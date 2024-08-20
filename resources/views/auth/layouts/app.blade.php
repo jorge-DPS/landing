@@ -4,13 +4,13 @@
     <base href="../../../../">
     @include('backend.layouts.metas')
     @include('backend.layouts.styles')
-    <link rel="stylesheet" href="{{ asset('assets/vendors/sweet/sweetalert2.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/swetAlert.css') }}">
+    <link rel="stylesheet" href="{{ asset('assetsBackend/vendors/sweet/sweetalert2.css') }}">
+    <link rel="stylesheet" href="{{ asset('assetsBackend/css/swetAlert.css') }}">
 </head>
 <body class="flex h-full dark:bg-coal-500">
 @yield('content')
-<script src="{{ asset('assets/vendors/sweet/sweetalert2.js') }}"></script>
-<script src="{{ asset('assets/js/login/utilitis.js') }}"></script>
+<script src="{{ asset('assetsBackend/vendors/sweet/sweetalert2.js') }}"></script>
+<script src="{{ asset('assetsBackend/js/login/utilitis.js') }}"></script>
 <?php if (session('error')) { ?>
 <script>
     Swal.fire({

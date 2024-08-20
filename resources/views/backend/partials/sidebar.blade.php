@@ -5,8 +5,8 @@
     <div class="sidebar-header hidden lg:flex items-center relative justify-between px-3 lg:px-6 shrink-0"
          id="sidebar_header">
         <a href="html/demo1/index.html">
-            <img class="default-logo min-h-[22px] max-w-none" src="assets/media/app/default-logo-dark.svg"/>
-            <img class="small-logo min-h-[22px] max-w-none" src="assets/media/app/mini-logo.svg"/>
+            <img class="default-logo min-h-[22px] max-w-none" src="assetsBackend/media/app/default-logo-dark.svg"/>
+            <img class="small-logo min-h-[22px] max-w-none" src="assetsBackend/media/app/mini-logo.svg"/>
         </a>
         <div data-toggle="body" data-toggle-class="sidebar-collapse" id="sidebar_toggle">
             <div class="hidden [html.dark_&amp;]:block">

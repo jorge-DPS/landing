@@ -5,7 +5,7 @@
     <div class="container-fixed flex justify-between items-stretch lg:gap-4" id="header_container">
         <div class="flex gap-1 lg:hidden items-center -ml-1">
             <a class="shrink-0" href="html/demo1.html">
-                <img class="max-h-[25px] w-full" src="assets/media/app/mini-logo.svg"/>
+                <img class="max-h-[25px] w-full" src="assetsBackend/media/app/mini-logo.svg"/>
             </a>
             <div class="flex items-center">
                 <button class="btn btn-icon btn-light btn-clear btn-sm" data-drawer-toggle="#sidebar">
@@ -1627,7 +1627,7 @@
                                 <div class="flex items-center flex-wrap gap-2">
                                     <div
                                         class="flex items-center justify-center shrink-0 rounded-full bg-gray-100 border border-gray-200 size-11">
-                                        <img alt="" class="size-7" src="assets/media/brand-logos/gitlab.svg"/>
+                                        <img alt="" class="size-7" src="assetsBackend/media/brand-logos/gitlab.svg"/>
                                     </div>
                                     <div class="flex flex-col">
                                         <a class="text-2sm font-semibold text-gray-900 hover:text-primary-active"
@@ -1644,17 +1644,17 @@
                                         <div class="flex">
                                             <img
                                                 class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                src="assets/media/avatars/300-4.png"/>
+                                                src="assetsBackend/media/avatars/300-4.png"/>
                                         </div>
                                         <div class="flex">
                                             <img
                                                 class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                src="assets/media/avatars/300-1.png"/>
+                                                src="assetsBackend/media/avatars/300-1.png"/>
                                         </div>
                                         <div class="flex">
                                             <img
                                                 class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                src="assets/media/avatars/300-2.png"/>
+                                                src="assetsBackend/media/avatars/300-2.png"/>
                                         </div>
                                         <div class="flex">
                <span
@@ -1766,7 +1766,7 @@
                          data-scrollable-max-height="auto" data-scrollable-offset="280px">
                         <div class="flex flex-col gap-5 py-5">
                             <div class="flex items-end gap-3.5 px-5">
-                                <img alt="" class="rounded-full size-9" src="assets/media/avatars/300-5.png"/>
+                                <img alt="" class="rounded-full size-9" src="assetsBackend/media/avatars/300-5.png"/>
                                 <div class="flex flex-col gap-1.5">
                                     <div
                                         class="card shadow-none flex flex-col bg-gray-100 gap-2.5 p-3 rounded-bl-none">
@@ -1799,14 +1799,14 @@
                                 </div>
                                 <div class="relative shrink-0">
                                     <img alt="" class="rounded-full size-9"
-                                         src="assets/media/avatars/300-2.png"/>
+                                         src="assetsBackend/media/avatars/300-2.png"/>
                                     <span
                                         class="size-[4.8px] badge badge-circle badge-success absolute top-7 end-0 transform -translate-y-1/2">
              </span>
                                 </div>
                             </div>
                             <div class="flex items-end gap-3.5 px-5">
-                                <img alt="" class="rounded-full size-9" src="assets/media/avatars/300-4.png"/>
+                                <img alt="" class="rounded-full size-9" src="assetsBackend/media/avatars/300-4.png"/>
                                 <div class="flex flex-col gap-1.5">
                                     <div
                                         class="card shadow-none flex flex-col bg-gray-100 gap-2.5 p-3 rounded-bl-none">
@@ -1820,7 +1820,7 @@
                                 </div>
                             </div>
                             <div class="flex items-end gap-3.5 px-5">
-                                <img alt="" class="rounded-full size-9" src="assets/media/avatars/300-1.png"/>
+                                <img alt="" class="rounded-full size-9" src="assetsBackend/media/avatars/300-1.png"/>
                                 <div class="flex flex-col gap-1.5">
                                     <div
                                         class="card shadow-none flex flex-col bg-gray-100 gap-2.5 p-3 rounded-bl-none">
@@ -1852,7 +1852,7 @@
                                 </div>
                                 <div class="relative shrink-0">
                                     <img alt="" class="rounded-full size-9"
-                                         src="assets/media/avatars/300-2.png"/>
+                                         src="assetsBackend/media/avatars/300-2.png"/>
                                     <span
                                         class="size-[4.8px] badge badge-circle badge-success absolute top-7 end-0 transform -translate-y-1/2">
              </span>
@@ -1876,14 +1876,14 @@
                                 </div>
                                 <div class="relative shrink-0">
                                     <img alt="" class="rounded-full size-9"
-                                         src="assets/media/avatars/300-2.png"/>
+                                         src="assetsBackend/media/avatars/300-2.png"/>
                                     <span
                                         class="size-[4.8px] badge badge-circle badge-success absolute top-7 end-0 transform -translate-y-1/2">
              </span>
                                 </div>
                             </div>
                             <div class="flex items-end gap-3.5 px-5">
-                                <img alt="" class="rounded-full size-9" src="assets/media/avatars/300-4.png"/>
+                                <img alt="" class="rounded-full size-9" src="assetsBackend/media/avatars/300-4.png"/>
                                 <div class="flex flex-col gap-1.5">
                                     <div
                                         class="card shadow-none flex flex-col bg-gray-100 gap-2.5 p-3 rounded-bl-none">
@@ -1901,7 +1901,7 @@
                     <div class="mb-2.5">
                         <div class="flex grow gap-2 p-5 bg-gray-100 mb-2.5" id="join_request">
                             <div class="relative shrink-0">
-                                <img alt="" class="rounded-full size-8" src="assets/media/avatars/300-14.png"/>
+                                <img alt="" class="rounded-full size-8" src="assetsBackend/media/avatars/300-14.png"/>
                                 <span
                                     class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
             </span>
@@ -1937,7 +1937,7 @@
                         <div class="relative grow mx-5">
                             <img alt=""
                                  class="rounded-full size-[30px] absolute left-0 top-2/4 -translate-y-2/4 ms-2.5"
-                                 src="assets/media/avatars/300-2.png"/>
+                                 src="assetsBackend/media/avatars/300-2.png"/>
                             <input class="input h-auto py-4 ps-12 bg-transparent"
                                    placeholder="Write a message..." type="text" value=""/>
                             <div class="flex items-center gap-2.5 absolute right-3 top-1/2 -translate-y-1/2">
@@ -1975,7 +1975,7 @@
                             <div class="flex items-center flex-wrap gap-2">
                                 <div
                                     class="flex items-center justify-center shrink-0 rounded-full bg-gray-100 border border-gray-200 size-10">
-                                    <img alt="" class="size-6" src="assets/media/brand-logos/jira.svg"/>
+                                    <img alt="" class="size-6" src="assetsBackend/media/brand-logos/jira.svg"/>
                                 </div>
                                 <div class="flex flex-col">
                                     <a class="text-2sm font-semibold text-gray-900 hover:text-primary-active"
@@ -1997,7 +1997,7 @@
                             <div class="flex items-center flex-wrap gap-2">
                                 <div
                                     class="flex items-center justify-center shrink-0 rounded-full bg-gray-100 border border-gray-200 size-10">
-                                    <img alt="" class="size-6" src="assets/media/brand-logos/inferno.svg"/>
+                                    <img alt="" class="size-6" src="assetsBackend/media/brand-logos/inferno.svg"/>
                                 </div>
                                 <div class="flex flex-col">
                                     <a class="text-2sm font-semibold text-gray-900 hover:text-primary-active"
@@ -2019,7 +2019,7 @@
                             <div class="flex items-center flex-wrap gap-2">
                                 <div
                                     class="flex items-center justify-center shrink-0 rounded-full bg-gray-100 border border-gray-200 size-10">
-                                    <img alt="" class="size-6" src="assets/media/brand-logos/evernote.svg"/>
+                                    <img alt="" class="size-6" src="assetsBackend/media/brand-logos/evernote.svg"/>
                                 </div>
                                 <div class="flex flex-col">
                                     <a class="text-2sm font-semibold text-gray-900 hover:text-primary-active"
@@ -2041,7 +2041,7 @@
                             <div class="flex items-center flex-wrap gap-2">
                                 <div
                                     class="flex items-center justify-center shrink-0 rounded-full bg-gray-100 border border-gray-200 size-10">
-                                    <img alt="" class="size-6" src="assets/media/brand-logos/gitlab.svg"/>
+                                    <img alt="" class="size-6" src="assetsBackend/media/brand-logos/gitlab.svg"/>
                                 </div>
                                 <div class="flex flex-col">
                                     <a class="text-2sm font-semibold text-gray-900 hover:text-primary-active"
@@ -2064,7 +2064,7 @@
                                 <div
                                     class="flex items-center justify-center shrink-0 rounded-full bg-gray-100 border border-gray-200 size-10">
                                     <img alt="" class="size-6"
-                                         src="assets/media/brand-logos/google-webdev.svg"/>
+                                         src="assetsBackend/media/brand-logos/google-webdev.svg"/>
                                 </div>
                                 <div class="flex flex-col">
                                     <a class="text-2sm font-semibold text-gray-900 hover:text-primary-active"
@@ -2242,7 +2242,7 @@
                                     <div class="flex grow gap-2.5 px-5">
                                         <div class="relative shrink-0 mt-0.5">
                                             <img alt="" class="rounded-full size-8"
-                                                 src="assets/media/avatars/300-4.png"/>
+                                                 src="assetsBackend/media/avatars/300-4.png"/>
                                             <span
                                                 class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
@@ -2299,7 +2299,7 @@
                                     <div class="flex grow gap-2.5 px-5">
                                         <div class="relative shrink-0 mt-0.5">
                                             <img alt="" class="rounded-full size-8"
-                                                 src="assets/media/avatars/300-5.png"/>
+                                                 src="assetsBackend/media/avatars/300-5.png"/>
                                             <span
                                                 class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
@@ -2344,7 +2344,7 @@
                                     <div class="flex grow gap-2.5 px-5" id="notification_request_3">
                                         <div class="relative shrink-0 mt-0.5">
                                             <img alt="" class="rounded-full size-8"
-                                                 src="assets/media/avatars/300-27.png"/>
+                                                 src="assetsBackend/media/avatars/300-27.png"/>
                                             <span
                                                 class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
@@ -2391,7 +2391,7 @@
                                     <div class="flex grow gap-2.5 px-5">
                                         <div class="relative shrink-0 mt-0.5">
                                             <img alt="" class="rounded-full size-8"
-                                                 src="assets/media/avatars/300-1.png"/>
+                                                 src="assetsBackend/media/avatars/300-1.png"/>
                                             <span
                                                 class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
@@ -2417,7 +2417,7 @@
                                             </div>
                                             <div
                                                 class="card shadow-none flex items-center flex-row gap-1.5 p-2.5 rounded-lg bg-light-active">
-                                                <img class="h-5" src="assets/media/file-types/pdf.svg"/>
+                                                <img class="h-5" src="assetsBackend/media/file-types/pdf.svg"/>
                                                 <a class="hover:text-primary-active font-medium text-gray-700 text-xs me-1"
                                                    href="#">
                                                     Launch_nov24.pptx
@@ -2433,7 +2433,7 @@
                                     <div class="flex grow gap-2.5 px-5">
                                         <div class="relative shrink-0 mt-0.5">
                                             <img alt="" class="rounded-full size-8"
-                                                 src="assets/media/avatars/300-11.png"/>
+                                                 src="assetsBackend/media/avatars/300-11.png"/>
                                             <span
                                                 class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
@@ -2464,7 +2464,7 @@
                                     <div class="flex grow gap-2.5 px-5">
                                         <div class="relative shrink-0 mt-0.5">
                                             <img alt="" class="rounded-full size-8"
-                                                 src="assets/media/avatars/300-14.png"/>
+                                                 src="assetsBackend/media/avatars/300-14.png"/>
                                             <span
                                                 class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
@@ -2492,7 +2492,7 @@
                                                 class="card shadow-none flex items-center flex-row gap-1.5 p-2.5 rounded-lg bg-light-active">
                                                 <div
                                                     class="flex items-center justify-center w-[26px] h-[30px] shrink-0 bg-light rounded border border-gray-200">
-                                                    <img class="h-5" src="assets/media/file-types/figma.svg"/>
+                                                    <img class="h-5" src="assetsBackend/media/file-types/figma.svg"/>
                                                 </div>
                                                 <a class="hover:text-primary-active font-medium text-gray-700 text-xs me-1"
                                                    href="#">
@@ -2527,7 +2527,7 @@
                                     <div class="flex grow gap-2.5 px-5" id="notification_request_13">
                                         <div class="relative shrink-0 mt-0.5">
                                             <img alt="" class="rounded-full size-8"
-                                                 src="assets/media/avatars/300-25.png"/>
+                                                 src="assetsBackend/media/avatars/300-25.png"/>
                                             <span
                                                 class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
@@ -2606,7 +2606,7 @@
                                     <div class="flex grow gap-2.5 px-5">
                                         <div class="relative shrink-0 mt-0.5">
                                             <img alt="" class="rounded-full size-8"
-                                                 src="assets/media/avatars/300-34.png"/>
+                                                 src="assetsBackend/media/avatars/300-34.png"/>
                                             <span
                                                 class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
@@ -2633,7 +2633,7 @@
                                             <div
                                                 class="card shadow-none flex items-center justify-between flex-row gap-1.5 p-2.5 rounded-lg bg-light-active">
                                                 <div class="flex items-center gap-1.5">
-                                                    <img class="h-6" src="assets/media/file-types/xls.svg"/>
+                                                    <img class="h-6" src="assetsBackend/media/file-types/xls.svg"/>
                                                     <div class="flex flex-col gap-0.5">
                                                         <a class="hover:text-primary-active font-medium text-gray-700 text-xs"
                                                            href="#">
@@ -2669,7 +2669,7 @@
                                     <div class="flex grow gap-2 px-5">
                                         <div class="relative shrink-0 mt-0.5">
                                             <img alt="" class="rounded-full size-8"
-                                                 src="assets/media/avatars/300-29.png"/>
+                                                 src="assetsBackend/media/avatars/300-29.png"/>
                                             <span
                                                 class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
@@ -2715,12 +2715,12 @@
                                                         <div class="flex">
                                                             <img
                                                                 class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-6"
-                                                                src="assets/media/avatars/300-3.png"/>
+                                                                src="assetsBackend/media/avatars/300-3.png"/>
                                                         </div>
                                                         <div class="flex">
                                                             <img
                                                                 class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-6"
-                                                                src="assets/media/avatars/300-2.png"/>
+                                                                src="assetsBackend/media/avatars/300-2.png"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2740,7 +2740,7 @@
                                     <div class="flex grow gap-2.5 px-5" id="notification_request_3">
                                         <div class="relative shrink-0 mt-0.5">
                                             <img alt="" class="rounded-full size-8"
-                                                 src="assets/media/avatars/300-30.png"/>
+                                                 src="assetsBackend/media/avatars/300-30.png"/>
                                             <span
                                                 class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
@@ -2785,7 +2785,7 @@
                                     <div class="flex grow gap-2.5 px-5">
                                         <div class="relative shrink-0 mt-0.5">
                                             <img alt="" class="rounded-full size-8"
-                                                 src="assets/media/avatars/300-24.png"/>
+                                                 src="assetsBackend/media/avatars/300-24.png"/>
                                             <span
                                                 class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
@@ -2835,7 +2835,7 @@
                                     <div class="flex grow gap-2 px-5">
                                         <div class="relative shrink-0 mt-0.5">
                                             <img alt="" class="rounded-full size-8"
-                                                 src="assets/media/avatars/300-15.png"/>
+                                                 src="assetsBackend/media/avatars/300-15.png"/>
                                             <span
                                                 class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
@@ -2891,17 +2891,17 @@
                                                         <div class="flex">
                                                             <img
                                                                 class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-6"
-                                                                src="assets/media/avatars/300-4.png"/>
+                                                                src="assetsBackend/media/avatars/300-4.png"/>
                                                         </div>
                                                         <div class="flex">
                                                             <img
                                                                 class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-6"
-                                                                src="assets/media/avatars/300-1.png"/>
+                                                                src="assetsBackend/media/avatars/300-1.png"/>
                                                         </div>
                                                         <div class="flex">
                                                             <img
                                                                 class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-6"
-                                                                src="assets/media/avatars/300-2.png"/>
+                                                                src="assetsBackend/media/avatars/300-2.png"/>
                                                         </div>
                                                         <div class="flex">
                    <span
@@ -2929,7 +2929,7 @@
                                     <div class="flex grow gap-2.5 px-5">
                                         <div class="relative shrink-0 mt-0.5">
                                             <img alt="" class="rounded-full size-8"
-                                                 src="assets/media/avatars/300-6.png"/>
+                                                 src="assetsBackend/media/avatars/300-6.png"/>
                                             <span
                                                 class="size-1.5 badge badge-circle absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
@@ -2961,7 +2961,7 @@
                                     <div class="flex grow gap-2.5 px-5">
                                         <div class="relative shrink-0 mt-0.5">
                                             <img alt="" class="rounded-full size-8"
-                                                 src="assets/media/avatars/300-12.png"/>
+                                                 src="assetsBackend/media/avatars/300-12.png"/>
                                             <span
                                                 class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
@@ -2988,7 +2988,7 @@
                                             <div
                                                 class="card shadow-none flex items-center justify-between flex-row gap-1.5 p-2.5 rounded-lg bg-light-active">
                                                 <div class="flex items-center gap-1.5">
-                                                    <img class="h-6" src="assets/media/file-types/word.svg"/>
+                                                    <img class="h-6" src="assetsBackend/media/file-types/word.svg"/>
                                                     <div class="flex flex-col gap-0.5">
                                                         <a class="hover:text-primary-active font-medium text-gray-700 text-xs"
                                                            href="#">
@@ -3020,7 +3020,7 @@
                                             <div
                                                 class="card shadow-none flex items-center justify-between flex-row gap-1.5 p-2.5 rounded-lg bg-light-active">
                                                 <div class="flex items-center gap-1.5">
-                                                    <img class="h-6" src="assets/media/file-types/svg.svg"/>
+                                                    <img class="h-6" src="assetsBackend/media/file-types/svg.svg"/>
                                                     <div class="flex flex-col gap-0.5">
                                                         <a class="hover:text-primary-active font-medium text-gray-700 text-xs"
                                                            href="#">
@@ -3056,7 +3056,7 @@
                                     <div class="flex grow gap-2.5 px-5">
                                         <div class="relative shrink-0 mt-0.5">
                                             <img alt="" class="rounded-full size-8"
-                                                 src="assets/media/avatars/300-21.png"/>
+                                                 src="assetsBackend/media/avatars/300-21.png"/>
                                             <span
                                                 class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
@@ -3112,7 +3112,7 @@
                                     <div class="flex grow gap-2.5 px-5" id="notification_request_3">
                                         <div class="relative shrink-0 mt-0.5">
                                             <img alt="" class="rounded-full size-8"
-                                                 src="assets/media/avatars/300-13.png"/>
+                                                 src="assetsBackend/media/avatars/300-13.png"/>
                                             <span
                                                 class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
@@ -3176,7 +3176,7 @@
                                     <div class="flex grow gap-2.5 px-5">
                                         <div class="relative shrink-0 mt-0.5">
                                             <img alt="" class="rounded-full size-8"
-                                                 src="assets/media/avatars/300-1.png"/>
+                                                 src="assetsBackend/media/avatars/300-1.png"/>
                                             <span
                                                 class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
@@ -3209,7 +3209,7 @@
                                                     class="card shadow-none flex flex-col gap-3.5 bg-light-active w-40">
                                                     <div
                                                         class="bg-cover bg-no-repeat card-rounded-t shrink-0 h-24"
-                                                        style="background-image: url('/static/metronic-tailwind-html/dist/assets/media/images/600x600/6.jpg')">
+                                                        style="background-image: url('/static/metronic-tailwind-html/dist/assetsBackend/media/images/600x600/6.jpg')">
                                                     </div>
                                                     <div class="px-2.5 pb-2">
                                                         <a class="font-medium block text-gray-700 hover:text-primary text-xs leading-4 mb-0.5"
@@ -3228,7 +3228,7 @@
                                                     class="card shadow-none flex flex-col gap-3.5 bg-light-active w-40">
                                                     <div
                                                         class="bg-cover bg-no-repeat card-rounded-t shrink-0 h-24"
-                                                        style="background-image: url('/static/metronic-tailwind-html/dist/assets/media/images/600x600/1.jpg')">
+                                                        style="background-image: url('/static/metronic-tailwind-html/dist/assetsBackend/media/images/600x600/1.jpg')">
                                                     </div>
                                                     <div class="px-2.5 pb-2">
                                                         <a class="font-medium block text-gray-700 hover:text-primary text-xs leading-4 mb-0.5"
@@ -3251,7 +3251,7 @@
                                     <div class="flex grow gap-2.5 px-5" id="notification_request_3">
                                         <div class="relative shrink-0 mt-0.5">
                                             <img alt="" class="rounded-full size-8"
-                                                 src="assets/media/avatars/300-19.png"/>
+                                                 src="assetsBackend/media/avatars/300-19.png"/>
                                             <span
                                                 class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
@@ -3279,7 +3279,7 @@
                                                 class="card shadow-none flex items-center flex-row gap-1.5 p-2.5 rounded-lg bg-light-active">
                                                 <div
                                                     class="flex items-center justify-center w-[26px] h-[30px] shrink-0 bg-white rounded border border-gray-200">
-                                                    <img class="h-5" src="assets/media/brand-logos/jira.svg"/>
+                                                    <img class="h-5" src="assetsBackend/media/brand-logos/jira.svg"/>
                                                 </div>
                                                 <a class="hover:text-primary-active font-medium text-gray-700 text-xs me-1"
                                                    href="#">
@@ -3306,7 +3306,7 @@
                                     <div class="flex grow gap-2.5 px-5">
                                         <div class="relative shrink-0 mt-0.5">
                                             <img alt="" class="rounded-full size-8"
-                                                 src="assets/media/avatars/300-17.png"/>
+                                                 src="assetsBackend/media/avatars/300-17.png"/>
                                             <span
                                                 class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
@@ -3345,7 +3345,7 @@
                                     <div class="flex grow gap-2.5 px-5">
                                         <div class="relative shrink-0 mt-0.5">
                                             <img alt="" class="rounded-full size-8"
-                                                 src="assets/media/avatars/300-34.png"/>
+                                                 src="assetsBackend/media/avatars/300-34.png"/>
                                             <span
                                                 class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
@@ -3376,7 +3376,7 @@
                                     <div class="flex grow gap-2.5 px-5">
                                         <div class="relative shrink-0 mt-0.5">
                                             <img alt="" class="rounded-full size-8"
-                                                 src="assets/media/avatars/300-9.png"/>
+                                                 src="assetsBackend/media/avatars/300-9.png"/>
                                             <span
                                                 class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
@@ -3417,7 +3417,7 @@
                                     <div class="flex grow gap-2.5 px-5" id="notification_request_3">
                                         <div class="relative shrink-0 mt-0.5">
                                             <img alt="" class="rounded-full size-8"
-                                                 src="assets/media/avatars/300-13.png"/>
+                                                 src="assetsBackend/media/avatars/300-13.png"/>
                                             <span
                                                 class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
@@ -3479,14 +3479,14 @@
                      data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
                     <div class="menu-toggle btn btn-icon rounded-full">
                         <img alt="" class="size-9 rounded-full border-2 border-success shrink-0"
-                             src="assets/media/avatars/300-2.png">
+                             src="assetsBackend/media/avatars/300-2.png">
                         </img>
                     </div>
                     <div class="menu-dropdown menu-default light:border-gray-300 w-full max-w-[250px]">
                         <div class="flex items-center justify-between px-5 py-1.5 gap-1.5">
                             <div class="flex items-center gap-2">
                                 <img alt="" class="size-9 rounded-full border-2 border-success"
-                                     src="assets/media/avatars/300-2.png">
+                                     src="assetsBackend/media/avatars/300-2.png">
                                 <div class="flex flex-col gap-1.5">
               <span class="text-sm text-gray-800 font-semibold leading-none">
                Cody Fisher
@@ -3664,7 +3664,7 @@
                                         class="flex items-center gap-1.5 rounded-md border border-gray-300 text-gray-600 p-1.5 text-2xs font-medium shrink-0">
                                         English
                                         <img alt="" class="inline-block size-3.5 rounded-full"
-                                             src="assets/media/flags/united-states.svg"/>
+                                             src="assetsBackend/media/flags/united-states.svg"/>
                                     </div>
                                 </div>
                                 <div
@@ -3672,7 +3672,7 @@
                                     <div class="menu-item active">
                                         <a class="menu-link h-10" href="#">
                <span class="menu-icon">
-                <img alt="" class="inline-block size-4 rounded-full" src="assets/media/flags/united-states.svg"/>
+                <img alt="" class="inline-block size-4 rounded-full" src="assetsBackend/media/flags/united-states.svg"/>
                </span>
                                             <span class="menu-title">
                 English
@@ -3686,7 +3686,7 @@
                                     <div class="menu-item">
                                         <a class="menu-link h-10" href="#">
                <span class="menu-icon">
-                <img alt="" class="inline-block size-4 rounded-full" src="assets/media/flags/spain.svg"/>
+                <img alt="" class="inline-block size-4 rounded-full" src="assetsBackend/media/flags/spain.svg"/>
                </span>
                                             <span class="menu-title">
                 Spanish
@@ -3696,7 +3696,7 @@
                                     <div class="menu-item">
                                         <a class="menu-link h-10" href="#">
                <span class="menu-icon">
-                <img alt="" class="inline-block size-4 rounded-full" src="assets/media/flags/germany.svg"/>
+                <img alt="" class="inline-block size-4 rounded-full" src="assetsBackend/media/flags/germany.svg"/>
                </span>
                                             <span class="menu-title">
                 German
@@ -3706,7 +3706,7 @@
                                     <div class="menu-item">
                                         <a class="menu-link h-10" href="#">
                <span class="menu-icon">
-                <img alt="" class="inline-block size-4 rounded-full" src="assets/media/flags/japan.svg"/>
+                <img alt="" class="inline-block size-4 rounded-full" src="assetsBackend/media/flags/japan.svg"/>
                </span>
                                             <span class="menu-title">
                 Japanese
@@ -3716,7 +3716,7 @@
                                     <div class="menu-item">
                                         <a class="menu-link h-10" href="#">
                <span class="menu-icon">
-                <img alt="" class="inline-block size-4 rounded-full" src="assets/media/flags/france.svg"/>
+                <img alt="" class="inline-block size-4 rounded-full" src="assetsBackend/media/flags/france.svg"/>
                </span>
                                             <span class="menu-title">
                 French

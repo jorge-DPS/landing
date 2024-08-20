@@ -1,8 +1,8 @@
-<script src="{{ asset('assets/js/core.bundle.js') }}">
+<script src="{{ asset('assetsBackend/js/core.bundle.js') }}">
 </script>
-<script src="{{ asset('assets/vendors/apexcharts/apexcharts.min.js') }}">
+<script src="{{ asset('assetsBackend/vendors/apexcharts/apexcharts.min.js') }}">
 </script>
-<script src="{{ asset('assets/js/widgets/general.js') }}">
+<script src="{{ asset('assetsBackend/js/widgets/general.js') }}">
 </script>
-<script src="{{ asset('assets/js/layouts/demo1.js') }}">
+<script src="{{ asset('assetsBackend/js/layouts/demo1.js') }}">
 </script>

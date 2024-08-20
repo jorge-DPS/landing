@@ -6,11 +6,8 @@
 
 @section('content')
     <main class="grow content pt-5" id="content" role="content">
-        <!-- begin: container -->
         <div class="container-fixed" id="content_container">
         </div>
-        <!-- end: container -->
-        <!-- begin: container -->
         <div class="container-fixed">
             <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
                 <div class="flex flex-col justify-center gap-2">
@@ -47,7 +44,7 @@
                             </style>
                             <div
                                 class="card flex-col justify-between gap-6 h-full bg-cover bg-[right_top_-1.7rem] bg-no-repeat channel-stats-bg">
-                                <img alt="" class="w-7 mt-4 ms-5" src="assets/media/brand-logos/linkedin-2.svg"/>
+                                <img alt="" class="w-7 mt-4 ms-5" src="assetsBackend/media/brand-logos/linkedin-2.svg"/>
                                 <div class="flex flex-col gap-1 pb-4 px-5">
             <span class="text-3xl font-semibold text-gray-900">
              9.3k
@@ -59,7 +56,7 @@
                             </div>
                             <div
                                 class="card flex-col justify-between gap-6 h-full bg-cover bg-[right_top_-1.7rem] bg-no-repeat channel-stats-bg">
-                                <img alt="" class="w-7 mt-4 ms-5" src="assets/media/brand-logos/youtube-2.svg"/>
+                                <img alt="" class="w-7 mt-4 ms-5" src="assetsBackend/media/brand-logos/youtube-2.svg"/>
                                 <div class="flex flex-col gap-1 pb-4 px-5">
             <span class="text-3xl font-semibold text-gray-900">
              24k
@@ -71,7 +68,7 @@
                             </div>
                             <div
                                 class="card flex-col justify-between gap-6 h-full bg-cover bg-[right_top_-1.7rem] bg-no-repeat channel-stats-bg">
-                                <img alt="" class="w-7 mt-4 ms-5" src="assets/media/brand-logos/instagram-03.svg"/>
+                                <img alt="" class="w-7 mt-4 ms-5" src="assetsBackend/media/brand-logos/instagram-03.svg"/>
                                 <div class="flex flex-col gap-1 pb-4 px-5">
             <span class="text-3xl font-semibold text-gray-900">
              608
@@ -84,9 +81,9 @@
                             <div
                                 class="card flex-col justify-between gap-6 h-full bg-cover bg-[right_top_-1.7rem] bg-no-repeat channel-stats-bg">
                                 <img alt="" class="dark:hidden w-7 mt-4 ms-5"
-                                     src="assets/media/brand-logos/tiktok.svg"/>
+                                     src="assetsBackend/media/brand-logos/tiktok.svg"/>
                                 <img alt="" class="light:hidden w-7 mt-4 ms-5"
-                                     src="assets/media/brand-logos/tiktok-dark.svg"/>
+                                     src="assetsBackend/media/brand-logos/tiktok-dark.svg"/>
                                 <div class="flex flex-col gap-1 pb-4 px-5">
             <span class="text-3xl font-semibold text-gray-900">
              2.5k
@@ -101,7 +98,7 @@
                     <div class="lg:col-span-2">
                         <style>
                             .entry-callout-bg {
-                                background-image: url('/static/metronic-tailwind-html/dist/assets/media/images/2600x1600/2.png');
+                                background-image: url('/static/metronic-tailwind-html/dist/assetsBackend/media/images/2600x1600/2.png');
                             }
 
                             .dark .entry-callout-bg {
@@ -116,17 +113,17 @@
                                         <div class="flex">
                                             <img
                                                 class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-10"
-                                                src="assets/media/avatars/300-4.png"/>
+                                                src="assetsBackend/media/avatars/300-4.png"/>
                                         </div>
                                         <div class="flex">
                                             <img
                                                 class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-10"
-                                                src="assets/media/avatars/300-1.png"/>
+                                                src="assetsBackend/media/avatars/300-1.png"/>
                                         </div>
                                         <div class="flex">
                                             <img
                                                 class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-10"
-                                                src="assets/media/avatars/300-2.png"/>
+                                                src="assetsBackend/media/avatars/300-2.png"/>
                                         </div>
                                         <div class="flex">
               <span
@@ -448,7 +445,7 @@
               09:00 - 09:30
              </span>
                                     </div>
-                                    <img alt="" class="size-7" src="assets/media/brand-logos/zoom.svg"/>
+                                    <img alt="" class="size-7" src="assetsBackend/media/brand-logos/zoom.svg"/>
                                 </div>
                                 <p class="text-sm font-normal text-gray-800 leading-5.5 mb-8">
                                     Team meeting to discuss strategies, outline
@@ -478,17 +475,17 @@
                                             <div class="flex">
                                                 <img
                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                    src="assets/media/avatars/300-4.png"/>
+                                                    src="assetsBackend/media/avatars/300-4.png"/>
                                             </div>
                                             <div class="flex">
                                                 <img
                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                    src="assets/media/avatars/300-1.png"/>
+                                                    src="assetsBackend/media/avatars/300-1.png"/>
                                             </div>
                                             <div class="flex">
                                                 <img
                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                    src="assets/media/avatars/300-2.png"/>
+                                                    src="assetsBackend/media/avatars/300-2.png"/>
                                             </div>
                                             <div class="flex">
                <span
@@ -628,17 +625,17 @@
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-4.png"/>
+                                                                    src="assetsBackend/media/avatars/300-4.png"/>
                                                             </div>
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-1.png"/>
+                                                                    src="assetsBackend/media/avatars/300-1.png"/>
                                                             </div>
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-2.png"/>
+                                                                    src="assetsBackend/media/avatars/300-2.png"/>
                                                             </div>
                                                             <div class="flex">
                     <span
@@ -709,7 +706,7 @@
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-4.png"/>
+                                                                    src="assetsBackend/media/avatars/300-4.png"/>
                                                             </div>
                                                             <div class="flex">
                     <span
@@ -779,17 +776,17 @@
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-4.png"/>
+                                                                    src="assetsBackend/media/avatars/300-4.png"/>
                                                             </div>
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-1.png"/>
+                                                                    src="assetsBackend/media/avatars/300-1.png"/>
                                                             </div>
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-2.png"/>
+                                                                    src="assetsBackend/media/avatars/300-2.png"/>
                                                             </div>
                                                             <div class="flex">
                     <span
@@ -859,12 +856,12 @@
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-24.png"/>
+                                                                    src="assetsBackend/media/avatars/300-24.png"/>
                                                             </div>
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-7.png"/>
+                                                                    src="assetsBackend/media/avatars/300-7.png"/>
                                                             </div>
                                                         </div>
                                                     </td>
@@ -929,17 +926,17 @@
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-3.png"/>
+                                                                    src="assetsBackend/media/avatars/300-3.png"/>
                                                             </div>
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-8.png"/>
+                                                                    src="assetsBackend/media/avatars/300-8.png"/>
                                                             </div>
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-9.png"/>
+                                                                    src="assetsBackend/media/avatars/300-9.png"/>
                                                             </div>
                                                             <div class="flex">
                     <span
@@ -1009,12 +1006,12 @@
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-6.png"/>
+                                                                    src="assetsBackend/media/avatars/300-6.png"/>
                                                             </div>
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-5.png"/>
+                                                                    src="assetsBackend/media/avatars/300-5.png"/>
                                                             </div>
                                                         </div>
                                                     </td>
@@ -1078,17 +1075,17 @@
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-10.png"/>
+                                                                    src="assetsBackend/media/avatars/300-10.png"/>
                                                             </div>
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-11.png"/>
+                                                                    src="assetsBackend/media/avatars/300-11.png"/>
                                                             </div>
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-12.png"/>
+                                                                    src="assetsBackend/media/avatars/300-12.png"/>
                                                             </div>
                                                             <div class="flex">
                     <span
@@ -1159,12 +1156,12 @@
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-13.png"/>
+                                                                    src="assetsBackend/media/avatars/300-13.png"/>
                                                             </div>
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-14.png"/>
+                                                                    src="assetsBackend/media/avatars/300-14.png"/>
                                                             </div>
                                                         </div>
                                                     </td>
@@ -1228,12 +1225,12 @@
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-15.png"/>
+                                                                    src="assetsBackend/media/avatars/300-15.png"/>
                                                             </div>
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-16.png"/>
+                                                                    src="assetsBackend/media/avatars/300-16.png"/>
                                                             </div>
                                                         </div>
                                                     </td>
@@ -1297,17 +1294,17 @@
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-17.png"/>
+                                                                    src="assetsBackend/media/avatars/300-17.png"/>
                                                             </div>
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-18.png"/>
+                                                                    src="assetsBackend/media/avatars/300-18.png"/>
                                                             </div>
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-19.png"/>
+                                                                    src="assetsBackend/media/avatars/300-19.png"/>
                                                             </div>
                                                         </div>
                                                     </td>
@@ -1371,12 +1368,12 @@
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-20.png"/>
+                                                                    src="assetsBackend/media/avatars/300-20.png"/>
                                                             </div>
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-21.png"/>
+                                                                    src="assetsBackend/media/avatars/300-21.png"/>
                                                             </div>
                                                         </div>
                                                     </td>
@@ -1440,12 +1437,12 @@
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-22.png"/>
+                                                                    src="assetsBackend/media/avatars/300-22.png"/>
                                                             </div>
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-23.png"/>
+                                                                    src="assetsBackend/media/avatars/300-23.png"/>
                                                             </div>
                                                         </div>
                                                     </td>
@@ -1510,12 +1507,12 @@
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-24.png"/>
+                                                                    src="assetsBackend/media/avatars/300-24.png"/>
                                                             </div>
                                                             <div class="flex">
                                                                 <img
                                                                     class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-[30px]"
-                                                                    src="assets/media/avatars/300-25.png"/>
+                                                                    src="assetsBackend/media/avatars/300-25.png"/>
                                                             </div>
                                                         </div>
                                                     </td>
