@@ -6,3 +6,4 @@
 </script>
 <script src="{{ asset('assetsBackend/js/layouts/demo1.js') }}">
 </script>
+@stack('scripts')

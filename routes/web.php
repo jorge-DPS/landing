@@ -2,22 +2,28 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
     return view('frontend.home.index');
 });
 
-//route auth
+//auth route
 Route::get('login', [AuthController::class, 'index'])->name('login');
 Route::post('post-login', [AuthController::class, 'postLogin'])->name('login.post');
-Route::get('dashboard', [AuthController::class, 'dashboard']);
+Route::get('dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
+//general route
 Route::middleware(['auth'])->group(function () {
-    Route::group(['prefix' => 'home'], function () {
-        Route::get('/', [HomeController::class, 'index'])->name('backend.home.index');
+
+    Route::group(['prefix' => 'usuarios'], function () {
+        Route::get('/', [UserController::class, 'index'])->name('backend.user.index');
     });
+
+    Route::get('/profile', [ProfileController::class, 'index'])->name('user.profile');
+    Route::post('/profile', [ProfileController::class, 'store'])->name('user.profile.store');
 
 });
 
