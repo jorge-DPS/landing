@@ -47,7 +47,7 @@
                                 </div>
 
                                 <div class="mb-3 col-md-6">
-                                    <img src="/avatars/{{ auth()->user()->avatar }}" style="width:80px;margin-top: 10px;">
+                                    <img src="{{ asset(auth()->user()->avatar) }}" style="width:80px;margin-top: 10px;">
                                 </div>
 
                             </div>

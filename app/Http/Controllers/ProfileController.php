@@ -29,11 +29,7 @@ class ProfileController extends Controller
         $input = $request->all();
 
         if ($request->hasFile('avatar')) {
-            $avatarName = time() . '.' . $request->avatar->getClientOriginalExtension();
-            $request->avatar->move(public_path('avatars'), $avatarName);
-
-            $input['avatar'] = $avatarName;
-
+            $input['avatar'] = saveStorage($request->file('avatar'), 'avatars');
         } else {
             unset($input['avatar']);
         }
@@ -48,4 +44,5 @@ class ProfileController extends Controller
 
         return back()->with('success', 'Profile updated successfully.');
     }
+
 }

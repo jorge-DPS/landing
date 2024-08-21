@@ -18,28 +18,23 @@
             </div>
         </div>
         <div class="flex items-stretch" id="megamenu_container">
-
-
             @yield('breadcrumbs')
-
-
-
         </div>
         <div class="flex items-center gap-2 lg:gap-3.5">
             <div class="dropdown" data-dropdown="true" data-dropdown-offset="70px, 10px"
                  data-dropdown-placement="bottom-end" data-dropdown-trigger="click|lg:click">
                 <button
-                    class="dropdown-toggle btn btn-icon btn-icon-lg relative cursor-pointer size-9 rounded-full hover:bg-primary-light hover:text-primary dropdown-open:bg-primary-light dropdown-open:text-primary text-gray-500">
+                        class="dropdown-toggle btn btn-icon btn-icon-lg relative cursor-pointer size-9 rounded-full hover:bg-primary-light hover:text-primary dropdown-open:bg-primary-light dropdown-open:text-primary text-gray-500">
                     <i class="ki-filled ki-notification-on">
                     </i>
                     <span
-                        class="badge badge-dot badge-success size-[5px] absolute top-0.5 right-0.5 transform translate-y-1/2">
+                            class="badge badge-dot badge-success size-[5px] absolute top-0.5 right-0.5 transform translate-y-1/2">
          </span>
                 </button>
                 <div class="dropdown-content light:border-gray-300 w-full max-w-[460px]">
                     <div
-                        class="flex items-center justify-between gap-2.5 text-sm text-gray-900 font-semibold px-5 py-2.5"
-                        id="notifications_header">
+                            class="flex items-center justify-between gap-2.5 text-sm text-gray-900 font-semibold px-5 py-2.5"
+                            id="notifications_header">
                         Notifications
                         <button class="btn btn-sm btn-icon btn-light btn-clear shrink-0"
                                 data-dropdown-dismiss="true">
@@ -57,7 +52,7 @@
                             <button class="tab relative" data-tab-toggle="#notifications_tab_inbox">
                                 Inbox
                                 <span
-                                    class="badge badge-dot badge-success size-[5px] absolute top-2 right-0 transform translate-y-1/2 translate-x-full">
+                                        class="badge badge-dot badge-success size-[5px] absolute top-2 right-0 transform translate-y-1/2 translate-x-full">
             </span>
                             </button>
                             <button class="tab" data-tab-toggle="#notifications_tab_team">
@@ -180,7 +175,7 @@
                                             <img alt="" class="rounded-full size-8"
                                                  src="assetsBackend/media/avatars/300-4.png"/>
                                             <span
-                                                class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
+                                                    class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
                                         </div>
                                         <div class="flex flex-col gap-3.5">
@@ -201,7 +196,7 @@
                  </span>
                                                 </div>
                                                 <span
-                                                    class="flex items-center text-2xs font-medium text-gray-500">
+                                                        class="flex items-center text-2xs font-medium text-gray-500">
                  18 mins ago
                  <span class="badge badge-circle bg-gray-500 size-1 mx-1.5">
                  </span>
@@ -209,7 +204,7 @@
                 </span>
                                             </div>
                                             <div
-                                                class="card shadow-none flex flex-col gap-2.5 p-3.5 rounded-lg bg-light-active">
+                                                    class="card shadow-none flex flex-col gap-2.5 p-3.5 rounded-lg bg-light-active">
                                                 <div class="text-2sm font-semibold text-gray-600 mb-px">
                                                     <a class="hover:text-primary-active text-gray-900 font-semibold"
                                                        href="#">
@@ -237,7 +232,7 @@
                                             <img alt="" class="rounded-full size-8"
                                                  src="assetsBackend/media/avatars/300-5.png"/>
                                             <span
-                                                class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
+                                                    class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
                                         </div>
                                         <div class="flex flex-col gap-3.5">
@@ -255,7 +250,7 @@
                                                     </a>
                                                 </div>
                                                 <span
-                                                    class="flex items-center text-2xs font-medium text-gray-500">
+                                                        class="flex items-center text-2xs font-medium text-gray-500">
                  53 mins ago
                  <span class="badge badge-circle bg-gray-500 size-1 mx-1.5">
                  </span>
@@ -282,7 +277,7 @@
                                             <img alt="" class="rounded-full size-8"
                                                  src="assetsBackend/media/avatars/300-27.png"/>
                                             <span
-                                                class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
+                                                    class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
                                         </div>
                                         <div class="flex flex-col gap-3.5">
@@ -303,7 +298,7 @@
                  </span>
                                                 </div>
                                                 <span
-                                                    class="flex items-center text-2xs font-medium text-gray-500">
+                                                        class="flex items-center text-2xs font-medium text-gray-500">
                  14 hours ago
                  <span class="badge badge-circle bg-gray-500 size-1 mx-1.5">
                  </span>
@@ -329,7 +324,7 @@
                                             <img alt="" class="rounded-full size-8"
                                                  src="assetsBackend/media/avatars/300-1.png"/>
                                             <span
-                                                class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
+                                                    class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
                                         </div>
                                         <div class="flex flex-col gap-3.5 grow">
@@ -344,7 +339,7 @@
                  </span>
                                                 </div>
                                                 <span
-                                                    class="flex items-center text-2xs font-medium text-gray-500">
+                                                        class="flex items-center text-2xs font-medium text-gray-500">
                  3 hours ago
                  <span class="badge badge-circle bg-gray-500 size-1 mx-1.5">
                  </span>
@@ -352,7 +347,7 @@
                 </span>
                                             </div>
                                             <div
-                                                class="card shadow-none flex items-center flex-row gap-1.5 p-2.5 rounded-lg bg-light-active">
+                                                    class="card shadow-none flex items-center flex-row gap-1.5 p-2.5 rounded-lg bg-light-active">
                                                 <img class="h-5" src="assetsBackend/media/file-types/pdf.svg"/>
                                                 <a class="hover:text-primary-active font-medium text-gray-700 text-xs me-1"
                                                    href="#">
@@ -371,7 +366,7 @@
                                             <img alt="" class="rounded-full size-8"
                                                  src="assetsBackend/media/avatars/300-11.png"/>
                                             <span
-                                                class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
+                                                    class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
                                         </div>
                                         <div class="flex flex-col gap-1">
@@ -402,7 +397,7 @@
                                             <img alt="" class="rounded-full size-8"
                                                  src="assetsBackend/media/avatars/300-14.png"/>
                                             <span
-                                                class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
+                                                    class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
                                         </div>
                                         <div class="flex flex-col gap-3.5 grow">
@@ -417,7 +412,7 @@
                  </span>
                                                 </div>
                                                 <span
-                                                    class="flex items-center text-2xs font-medium text-gray-500">
+                                                        class="flex items-center text-2xs font-medium text-gray-500">
                  3 day ago
                  <span class="badge badge-circle bg-gray-500 size-1 mx-1.5">
                  </span>
@@ -425,9 +420,9 @@
                 </span>
                                             </div>
                                             <div
-                                                class="card shadow-none flex items-center flex-row gap-1.5 p-2.5 rounded-lg bg-light-active">
+                                                    class="card shadow-none flex items-center flex-row gap-1.5 p-2.5 rounded-lg bg-light-active">
                                                 <div
-                                                    class="flex items-center justify-center w-[26px] h-[30px] shrink-0 bg-light rounded border border-gray-200">
+                                                        class="flex items-center justify-center w-[26px] h-[30px] shrink-0 bg-light rounded border border-gray-200">
                                                     <img class="h-5" src="assetsBackend/media/file-types/figma.svg"/>
                                                 </div>
                                                 <a class="hover:text-primary-active font-medium text-gray-700 text-xs me-1"
@@ -465,7 +460,7 @@
                                             <img alt="" class="rounded-full size-8"
                                                  src="assetsBackend/media/avatars/300-25.png"/>
                                             <span
-                                                class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
+                                                    class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
                                         </div>
                                         <div class="flex flex-col gap-3.5 grow">
@@ -484,7 +479,7 @@
                                                     </a>
                                                 </div>
                                                 <span
-                                                    class="flex items-center text-2xs font-medium text-gray-500">
+                                                        class="flex items-center text-2xs font-medium text-gray-500">
                  22 hours ago
                  <span class="badge badge-circle bg-gray-500 size-1 mx-1.5">
                  </span>
@@ -492,7 +487,7 @@
                 </span>
                                             </div>
                                             <div
-                                                class="card shadow-none flex items-center flex-row justify-between gap-1.5 px-2.5 py-2 rounded-lg bg-light-active">
+                                                    class="card shadow-none flex items-center flex-row justify-between gap-1.5 px-2.5 py-2 rounded-lg bg-light-active">
                                                 <div class="flex flex-col">
                                                     <a class="hover:text-primary-active font-medium text-gray-900 text-xs"
                                                        href="#">
@@ -524,7 +519,7 @@
                                     </div>
                                     <div class="flex items-center grow gap-2.5 px-5">
                                         <div
-                                            class="flex items-center justify-center size-8 bg-success-light rounded-full border border-success-clarity">
+                                                class="flex items-center justify-center size-8 bg-success-light rounded-full border border-success-clarity">
                                             <i class="ki-filled ki-check text-lg text-success">
                                             </i>
                                         </div>
@@ -544,7 +539,7 @@
                                             <img alt="" class="rounded-full size-8"
                                                  src="assetsBackend/media/avatars/300-34.png"/>
                                             <span
-                                                class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
+                                                    class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
                                         </div>
                                         <div class="flex flex-col gap-3.5 grow">
@@ -559,7 +554,7 @@
                  </span>
                                                 </div>
                                                 <span
-                                                    class="flex items-center text-2xs font-medium text-gray-500">
+                                                        class="flex items-center text-2xs font-medium text-gray-500">
                  3 days ago
                  <span class="badge badge-circle bg-gray-500 size-1 mx-1.5">
                  </span>
@@ -567,7 +562,7 @@
                 </span>
                                             </div>
                                             <div
-                                                class="card shadow-none flex items-center justify-between flex-row gap-1.5 p-2.5 rounded-lg bg-light-active">
+                                                    class="card shadow-none flex items-center justify-between flex-row gap-1.5 p-2.5 rounded-lg bg-light-active">
                                                 <div class="flex items-center gap-1.5">
                                                     <img class="h-6" src="assetsBackend/media/file-types/xls.svg"/>
                                                     <div class="flex flex-col gap-0.5">
@@ -607,7 +602,7 @@
                                             <img alt="" class="rounded-full size-8"
                                                  src="assetsBackend/media/avatars/300-29.png"/>
                                             <span
-                                                class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
+                                                    class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
                                         </div>
                                         <div class="flex flex-col gap-3 grow">
@@ -628,7 +623,7 @@
                  </span>
                                                 </div>
                                                 <span
-                                                    class="flex items-center text-2xs font-medium text-gray-500">
+                                                        class="flex items-center text-2xs font-medium text-gray-500">
                  3 days ago
                  <span class="badge badge-circle bg-gray-500 size-1 mx-1.5">
                  </span>
@@ -636,9 +631,9 @@
                 </span>
                                             </div>
                                             <div
-                                                class="card shadow-none p-3.5 gap-3.5 rounded-lg bg-light-active">
+                                                    class="card shadow-none p-3.5 gap-3.5 rounded-lg bg-light-active">
                                                 <div
-                                                    class="flex items-center justify-between flex-wrap gap-2.5">
+                                                        class="flex items-center justify-between flex-wrap gap-2.5">
                                                     <div class="flex flex-col gap-1">
                   <span class="font-medium text-gray-900 text-xs">
                    Location history is erased after Logging In
@@ -650,13 +645,13 @@
                                                     <div class="flex -space-x-2">
                                                         <div class="flex">
                                                             <img
-                                                                class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-6"
-                                                                src="assetsBackend/media/avatars/300-3.png"/>
+                                                                    class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-6"
+                                                                    src="assetsBackend/media/avatars/300-3.png"/>
                                                         </div>
                                                         <div class="flex">
                                                             <img
-                                                                class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-6"
-                                                                src="assetsBackend/media/avatars/300-2.png"/>
+                                                                    class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-6"
+                                                                    src="assetsBackend/media/avatars/300-2.png"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -678,7 +673,7 @@
                                             <img alt="" class="rounded-full size-8"
                                                  src="assetsBackend/media/avatars/300-30.png"/>
                                             <span
-                                                class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
+                                                    class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
                                         </div>
                                         <div class="flex flex-col gap-3.5">
@@ -697,7 +692,7 @@
                  </span>
                                                 </div>
                                                 <span
-                                                    class="flex items-center text-2xs font-medium text-gray-500">
+                                                        class="flex items-center text-2xs font-medium text-gray-500">
                  4 days ago
                  <span class="badge badge-circle bg-gray-500 size-1 mx-1.5">
                  </span>
@@ -723,7 +718,7 @@
                                             <img alt="" class="rounded-full size-8"
                                                  src="assetsBackend/media/avatars/300-24.png"/>
                                             <span
-                                                class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
+                                                    class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
                                         </div>
                                         <div class="flex flex-col gap-1">
@@ -773,7 +768,7 @@
                                             <img alt="" class="rounded-full size-8"
                                                  src="assetsBackend/media/avatars/300-15.png"/>
                                             <span
-                                                class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
+                                                    class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
                                         </div>
                                         <div class="flex flex-col gap-3 grow" id="notification_request_10">
@@ -788,7 +783,7 @@
                  </span>
                                                 </div>
                                                 <span
-                                                    class="flex items-center text-2xs font-medium text-gray-500">
+                                                        class="flex items-center text-2xs font-medium text-gray-500">
                  2 days ago
                  <span class="badge badge-circle bg-gray-500 size-1 mx-1.5">
                  </span>
@@ -797,17 +792,17 @@
                                             </div>
                                             <div class="card shadow-none p-2.5 rounded-lg bg-light-active">
                                                 <div
-                                                    class="flex items-center justify-between flex-wrap gap-2.5">
+                                                        class="flex items-center justify-between flex-wrap gap-2.5">
                                                     <div class="flex items-center gap-2.5">
                                                         <div class="border border-brand-clarity rounded-lg">
                                                             <div
-                                                                class="flex items-center justify-center border-b border-b-brand-clarity bg-brand-light rounded-t-lg">
+                                                                    class="flex items-center justify-center border-b border-b-brand-clarity bg-brand-light rounded-t-lg">
                     <span class="text-3xs text-brand fw-medium p-1.5">
                      Apr
                     </span>
                                                             </div>
                                                             <div
-                                                                class="flex items-center justify-center size-9">
+                                                                    class="flex items-center justify-center size-9">
                     <span class="fw-semibold text-gray-900 text-md tracking-tight">
                      12
                     </span>
@@ -826,22 +821,22 @@
                                                     <div class="flex -space-x-2">
                                                         <div class="flex">
                                                             <img
-                                                                class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-6"
-                                                                src="assetsBackend/media/avatars/300-4.png"/>
+                                                                    class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-6"
+                                                                    src="assetsBackend/media/avatars/300-4.png"/>
                                                         </div>
                                                         <div class="flex">
                                                             <img
-                                                                class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-6"
-                                                                src="assetsBackend/media/avatars/300-1.png"/>
+                                                                    class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-6"
+                                                                    src="assetsBackend/media/avatars/300-1.png"/>
                                                         </div>
                                                         <div class="flex">
                                                             <img
-                                                                class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-6"
-                                                                src="assetsBackend/media/avatars/300-2.png"/>
+                                                                    class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-6"
+                                                                    src="assetsBackend/media/avatars/300-2.png"/>
                                                         </div>
                                                         <div class="flex">
                    <span
-                       class="hover:z-5 relative inline-flex items-center justify-center shrink-0 rounded-full ring-1 font-semibold leading-none text-3xs size-6 text-success-inverse size-6 ring-success-light bg-success">
+                           class="hover:z-5 relative inline-flex items-center justify-center shrink-0 rounded-full ring-1 font-semibold leading-none text-3xs size-6 text-success-inverse size-6 ring-success-light bg-success">
                     +3
                    </span>
                                                         </div>
@@ -867,7 +862,7 @@
                                             <img alt="" class="rounded-full size-8"
                                                  src="assetsBackend/media/avatars/300-6.png"/>
                                             <span
-                                                class="size-1.5 badge badge-circle absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
+                                                    class="size-1.5 badge badge-circle absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
                                         </div>
                                         <div class="flex flex-col gap-1">
@@ -899,7 +894,7 @@
                                             <img alt="" class="rounded-full size-8"
                                                  src="assetsBackend/media/avatars/300-12.png"/>
                                             <span
-                                                class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
+                                                    class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
                                         </div>
                                         <div class="flex flex-col gap-3.5 grow">
@@ -914,7 +909,7 @@
                  </span>
                                                 </div>
                                                 <span
-                                                    class="flex items-center text-2xs font-medium text-gray-500">
+                                                        class="flex items-center text-2xs font-medium text-gray-500">
                  3 days ago
                  <span class="badge badge-circle bg-gray-500 size-1 mx-1.5">
                  </span>
@@ -922,7 +917,7 @@
                 </span>
                                             </div>
                                             <div
-                                                class="card shadow-none flex items-center justify-between flex-row gap-1.5 p-2.5 rounded-lg bg-light-active">
+                                                    class="card shadow-none flex items-center justify-between flex-row gap-1.5 p-2.5 rounded-lg bg-light-active">
                                                 <div class="flex items-center gap-1.5">
                                                     <img class="h-6" src="assetsBackend/media/file-types/word.svg"/>
                                                     <div class="flex flex-col gap-0.5">
@@ -954,7 +949,7 @@
                                                 </button>
                                             </div>
                                             <div
-                                                class="card shadow-none flex items-center justify-between flex-row gap-1.5 p-2.5 rounded-lg bg-light-active">
+                                                    class="card shadow-none flex items-center justify-between flex-row gap-1.5 p-2.5 rounded-lg bg-light-active">
                                                 <div class="flex items-center gap-1.5">
                                                     <img class="h-6" src="assetsBackend/media/file-types/svg.svg"/>
                                                     <div class="flex flex-col gap-0.5">
@@ -994,7 +989,7 @@
                                             <img alt="" class="rounded-full size-8"
                                                  src="assetsBackend/media/avatars/300-21.png"/>
                                             <span
-                                                class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
+                                                    class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
                                         </div>
                                         <div class="flex flex-col gap-3.5">
@@ -1014,7 +1009,7 @@
                  </span>
                                                 </div>
                                                 <span
-                                                    class="flex items-center text-2xs font-medium text-gray-500">
+                                                        class="flex items-center text-2xs font-medium text-gray-500">
                  4 days ago
                  <span class="badge badge-circle bg-gray-500 size-1 mx-1.5">
                  </span>
@@ -1022,7 +1017,7 @@
                 </span>
                                             </div>
                                             <div
-                                                class="card shadow-none flex flex-col gap-2.5 p-3.5 rounded-lg bg-light-active">
+                                                    class="card shadow-none flex flex-col gap-2.5 p-3.5 rounded-lg bg-light-active">
                                                 <div class="text-2sm font-semibold text-gray-600 mb-px">
                                                     <a class="hover:text-primary-active text-gray-900 font-semibold"
                                                        href="#">
@@ -1050,7 +1045,7 @@
                                             <img alt="" class="rounded-full size-8"
                                                  src="assetsBackend/media/avatars/300-13.png"/>
                                             <span
-                                                class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
+                                                    class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
                                         </div>
                                         <div class="flex flex-col gap-3.5">
@@ -1070,7 +1065,7 @@
                  </span>
                                                 </div>
                                                 <span
-                                                    class="flex items-center text-2xs font-medium text-gray-500">
+                                                        class="flex items-center text-2xs font-medium text-gray-500">
                  4 days ago
                  <span class="badge badge-circle bg-gray-500 size-1 mx-1.5">
                  </span>
@@ -1114,7 +1109,7 @@
                                             <img alt="" class="rounded-full size-8"
                                                  src="assetsBackend/media/avatars/300-1.png"/>
                                             <span
-                                                class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
+                                                    class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
                                         </div>
                                         <div class="flex flex-col gap-2.5 grow">
@@ -1133,7 +1128,7 @@
                                                     </a>
                                                 </div>
                                                 <span
-                                                    class="flex items-center text-2xs font-medium text-gray-500">
+                                                        class="flex items-center text-2xs font-medium text-gray-500">
                  23 hours ago
                  <span class="badge badge-circle bg-gray-500 size-1 mx-1.5">
                  </span>
@@ -1142,10 +1137,10 @@
                                             </div>
                                             <div class="flex items-center gap-2.5">
                                                 <div
-                                                    class="card shadow-none flex flex-col gap-3.5 bg-light-active w-40">
+                                                        class="card shadow-none flex flex-col gap-3.5 bg-light-active w-40">
                                                     <div
-                                                        class="bg-cover bg-no-repeat card-rounded-t shrink-0 h-24"
-                                                        style="background-image: url('/static/metronic-tailwind-html/dist/assetsBackend/media/images/600x600/6.jpg')">
+                                                            class="bg-cover bg-no-repeat card-rounded-t shrink-0 h-24"
+                                                            style="background-image: url('/static/metronic-tailwind-html/dist/assetsBackend/media/images/600x600/6.jpg')">
                                                     </div>
                                                     <div class="px-2.5 pb-2">
                                                         <a class="font-medium block text-gray-700 hover:text-primary text-xs leading-4 mb-0.5"
@@ -1161,10 +1156,10 @@
                                                     </div>
                                                 </div>
                                                 <div
-                                                    class="card shadow-none flex flex-col gap-3.5 bg-light-active w-40">
+                                                        class="card shadow-none flex flex-col gap-3.5 bg-light-active w-40">
                                                     <div
-                                                        class="bg-cover bg-no-repeat card-rounded-t shrink-0 h-24"
-                                                        style="background-image: url('/static/metronic-tailwind-html/dist/assetsBackend/media/images/600x600/1.jpg')">
+                                                            class="bg-cover bg-no-repeat card-rounded-t shrink-0 h-24"
+                                                            style="background-image: url('/static/metronic-tailwind-html/dist/assetsBackend/media/images/600x600/1.jpg')">
                                                     </div>
                                                     <div class="px-2.5 pb-2">
                                                         <a class="font-medium block text-gray-700 hover:text-primary text-xs leading-4 mb-0.5"
@@ -1189,7 +1184,7 @@
                                             <img alt="" class="rounded-full size-8"
                                                  src="assetsBackend/media/avatars/300-19.png"/>
                                             <span
-                                                class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
+                                                    class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
                                         </div>
                                         <div class="flex flex-col gap-2.5 grow" id="notification_request_17">
@@ -1204,7 +1199,7 @@
                  </span>
                                                 </div>
                                                 <span
-                                                    class="flex items-center text-2xs font-medium text-gray-500">
+                                                        class="flex items-center text-2xs font-medium text-gray-500">
                  1 day ago
                  <span class="badge badge-circle bg-gray-500 size-1 mx-1.5">
                  </span>
@@ -1212,9 +1207,9 @@
                 </span>
                                             </div>
                                             <div
-                                                class="card shadow-none flex items-center flex-row gap-1.5 p-2.5 rounded-lg bg-light-active">
+                                                    class="card shadow-none flex items-center flex-row gap-1.5 p-2.5 rounded-lg bg-light-active">
                                                 <div
-                                                    class="flex items-center justify-center w-[26px] h-[30px] shrink-0 bg-white rounded border border-gray-200">
+                                                        class="flex items-center justify-center w-[26px] h-[30px] shrink-0 bg-white rounded border border-gray-200">
                                                     <img class="h-5" src="assetsBackend/media/brand-logos/jira.svg"/>
                                                 </div>
                                                 <a class="hover:text-primary-active font-medium text-gray-700 text-xs me-1"
@@ -1244,7 +1239,7 @@
                                             <img alt="" class="rounded-full size-8"
                                                  src="assetsBackend/media/avatars/300-17.png"/>
                                             <span
-                                                class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
+                                                    class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
                                         </div>
                                         <div class="flex flex-col gap-2.5 grow">
@@ -1259,7 +1254,7 @@
                  </span>
                                                 </div>
                                                 <span
-                                                    class="flex items-center text-2xs font-medium text-gray-500">
+                                                        class="flex items-center text-2xs font-medium text-gray-500">
                  3 day ago
                  <span class="badge badge-circle bg-gray-500 size-1 mx-1.5">
                  </span>
@@ -1267,7 +1262,7 @@
                 </span>
                                             </div>
                                             <div
-                                                class="card shadow-none flex items-center flex-row gap-1.5 px-2.5 py-1.5 rounded-lg bg-light-active">
+                                                    class="card shadow-none flex items-center flex-row gap-1.5 px-2.5 py-1.5 rounded-lg bg-light-active">
                                                 <i class="ki-filled ki-user-tick text-success text-base">
                                                 </i>
                                                 <span class="font-medium text-success text-2sm">
@@ -1283,7 +1278,7 @@
                                             <img alt="" class="rounded-full size-8"
                                                  src="assetsBackend/media/avatars/300-34.png"/>
                                             <span
-                                                class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
+                                                    class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
                                         </div>
                                         <div class="flex flex-col gap-1">
@@ -1314,7 +1309,7 @@
                                             <img alt="" class="rounded-full size-8"
                                                  src="assetsBackend/media/avatars/300-9.png"/>
                                             <span
-                                                class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
+                                                    class="size-1.5 badge badge-circle bg-gray-400 absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
                                         </div>
                                         <div class="flex flex-col gap-2.5 grow">
@@ -1329,7 +1324,7 @@
                  </span>
                                                 </div>
                                                 <span
-                                                    class="flex items-center text-2xs font-medium text-gray-500">
+                                                        class="flex items-center text-2xs font-medium text-gray-500">
                  3 day ago
                  <span class="badge badge-circle bg-gray-500 size-1 mx-1.5">
                  </span>
@@ -1355,7 +1350,7 @@
                                             <img alt="" class="rounded-full size-8"
                                                  src="assetsBackend/media/avatars/300-13.png"/>
                                             <span
-                                                class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
+                                                    class="size-1.5 badge badge-circle badge-success absolute top-7 end-0.5 ring-1 ring-light transform -translate-y-1/2">
                </span>
                                         </div>
                                         <div class="flex flex-col gap-3.5">
@@ -1375,7 +1370,7 @@
                  </span>
                                                 </div>
                                                 <span
-                                                    class="flex items-center text-2xs font-medium text-gray-500">
+                                                        class="flex items-center text-2xs font-medium text-gray-500">
                  4 days ago
                  <span class="badge badge-circle bg-gray-500 size-1 mx-1.5">
                  </span>
@@ -1415,14 +1410,14 @@
                      data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
                     <div class="menu-toggle btn btn-icon rounded-full">
                         <img alt="" class="size-9 rounded-full border-2 border-success shrink-0"
-                             src="assetsBackend/media/avatars/300-2.png">
+                             src="{{ asset(auth()->user()->avatar) }}">
                         </img>
                     </div>
                     <div class="menu-dropdown menu-default light:border-gray-300 w-full max-w-[250px]">
                         <div class="flex items-center justify-between px-5 py-1.5 gap-1.5">
                             <div class="flex items-center gap-2">
                                 <img alt="" class="size-9 rounded-full border-2 border-success"
-                                     src="assetsBackend/media/avatars/300-2.png">
+                                     src="{{ asset(auth()->user()->avatar) }}">
                                 <div class="flex flex-col gap-1.5">
               <span class="text-sm text-gray-800 font-semibold leading-none">
                Cody Fisher
@@ -1480,7 +1475,7 @@
              </span>
                                 </div>
                                 <div
-                                    class="menu-dropdown menu-default light:border-gray-300 w-full max-w-[220px]">
+                                        class="menu-dropdown menu-default light:border-gray-300 w-full max-w-[220px]">
                                     <div class="menu-item">
                                         <a class="menu-link" href="html/demo1/account/home/get-started.html">
                <span class="menu-icon">
@@ -1597,14 +1592,14 @@
               Language
              </span>
                                     <div
-                                        class="flex items-center gap-1.5 rounded-md border border-gray-300 text-gray-600 p-1.5 text-2xs font-medium shrink-0">
+                                            class="flex items-center gap-1.5 rounded-md border border-gray-300 text-gray-600 p-1.5 text-2xs font-medium shrink-0">
                                         English
                                         <img alt="" class="inline-block size-3.5 rounded-full"
                                              src="assetsBackend/media/flags/united-states.svg"/>
                                     </div>
                                 </div>
                                 <div
-                                    class="menu-dropdown menu-default light:border-gray-300 w-full max-w-[170px]">
+                                        class="menu-dropdown menu-default light:border-gray-300 w-full max-w-[170px]">
                                     <div class="menu-item active">
                                         <a class="menu-link h-10" href="#">
                <span class="menu-icon">
@@ -1686,7 +1681,7 @@
                                    href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();"
-                                   >
+                                >
                                     salir
                                 </a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

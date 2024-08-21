@@ -33,7 +33,20 @@
             <td class="text-center">
                 <input class="checkbox checkbox-sm" type="checkbox"/>
             </td>
-            <td>{{ $user->name }}</td>
+            <td>
+                <div class="flex items-center gap-2.5">
+                    <img alt="" class="rounded-full size-9 shrink-0" src="assets/media/avatars/300-1.png"/>
+                    <div class="flex flex-col">
+                        <a class="text-sm font-semibold text-gray-900 hover:text-primary-active mb-px" href="#">
+                            {{ $user->name }}
+                        </a>
+                        <a class="text-2sm font-medium text-gray-600 hover:text-primary-active" href="#">
+                            {{ $user->email }}
+                        </a>
+                    </div>
+                </div>
+            </td>
+
             <td>{{ $user->email }}</td>
             <td class="text-center">
                 <div class="menu flex-inline" data-menu="true">
