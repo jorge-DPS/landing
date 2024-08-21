@@ -398,7 +398,7 @@
                                 <div class="grid gap-5 mb-7">
                                     <div class="flex items-center justify-between flex-wrap border border-gray-200 rounded-xl gap-2 px-3.5 py-2.5">
                                         <div class="flex items-center flex-wrap gap-3.5">
-                                            <img alt="" class="size-6 shrink-0" src="assets/media/brand-logos/google.svg"/>
+                                            <img alt="" class="size-6 shrink-0" src="assetsBackend/media/brand-logos/google.svg"/>
                                             <div class="flex flex-col gap-0.5">
                                                 <a class="text-sm font-semibold text-gray-900 hover:text-primary-active" href="#">
                                                     Google
@@ -420,7 +420,7 @@
                                     </div>
                                     <div class="flex items-center justify-between flex-wrap border border-gray-200 rounded-xl gap-2 px-3.5 py-2.5">
                                         <div class="flex items-center flex-wrap gap-3.5">
-                                            <img alt="" class="size-6 shrink-0" src="assets/media/brand-logos/linkedin.svg"/>
+                                            <img alt="" class="size-6 shrink-0" src="assetsBackend/media/brand-logos/linkedin.svg"/>
                                             <div class="flex flex-col gap-0.5">
                                                 <a class="text-sm font-semibold text-gray-900 hover:text-primary-active" href="#">
                                                     Linkedin
@@ -451,16 +451,16 @@
                                 </div>
                                 <div class="flex items-center flex-wrap gap-2.5 mb-7.5">
                                     <a class="btn btn-light" href="#">
-                                        <img alt="" class="dark:hidden size-5" src="assets/media/brand-logos/apple-black.svg"/>
-                                        <img alt="" class="light:hidden size-5" src="assets/media/brand-logos/apple-white.svg"/>
+                                        <img alt="" class="dark:hidden size-5" src="assetsBackend/media/brand-logos/apple-black.svg"/>
+                                        <img alt="" class="light:hidden size-5" src="assetsBackend/media/brand-logos/apple-white.svg"/>
                                         Sign in with Apple
                                     </a>
                                     <a class="btn btn-light" href="#">
-                                        <img alt="" class="size-5" src="assets/media/brand-logos/microsoft-5.svg"/>
+                                        <img alt="" class="size-5" src="assetsBackend/media/brand-logos/microsoft-5.svg"/>
                                         Sign in with Microsoft
                                     </a>
                                     <a class="btn btn-light" href="#">
-                                        <img alt="" class="size-5" src="assets/media/brand-logos/facebook.svg"/>
+                                        <img alt="" class="size-5" src="assetsBackend/media/brand-logos/facebook.svg"/>
                                         Sign in with Facebook
                                     </a>
                                 </div>
@@ -648,7 +648,7 @@
                                         <label class="flex align-stretch cursor-pointer bg-center h-44 bg-no-repeat border border-gray-300 rounded-xl border-dashed has-[:checked]:border-primary bg-[length:500px] sso-active singl-sign-on-bg">
                                             <div class="flex flex-col place-items-center place-content-center rounded-xl grow">
                                                 <div class="flex items-center h-11">
-                                                    <img alt="" class="w-5" src="assets/media/brand-logos/azure.svg"/>
+                                                    <img alt="" class="w-5" src="assetsBackend/media/brand-logos/azure.svg"/>
                                                 </div>
                                                 <span class="text-md font-semibold text-gray-800">
                   Microsoft Azure
@@ -659,7 +659,7 @@
                                         <label class="flex align-stretch cursor-pointer bg-center h-44 bg-no-repeat border border-gray-300 rounded-xl border-dashed has-[:checked]:border-primary bg-[length:500px] sso-active singl-sign-on-bg">
                                             <div class="flex flex-col place-items-center place-content-center rounded-xl grow">
                                                 <div class="flex items-center h-11">
-                                                    <img alt="" class="w-8" src="assets/media/brand-logos/google.svg"/>
+                                                    <img alt="" class="w-8" src="assetsBackend/media/brand-logos/google.svg"/>
                                                 </div>
                                                 <span class="text-md font-semibold text-gray-800">
                   Google
@@ -670,7 +670,7 @@
                                         <label class="flex align-stretch cursor-pointer bg-center h-44 bg-no-repeat border border-gray-300 rounded-xl border-dashed has-[:checked]:border-primary bg-[length:500px] sso-active singl-sign-on-bg">
                                             <div class="flex flex-col place-items-center place-content-center rounded-xl grow">
                                                 <div class="flex items-center h-11">
-                                                    <img alt="" class="w-24" src="assets/media/brand-logos/openid.svg"/>
+                                                    <img alt="" class="w-24" src="assetsBackend/media/brand-logos/openid.svg"/>
                                                 </div>
                                                 <span class="text-md font-semibold text-gray-800">
                   OpenID Connect
@@ -1041,7 +1041,7 @@
                                                     </path>
                                                 </svg>
                                                 <div class="absolute leading-none left-2/4 top-2/4 -translate-y-2/4 -translate-x-2/4">
-                                                    <img alt="" class="h-5" src="assets/media/brand-logos/slack.svg"/>
+                                                    <img alt="" class="h-5" src="assetsBackend/media/brand-logos/slack.svg"/>
                                                 </div>
                                             </div>
                                             <div class="flex flex-col">
@@ -1282,7 +1282,7 @@
                                 <div class="grid gap-5">
                                     <div class="flex items-center justify-between flex-wrap border border-gray-200 rounded-xl gap-2 p-3.5">
                                         <div class="flex items-center flex-wrap gap-3.5">
-                                            <img alt="" class="size-8 shrink-0" src="assets/media/brand-logos/google-webdev.svg"/>
+                                            <img alt="" class="size-8 shrink-0" src="assetsBackend/media/brand-logos/google-webdev.svg"/>
                                             <div class="flex flex-col">
                                                 <div class="flex items-center gap-1.5">
                                                     <a class="text-sm font-semibold text-gray-900 hover:text-primary-active" href="#">
@@ -1309,7 +1309,7 @@
                                     </div>
                                     <div class="flex items-center justify-between flex-wrap border border-gray-200 rounded-xl gap-2 p-3.5">
                                         <div class="flex items-center flex-wrap gap-3.5">
-                                            <img alt="" class="size-8 shrink-0" src="assets/media/brand-logos/equacoin.svg"/>
+                                            <img alt="" class="size-8 shrink-0" src="assetsBackend/media/brand-logos/equacoin.svg"/>
                                             <div class="flex flex-col">
                                                 <div class="flex items-center gap-1.5">
                                                     <a class="text-sm font-semibold text-gray-900 hover:text-primary-active" href="#">
@@ -1336,7 +1336,7 @@
                                     </div>
                                     <div class="flex items-center justify-between flex-wrap border border-gray-200 rounded-xl gap-2 p-3.5">
                                         <div class="flex items-center flex-wrap gap-3.5">
-                                            <img alt="" class="size-8 shrink-0" src="assets/media/brand-logos/evernote.svg"/>
+                                            <img alt="" class="size-8 shrink-0" src="assetsBackend/media/brand-logos/evernote.svg"/>
                                             <div class="flex flex-col">
                                                 <div class="flex items-center gap-1.5">
                                                     <a class="text-sm font-semibold text-gray-900 hover:text-primary-active" href="#">
@@ -1363,7 +1363,7 @@
                                     </div>
                                     <div class="flex items-center justify-between flex-wrap border border-gray-200 rounded-xl gap-2 p-3.5">
                                         <div class="flex items-center flex-wrap gap-3.5">
-                                            <img alt="" class="size-8 shrink-0" src="assets/media/brand-logos/inferno.svg"/>
+                                            <img alt="" class="size-8 shrink-0" src="assetsBackend/media/brand-logos/inferno.svg"/>
                                             <div class="flex flex-col">
                                                 <div class="flex items-center gap-1.5">
                                                     <a class="text-sm font-semibold text-gray-900 hover:text-primary-active" href="#">
@@ -1390,7 +1390,7 @@
                                     </div>
                                     <div class="flex items-center justify-between flex-wrap border border-gray-200 rounded-xl gap-2 p-3.5">
                                         <div class="flex items-center flex-wrap gap-3.5">
-                                            <img alt="" class="size-8 shrink-0" src="assets/media/brand-logos/jira.svg"/>
+                                            <img alt="" class="size-8 shrink-0" src="assetsBackend/media/brand-logos/jira.svg"/>
                                             <div class="flex flex-col">
                                                 <div class="flex items-center gap-1.5">
                                                     <a class="text-sm font-semibold text-gray-900 hover:text-primary-active" href="#">

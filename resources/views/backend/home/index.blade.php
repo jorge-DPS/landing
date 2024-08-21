@@ -120,42 +120,26 @@
                                 class="card-body p-10 bg-[length:80%] [background-position:175%_25%] bg-no-repeat entry-callout-bg">
                                 <div class="flex flex-col justify-center gap-4">
                                     <div class="flex -space-x-2">
+
                                         <div class="flex">
                                             <img
                                                 class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-10"
-                                                src="assetsBackend/media/avatars/300-4.png"/>
+                                                src="favicon.png"/>
                                         </div>
-                                        <div class="flex">
-                                            <img
-                                                class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-10"
-                                                src="assetsBackend/media/avatars/300-1.png"/>
-                                        </div>
-                                        <div class="flex">
-                                            <img
-                                                class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-10"
-                                                src="assetsBackend/media/avatars/300-2.png"/>
-                                        </div>
-                                        <div class="flex">
-              <span
-                  class="hover:z-5 relative inline-flex items-center justify-center shrink-0 rounded-full ring-1 font-semibold leading-none text-3xs size-10 text-success-inverse text-xs ring-success-light bg-success">
-               S
-              </span>
-                                        </div>
+
                                     </div>
                                     <h2 class="text-1.5xl font-semibold text-gray-900">
-                                        Connect Today &amp; Join
+                                        Hola bienvenido
                                         <br/>
-                                        the
+                                        A
                                         <a class="link" href="#">
-                                            KeenThemes Network
+                                            Saint George
                                         </a>
                                     </h2>
                                     <p class="text-sm font-medium text-gray-700 leading-5.5">
-                                        Enhance your projects with premium themes and
-                                        <br/>
-                                        templates. Join the KeenThemes community today
-                                        <br/>
-                                        for top-quality designs and resources.
+                                        Acceso de usuario eficiente a nuestro sistema.
+                                        <br>
+                                        Interfaz de adminitración.
                                     </p>
                                 </div>
                             </div>
