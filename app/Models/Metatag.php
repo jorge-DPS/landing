@@ -25,5 +25,6 @@ class Metatag extends Model
         'twitter_title',
         'twitter_description',
         'twitter_image',
+        'favicon',
     ];
 }

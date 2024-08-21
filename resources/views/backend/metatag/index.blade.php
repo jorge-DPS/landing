@@ -21,35 +21,20 @@
 
 @section('content')
     <main class="grow content pt-5" id="content" role="content">
-        <!-- begin: container -->
-        <div class="container-fixed" id="content_container">
-        </div>
-        <!-- end: container -->
-        <div class="flex flex-nowrap items-center lg:items-end justify-between border-b border-b-gray-200 dark:border-b-coal-100 gap-6 mb-5 lg:mb-10">
-            <!-- begin: container -->
-            <div class="container-fixed">
-
-            </div>
-            <!-- end: container -->
-        </div>
-        <!-- begin: container -->
         <div class="container-fixed">
             <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
-                <div class="flex flex-col justify-center gap-4 p-4 bg-white rounded-lg shadow-md">
-                    <h1 class="text-2xl font-bold leading-tight text-gray-900">
+                <div class="flex flex-col justify-center gap-2">
+                    <h1 class="text-xl font-semibold leading-none text-gray-900">
                         Cabecera del sitio web
                     </h1>
-                    <div class="flex items-center gap-3 text-base font-medium text-gray-700">
+                    <div class="flex items-center gap-2 text-sm font-medium text-gray-600">
                         La cabecera del sitio es crucial para proporcionar información relevante y optimizada sobre tu sitio web.
                     </div>
                 </div>
             </div>
         </div>
-        <!-- end: container -->
-        <!-- begin: container -->
         <div class="container-fixed">
-            <!-- begin: grid -->
-            <div class="grid grid-cols-1 xl:grid-cols-3 gap-5 lg:gap-7.5">
+            <div class="grid gap-5 lg:gap-7.5">
                 <div class="col-span-2">
                     <div class="flex flex-col gap-5 lg:gap-7.5">
                         <style>
@@ -65,53 +50,109 @@
                                 <h3 class="card-title">
                                     Enalces
                                 </h3>
-                                <div class="flex items-center gap-2">
-                                    <label class="switch switch-sm">
-             <span class="switch-label">
-              Publish
-             </span>
-                                        <input name="check" type="checkbox" value="1"/>
-                                    </label>
-                                </div>
                             </div>
                             <div class="card-body lg:py-7.5 py-5">
                                 <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14">
                                     <div class="flex flex-col max-w-72 w-full">
                                         <div class="text-gray-900 text-sm font-semibold">
-                                            Company Logo
+                                            favicon
                                         </div>
-                                        <span class="text-gray-600 text-2sm font-medium">
-              Emblematic Corporate Identity Symbol
-             </span>
                                     </div>
                                     <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
-                                        <img alt="" class="h-[35px] mt-2" src="assets/media/brand-logos/hex-lab.svg"/>
-                                        <div class="flex bg-center max-w-72 lg:w-full p-5 lg:p-7 bg-no-repeat bg-[length:550px] border border-gray-300 rounded-xl border-dashed branding-bg">
-                                            <div class="flex flex-col place-items-center place-content-center text-center rounded-xl w-full">
-                                                <div class="flex items-center mb-2.5">
-                                                    <div class="relative size-11 shrink-0">
-                                                        <svg class="w-full h-full stroke-brand-clarity fill-light" fill="none" height="48" viewbox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506
-										18.4282V29.5718C43.6506 33.859 41.3634 37.8205 37.6506 39.9641L28 45.5359C24.2872 47.6795 19.7128 47.6795 16 45.5359L6.34937
-										39.9641C2.63655 37.8205 0.349365 33.859 0.349365 29.5718V18.4282C0.349365 14.141 2.63655 10.1795 6.34937 8.0359L16 2.4641Z" fill="">
-                                                            </path>
-                                                            <path d="M16.25 2.89711C19.8081 0.842838 24.1919 0.842837 27.75 2.89711L37.4006 8.46891C40.9587 10.5232 43.1506 14.3196 43.1506
-										18.4282V29.5718C43.1506 33.6804 40.9587 37.4768 37.4006 39.5311L27.75 45.1029C24.1919 47.1572 19.8081 47.1572 16.25 45.1029L6.59937
-										39.5311C3.04125 37.4768 0.849365 33.6803 0.849365 29.5718V18.4282C0.849365 14.3196 3.04125 10.5232 6.59937 8.46891L16.25 2.89711Z" stroke="" stroke-opacity="0.2">
-                                                            </path>
-                                                        </svg>
-                                                        <div class="absolute leading-none left-2/4 top-2/4 -translate-y-2/4 -translate-x-2/4">
-                                                            <i class="ki-filled ki-picture text-xl ps-px text-brand">
-                                                            </i>
-                                                        </div>
-                                                    </div>
+                                        <img alt="" class="h-[35px] mt-2" src="assetsBackend/media/brand-logos/hex-lab.svg"/>
+                                    </div>
+                                    <div class="flex justify-center items-center">
+                                        <div class="image-input size-[70px]" data-image-input="true">
+                                            <input accept=".png, .jpg, .jpeg" name="avatar" type="file"/>
+                                            <input name="avatar_remove" type="hidden"/>
+                                            <div class="btn btn-icon btn-icon-xs btn-light shadow-default absolute z-1 size-5 -top-0.5 -right-0.5 rounded-full" data-image-input-remove="" data-tooltip="#image_input_tooltip" data-tooltip-trigger="hover">
+                                                <i class="ki-outline ki-cross">
+                                                </i>
+                                            </div>
+                                            <span class="tooltip" id="image_input_tooltip">
+   Click to remove or revert
+  </span>
+                                            <div class="image-input-placeholder rounded-full border-2 border-success image-input-empty:border-gray-300" style="background-image:url(assetsBackend/media/avatars/blank.png)">
+                                                <div class="image-input-preview rounded-full">
                                                 </div>
-                                                <a class="text-gray-800 text-[0.75rem] font-semibold hover:text-primary-active mb-px" href="html/demo1/network/user-cards/mini-cards.html">
-                                                    Click or Drag &amp; Drop
-                                                </a>
-                                                <span class="text-2xs font-medium text-gray-600 text-nowrap">
-                SVG,PNG, JPG (max. 800x400)
-               </span>
+                                                <div class="flex items-center justify-center cursor-pointer h-5 left-0 right-0 bottom-0 bg-dark-clarity absolute">
+                                                    <svg class="fill-light opacity-80" height="12" viewbox="0 0 14 12" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.6665 2.64585H11.2232C11.0873 2.64749 10.9538 2.61053 10.8382 2.53928C10.7225 2.46803 10.6295 2.36541 10.5698 2.24335L10.0448 1.19918C9.91266 0.931853 9.70808 0.707007 9.45438 0.550249C9.20068 0.393491 8.90806 0.311121 8.60984 0.312517H5.38984C5.09162 0.311121 4.799 0.393491 4.5453 0.550249C4.2916 0.707007 4.08701 0.931853 3.95484 1.19918L3.42984 2.24335C3.37021 2.36541 3.27716 2.46803 3.1615 2.53928C3.04584 2.61053 2.91234 2.64749 2.7765 2.64585H2.33317C1.90772 2.64585 1.49969 2.81486 1.19885 3.1157C0.898014 3.41654 0.729004 3.82457 0.729004 4.25002V10.0834C0.729004 10.5088 0.898014 10.9168 1.19885 11.2177C1.49969 11.5185 1.90772 11.6875 2.33317 11.6875H11.6665C12.092 11.6875 12.5 11.5185 12.8008 11.2177C13.1017 10.9168 13.2707 10.5088 13.2707 10.0834V4.25002C13.2707 3.82457 13.1017 3.41654 12.8008 3.1157C12.5 2.81486 12.092 2.64585 11.6665 2.64585ZM6.99984 9.64585C6.39413 9.64585 5.80203 9.46624 5.2984 9.12973C4.79478 8.79321 4.40225 8.31492 4.17046 7.75532C3.93866 7.19572 3.87802 6.57995 3.99618 5.98589C4.11435 5.39182 4.40602 4.84613 4.83432 4.41784C5.26262 3.98954 5.80831 3.69786 6.40237 3.5797C6.99644 3.46153 7.61221 3.52218 8.1718 3.75397C8.7314 3.98576 9.2097 4.37829 9.54621 4.88192C9.88272 5.38554 10.0623 5.97765 10.0623 6.58335C10.0608 7.3951 9.73765 8.17317 9.16365 8.74716C8.58965 9.32116 7.81159 9.64431 6.99984 9.64585Z" fill="">
+                                                        </path>
+                                                        <path d="M7 8.77087C8.20812 8.77087 9.1875 7.7915 9.1875 6.58337C9.1875 5.37525 8.20812 4.39587 7 4.39587C5.79188 4.39587 4.8125 5.37525 4.8125 6.58337C4.8125 7.7915 5.79188 8.77087 7 8.77087Z" fill="">
+                                                        </path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                    <div class="flex flex-col max-w-72 w-full">
+                                        <div class="text-gray-900 text-sm font-semibold">
+                                            twitter_image
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
+                                        <img alt="" class="h-[35px] mt-2" src="assetsBackend/media/brand-logos/hex-lab.svg"/>
+                                    </div>
+                                    <div class="flex justify-center items-center">
+                                        <div class="image-input size-[70px]" data-image-input="true">
+                                            <input accept=".png, .jpg, .jpeg" name="avatar" type="file"/>
+                                            <input name="avatar_remove" type="hidden"/>
+                                            <div class="btn btn-icon btn-icon-xs btn-light shadow-default absolute z-1 size-5 -top-0.5 -right-0.5 rounded-full" data-image-input-remove="" data-tooltip="#image_input_tooltip" data-tooltip-trigger="hover">
+                                                <i class="ki-outline ki-cross">
+                                                </i>
+                                            </div>
+                                            <span class="tooltip" id="image_input_tooltip">
+   Click to remove or revert
+  </span>
+                                            <div class="image-input-placeholder rounded-full border-2 border-success image-input-empty:border-gray-300" style="background-image:url(assetsBackend/media/avatars/blank.png)">
+                                                <div class="image-input-preview rounded-full">
+                                                </div>
+                                                <div class="flex items-center justify-center cursor-pointer h-5 left-0 right-0 bottom-0 bg-dark-clarity absolute">
+                                                    <svg class="fill-light opacity-80" height="12" viewbox="0 0 14 12" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.6665 2.64585H11.2232C11.0873 2.64749 10.9538 2.61053 10.8382 2.53928C10.7225 2.46803 10.6295 2.36541 10.5698 2.24335L10.0448 1.19918C9.91266 0.931853 9.70808 0.707007 9.45438 0.550249C9.20068 0.393491 8.90806 0.311121 8.60984 0.312517H5.38984C5.09162 0.311121 4.799 0.393491 4.5453 0.550249C4.2916 0.707007 4.08701 0.931853 3.95484 1.19918L3.42984 2.24335C3.37021 2.36541 3.27716 2.46803 3.1615 2.53928C3.04584 2.61053 2.91234 2.64749 2.7765 2.64585H2.33317C1.90772 2.64585 1.49969 2.81486 1.19885 3.1157C0.898014 3.41654 0.729004 3.82457 0.729004 4.25002V10.0834C0.729004 10.5088 0.898014 10.9168 1.19885 11.2177C1.49969 11.5185 1.90772 11.6875 2.33317 11.6875H11.6665C12.092 11.6875 12.5 11.5185 12.8008 11.2177C13.1017 10.9168 13.2707 10.5088 13.2707 10.0834V4.25002C13.2707 3.82457 13.1017 3.41654 12.8008 3.1157C12.5 2.81486 12.092 2.64585 11.6665 2.64585ZM6.99984 9.64585C6.39413 9.64585 5.80203 9.46624 5.2984 9.12973C4.79478 8.79321 4.40225 8.31492 4.17046 7.75532C3.93866 7.19572 3.87802 6.57995 3.99618 5.98589C4.11435 5.39182 4.40602 4.84613 4.83432 4.41784C5.26262 3.98954 5.80831 3.69786 6.40237 3.5797C6.99644 3.46153 7.61221 3.52218 8.1718 3.75397C8.7314 3.98576 9.2097 4.37829 9.54621 4.88192C9.88272 5.38554 10.0623 5.97765 10.0623 6.58335C10.0608 7.3951 9.73765 8.17317 9.16365 8.74716C8.58965 9.32116 7.81159 9.64431 6.99984 9.64585Z" fill="">
+                                                        </path>
+                                                        <path d="M7 8.77087C8.20812 8.77087 9.1875 7.7915 9.1875 6.58337C9.1875 5.37525 8.20812 4.39587 7 4.39587C5.79188 4.39587 4.8125 5.37525 4.8125 6.58337C4.8125 7.7915 5.79188 8.77087 7 8.77087Z" fill="">
+                                                        </path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                    <div class="flex flex-col max-w-72 w-full">
+                                        <div class="text-gray-900 text-sm font-semibold">
+                                            og_image
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
+                                        <img alt="" class="h-[35px] mt-2" src="assetsBackend/media/brand-logos/hex-lab.svg"/>
+                                    </div>
+                                    <div class="flex justify-center items-center">
+                                        <div class="image-input size-[70px]" data-image-input="true">
+                                            <input accept=".png, .jpg, .jpeg" name="avatar" type="file"/>
+                                            <input name="avatar_remove" type="hidden"/>
+                                            <div class="btn btn-icon btn-icon-xs btn-light shadow-default absolute z-1 size-5 -top-0.5 -right-0.5 rounded-full" data-image-input-remove="" data-tooltip="#image_input_tooltip" data-tooltip-trigger="hover">
+                                                <i class="ki-outline ki-cross">
+                                                </i>
+                                            </div>
+                                            <span class="tooltip" id="image_input_tooltip">
+   Click to remove or revert
+  </span>
+                                            <div class="image-input-placeholder rounded-full border-2 border-success image-input-empty:border-gray-300" style="background-image:url(assetsBackend/media/avatars/blank.png)">
+                                                <div class="image-input-preview rounded-full">
+                                                </div>
+                                                <div class="flex items-center justify-center cursor-pointer h-5 left-0 right-0 bottom-0 bg-dark-clarity absolute">
+                                                    <svg class="fill-light opacity-80" height="12" viewbox="0 0 14 12" width="14" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.6665 2.64585H11.2232C11.0873 2.64749 10.9538 2.61053 10.8382 2.53928C10.7225 2.46803 10.6295 2.36541 10.5698 2.24335L10.0448 1.19918C9.91266 0.931853 9.70808 0.707007 9.45438 0.550249C9.20068 0.393491 8.90806 0.311121 8.60984 0.312517H5.38984C5.09162 0.311121 4.799 0.393491 4.5453 0.550249C4.2916 0.707007 4.08701 0.931853 3.95484 1.19918L3.42984 2.24335C3.37021 2.36541 3.27716 2.46803 3.1615 2.53928C3.04584 2.61053 2.91234 2.64749 2.7765 2.64585H2.33317C1.90772 2.64585 1.49969 2.81486 1.19885 3.1157C0.898014 3.41654 0.729004 3.82457 0.729004 4.25002V10.0834C0.729004 10.5088 0.898014 10.9168 1.19885 11.2177C1.49969 11.5185 1.90772 11.6875 2.33317 11.6875H11.6665C12.092 11.6875 12.5 11.5185 12.8008 11.2177C13.1017 10.9168 13.2707 10.5088 13.2707 10.0834V4.25002C13.2707 3.82457 13.1017 3.41654 12.8008 3.1157C12.5 2.81486 12.092 2.64585 11.6665 2.64585ZM6.99984 9.64585C6.39413 9.64585 5.80203 9.46624 5.2984 9.12973C4.79478 8.79321 4.40225 8.31492 4.17046 7.75532C3.93866 7.19572 3.87802 6.57995 3.99618 5.98589C4.11435 5.39182 4.40602 4.84613 4.83432 4.41784C5.26262 3.98954 5.80831 3.69786 6.40237 3.5797C6.99644 3.46153 7.61221 3.52218 8.1718 3.75397C8.7314 3.98576 9.2097 4.37829 9.54621 4.88192C9.88272 5.38554 10.0623 5.97765 10.0623 6.58335C10.0608 7.3951 9.73765 8.17317 9.16365 8.74716C8.58965 9.32116 7.81159 9.64431 6.99984 9.64585Z" fill="">
+                                                        </path>
+                                                        <path d="M7 8.77087C8.20812 8.77087 9.1875 7.7915 9.1875 6.58337C9.1875 5.37525 8.20812 4.39587 7 4.39587C5.79188 4.39587 4.8125 5.37525 4.8125 6.58337C4.8125 7.7915 5.79188 8.77087 7 8.77087Z" fill="">
+                                                        </path>
+                                                    </svg>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -121,117 +162,188 @@
                                 <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14">
                                     <div class="flex flex-col max-w-72 w-full">
                                         <div class="text-gray-900 text-sm font-semibold">
-                                            Brand Color
+                                            page_name
                                         </div>
-                                        <span class="text-gray-600 text-2sm font-medium">
-              Signature Palette Branding Element
-             </span>
                                     </div>
                                     <label class="input">
-                                        <i class="ki-solid ki-mouse-square text-success">
+                                        <i class="ki-solid ki-information-2 text-primary text-2xl">
                                         </i>
-                                        <input type="text" value="#BA35A0">
+                                        <input type="text" value="">
                                         </input>
                                     </label>
                                 </div>
-                                <div class="border-t border-gray-200 my-7.5">
-                                </div>
-                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14">
+
+                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
                                     <div class="flex flex-col max-w-72 w-full">
                                         <div class="text-gray-900 text-sm font-semibold">
-                                            Branding
-                                        </div>
-                                        <span class="text-gray-600 text-2sm font-medium">
-              Comprehensive Image Identity Design
-             </span>
-                                    </div>
-                                    <div class="flex flex-col gap-5 grow">
-                                        <div class="flex flex-col gap-2.5">
-                                            <label class="checkbox-group">
-                                                <input class="checkbox checkbox-sm" type="checkbox" value="1"/>
-                                                <span class="checkbox-label">
-                Security Questionaries
-               </span>
-                                            </label>
-                                            <div class="form-hint">
-                                                Detailed Risk Assessment &amp; Compliance Verification
-                                            </div>
-                                        </div>
-                                        <div class="flex flex-col gap-2.5">
-                                            <label class="checkbox-group">
-                                                <input checked="" class="checkbox checkbox-sm" type="checkbox" value="1"/>
-                                                <span class="checkbox-label">
-                Emails
-               </span>
-                                            </label>
-                                            <div class="form-hint">
-                                                Electronic Message Communication
-                                            </div>
-                                        </div>
-                                        <div class="flex flex-col gap-2.5">
-                                            <label class="checkbox-group">
-                                                <input checked="" class="checkbox checkbox-sm" type="checkbox" value="1"/>
-                                                <span class="checkbox-label">
-                Vendor Reports
-               </span>
-                                            </label>
-                                            <div class="form-hint">
-                                                Supplier Performance &amp; Reliability Evaluations
-                                            </div>
+                                            title
                                         </div>
                                     </div>
+                                    <label class="input">
+                                        <i class="ki-solid ki-information-2 text-primary text-2xl">
+                                        </i>
+                                        <input type="text" value="">
+                                        </input>
+                                    </label>
                                 </div>
-                                <div class="border-t border-gray-200 my-7.5">
+
+                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                    <div class="flex flex-col max-w-72 w-full">
+                                        <div class="text-gray-900 text-sm font-semibold">
+                                            description
+                                        </div>
+                                    </div>
+                                    <label class="input">
+                                        <i class="ki-solid ki-information-2 text-primary text-2xl">
+                                        </i>
+                                        <input type="text" value="">
+                                        </input>
+                                    </label>
                                 </div>
-                                <div class="flex justify-end">
+
+                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                    <div class="flex flex-col max-w-72 w-full">
+                                        <div class="text-gray-900 text-sm font-semibold">
+                                            keywords
+                                        </div>
+                                    </div>
+                                    <label class="input">
+                                        <i class="ki-solid ki-information-2 text-primary text-2xl">
+                                        </i>
+                                        <input type="text" value="">
+                                        </input>
+                                    </label>
+                                </div>
+                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                    <div class="flex flex-col max-w-72 w-full">
+                                        <div class="text-gray-900 text-sm font-semibold">
+                                            author
+                                        </div>
+                                    </div>
+                                    <label class="input">
+                                        <i class="ki-solid ki-information-2 text-primary text-2xl">
+                                        </i>
+                                        <input type="text" value="">
+                                        </input>
+                                    </label>
+                                </div>
+                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                    <div class="flex flex-col max-w-72 w-full">
+                                        <div class="text-gray-900 text-sm font-semibold">
+                                            robots
+                                        </div>
+                                    </div>
+                                    <label class="input">
+                                        <i class="ki-solid ki-information-2 text-primary text-2xl">
+                                        </i>
+                                        <input type="text" value="">
+                                        </input>
+                                    </label>
+                                </div>
+                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                    <div class="flex flex-col max-w-72 w-full">
+                                        <div class="text-gray-900 text-sm font-semibold">
+                                            canonical
+                                        </div>
+                                    </div>
+                                    <label class="input">
+                                        <i class="ki-solid ki-information-2 text-primary text-2xl">
+                                        </i>
+                                        <input type="text" value="">
+                                        </input>
+                                    </label>
+                                </div>
+                                <div class="border-t border-gray-200 my-7.5"></div>
+                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                    <div class="flex flex-col max-w-72 w-full">
+                                        <div class="text-gray-900 text-sm font-semibold">
+                                            og_title
+                                        </div>
+                                    </div>
+                                    <label class="input">
+                                        <i class="ki-solid ki-information-2 text-primary text-2xl">
+                                        </i>
+                                        <input type="text" value="">
+                                        </input>
+                                    </label>
+                                </div>
+                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                    <div class="flex flex-col max-w-72 w-full">
+                                        <div class="text-gray-900 text-sm font-semibold">
+                                            og_description
+                                        </div>
+                                    </div>
+                                    <label class="input">
+                                        <i class="ki-solid ki-information-2 text-primary text-2xl">
+                                        </i>
+                                        <input type="text" value="">
+                                        </input>
+                                    </label>
+                                </div>
+                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                    <div class="flex flex-col max-w-72 w-full">
+                                        <div class="text-gray-900 text-sm font-semibold">
+                                            og_type
+                                        </div>
+                                    </div>
+                                    <label class="input">
+                                        <i class="ki-solid ki-information-2 text-primary text-2xl">
+                                        </i>
+                                        <input type="text" value="">
+                                        </input>
+                                    </label>
+                                </div>
+                                <div class="border-t border-gray-200 my-7.5"></div>
+                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                    <div class="flex flex-col max-w-72 w-full">
+                                        <div class="text-gray-900 text-sm font-semibold">
+                                            twitter_card
+                                        </div>
+                                    </div>
+                                    <label class="input">
+                                        <i class="ki-solid ki-information-2 text-primary text-2xl">
+                                        </i>
+                                        <input type="text" value="">
+                                        </input>
+                                    </label>
+                                </div>
+                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                    <div class="flex flex-col max-w-72 w-full">
+                                        <div class="text-gray-900 text-sm font-semibold">
+                                            twitter_title
+                                        </div>
+                                    </div>
+                                    <label class="input">
+                                        <i class="ki-solid ki-information-2 text-primary text-2xl">
+                                        </i>
+                                        <input type="text" value="">
+                                        </input>
+                                    </label>
+                                </div>
+                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                    <div class="flex flex-col max-w-72 w-full">
+                                        <div class="text-gray-900 text-sm font-semibold">
+                                            twitter_description
+                                        </div>
+                                    </div>
+                                    <label class="input">
+                                        <i class="ki-solid ki-information-2 text-primary text-2xl">
+                                        </i>
+                                        <input type="text" value="">
+                                        </input>
+                                    </label>
+                                </div>
+                                <div class="border-t border-gray-200 my-7.5"></div>
+                                <div class="flex justify-end" style="position: fixed; bottom: 65px; right: 70px; z-index: 1000;">
                                     <button class="btn btn-primary">
-                                        Save Changes
+                                        Actualizar
                                     </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-span-1">
-                    <div class="flex flex-col gap-5 lg:gap-7.5">
-                        <div class="card">
-                            <div class="card-body py-10 flex flex-col gap-5 lg:gap-7.5">
-                                <div class="flex flex-col items-start gap-2.5">
-                                    <div class="mb-2.5">
-                                        <div class="relative size-[50px] shrink-0">
-                                            <svg class="w-full h-full stroke-brand-clarity fill-brand-light" fill="none" height="48" viewbox="0 0 44 48" width="44" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506
-			18.4282V29.5718C43.6506 33.859 41.3634 37.8205 37.6506 39.9641L28 45.5359C24.2872 47.6795 19.7128 47.6795 16 45.5359L6.34937
-			39.9641C2.63655 37.8205 0.349365 33.859 0.349365 29.5718V18.4282C0.349365 14.141 2.63655 10.1795 6.34937 8.0359L16 2.4641Z" fill="">
-                                                </path>
-                                                <path d="M16.25 2.89711C19.8081 0.842838 24.1919 0.842837 27.75 2.89711L37.4006 8.46891C40.9587 10.5232 43.1506 14.3196 43.1506
-			18.4282V29.5718C43.1506 33.6804 40.9587 37.4768 37.4006 39.5311L27.75 45.1029C24.1919 47.1572 19.8081 47.1572 16.25 45.1029L6.59937
-			39.5311C3.04125 37.4768 0.849365 33.6803 0.849365 29.5718V18.4282C0.849365 14.3196 3.04125 10.5232 6.59937 8.46891L16.25 2.89711Z" stroke="">
-                                                </path>
-                                            </svg>
-                                            <div class="absolute leading-none left-2/4 top-2/4 -translate-y-2/4 -translate-x-2/4">
-                                                <i class="ki-filled ki-emoji-happy text-1.5xl ps-px text-brand">
-                                                </i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a class="text-base font-semibold text-gray-900 hover:text-primary" href="#">
-                                        ¿Qué es la Cabecera del Sitio?
-                                    </a>
-                                    <p class="text-sm text-gray-700">
-                                        La cabecera del sitio es la parte superior de una página web, donde generalmente se encuentra el logotipo, el nombre del sitio, y enlaces importantes como el menú de navegación. Es la primera impresión que los visitantes tienen de tu sitio, ayudando a que encuentren fácilmente la información que buscan.
-                                    </p>
-                                </div>
-
-                                <span class="hidden [&amp;:not(:last-child)]:block [&amp;:not(:last-child)]:border-b border-b-gray-200">
-           </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <!-- end: grid -->
         </div>
-        <!-- end: container -->
     </main>
 @endsection

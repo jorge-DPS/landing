@@ -35,7 +35,7 @@
                     <div
                             class="flex items-center justify-between gap-2.5 text-sm text-gray-900 font-semibold px-5 py-2.5"
                             id="notifications_header">
-                        <spam>No es accesible. Por favor contacta al encargado de  <a class="text-2sm font-medium text-gray-600 hover:text-primary-active" href="https://desarrollamelo.com"  >desarrollamelo.com</a></spam>
+                        <span>No es accesible.</span>
                         <button class="btn btn-sm btn-icon btn-light btn-clear shrink-0"
                                 data-dropdown-dismiss="true">
                             <i class="ki-filled ki-cross">

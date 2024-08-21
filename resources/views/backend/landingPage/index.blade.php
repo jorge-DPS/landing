@@ -21,9 +21,6 @@
 
 @section('content')
     <main class="grow content pt-5" id="content" role="content">
-        <!-- begin: container -->
-        <div class="container-fixed" id="content_container">
-        </div>
         <div class="container-fixed">
             <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
                 <div class="flex flex-col justify-center gap-2">
@@ -41,8 +38,7 @@
                 </div>
             </div>
         </div>
-        <!-- end: container -->
-        <!-- begin: container -->
+
         <div class="container-fixed">
             <div class="grid gap-5 lg:gap-7.5">
                 <!-- begin: cards -->
@@ -114,36 +110,9 @@
                                 </div>
                             </div>
                         </div>
-
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body flex flex-col items-center gap-2.5 py-7.5">
-                        <div class="flex justify-center p-7.5 py-9">
-                            <img alt="image" class="dark:hidden max-h-[230px]" src="assets/media/illustrations/28.svg"/>
-                            <img alt="image" class="light:hidden max-h-[230px]" src="assets/media/illustrations/28-dark.svg"/>
-                        </div>
-                        <div class="flex flex-col gap-5 lg:gap-7.5">
-                            <div class="flex flex-col gap-3 text-center">
-                                <h2 class="text-1.5xl font-semibold text-gray-900">
-                                    Add New Integration
-                                </h2>
-                                <p class="text-sm font-medium text-gray-700">
-                                    Explore New Integration: Expand Your Toolkit with Cutting-Edge,
-                                    <br/>
-                                    User-Friendly Solutions Tailored for Efficient and Innovative Project Management.
-                                </p>
-                            </div>
-                            <div class="flex justify-center mb-5">
-                                <a class="btn btn-primary" href="html/demo1/network/user-cards/mini-cards.html">
-                                    Start Now
-                                </a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- end: container -->
     </main>
 @endsection

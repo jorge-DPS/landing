@@ -2,13 +2,12 @@
     <thead>
     <tr>
         <th class="w-[60px] text-center">
-            <input class="checkbox checkbox-sm" data-datatable-check="true"
-                   type="checkbox"/>
+           #
         </th>
         <th class="min-w-[300px]">
                <span class="sort asc">
                 <span class="sort-label">
-                 Member
+                 Nombre
                 </span>
                 <span class="sort-icon">
                 </span>
@@ -28,14 +27,15 @@
     </tr>
     </thead>
     <tbody>
-    @foreach($data as $user)
+    @foreach($data as $i => $user)
         <tr>
             <td class="text-center">
-                <input class="checkbox checkbox-sm" type="checkbox"/>
+                {{ $i+1 }}
             </td>
             <td>
                 <div class="flex items-center gap-2.5">
-                    <img alt="" class="rounded-full size-9 shrink-0" src="{{ asset($user->avatar) }}"/>
+                    <img alt="" class="rounded-full size-9 shrink-0" src="{{ $user->avatar ? asset($user->avatar) : asset('/assetsBackend/media/avatars/blank.png') }}"/>
+
                     <div class="flex flex-col">
                         <a class="text-sm font-semibold text-gray-900 hover:text-primary-active mb-px" href="#">
                             {{ $user->name }}
