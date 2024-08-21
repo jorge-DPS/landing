@@ -5,7 +5,8 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MetaTagsController;
-use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\CarruselController;
+use App\Http\Controllers\CompanyController;
 
 Route::get('/', function () {
     return view('frontend.home.index');
@@ -29,7 +30,8 @@ Route::middleware(['auth'])->group(function () {
 
     //rutasNative
     Route::resource('metatags', MetaTagsController::class);
-    Route::resource('landing', LandingPageController::class);
+    Route::resource('carrusel', CarruselController::class);
+    Route::resource('company', CompanyController::class);
 
 });
 

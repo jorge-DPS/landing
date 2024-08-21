@@ -11,6 +11,6 @@ Breadcrumbs::for('backend.user.index', function (BreadcrumbTrail $trail) {
     $trail->push('Usuarios', route('backend.user.index'));
 });
 
-Breadcrumbs::for('landing.index', function (BreadcrumbTrail $trail) {
-    $trail->push('Landing Pages', route('landing.index'));
+Breadcrumbs::for('carrusel.index', function (BreadcrumbTrail $trail) {
+    $trail->push('Carrusel de contenido', route('carrusel.index'));
 });
