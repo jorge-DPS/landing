@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\MetaTagsController;
+use App\Http\Controllers\LandingPageController;
 
 Route::get('/', function () {
     return view('frontend.home.index');
@@ -24,6 +26,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/profile', [ProfileController::class, 'index'])->name('user.profile');
     Route::post('/profile', [ProfileController::class, 'store'])->name('user.profile.store');
+
+    //rutasNative
+    Route::resource('metatags', MetaTagsController::class);
+    Route::resource('landing', LandingPageController::class);
 
 });
 
