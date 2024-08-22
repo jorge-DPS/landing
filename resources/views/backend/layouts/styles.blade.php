@@ -7,3 +7,4 @@
 <link href="{{ asset('assetsBackend/vendors/apexcharts/apexcharts.css') }}" rel="stylesheet"/>
 <link href="{{ asset('assetsBackend/vendors/keenicons/styles.bundle.css') }}" rel="stylesheet"/>
 <link href="{{ asset('assetsBackend/css/styles.css') }}" rel="stylesheet"/>
+<link href="{{ asset('assetsBackend/css/editCarruselEffect.css') }}" rel="stylesheet"/>

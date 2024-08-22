@@ -3,15 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Services\CarruselService;
 
 class CarruselController extends Controller
 {
+    protected $service;
+
+    public function __construct(CarruselService $service)
+    {
+        $this->service = $service;
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('backend.carrusel.index');
+        $carrusel = $this->service->getAllCarrusel();
+        $countCarrusel = count($carrusel);
+        return view('backend.carrusel.index', compact('carrusel', 'countCarrusel'));
     }
 
     /**

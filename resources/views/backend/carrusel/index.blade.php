@@ -40,10 +40,9 @@
         </div>
         <div class="container-fixed">
             <div class="flex flex-col items-stretch gap-5 lg:gap-7.5">
-                <!-- begin: toolbar -->
                 <div class="flex flex-wrap items-center gap-5 justify-between">
                     <h3 class="text-lg text-gray-900 font-semibold">
-                        8 Works
+                        {{ $countCarrusel }} CAMBIOS
                     </h3>
                     <div class="btn-tabs" data-tabs="true">
                         <a class="btn btn-icon active" data-tab-toggle="#works_cards" href="#">
@@ -57,273 +56,30 @@
                     </div>
                 </div>
                 <!-- end: toolbar -->
-                <!-- begin: cards -->
                 <div id="works_cards">
                     <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 lg:gap-7.5">
-                        <div class="card border-0">
-                            <img alt="" class="w-full h-auto rounded-t-xl" src="assetsBackend/media/images/600x400/21.jpg"/>
-                            <div class="card-border card-rounded-b flex flex-col gap-2 px-5 py-4.5">
-                                <a class="text-lg font-semibold text-gray-900 hover:text-primary" href="#">
-                                    Urban Dreams
-                                </a>
-                                <div class="flex items-center justify-between grow">
-                                    <div class="flex items-center grow">
-                                        <img alt="" class="rounded-full size-7 me-2"
-                                             src="assetsBackend/media/avatars/300-6.png"/>
-                                        <span class="text-2sm font-medium text-gray-700 cursor-pointer hover:text-primary mb-px">
-              Cody Fisher
-             </span>
-                                    </div>
-                                    <div class="flex gap-3 items-center">
-                                        <div class="flex gap-1 items-center">
-                                            <i class="ki-filled ki-heart text-base text-gray-500">
-                                            </i>
-                                            <span class="text-2sm font-medium text-gray-700 py-2">
-               24
-              </span>
+
+                        @foreach($carrusel as $car)
+                            <a href="#" class="card-link">
+                                <div class="card border-0">
+                                    <img alt="" class="w-full h-auto rounded-t-xl" src="assetsBackend/media/images/600x400/21.jpg"/>
+                                    <div class="card-border card-rounded-b flex flex-col gap-2 px-5 py-4.5">
+                                        <div class="text-lg font-semibold text-gray-900 hover:text-primary">
+                                            {{ $car->big_title }}
                                         </div>
-                                        <div class="flex gap-1 items-center">
-                                            <i class="ki-filled ki-messages text-base text-gray-500">
-                                            </i>
-                                            <span class="text-2sm font-medium text-gray-700 py-2">
-               5
-              </span>
+                                        <div class="flex items-center justify-between grow">
+                                            <div class="flex items-center grow">
+                        <span class="text-2sm font-medium text-gray-700 hover:text-primary mb-px">
+                            {{ $car->description }}
+                        </span>
+                                            </div>
                                         </div>
+                                        <span class="edit-text">Editar</span>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="card border-0">
-                            <img alt="" class="w-full h-auto rounded-t-xl" src="assetsBackend/media/images/600x400/3.jpg"/>
-                            <div class="card-border card-rounded-b flex flex-col gap-2 px-5 py-4.5">
-                                <a class="text-lg font-semibold text-gray-900 hover:text-primary" href="#">
-                                    Whispered Emotions
-                                </a>
-                                <div class="flex items-center justify-between grow">
-                                    <div class="flex items-center grow">
-                                        <img alt="" class="rounded-full size-7 me-2"
-                                             src="assetsBackend/media/avatars/300-14.png"/>
-                                        <span class="text-2sm font-medium text-gray-700 cursor-pointer hover:text-primary mb-px">
-              Wade Warren
-             </span>
-                                    </div>
-                                    <div class="flex gap-3 items-center">
-                                        <div class="flex gap-1 items-center">
-                                            <i class="ki-filled ki-heart text-base text-gray-500">
-                                            </i>
-                                            <span class="text-2sm font-medium text-gray-700 py-2">
-               187
-              </span>
-                                        </div>
-                                        <div class="flex gap-1 items-center">
-                                            <i class="ki-filled ki-messages text-base text-gray-500">
-                                            </i>
-                                            <span class="text-2sm font-medium text-gray-700 py-2">
-               49
-              </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card border-0">
-                            <img alt="" class="w-full h-auto rounded-t-xl" src="assetsBackend/media/images/600x400/22.jpg"/>
-                            <div class="card-border card-rounded-b flex flex-col gap-2 px-5 py-4.5">
-                                <a class="text-lg font-semibold text-gray-900 hover:text-primary" href="#">
-                                    Golden Serenity
-                                </a>
-                                <div class="flex items-center justify-between grow">
-                                    <div class="flex items-center grow">
-                                        <img alt="" class="rounded-full size-7 me-2"
-                                             src="assetsBackend/media/avatars/300-11.png"/>
-                                        <span class="text-2sm font-medium text-gray-700 cursor-pointer hover:text-primary mb-px">
-              Albert Flores
-             </span>
-                                    </div>
-                                    <div class="flex gap-3 items-center">
-                                        <div class="flex gap-1 items-center">
-                                            <i class="ki-filled ki-heart text-base text-gray-500">
-                                            </i>
-                                            <span class="text-2sm font-medium text-gray-700 py-2">
-               60
-              </span>
-                                        </div>
-                                        <div class="flex gap-1 items-center">
-                                            <i class="ki-filled ki-messages text-base text-gray-500">
-                                            </i>
-                                            <span class="text-2sm font-medium text-gray-700 py-2">
-               13
-              </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card border-0">
-                            <img alt="" class="w-full h-auto rounded-t-xl" src="assetsBackend/media/images/600x400/23.jpg"/>
-                            <div class="card-border card-rounded-b flex flex-col gap-2 px-5 py-4.5">
-                                <a class="text-lg font-semibold text-gray-900 hover:text-primary" href="#">
-                                    Mystic Shadows
-                                </a>
-                                <div class="flex items-center justify-between grow">
-                                    <div class="flex items-center grow">
-                                        <img alt="" class="rounded-full size-7 me-2"
-                                             src="assetsBackend/media/avatars/300-1.png"/>
-                                        <span class="text-2sm font-medium text-gray-700 cursor-pointer hover:text-primary mb-px">
-              Kathryn Murphy
-             </span>
-                                    </div>
-                                    <div class="flex gap-3 items-center">
-                                        <div class="flex gap-1 items-center">
-                                            <i class="ki-filled ki-heart text-base text-gray-500">
-                                            </i>
-                                            <span class="text-2sm font-medium text-gray-700 py-2">
-               37
-              </span>
-                                        </div>
-                                        <div class="flex gap-1 items-center">
-                                            <i class="ki-filled ki-messages text-base text-gray-500">
-                                            </i>
-                                            <span class="text-2sm font-medium text-gray-700 py-2">
-               16
-              </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card border-0">
-                            <img alt="" class="w-full h-auto rounded-t-xl" src="assetsBackend/media/images/600x400/14.jpg"/>
-                            <div class="card-border card-rounded-b flex flex-col gap-2 px-5 py-4.5">
-                                <a class="text-lg font-semibold text-gray-900 hover:text-primary" href="#">
-                                    Wild Beauty
-                                </a>
-                                <div class="flex items-center justify-between grow">
-                                    <div class="flex items-center grow">
-                                        <img alt="" class="rounded-full size-7 me-2"
-                                             src="assetsBackend/media/avatars/300-16.png"/>
-                                        <span class="text-2sm font-medium text-gray-700 cursor-pointer hover:text-primary mb-px">
-              Devon Lane
-             </span>
-                                    </div>
-                                    <div class="flex gap-3 items-center">
-                                        <div class="flex gap-1 items-center">
-                                            <i class="ki-filled ki-heart text-base text-gray-500">
-                                            </i>
-                                            <span class="text-2sm font-medium text-gray-700 py-2">
-               625
-              </span>
-                                        </div>
-                                        <div class="flex gap-1 items-center">
-                                            <i class="ki-filled ki-messages text-base text-gray-500">
-                                            </i>
-                                            <span class="text-2sm font-medium text-gray-700 py-2">
-               109
-              </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card border-0">
-                            <img alt="" class="w-full h-auto rounded-t-xl" src="assetsBackend/media/images/600x400/25.jpg"/>
-                            <div class="card-border card-rounded-b flex flex-col gap-2 px-5 py-4.5">
-                                <a class="text-lg font-semibold text-gray-900 hover:text-primary" href="#">
-                                    Timeless Elegance
-                                </a>
-                                <div class="flex items-center justify-between grow">
-                                    <div class="flex items-center grow">
-                                        <img alt="" class="rounded-full size-7 me-2"
-                                             src="assetsBackend/media/avatars/300-5.png"/>
-                                        <span class="text-2sm font-medium text-gray-700 cursor-pointer hover:text-primary mb-px">
-              Jenny Wilson
-             </span>
-                                    </div>
-                                    <div class="flex gap-3 items-center">
-                                        <div class="flex gap-1 items-center">
-                                            <i class="ki-filled ki-heart text-base text-gray-500">
-                                            </i>
-                                            <span class="text-2sm font-medium text-gray-700 py-2">
-               6
-              </span>
-                                        </div>
-                                        <div class="flex gap-1 items-center">
-                                            <i class="ki-filled ki-messages text-base text-gray-500">
-                                            </i>
-                                            <span class="text-2sm font-medium text-gray-700 py-2">
-               1
-              </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card border-0">
-                            <img alt="" class="w-full h-auto rounded-t-xl" src="assetsBackend/media/images/600x400/26.jpg"/>
-                            <div class="card-border card-rounded-b flex flex-col gap-2 px-5 py-4.5">
-                                <a class="text-lg font-semibold text-gray-900 hover:text-primary" href="#">
-                                    Intrepid Travel
-                                </a>
-                                <div class="flex items-center justify-between grow">
-                                    <div class="flex items-center grow">
-                                        <img alt="" class="rounded-full size-7 me-2"
-                                             src="assetsBackend/media/avatars/300-25.png"/>
-                                        <span class="text-2sm font-medium text-gray-700 cursor-pointer hover:text-primary mb-px">
-              Jhon Smith
-             </span>
-                                    </div>
-                                    <div class="flex gap-3 items-center">
-                                        <div class="flex gap-1 items-center">
-                                            <i class="ki-filled ki-heart text-base text-gray-500">
-                                            </i>
-                                            <span class="text-2sm font-medium text-gray-700 py-2">
-               30
-              </span>
-                                        </div>
-                                        <div class="flex gap-1 items-center">
-                                            <i class="ki-filled ki-messages text-base text-gray-500">
-                                            </i>
-                                            <span class="text-2sm font-medium text-gray-700 py-2">
-               22
-              </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card border-0">
-                            <img alt="" class="w-full h-auto rounded-t-xl" src="assetsBackend/media/images/600x400/2.jpg"/>
-                            <div class="card-border card-rounded-b flex flex-col gap-2 px-5 py-4.5">
-                                <a class="text-lg font-semibold text-gray-900 hover:text-primary" href="#">
-                                    We rise together
-                                </a>
-                                <div class="flex items-center justify-between grow">
-                                    <div class="flex items-center grow">
-                                        <img alt="" class="rounded-full size-7 me-2"
-                                             src="assetsBackend/media/avatars/300-29.png"/>
-                                        <span class="text-2sm font-medium text-gray-700 cursor-pointer hover:text-primary mb-px">
-              Adam Cruse
-             </span>
-                                    </div>
-                                    <div class="flex gap-3 items-center">
-                                        <div class="flex gap-1 items-center">
-                                            <i class="ki-filled ki-heart text-base text-gray-500">
-                                            </i>
-                                            <span class="text-2sm font-medium text-gray-700 py-2">
-               19
-              </span>
-                                        </div>
-                                        <div class="flex gap-1 items-center">
-                                            <i class="ki-filled ki-messages text-base text-gray-500">
-                                            </i>
-                                            <span class="text-2sm font-medium text-gray-700 py-2">
-               23
-              </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            </a>
+                        @endforeach
+
                         <style>
                             .offer-bg {
                                 background-image: url('/static/metronic-tailwind-html/dist/assets/media/images/2600x1200/bg-4.png');
@@ -369,11 +125,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </a>
-                    </div>
-                    <div class="flex grow justify-center pt-5 lg:pt-7.5">
-                        <a class="btn btn-link" href="#">
-                            Show more works
                         </a>
                     </div>
                 </div>

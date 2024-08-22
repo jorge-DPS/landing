@@ -1,0 +1,60 @@
+/* changes in the edition sample - YovanEnovore */
+.card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-link:hover .card {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.edit-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.5s ease-in-out;
+    color: #FFFFFF;
+    font-size: 2rem;
+    background-color: #48ff00;
+    padding: 15px;
+    border-radius: 15px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+    box-shadow: 0 0 20px rgb(0, 55, 65);
+    filter: blur(5px);
+}
+
+.card-link:hover .edit-text {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+    filter: blur(0px);
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate(-50%, -50%) scale(1.1) translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate(-50%, -50%) scale(1.1) translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate(-50%, -50%) scale(1.1) translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate(-50%, -50%) scale(1.1) translate3d(4px, 0, 0);
+    }
+}
+
+.card {
+    transition: transform 0.3s ease-in-out;
+}

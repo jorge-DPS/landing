@@ -19,6 +19,8 @@
 @endsection
 
 @section('content')
+
+    {{ $metatags }}
     <main class="grow content pt-5" id="content" role="content">
         <div class="container-fixed">
             <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
