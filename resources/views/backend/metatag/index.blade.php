@@ -14,7 +14,6 @@
         <i class="ki-filled ki-right text-gray-500 text-3xs">
         </i>
         <span class="text-gray-700">
-        {{ Breadcrumbs::render('carrusel.index') }}
        </span>
     </div>
 @endsection
