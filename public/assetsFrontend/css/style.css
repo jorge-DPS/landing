@@ -45,7 +45,7 @@ p {
 }
 
 .ed-btn {
-  background-color: var(--ed-purple);
+  background-color: #B12A38;
   color: var(--white);
   border-radius: 99px;
   display: inline-flex;

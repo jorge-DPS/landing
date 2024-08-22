@@ -3694,7 +3694,7 @@ video {
 }
 
 .fill-edblue {
-  fill: #241442;
+  fill: #B12A38;
 }
 
 .fill-edpurple {
@@ -5458,7 +5458,7 @@ video {
 
 .before\:bg-edblue\/70::before {
   content: var(--tw-content);
-  background-color: rgb(36 20 66 / 0.7);
+  background-color: rgba(177, 42, 56, 0.4);
 }
 
 .before\:bg-edpurple::before {

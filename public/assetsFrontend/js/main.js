@@ -83,12 +83,15 @@ document.addEventListener("DOMContentLoaded", () => {
     new Swiper(".ed-banner-slider", {
         slidesPerView: 1,
         loop: true,
-        autoplay: true,
+        autoplay: {
+            delay: 5000, // Cambia 5000 por el tiempo en milisegundos que desees (5000 ms = 5 segundos)
+        },
         navigation: {
             prevEl: ".ed-banner-slider .prev",
             nextEl: ".ed-banner-slider .next",
         }
     });
+
     // BANNER SLIDER JS END
 
 

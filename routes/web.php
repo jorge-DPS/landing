@@ -7,9 +7,11 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MetaTagsController;
 use App\Http\Controllers\CarruselController;
 use App\Http\Controllers\CompanyController;
+use App\Models\Carrusel;
 
 Route::get('/', function () {
-    return view('frontend.home.index');
+    $carrusels = Carrusel::all();
+    return view('frontend.home.index', compact('carrusels'));
 });
 
 //auth route
