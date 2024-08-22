@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('carrusel', function (Blueprint $table) {
             $table->id();
+            $table->string('small_title')->nullable();
+            $table->string('big_title')->nullable();
+            $table->string('description')->nullable();
+            $table->string('primary_button')->nullable();
+            $table->string('secondary_button')->nullable();
+            $table->string('mobile_background')->nullable();
+            $table->string('desktop_background')->nullable();
+            $table->string('tablet_background')->nullable();
+            $table->string('others')->nullable();
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }

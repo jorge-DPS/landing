@@ -12,8 +12,9 @@
                 <div class="swiper-wrapper">
                     <!-- single slide -->
                     <div class="swiper-slide">
-                        <div class="pt-[390px] md:pt-[300px] xs:pt-[280px] pb-[205px] bg-[url('../assetsFrontend/img/banner-bg-1.jpg')] bg-no-repeat bg-center bg-cover relative z-[1] before:absolute before:-z-[1] before:inset-0 before:bg-edblue/70 before:pointer-events-none">
-                            <div class="mx-[10%] md:mx-[15px]">
+                            <div class="pt-[390px] md:pt-[300px] xs:pt-[280px] pb-[205px] bg-no-repeat bg-center bg-cover relative z-[1] before:absolute before:-z-[1] before:inset-0 before:bg-edblue/70 before:pointer-events-none"
+                                 style="background-image: url('{{ asset('assetsFrontend/img/banner-bg-1.jpg') }}');">
+                                <div class="mx-[10%] md:mx-[15px]">
                                 <div class="text-white w-[48%] xl:w-[60%] md:w-[70%] sm:w-[80%] xs:w-full">
                                     <h6 class="font-medium uppercase tracking-[3px] mb-[16px]">Welcome to School in <span class="text-edyellow">NY</span></h6>
                                     <h2 class="font-bold text-[clamp(35px,4.57vw,80px)] leading-[1.13] mb-[15px]">The Best School in Your Town</h2>
@@ -29,7 +30,8 @@
 
                     <!-- single slide -->
                     <div class="swiper-slide">
-                        <div class="pt-[390px] md:pt-[300px] xs:pt-[280px] pb-[205px] bg-[url('../assetsFrontend/img/banner-bg-2.jpg')] bg-no-repeat bg-center bg-cover relative z-[1] before:absolute before:-z-[1] before:inset-0 before:bg-edblue/70 before:pointer-events-none">
+                        <div class="pt-[390px] md:pt-[300px] xs:pt-[280px] pb-[205px] bg-no-repeat bg-center bg-cover relative z-[1] before:absolute before:-z-[1] before:inset-0 before:bg-edblue/70 before:pointer-events-none"
+                             style="background-image: url('{{ asset('assetsFrontend/img/banner-bg-2.jpg') }}');">
                             <div class="mx-[10%] md:mx-[15px]">
                                 <div class="text-white w-[48%] xl:w-[60%] md:w-[70%] sm:w-[80%] xs:w-full">
                                     <h6 class="font-medium uppercase tracking-[3px] mb-[16px]">Welcome to School in <span class="text-edyellow">NY</span></h6>
@@ -62,6 +64,7 @@
                     <!-- single feature -->
                     <div class="bg-[#FAF9F6] hover:bg-edyellow border-t-[7px] border-edyellow hover:border-edpurple duration-[400ms] p-[30px] sm:p-[25px] group relative z-[1] before:absolute before:-z-[1] before:inset-0 before:bg-[url('../assetsFrontend/img/faeture-bg.jpg')] before:mix-blend-hard-light before:opacity-0 before:duration-[400ms] hover:before:opacity-15">
                         <span class="icon">
+                            {{ asset('assetsFrontend/img/banner-bg-1.jpg') }}
                             <img src="assetsFrontend/img/feature-1.svg" alt="feature" class="mb-[11px]">
                         </span>
                         <h4 class="font-semibold text-[24px] xl:text-[22px] mb-[3px] text-edblue"><a href="#" class="hover:text-edpurple">School Life</a></h4>

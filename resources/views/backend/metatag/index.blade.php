@@ -38,10 +38,10 @@
                     <div class="flex flex-col gap-5 lg:gap-7.5">
                         <style>
                             .branding-bg {
-                                background-image: url('/static/metronic-tailwind-html/dist/assets/media/images/2600x1200/bg-5.png');
+                                background-image: url('/assetsBackend/media/images/2600x1200/bg-5.png');
                             }
                             .dark .branding-bg {
-                                background-image: url('/static/metronic-tailwind-html/dist/assets/media/images/2600x1200/bg-5-dark.png');
+                                background-image: url('/assetsBackend/media/images/2600x1200/bg-5-dark.png');
                             }
                         </style>
                         <div class="card min-w-full">
