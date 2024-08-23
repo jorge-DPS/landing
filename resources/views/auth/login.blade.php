@@ -1,5 +1,3 @@
-
-
 @extends('auth.layouts.app')
 
 @section('title')
@@ -35,7 +33,7 @@
                         </div>
                         <label class="input" data-toggle-password="true">
                             <input type="password" name="password" id="password"
-                            value="" placeholder="Clave de seguridad" required>
+                                   value="" placeholder="Clave de seguridad" required>
                             <button type="button" class="btn btn-icon" data-toggle-password-trigger="true"
                                     onclick="togglePasswordVisibility()">
                                 <i class="ki-filled ki-eye text-gray-500 toggle-password-active:block"></i>
@@ -52,24 +50,13 @@
         <div
                 class="lg:rounded-xl lg:border lg:border-gray-200 lg:m-5 order-1 lg:order-2 bg-top xxl:bg-center xl:bg-cover bg-no-repeat branded-bg">
             <div class="flex flex-col p-8 lg:p-16 gap-4">
-                <a href="/">
-                    <img class="h-[35px] max-w-none" src="favicon.png"/>
-                </a>
                 <div class="flex flex-col gap-3">
                     <h3 class="text-2xl font-semibold text-gray-900">
                         Portal de Acceso Seguro
                     </h3>
-                    <div class="text-base font-medium text-gray-600">
-                        una puerta de enlace de autenticación robusta que garantiza
-                        <br/>
-                        seguridad
-                        <span class="text-gray-900 font-semibold">
-        acceso de usuario eficiente
-       </span>
-                       a nuestro sistema
-                        <br/>
-                        Interfaz de adminitración.
-                    </div>
+                    <a href="/">
+                        <img style="max-width: 300px;" src="favicon.png"/>
+                    </a>
                 </div>
             </div>
         </div>

@@ -27,7 +27,8 @@
                         Cabecera del sitio web
                     </h1>
                     <div class="flex items-center gap-2 text-sm font-medium text-gray-600">
-                        La cabecera del sitio es crucial para proporcionar información relevante y optimizada sobre tu sitio web.
+                        La cabecera del sitio es crucial para proporcionar información relevante y optimizada sobre tu
+                        sitio web.
                     </div>
                 </div>
             </div>
@@ -37,304 +38,346 @@
                 <div class="col-span-2">
                     <div class="flex flex-col gap-5 lg:gap-7.5">
                         <div class="card min-w-full">
-                            <div class="card-header gap-2">
-                                <h3 class="card-title">
-                                    Enalces y datos relevantes para el Sitema Web
-                                </h3>
-                            </div>
-                            <div class="card-body lg:py-7.5 py-5">
-                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14">
-                                    <div class="flex flex-col max-w-72 w-full">
-                                        <div class="text-gray-900 text-sm font-semibold">
-                                            Icono favorito (favicon)
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
-                                        <img class="mt-2" src="{{ $metatags->favicon ? asset($metatags->favicon) : asset('/assetsBackend/media/avatars/blank.png') }}" style="height:100px;"/>
-                                    </div>
-                                    <div class="flex justify-center items-center">
-                                        <div class="image-input size-[70px]" data-image-input="true">
-                                            <input accept=".png, .jpg, .jpeg" name="avatar" type="file"/>
-                                            <input name="avatar_remove" type="hidden"/>
-                                            <div class="btn btn-icon btn-icon-xs btn-light shadow-default absolute z-1 size-5 -top-0.5 -right-0.5 rounded-full" data-image-input-remove="" data-tooltip="#image_input_tooltip" data-tooltip-trigger="hover">
-                                                <i class="ki-outline ki-cross">
-                                                </i>
+                            <form action="{{ route('metatags.update',$metatags->id) }}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <div class="card-header gap-2">
+                                    <h3 class="card-title">
+                                        Enalces y datos relevantes para el Sitema Web
+                                    </h3>
+                                </div>
+                                <div class="card-body lg:py-7.5 py-5">
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Icono favorito (favicon)
                                             </div>
-                                            <span class="tooltip" id="image_input_tooltip">
+                                        </div>
+                                        <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
+                                            <img class="mt-2"
+                                                 src="{{ $metatags->favicon ? asset($metatags->favicon) : asset('/assetsBackend/media/avatars/blank.png') }}"
+                                                 style="height:100px;"/>
+                                        </div>
+                                        <div class="flex justify-center items-center">
+                                            <div class="image-input size-[70px]" data-image-input="true">
+                                                <input accept=".png, .jpg, .jpeg" name="avatar" type="file"/>
+                                                <input name="avatar_remove" type="hidden"/>
+                                                <div class="btn btn-icon btn-icon-xs btn-light shadow-default absolute z-1 size-5 -top-0.5 -right-0.5 rounded-full"
+                                                     data-image-input-remove="" data-tooltip="#image_input_tooltip"
+                                                     data-tooltip-trigger="hover">
+                                                    <i class="ki-outline ki-cross">
+                                                    </i>
+                                                </div>
+                                                <span class="tooltip" id="image_input_tooltip">
    Click to remove or revert
   </span>
-                                            <div class="image-input-placeholder rounded-full border-2 border-success image-input-empty:border-gray-300" style="background-image:url(assetsBackend/media/avatars/blank.png)">
-                                                <div class="image-input-preview rounded-full">
-                                                </div>
-                                                <div class="flex items-center justify-center cursor-pointer h-5 left-0 right-0 bottom-0 bg-dark-clarity absolute">
-                                                    <svg class="fill-light opacity-80" height="12" viewbox="0 0 14 12" width="14" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M11.6665 2.64585H11.2232C11.0873 2.64749 10.9538 2.61053 10.8382 2.53928C10.7225 2.46803 10.6295 2.36541 10.5698 2.24335L10.0448 1.19918C9.91266 0.931853 9.70808 0.707007 9.45438 0.550249C9.20068 0.393491 8.90806 0.311121 8.60984 0.312517H5.38984C5.09162 0.311121 4.799 0.393491 4.5453 0.550249C4.2916 0.707007 4.08701 0.931853 3.95484 1.19918L3.42984 2.24335C3.37021 2.36541 3.27716 2.46803 3.1615 2.53928C3.04584 2.61053 2.91234 2.64749 2.7765 2.64585H2.33317C1.90772 2.64585 1.49969 2.81486 1.19885 3.1157C0.898014 3.41654 0.729004 3.82457 0.729004 4.25002V10.0834C0.729004 10.5088 0.898014 10.9168 1.19885 11.2177C1.49969 11.5185 1.90772 11.6875 2.33317 11.6875H11.6665C12.092 11.6875 12.5 11.5185 12.8008 11.2177C13.1017 10.9168 13.2707 10.5088 13.2707 10.0834V4.25002C13.2707 3.82457 13.1017 3.41654 12.8008 3.1157C12.5 2.81486 12.092 2.64585 11.6665 2.64585ZM6.99984 9.64585C6.39413 9.64585 5.80203 9.46624 5.2984 9.12973C4.79478 8.79321 4.40225 8.31492 4.17046 7.75532C3.93866 7.19572 3.87802 6.57995 3.99618 5.98589C4.11435 5.39182 4.40602 4.84613 4.83432 4.41784C5.26262 3.98954 5.80831 3.69786 6.40237 3.5797C6.99644 3.46153 7.61221 3.52218 8.1718 3.75397C8.7314 3.98576 9.2097 4.37829 9.54621 4.88192C9.88272 5.38554 10.0623 5.97765 10.0623 6.58335C10.0608 7.3951 9.73765 8.17317 9.16365 8.74716C8.58965 9.32116 7.81159 9.64431 6.99984 9.64585Z" fill="">
-                                                        </path>
-                                                        <path d="M7 8.77087C8.20812 8.77087 9.1875 7.7915 9.1875 6.58337C9.1875 5.37525 8.20812 4.39587 7 4.39587C5.79188 4.39587 4.8125 5.37525 4.8125 6.58337C4.8125 7.7915 5.79188 8.77087 7 8.77087Z" fill="">
-                                                        </path>
-                                                    </svg>
+                                                <div class="image-input-placeholder rounded-full border-2 border-success image-input-empty:border-gray-300"
+                                                     style="background-image:url(assetsBackend/media/avatars/blank.png)">
+                                                    <div class="image-input-preview rounded-full">
+                                                    </div>
+                                                    <div class="flex items-center justify-center cursor-pointer h-5 left-0 right-0 bottom-0 bg-dark-clarity absolute">
+                                                        <svg class="fill-light opacity-80" height="12"
+                                                             viewbox="0 0 14 12" width="14"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M11.6665 2.64585H11.2232C11.0873 2.64749 10.9538 2.61053 10.8382 2.53928C10.7225 2.46803 10.6295 2.36541 10.5698 2.24335L10.0448 1.19918C9.91266 0.931853 9.70808 0.707007 9.45438 0.550249C9.20068 0.393491 8.90806 0.311121 8.60984 0.312517H5.38984C5.09162 0.311121 4.799 0.393491 4.5453 0.550249C4.2916 0.707007 4.08701 0.931853 3.95484 1.19918L3.42984 2.24335C3.37021 2.36541 3.27716 2.46803 3.1615 2.53928C3.04584 2.61053 2.91234 2.64749 2.7765 2.64585H2.33317C1.90772 2.64585 1.49969 2.81486 1.19885 3.1157C0.898014 3.41654 0.729004 3.82457 0.729004 4.25002V10.0834C0.729004 10.5088 0.898014 10.9168 1.19885 11.2177C1.49969 11.5185 1.90772 11.6875 2.33317 11.6875H11.6665C12.092 11.6875 12.5 11.5185 12.8008 11.2177C13.1017 10.9168 13.2707 10.5088 13.2707 10.0834V4.25002C13.2707 3.82457 13.1017 3.41654 12.8008 3.1157C12.5 2.81486 12.092 2.64585 11.6665 2.64585ZM6.99984 9.64585C6.39413 9.64585 5.80203 9.46624 5.2984 9.12973C4.79478 8.79321 4.40225 8.31492 4.17046 7.75532C3.93866 7.19572 3.87802 6.57995 3.99618 5.98589C4.11435 5.39182 4.40602 4.84613 4.83432 4.41784C5.26262 3.98954 5.80831 3.69786 6.40237 3.5797C6.99644 3.46153 7.61221 3.52218 8.1718 3.75397C8.7314 3.98576 9.2097 4.37829 9.54621 4.88192C9.88272 5.38554 10.0623 5.97765 10.0623 6.58335C10.0608 7.3951 9.73765 8.17317 9.16365 8.74716C8.58965 9.32116 7.81159 9.64431 6.99984 9.64585Z"
+                                                                  fill="">
+                                                            </path>
+                                                            <path d="M7 8.77087C8.20812 8.77087 9.1875 7.7915 9.1875 6.58337C9.1875 5.37525 8.20812 4.39587 7 4.39587C5.79188 4.39587 4.8125 5.37525 4.8125 6.58337C4.8125 7.7915 5.79188 8.77087 7 8.77087Z"
+                                                                  fill="">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
-                                    <div class="flex flex-col max-w-72 w-full">
-                                        <div class="text-gray-900 text-sm font-semibold">
-                                            Imagen de Twitter
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
-                                        <img class="mt-2" src="{{ $metatags->twitter_image ? asset($metatags->twitter_image) : asset('/assetsBackend/media/avatars/blank.png') }}" style="height:100px;"/>
-                                    </div>
-                                    <div class="flex justify-center items-center">
-                                        <div class="image-input size-[70px]" data-image-input="true">
-                                            <input accept=".png, .jpg, .jpeg" name="avatar" type="file"/>
-                                            <input name="avatar_remove" type="hidden"/>
-                                            <div class="btn btn-icon btn-icon-xs btn-light shadow-default absolute z-1 size-5 -top-0.5 -right-0.5 rounded-full" data-image-input-remove="" data-tooltip="#image_input_tooltip" data-tooltip-trigger="hover">
-                                                <i class="ki-outline ki-cross">
-                                                </i>
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Imagen de Twitter
                                             </div>
-                                            <span class="tooltip" id="image_input_tooltip">
+                                        </div>
+                                        <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
+                                            <img class="mt-2"
+                                                 src="{{ $metatags->twitter_image ? asset($metatags->twitter_image) : asset('/assetsBackend/media/avatars/blank.png') }}"
+                                                 style="height:100px;"/>
+                                        </div>
+                                        <div class="flex justify-center items-center">
+                                            <div class="image-input size-[70px]" data-image-input="true">
+                                                <input accept=".png, .jpg, .jpeg" name="avatar" type="file"/>
+                                                <input name="avatar_remove" type="hidden"/>
+                                                <div class="btn btn-icon btn-icon-xs btn-light shadow-default absolute z-1 size-5 -top-0.5 -right-0.5 rounded-full"
+                                                     data-image-input-remove="" data-tooltip="#image_input_tooltip"
+                                                     data-tooltip-trigger="hover">
+                                                    <i class="ki-outline ki-cross">
+                                                    </i>
+                                                </div>
+                                                <span class="tooltip" id="image_input_tooltip">
    Click to remove or revert
   </span>
-                                            <div class="image-input-placeholder rounded-full border-2 border-success image-input-empty:border-gray-300" style="background-image:url(assetsBackend/media/avatars/blank.png)">
-                                                <div class="image-input-preview rounded-full">
-                                                </div>
-                                                <div class="flex items-center justify-center cursor-pointer h-5 left-0 right-0 bottom-0 bg-dark-clarity absolute">
-                                                    <svg class="fill-light opacity-80" height="12" viewbox="0 0 14 12" width="14" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M11.6665 2.64585H11.2232C11.0873 2.64749 10.9538 2.61053 10.8382 2.53928C10.7225 2.46803 10.6295 2.36541 10.5698 2.24335L10.0448 1.19918C9.91266 0.931853 9.70808 0.707007 9.45438 0.550249C9.20068 0.393491 8.90806 0.311121 8.60984 0.312517H5.38984C5.09162 0.311121 4.799 0.393491 4.5453 0.550249C4.2916 0.707007 4.08701 0.931853 3.95484 1.19918L3.42984 2.24335C3.37021 2.36541 3.27716 2.46803 3.1615 2.53928C3.04584 2.61053 2.91234 2.64749 2.7765 2.64585H2.33317C1.90772 2.64585 1.49969 2.81486 1.19885 3.1157C0.898014 3.41654 0.729004 3.82457 0.729004 4.25002V10.0834C0.729004 10.5088 0.898014 10.9168 1.19885 11.2177C1.49969 11.5185 1.90772 11.6875 2.33317 11.6875H11.6665C12.092 11.6875 12.5 11.5185 12.8008 11.2177C13.1017 10.9168 13.2707 10.5088 13.2707 10.0834V4.25002C13.2707 3.82457 13.1017 3.41654 12.8008 3.1157C12.5 2.81486 12.092 2.64585 11.6665 2.64585ZM6.99984 9.64585C6.39413 9.64585 5.80203 9.46624 5.2984 9.12973C4.79478 8.79321 4.40225 8.31492 4.17046 7.75532C3.93866 7.19572 3.87802 6.57995 3.99618 5.98589C4.11435 5.39182 4.40602 4.84613 4.83432 4.41784C5.26262 3.98954 5.80831 3.69786 6.40237 3.5797C6.99644 3.46153 7.61221 3.52218 8.1718 3.75397C8.7314 3.98576 9.2097 4.37829 9.54621 4.88192C9.88272 5.38554 10.0623 5.97765 10.0623 6.58335C10.0608 7.3951 9.73765 8.17317 9.16365 8.74716C8.58965 9.32116 7.81159 9.64431 6.99984 9.64585Z" fill="">
-                                                        </path>
-                                                        <path d="M7 8.77087C8.20812 8.77087 9.1875 7.7915 9.1875 6.58337C9.1875 5.37525 8.20812 4.39587 7 4.39587C5.79188 4.39587 4.8125 5.37525 4.8125 6.58337C4.8125 7.7915 5.79188 8.77087 7 8.77087Z" fill="">
-                                                        </path>
-                                                    </svg>
+                                                <div class="image-input-placeholder rounded-full border-2 border-success image-input-empty:border-gray-300"
+                                                     style="background-image:url(assetsBackend/media/avatars/blank.png)">
+                                                    <div class="image-input-preview rounded-full">
+                                                    </div>
+                                                    <div class="flex items-center justify-center cursor-pointer h-5 left-0 right-0 bottom-0 bg-dark-clarity absolute">
+                                                        <svg class="fill-light opacity-80" height="12"
+                                                             viewbox="0 0 14 12" width="14"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M11.6665 2.64585H11.2232C11.0873 2.64749 10.9538 2.61053 10.8382 2.53928C10.7225 2.46803 10.6295 2.36541 10.5698 2.24335L10.0448 1.19918C9.91266 0.931853 9.70808 0.707007 9.45438 0.550249C9.20068 0.393491 8.90806 0.311121 8.60984 0.312517H5.38984C5.09162 0.311121 4.799 0.393491 4.5453 0.550249C4.2916 0.707007 4.08701 0.931853 3.95484 1.19918L3.42984 2.24335C3.37021 2.36541 3.27716 2.46803 3.1615 2.53928C3.04584 2.61053 2.91234 2.64749 2.7765 2.64585H2.33317C1.90772 2.64585 1.49969 2.81486 1.19885 3.1157C0.898014 3.41654 0.729004 3.82457 0.729004 4.25002V10.0834C0.729004 10.5088 0.898014 10.9168 1.19885 11.2177C1.49969 11.5185 1.90772 11.6875 2.33317 11.6875H11.6665C12.092 11.6875 12.5 11.5185 12.8008 11.2177C13.1017 10.9168 13.2707 10.5088 13.2707 10.0834V4.25002C13.2707 3.82457 13.1017 3.41654 12.8008 3.1157C12.5 2.81486 12.092 2.64585 11.6665 2.64585ZM6.99984 9.64585C6.39413 9.64585 5.80203 9.46624 5.2984 9.12973C4.79478 8.79321 4.40225 8.31492 4.17046 7.75532C3.93866 7.19572 3.87802 6.57995 3.99618 5.98589C4.11435 5.39182 4.40602 4.84613 4.83432 4.41784C5.26262 3.98954 5.80831 3.69786 6.40237 3.5797C6.99644 3.46153 7.61221 3.52218 8.1718 3.75397C8.7314 3.98576 9.2097 4.37829 9.54621 4.88192C9.88272 5.38554 10.0623 5.97765 10.0623 6.58335C10.0608 7.3951 9.73765 8.17317 9.16365 8.74716C8.58965 9.32116 7.81159 9.64431 6.99984 9.64585Z"
+                                                                  fill="">
+                                                            </path>
+                                                            <path d="M7 8.77087C8.20812 8.77087 9.1875 7.7915 9.1875 6.58337C9.1875 5.37525 8.20812 4.39587 7 4.39587C5.79188 4.39587 4.8125 5.37525 4.8125 6.58337C4.8125 7.7915 5.79188 8.77087 7 8.77087Z"
+                                                                  fill="">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
-                                    <div class="flex flex-col max-w-72 w-full">
-                                        <div class="text-gray-900 text-sm font-semibold">
-                                            Imagen OG (Open Graph)
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
-                                        <img class="mt-2" src="{{ $metatags->og_image ? asset($metatags->og_image) : asset('/assetsBackend/media/avatars/blank.png') }}" style="height:100px;"/>
-                                    </div>
-                                    <div class="flex justify-center items-center">
-                                        <div class="image-input size-[70px]" data-image-input="true">
-                                            <input accept=".png, .jpg, .jpeg" name="avatar" type="file"/>
-                                            <input name="avatar_remove" type="hidden"/>
-                                            <div class="btn btn-icon btn-icon-xs btn-light shadow-default absolute z-1 size-5 -top-0.5 -right-0.5 rounded-full" data-image-input-remove="" data-tooltip="#image_input_tooltip" data-tooltip-trigger="hover">
-                                                <i class="ki-outline ki-cross">
-                                                </i>
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Imagen OG (Open Graph)
                                             </div>
-                                            <span class="tooltip" id="image_input_tooltip">
+                                        </div>
+                                        <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
+                                            <img class="mt-2"
+                                                 src="{{ $metatags->og_image ? asset($metatags->og_image) : asset('/assetsBackend/media/avatars/blank.png') }}"
+                                                 style="height:100px;"/>
+                                        </div>
+                                        <div class="flex justify-center items-center">
+                                            <div class="image-input size-[70px]" data-image-input="true">
+                                                <input accept=".png, .jpg, .jpeg" name="avatar" type="file"/>
+                                                <input name="avatar_remove" type="hidden"/>
+                                                <div class="btn btn-icon btn-icon-xs btn-light shadow-default absolute z-1 size-5 -top-0.5 -right-0.5 rounded-full"
+                                                     data-image-input-remove="" data-tooltip="#image_input_tooltip"
+                                                     data-tooltip-trigger="hover">
+                                                    <i class="ki-outline ki-cross">
+                                                    </i>
+                                                </div>
+                                                <span class="tooltip" id="image_input_tooltip">
    Click to remove or revert
   </span>
-                                            <div class="image-input-placeholder rounded-full border-2 border-success image-input-empty:border-gray-300" style="background-image:url(assetsBackend/media/avatars/blank.png)">
-                                                <div class="image-input-preview rounded-full">
-                                                </div>
-                                                <div class="flex items-center justify-center cursor-pointer h-5 left-0 right-0 bottom-0 bg-dark-clarity absolute">
-                                                    <svg class="fill-light opacity-80" height="12" viewbox="0 0 14 12" width="14" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M11.6665 2.64585H11.2232C11.0873 2.64749 10.9538 2.61053 10.8382 2.53928C10.7225 2.46803 10.6295 2.36541 10.5698 2.24335L10.0448 1.19918C9.91266 0.931853 9.70808 0.707007 9.45438 0.550249C9.20068 0.393491 8.90806 0.311121 8.60984 0.312517H5.38984C5.09162 0.311121 4.799 0.393491 4.5453 0.550249C4.2916 0.707007 4.08701 0.931853 3.95484 1.19918L3.42984 2.24335C3.37021 2.36541 3.27716 2.46803 3.1615 2.53928C3.04584 2.61053 2.91234 2.64749 2.7765 2.64585H2.33317C1.90772 2.64585 1.49969 2.81486 1.19885 3.1157C0.898014 3.41654 0.729004 3.82457 0.729004 4.25002V10.0834C0.729004 10.5088 0.898014 10.9168 1.19885 11.2177C1.49969 11.5185 1.90772 11.6875 2.33317 11.6875H11.6665C12.092 11.6875 12.5 11.5185 12.8008 11.2177C13.1017 10.9168 13.2707 10.5088 13.2707 10.0834V4.25002C13.2707 3.82457 13.1017 3.41654 12.8008 3.1157C12.5 2.81486 12.092 2.64585 11.6665 2.64585ZM6.99984 9.64585C6.39413 9.64585 5.80203 9.46624 5.2984 9.12973C4.79478 8.79321 4.40225 8.31492 4.17046 7.75532C3.93866 7.19572 3.87802 6.57995 3.99618 5.98589C4.11435 5.39182 4.40602 4.84613 4.83432 4.41784C5.26262 3.98954 5.80831 3.69786 6.40237 3.5797C6.99644 3.46153 7.61221 3.52218 8.1718 3.75397C8.7314 3.98576 9.2097 4.37829 9.54621 4.88192C9.88272 5.38554 10.0623 5.97765 10.0623 6.58335C10.0608 7.3951 9.73765 8.17317 9.16365 8.74716C8.58965 9.32116 7.81159 9.64431 6.99984 9.64585Z" fill="">
-                                                        </path>
-                                                        <path d="M7 8.77087C8.20812 8.77087 9.1875 7.7915 9.1875 6.58337C9.1875 5.37525 8.20812 4.39587 7 4.39587C5.79188 4.39587 4.8125 5.37525 4.8125 6.58337C4.8125 7.7915 5.79188 8.77087 7 8.77087Z" fill="">
-                                                        </path>
-                                                    </svg>
+                                                <div class="image-input-placeholder rounded-full border-2 border-success image-input-empty:border-gray-300"
+                                                     style="background-image:url(assetsBackend/media/avatars/blank.png)">
+                                                    <div class="image-input-preview rounded-full">
+                                                    </div>
+                                                    <div class="flex items-center justify-center cursor-pointer h-5 left-0 right-0 bottom-0 bg-dark-clarity absolute">
+                                                        <svg class="fill-light opacity-80" height="12"
+                                                             viewbox="0 0 14 12" width="14"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M11.6665 2.64585H11.2232C11.0873 2.64749 10.9538 2.61053 10.8382 2.53928C10.7225 2.46803 10.6295 2.36541 10.5698 2.24335L10.0448 1.19918C9.91266 0.931853 9.70808 0.707007 9.45438 0.550249C9.20068 0.393491 8.90806 0.311121 8.60984 0.312517H5.38984C5.09162 0.311121 4.799 0.393491 4.5453 0.550249C4.2916 0.707007 4.08701 0.931853 3.95484 1.19918L3.42984 2.24335C3.37021 2.36541 3.27716 2.46803 3.1615 2.53928C3.04584 2.61053 2.91234 2.64749 2.7765 2.64585H2.33317C1.90772 2.64585 1.49969 2.81486 1.19885 3.1157C0.898014 3.41654 0.729004 3.82457 0.729004 4.25002V10.0834C0.729004 10.5088 0.898014 10.9168 1.19885 11.2177C1.49969 11.5185 1.90772 11.6875 2.33317 11.6875H11.6665C12.092 11.6875 12.5 11.5185 12.8008 11.2177C13.1017 10.9168 13.2707 10.5088 13.2707 10.0834V4.25002C13.2707 3.82457 13.1017 3.41654 12.8008 3.1157C12.5 2.81486 12.092 2.64585 11.6665 2.64585ZM6.99984 9.64585C6.39413 9.64585 5.80203 9.46624 5.2984 9.12973C4.79478 8.79321 4.40225 8.31492 4.17046 7.75532C3.93866 7.19572 3.87802 6.57995 3.99618 5.98589C4.11435 5.39182 4.40602 4.84613 4.83432 4.41784C5.26262 3.98954 5.80831 3.69786 6.40237 3.5797C6.99644 3.46153 7.61221 3.52218 8.1718 3.75397C8.7314 3.98576 9.2097 4.37829 9.54621 4.88192C9.88272 5.38554 10.0623 5.97765 10.0623 6.58335C10.0608 7.3951 9.73765 8.17317 9.16365 8.74716C8.58965 9.32116 7.81159 9.64431 6.99984 9.64585Z"
+                                                                  fill="">
+                                                            </path>
+                                                            <path d="M7 8.77087C8.20812 8.77087 9.1875 7.7915 9.1875 6.58337C9.1875 5.37525 8.20812 4.39587 7 4.39587C5.79188 4.39587 4.8125 5.37525 4.8125 6.58337C4.8125 7.7915 5.79188 8.77087 7 8.77087Z"
+                                                                  fill="">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="border-t border-gray-200 my-7.5"></div>
+                                    <div class="border-t border-gray-200 my-7.5"></div>
 
-                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14">
-                                    <div class="flex flex-col max-w-72 w-full">
-                                        <div class="text-gray-900 text-sm font-semibold">
-                                            Nombre de la página
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Nombre de la página
+                                            </div>
                                         </div>
+                                        <label class="input">
+                                            <i class="ki-solid ki-information-2 text-school text-2xl">
+                                            </i>
+                                            <input type="text" value="{{ $metatags->page_name }}"
+                                                   placeholder="No asignado"
+                                                   name="page_name"
+                                            >
+                                            </input>
+                                        </label>
                                     </div>
-                                    <label class="input">
-                                        <i class="ki-solid ki-information-2 text-school text-2xl">
-                                        </i>
-                                        <input type="text" value="{{ $metatags->page_name }}" placeholder="No asignado">
-                                        </input>
-                                    </label>
-                                </div>
-                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
-                                    <div class="flex flex-col max-w-72 w-full">
-                                        <div class="text-gray-900 text-sm font-semibold">
-                                            Título
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Título
+                                            </div>
                                         </div>
+                                        <label class="input">
+                                            <i class="ki-solid ki-information-2 text-school text-2xl">
+                                            </i>
+                                            <input type="text" value="{{ $metatags->title }}" name="title">
+                                            </input>
+                                        </label>
                                     </div>
-                                    <label class="input">
-                                        <i class="ki-solid ki-information-2 text-school text-2xl">
-                                        </i>
-                                        <input type="text" value="{{ $metatags->title }}">
-                                        </input>
-                                    </label>
-                                </div>
-                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
-                                    <div class="flex flex-col max-w-72 w-full">
-                                        <div class="text-gray-900 text-sm font-semibold">
-                                            Descripción
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Descripción
+                                            </div>
                                         </div>
+                                        <label class="input">
+                                            <i class="ki-solid ki-information-2 text-school text-2xl">
+                                            </i>
+                                            <input type="text" value="{{ $metatags->description }}" name="description">
+                                            </input>
+                                        </label>
                                     </div>
-                                    <label class="input">
-                                        <i class="ki-solid ki-information-2 text-school text-2xl">
-                                        </i>
-                                        <input type="text" value="{{ $metatags->description }}">
-                                        </input>
-                                    </label>
-                                </div>
-                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
-                                    <div class="flex flex-col max-w-72 w-full">
-                                        <div class="text-gray-900 text-sm font-semibold">
-                                            Palabras clave (keywords)
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Palabras clave (keywords)
+                                            </div>
                                         </div>
+                                        <label class="input">
+                                            <i class="ki-solid ki-information-2 text-school text-2xl">
+                                            </i>
+                                            <input type="text" value="{{ $metatags->keywords }}" name="keywords">
+                                            </input>
+                                        </label>
                                     </div>
-                                    <label class="input">
-                                        <i class="ki-solid ki-information-2 text-school text-2xl">
-                                        </i>
-                                        <input type="text" value="{{ $metatags->keywords }}">
-                                        </input>
-                                    </label>
-                                </div>
-                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
-                                    <div class="flex flex-col max-w-72 w-full">
-                                        <div class="text-gray-900 text-sm font-semibold">
-                                            Autor
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Autor
+                                            </div>
                                         </div>
+                                        <label class="input">
+                                            <i class="ki-solid ki-information-2 text-school text-2xl">
+                                            </i>
+                                            <input type="text" value="{{ $metatags->author }}" readonly>
+                                            </input>
+                                        </label>
                                     </div>
-                                    <label class="input">
-                                        <i class="ki-solid ki-information-2 text-school text-2xl">
-                                        </i>
-                                        <input type="text" value="{{ $metatags->author }}" readonly>
-                                        </input>
-                                    </label>
-                                </div>
-                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
-                                    <div class="flex flex-col max-w-72 w-full">
-                                        <div class="text-gray-900 text-sm font-semibold">
-                                            Palabras claves (robots)
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Palabras claves (robots)
+                                            </div>
                                         </div>
+                                        <label class="input">
+                                            <i class="ki-solid ki-information-2 text-school text-2xl">
+                                            </i>
+                                            <input type="text" value="{{ $metatags->robots }}" name="robots">
+                                            </input>
+                                        </label>
                                     </div>
-                                    <label class="input">
-                                        <i class="ki-solid ki-information-2 text-school text-2xl">
-                                        </i>
-                                        <input type="text" value="{{ $metatags->robots }}">
-                                        </input>
-                                    </label>
-                                </div>
-                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
-                                    <div class="flex flex-col max-w-72 w-full">
-                                        <div class="text-gray-900 text-sm font-semibold">
-                                            Enlace canónica (canonical)
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Enlace canónica (canonical)
+                                            </div>
                                         </div>
+                                        <label class="input">
+                                            <i class="ki-solid ki-information-2 text-school text-2xl">
+                                            </i>
+                                            <input type="text" value="{{ $metatags->canonical }}" name="canonical">
+                                            </input>
+                                        </label>
                                     </div>
-                                    <label class="input">
-                                        <i class="ki-solid ki-information-2 text-school text-2xl">
-                                        </i>
-                                        <input type="text" value="{{ $metatags->canonical }}">
-                                        </input>
-                                    </label>
-                                </div>
-                                <div class="border-t border-gray-200 my-7.5"></div>
-                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
-                                    <div class="flex flex-col max-w-72 w-full">
-                                        <div class="text-gray-900 text-sm font-semibold">
-                                            Título OG (Open Graph)
+                                    <div class="border-t border-gray-200 my-7.5"></div>
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Título OG (Open Graph)
+                                            </div>
                                         </div>
+                                        <label class="input">
+                                            <i class="ki-solid ki-information-2 text-school text-2xl">
+                                            </i>
+                                            <input type="text" value="{{ $metatags->og_title }}" name="og_title">
+                                            </input>
+                                        </label>
                                     </div>
-                                    <label class="input">
-                                        <i class="ki-solid ki-information-2 text-school text-2xl">
-                                        </i>
-                                        <input type="text" value="{{ $metatags->og_title }}">
-                                        </input>
-                                    </label>
-                                </div>
-                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
-                                    <div class="flex flex-col max-w-72 w-full">
-                                        <div class="text-gray-900 text-sm font-semibold">
-                                            Descripción OG (Open Graph)
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Descripción OG (Open Graph)
+                                            </div>
                                         </div>
+                                        <label class="input">
+                                            <i class="ki-solid ki-information-2 text-school text-2xl">
+                                            </i>
+                                            <input type="text" value="{{ $metatags->og_description }}"
+                                                   name="og_description">
+                                            </input>
+                                        </label>
                                     </div>
-                                    <label class="input">
-                                        <i class="ki-solid ki-information-2 text-school text-2xl">
-                                        </i>
-                                        <input type="text" value="{{ $metatags->og_description }}">
-                                        </input>
-                                    </label>
-                                </div>
-                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
-                                    <div class="flex flex-col max-w-72 w-full">
-                                        <div class="text-gray-900 text-sm font-semibold">
-                                            Tipo OG (Open Graph)
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Tipo OG (Open Graph)
+                                            </div>
                                         </div>
+                                        <label class="input">
+                                            <i class="ki-solid ki-information-2 text-school text-2xl">
+                                            </i>
+                                            <input type="text" value="{{ $metatags->og_type }}" name="og_type">
+                                            </input>
+                                        </label>
                                     </div>
-                                    <label class="input">
-                                        <i class="ki-solid ki-information-2 text-school text-2xl">
-                                        </i>
-                                        <input type="text" value="{{ $metatags->og_type }}">
-                                        </input>
-                                    </label>
-                                </div>
-                                <div class="border-t border-gray-200 my-7.5"></div>
-                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
-                                    <div class="flex flex-col max-w-72 w-full">
-                                        <div class="text-gray-900 text-sm font-semibold">
-                                            Tarjeta de Twitter
+                                    <div class="border-t border-gray-200 my-7.5"></div>
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Tarjeta de Twitter
+                                            </div>
                                         </div>
+                                        <label class="input">
+                                            <i class="ki-solid ki-information-2 text-school text-2xl">
+                                            </i>
+                                            <input type="text" value="{{ $metatags->twitter_card }}"
+                                                   name="twitter_card">
+                                            </input>
+                                        </label>
                                     </div>
-                                    <label class="input">
-                                        <i class="ki-solid ki-information-2 text-school text-2xl">
-                                        </i>
-                                        <input type="text" value="{{ $metatags->twitter_card }}">
-                                        </input>
-                                    </label>
-                                </div>
-                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
-                                    <div class="flex flex-col max-w-72 w-full">
-                                        <div class="text-gray-900 text-sm font-semibold">
-                                            Título de Twitter
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Título de Twitter
+                                            </div>
                                         </div>
+                                        <label class="input">
+                                            <i class="ki-solid ki-information-2 text-school text-2xl">
+                                            </i>
+                                            <input type="text" value="{{ $metatags->twitter_title }}"
+                                                   name="twitter_title">
+                                            </input>
+                                        </label>
                                     </div>
-                                    <label class="input">
-                                        <i class="ki-solid ki-information-2 text-school text-2xl">
-                                        </i>
-                                        <input type="text" value="{{ $metatags->twitter_title }}">
-                                        </input>
-                                    </label>
-                                </div>
-                                <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
-                                    <div class="flex flex-col max-w-72 w-full">
-                                        <div class="text-gray-900 text-sm font-semibold">
-                                            Descripción de Twitter
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Descripción de Twitter
+                                            </div>
                                         </div>
+                                        <label class="input">
+                                            <i class="ki-solid ki-information-2 text-school text-2xl">
+                                            </i>
+                                            <input type="text" value="{{ $metatags->twitter_description }}"
+                                                   name="twitter_description">
+                                            </input>
+                                        </label>
                                     </div>
-                                    <label class="input">
-                                        <i class="ki-solid ki-information-2 text-school text-2xl">
-                                        </i>
-                                        <input type="text" value="{{ $metatags->twitter_description }}">
-                                        </input>
-                                    </label>
+                                    <div class="border-t border-gray-200 my-7.5"></div>
+                                    <div class="flex justify-end"
+                                         style="position: fixed; bottom: 65px; right: 70px; z-index: 1000;">
+                                        <button class="btn btn-primary pulse-button" type="submit">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round" stroke-linejoin="round"
+                                                 class="icon icon-tabler icon-tabler-outline icon-tabler-device-floppy">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                                <path d="M6 4h10l4 4v10a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2"/>
+                                                <path d="M12 14m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/>
+                                                <path d="M14 4l0 4l-6 0l0 -4"/>
+                                            </svg>
+                                            Actualizar todo
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="border-t border-gray-200 my-7.5"></div>
-                                <div class="flex justify-end" style="position: fixed; bottom: 65px; right: 70px; z-index: 1000;">
-                                    <button class="btn btn-primary pulse-button">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-outline icon-tabler-device-floppy">
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                            <path d="M6 4h10l4 4v10a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2"/>
-                                            <path d="M12 14m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/>
-                                            <path d="M14 4l0 4l-6 0l0 -4"/>
-                                        </svg>
-                                        Actualizar todo
-                                    </button>
-                                </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -342,6 +385,65 @@
         </div>
     </main>
 @endsection
+
+@push('scripts')
+        <?php if (session('success')) { ?>
+    <script>
+        Swal.fire({
+            position: "top-end",
+            title: "!Registro exitoso¡",
+            text: "{{ session('success') }}",
+            showConfirmButton: false,
+            icon: "success",
+            timer: 2000,
+            scrollbarPadding: false,
+            heightAuto: false,
+            backdrop: false,
+            customClass: {
+                popup: 'swal-alert-success',
+                title: 'swal-title-overlay',
+                content: 'swal-content-overlay'
+            },
+            didOpen: () => {
+                document.body.classList.add('swal-open');
+            },
+            willClose: () => {
+                document.body.classList.remove('swal-open');
+            }
+        });
+    </script>
+    <?php } ?>
+
+        @if ($errors->any())
+            <script>
+                Swal.fire({
+                    position: "top-end",
+                    title: "¡Error!",
+                    text: "{{ $errors->first() }}",
+                    icon: "error",
+                    showConfirmButton: false,
+                    timer: 2000,
+                    scrollbarPadding: false,
+                    heightAuto: false,
+                    backdrop: false,
+                    customClass: {
+                        popup: 'swal-alert-danger',
+                        title: 'swal-title-overlay',
+                        content: 'swal-content-overlay'
+                    },
+                    didOpen: () => {
+                        document.body.classList.add('swal-open');
+                    },
+                    willClose: () => {
+                        document.body.classList.remove('swal-open');
+                    }
+                });
+            </script>
+        @endif
+
+
+
+@endpush
 
 
 

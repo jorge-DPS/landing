@@ -155,3 +155,32 @@
         </div>
     </main>
 @endsection
+
+@push('scripts')
+    <?php if (session('success')) { ?>
+    <script>
+        Swal.fire({
+            position: "top-end",
+            title: "Hola bienvenido(a)",
+            text: "{{ session('success') }}",
+            showConfirmButton: false,
+            icon: "success",
+            timer: 1000,
+            scrollbarPadding: false,
+            heightAuto: false,
+            backdrop: false,
+            customClass: {
+                popup: 'swal-alert-success',
+                title: 'swal-title-overlay',
+                content: 'swal-content-overlay'
+            },
+            didOpen: () => {
+                document.body.classList.add('swal-open');
+            },
+            willClose: () => {
+                document.body.classList.remove('swal-open');
+            }
+        });
+    </script>
+    <?php } ?>
+@endpush

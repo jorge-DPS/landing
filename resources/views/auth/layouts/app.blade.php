@@ -19,11 +19,12 @@
         text: "{{ session('error') }}",
         showConfirmButton: false,
         timer: 5000,
+        icon: "error",
         scrollbarPadding: false,
         heightAuto: false,
         backdrop: false,
         customClass: {
-            popup: 'swal-popup-overlay',
+            popup: 'swal-alert-danger',
             title: 'swal-title-overlay',
             content: 'swal-content-overlay'
         },

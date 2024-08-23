@@ -17,25 +17,5 @@ class MetatagRepository
     {
         return $this->model->first();
     }
-
-    public function findByPageName(string $pageName)
-    {
-        return $this->model->where('page_name', $pageName)->first();
-    }
-
-    public function create(array $data)
-    {
-        return $this->model->create($data);
-    }
-
-    public function update(Metatag $metatag, array $data)
-    {
-        $metatag->update($data);
-        return $metatag;
-    }
-
-    public function delete(Metatag $metatag)
-    {
-        return $metatag->delete();
-    }
+    
 }

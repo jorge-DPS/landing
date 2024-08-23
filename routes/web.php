@@ -11,7 +11,6 @@ use App\Models\Carrusel;
 
 Route::get('/', function () {
     $carrusels = Carrusel::all();
-    //dd($carrusels);
     return view('frontend.home.index', compact('carrusels'));
 });
 

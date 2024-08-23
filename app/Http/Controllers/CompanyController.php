@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Services\CompanyService;
+use App\Http\Requests\CompanyRequest;
+use App\models\Company;
 
 class CompanyController extends Controller
 {
@@ -13,61 +16,20 @@ class CompanyController extends Controller
     {
         $this->companyService = $companyService;
     }
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         $companies = $this->companyService->getFirstCompany();
-        //dd($companies);
         return view('backend.company.index', compact('companies'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function update(CompanyRequest $request, Company $product): RedirectResponse
     {
-        //
+
+        $product->update($request->validated());
+
+        return redirect()->route('company.index')
+            ->with('success','Product updated successfully');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

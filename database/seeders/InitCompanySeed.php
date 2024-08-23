@@ -14,12 +14,12 @@ class InitCompanySeed extends Seeder
     public function run(): void
     {
         DB::table('company')->insert([
-            'company_name' => 'Saint George Shool',
+            'company_name' => 'Saint George School',
             'owner_name' => 'Yovan Enovore',
             'description' => 'Descubre por qué somos líderes en educación y desarrollo estudiantil.',
             'phone' => '+59173467157',
             'mobile' => '+59173467157',
-            'address' => '1234 Innovation Drive, Tech City',
+            'address' => '1234 Innovation Drive, Santa Cruz de la Sierra',
             'big_logo' => '/favicon.png',
             'small_logo' => '/favicon.png',
             'long_logo' => '/favicon.png',

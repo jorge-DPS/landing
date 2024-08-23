@@ -15,5 +15,6 @@ class InitSysSeed extends Seeder
         $this->call(InitCompanySeed::class);
         $this->call(InitCarruselSeed::class);
         $this->call(InitMetaTagsSeed::class);
+        $this->call(DatabaseSeeder::class);
     }
 }
