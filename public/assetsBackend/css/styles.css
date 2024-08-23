@@ -1043,6 +1043,7 @@ video {
   --tw-danger-active-light: #D81A48;
   --tw-danger-light-light: #FFEEF3;
   --tw-danger-clarity-light: rgba(248, 40, 90, 0.20);
+  --color-shool: #B12A38;
   --tw-danger-inverse-light: #ffffff;
   --tw-warning-light: #F6B100;
   --tw-warning-active-light: #DFA000;
@@ -1152,7 +1153,7 @@ video {
   --tw-danger: #F8285A;
   --tw-danger-active: #D81A48;
   --tw-danger-light: #FFEEF3;
-  --tw-danger-clarity: rgba(248, 40, 90, 0.20);
+  --tw-danger-clarity: rgba(248, 40, 90, 0.6);
   --tw-danger-inverse: #ffffff;
   --tw-warning: #F6B100;
   --tw-warning-active: #DFA000;
@@ -1237,7 +1238,7 @@ video {
   --tw-danger: #E42855;
   --tw-danger-active: #FF3767;
   --tw-danger-light: #302024;
-  --tw-danger-clarity: rgba(228, 40, 85, 0.20);
+  --tw-danger-clarity: rgba(228, 40, 85, 0.77);
   --tw-danger-inverse: #ffffff;
   --tw-warning: #C59A00;
   --tw-warning-active: #D9AA00;
@@ -7251,6 +7252,10 @@ label.rating-label {
 
 .text-primary {
   color: var(--tw-primary);
+}
+
+.text-school {
+    color: var(--color-shool);
 }
 
 .text-primary-inverse {

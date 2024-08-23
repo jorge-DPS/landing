@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('owner_name')->nullable();
             $table->string('description')->nullable();
             $table->string('phone')->nullable();
+            $table->string('mobile')->nullable();
             $table->string('address')->nullable();
             $table->string('big_logo')->nullable();
             $table->string('small_logo')->nullable();
@@ -24,7 +25,6 @@ return new class extends Migration
             $table->string('short_logo')->nullable();
             $table->string('dark_logo')->nullable();
             $table->string('light_logo')->nullable();
-            $table->boolean('status')->nullable();
             $table->timestamps();
         });
     }

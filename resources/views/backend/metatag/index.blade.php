@@ -158,7 +158,7 @@
                                         </div>
                                     </div>
                                     <label class="input">
-                                        <i class="ki-solid ki-information-2 text-primary text-2xl">
+                                        <i class="ki-solid ki-information-2 text-school text-2xl">
                                         </i>
                                         <input type="text" value="{{ $metatags->page_name }}" placeholder="No asignado">
                                         </input>
@@ -171,7 +171,7 @@
                                         </div>
                                     </div>
                                     <label class="input">
-                                        <i class="ki-solid ki-information-2 text-primary text-2xl">
+                                        <i class="ki-solid ki-information-2 text-school text-2xl">
                                         </i>
                                         <input type="text" value="{{ $metatags->title }}">
                                         </input>
@@ -184,7 +184,7 @@
                                         </div>
                                     </div>
                                     <label class="input">
-                                        <i class="ki-solid ki-information-2 text-primary text-2xl">
+                                        <i class="ki-solid ki-information-2 text-school text-2xl">
                                         </i>
                                         <input type="text" value="{{ $metatags->description }}">
                                         </input>
@@ -197,7 +197,7 @@
                                         </div>
                                     </div>
                                     <label class="input">
-                                        <i class="ki-solid ki-information-2 text-primary text-2xl">
+                                        <i class="ki-solid ki-information-2 text-school text-2xl">
                                         </i>
                                         <input type="text" value="{{ $metatags->keywords }}">
                                         </input>
@@ -210,7 +210,7 @@
                                         </div>
                                     </div>
                                     <label class="input">
-                                        <i class="ki-solid ki-information-2 text-primary text-2xl">
+                                        <i class="ki-solid ki-information-2 text-school text-2xl">
                                         </i>
                                         <input type="text" value="{{ $metatags->author }}" readonly>
                                         </input>
@@ -223,7 +223,7 @@
                                         </div>
                                     </div>
                                     <label class="input">
-                                        <i class="ki-solid ki-information-2 text-primary text-2xl">
+                                        <i class="ki-solid ki-information-2 text-school text-2xl">
                                         </i>
                                         <input type="text" value="{{ $metatags->robots }}">
                                         </input>
@@ -236,7 +236,7 @@
                                         </div>
                                     </div>
                                     <label class="input">
-                                        <i class="ki-solid ki-information-2 text-primary text-2xl">
+                                        <i class="ki-solid ki-information-2 text-school text-2xl">
                                         </i>
                                         <input type="text" value="{{ $metatags->canonical }}">
                                         </input>
@@ -250,7 +250,7 @@
                                         </div>
                                     </div>
                                     <label class="input">
-                                        <i class="ki-solid ki-information-2 text-primary text-2xl">
+                                        <i class="ki-solid ki-information-2 text-school text-2xl">
                                         </i>
                                         <input type="text" value="{{ $metatags->og_title }}">
                                         </input>
@@ -263,7 +263,7 @@
                                         </div>
                                     </div>
                                     <label class="input">
-                                        <i class="ki-solid ki-information-2 text-primary text-2xl">
+                                        <i class="ki-solid ki-information-2 text-school text-2xl">
                                         </i>
                                         <input type="text" value="{{ $metatags->og_description }}">
                                         </input>
@@ -276,7 +276,7 @@
                                         </div>
                                     </div>
                                     <label class="input">
-                                        <i class="ki-solid ki-information-2 text-primary text-2xl">
+                                        <i class="ki-solid ki-information-2 text-school text-2xl">
                                         </i>
                                         <input type="text" value="{{ $metatags->og_type }}">
                                         </input>
@@ -290,7 +290,7 @@
                                         </div>
                                     </div>
                                     <label class="input">
-                                        <i class="ki-solid ki-information-2 text-primary text-2xl">
+                                        <i class="ki-solid ki-information-2 text-school text-2xl">
                                         </i>
                                         <input type="text" value="{{ $metatags->twitter_card }}">
                                         </input>
@@ -303,7 +303,7 @@
                                         </div>
                                     </div>
                                     <label class="input">
-                                        <i class="ki-solid ki-information-2 text-primary text-2xl">
+                                        <i class="ki-solid ki-information-2 text-school text-2xl">
                                         </i>
                                         <input type="text" value="{{ $metatags->twitter_title }}">
                                         </input>
@@ -316,7 +316,7 @@
                                         </div>
                                     </div>
                                     <label class="input">
-                                        <i class="ki-solid ki-information-2 text-primary text-2xl">
+                                        <i class="ki-solid ki-information-2 text-school text-2xl">
                                         </i>
                                         <input type="text" value="{{ $metatags->twitter_description }}">
                                         </input>
@@ -331,10 +331,9 @@
                                             <path d="M12 14m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/>
                                             <path d="M14 4l0 4l-6 0l0 -4"/>
                                         </svg>
-                                        Actualizar
+                                        Actualizar todo
                                     </button>
                                 </div>
-
                             </div>
                         </div>
                     </div>

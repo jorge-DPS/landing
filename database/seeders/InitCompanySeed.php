@@ -14,18 +14,18 @@ class InitCompanySeed extends Seeder
     public function run(): void
     {
         DB::table('company')->insert([
-            'company_name' => 'U. E. Saint George',
+            'company_name' => 'Saint George Shool',
             'owner_name' => 'Yovan Enovore',
-            'description' => 'La U.E. Saint George es un colegio comprometido con la educación integral, formando estudiantes con valores y preparación de excelencia.',
+            'description' => 'Descubre por qué somos líderes en educación y desarrollo estudiantil.',
             'phone' => '+59173467157',
+            'mobile' => '+59173467157',
             'address' => '1234 Innovation Drive, Tech City',
-            'big_logo' => 'big_logo.jpg',
-            'small_logo' => 'small_logo.jpg',
-            'long_logo' => 'long_logo.jpg',
-            'short_logo' => 'short_logo.jpg',
-            'dark_logo' => 'dark_logo.jpg',
-            'light_logo' => 'light_logo.jpg',
-            'status' => 1
+            'big_logo' => '/favicon.png',
+            'small_logo' => '/favicon.png',
+            'long_logo' => '/favicon.png',
+            'short_logo' => '/favicon.png',
+            'dark_logo' => '/favicon.png',
+            'light_logo' => '/favicon.png',
         ]);
     }
 }

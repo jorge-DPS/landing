@@ -3,15 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Services\CompanyService;
 
 class CompanyController extends Controller
 {
+    private $companyService;
+
+    public function __construct(CompanyService $companyService)
+    {
+        $this->companyService = $companyService;
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('backend.company.index');
+        $companies = $this->companyService->getFirstCompany();
+        return view('backend.company.index', compact('companies'));
     }
 
     /**
