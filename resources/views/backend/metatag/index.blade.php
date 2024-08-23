@@ -38,7 +38,7 @@
                 <div class="col-span-2">
                     <div class="flex flex-col gap-5 lg:gap-7.5">
                         <div class="card min-w-full">
-                            <form action="{{ route('metatags.update',$metatags->id) }}" method="POST">
+                            <form action="{{ route('metatags.update',$metatags->id) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
                                 <div class="card-header gap-2">
@@ -47,50 +47,80 @@
                                     </h3>
                                 </div>
                                 <div class="card-body lg:py-7.5 py-5">
-                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14">
+
+                                    <style>
+                                        .custom-file-button {
+                                            display: block;
+                                            width: 100%;
+                                            padding: 0.5rem 1rem;
+                                            font-size: 0.875rem;
+                                            color: #ffffff;
+                                            background-color: rgb(15, 155, 36);
+                                            border-radius: 30px;
+                                            text-align: center;
+                                            font-weight: 500;
+                                            cursor: pointer;
+                                            transition: background-color 0.3s ease, border-color 0.3s ease;
+                                        }
+
+                                        .custom-file-button:hover {
+                                            background-color: rgb(15, 155, 36, 0.8);
+                                        }
+
+                                        .custom-file-input {
+                                            position: absolute;
+                                            top: 0;
+                                            left: 0;
+                                            width: 100%;
+                                            height: 100%;
+                                            opacity: 0;
+                                            cursor: pointer;
+                                        }
+
+                                        .custom-remove-button {
+                                            display: inline-block;
+                                            margin-left: 1rem;
+                                            padding: 0.5rem 1rem;
+                                            background-color: rgb(177, 42, 56);
+                                            color: #ffffff;
+                                            border: none;
+                                            border-radius: 30px;
+                                            cursor: pointer;
+                                            transition: background-color 0.3s ease;
+                                        }
+
+                                        .custom-remove-button:hover {
+                                            background-color: rgb(177, 42, 56, 0.8);
+                                        }
+                                    </style>
+
+                                    <!-- Primer bloque: Favicon -->
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
                                         <div class="flex flex-col max-w-72 w-full">
                                             <div class="text-gray-900 text-sm font-semibold">
                                                 Icono favorito (favicon)
                                             </div>
                                         </div>
                                         <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
-                                            <img class="mt-2"
+                                            <img id="favicon-preview"
+                                                 class="mt-2"
                                                  src="{{ $metatags->favicon ? asset($metatags->favicon) : asset('/assetsBackend/media/avatars/blank.png') }}"
-                                                 style="height:100px;"/>
+                                                 style="height:100px;" />
                                         </div>
                                         <div class="flex justify-center items-center">
-                                            <div class="image-input size-[70px]" data-image-input="true">
-                                                <input accept=".png, .jpg, .jpeg" name="avatar" type="file"/>
-                                                <input name="avatar_remove" type="hidden"/>
-                                                <div class="btn btn-icon btn-icon-xs btn-light shadow-default absolute z-1 size-5 -top-0.5 -right-0.5 rounded-full"
-                                                     data-image-input-remove="" data-tooltip="#image_input_tooltip"
-                                                     data-tooltip-trigger="hover">
-                                                    <i class="ki-outline ki-cross">
-                                                    </i>
-                                                </div>
-                                                <span class="tooltip" id="image_input_tooltip">
-   Click to remove or revert
-  </span>
-                                                <div class="image-input-placeholder rounded-full border-2 border-success image-input-empty:border-gray-300"
-                                                     style="background-image:url(assetsBackend/media/avatars/blank.png)">
-                                                    <div class="image-input-preview rounded-full">
-                                                    </div>
-                                                    <div class="flex items-center justify-center cursor-pointer h-5 left-0 right-0 bottom-0 bg-dark-clarity absolute">
-                                                        <svg class="fill-light opacity-80" height="12"
-                                                             viewbox="0 0 14 12" width="14"
-                                                             xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M11.6665 2.64585H11.2232C11.0873 2.64749 10.9538 2.61053 10.8382 2.53928C10.7225 2.46803 10.6295 2.36541 10.5698 2.24335L10.0448 1.19918C9.91266 0.931853 9.70808 0.707007 9.45438 0.550249C9.20068 0.393491 8.90806 0.311121 8.60984 0.312517H5.38984C5.09162 0.311121 4.799 0.393491 4.5453 0.550249C4.2916 0.707007 4.08701 0.931853 3.95484 1.19918L3.42984 2.24335C3.37021 2.36541 3.27716 2.46803 3.1615 2.53928C3.04584 2.61053 2.91234 2.64749 2.7765 2.64585H2.33317C1.90772 2.64585 1.49969 2.81486 1.19885 3.1157C0.898014 3.41654 0.729004 3.82457 0.729004 4.25002V10.0834C0.729004 10.5088 0.898014 10.9168 1.19885 11.2177C1.49969 11.5185 1.90772 11.6875 2.33317 11.6875H11.6665C12.092 11.6875 12.5 11.5185 12.8008 11.2177C13.1017 10.9168 13.2707 10.5088 13.2707 10.0834V4.25002C13.2707 3.82457 13.1017 3.41654 12.8008 3.1157C12.5 2.81486 12.092 2.64585 11.6665 2.64585ZM6.99984 9.64585C6.39413 9.64585 5.80203 9.46624 5.2984 9.12973C4.79478 8.79321 4.40225 8.31492 4.17046 7.75532C3.93866 7.19572 3.87802 6.57995 3.99618 5.98589C4.11435 5.39182 4.40602 4.84613 4.83432 4.41784C5.26262 3.98954 5.80831 3.69786 6.40237 3.5797C6.99644 3.46153 7.61221 3.52218 8.1718 3.75397C8.7314 3.98576 9.2097 4.37829 9.54621 4.88192C9.88272 5.38554 10.0623 5.97765 10.0623 6.58335C10.0608 7.3951 9.73765 8.17317 9.16365 8.74716C8.58965 9.32116 7.81159 9.64431 6.99984 9.64585Z"
-                                                                  fill="">
-                                                            </path>
-                                                            <path d="M7 8.77087C8.20812 8.77087 9.1875 7.7915 9.1875 6.58337C9.1875 5.37525 8.20812 4.39587 7 4.39587C5.79188 4.39587 4.8125 5.37525 4.8125 6.58337C4.8125 7.7915 5.79188 8.77087 7 8.77087Z"
-                                                                  fill="">
-                                                            </path>
-                                                        </svg>
-                                                    </div>
-                                                </div>
+                                            <div class="image-input size-[500px]" data-image-input="true">
+                                                <input id="favicon-input" accept=".png, .jpg, .jpeg" name="favicon" type="file" class="custom-file-input" style="display: none;"/>
+                                                <button type="button" class="custom-file-button" id="upload-favicon-button">
+                                                    <i class="ki-solid ki-add-files text-2xl"></i>
+                                                </button>
+                                                <button type="button" onclick="removeFavicon()" class="custom-remove-button">
+                                                    <i class="ki-solid ki-trash text-2xl"></i>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
+
+                                    <!-- Segundo bloque: Imagen de Twitter -->
                                     <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
                                         <div class="flex flex-col max-w-72 w-full">
                                             <div class="text-gray-900 text-sm font-semibold">
@@ -98,43 +128,25 @@
                                             </div>
                                         </div>
                                         <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
-                                            <img class="mt-2"
+                                            <img id="twitter-image-preview"
+                                                 class="mt-2"
                                                  src="{{ $metatags->twitter_image ? asset($metatags->twitter_image) : asset('/assetsBackend/media/avatars/blank.png') }}"
-                                                 style="height:100px;"/>
+                                                 style="height:100px;" />
                                         </div>
                                         <div class="flex justify-center items-center">
-                                            <div class="image-input size-[70px]" data-image-input="true">
-                                                <input accept=".png, .jpg, .jpeg" name="avatar" type="file"/>
-                                                <input name="avatar_remove" type="hidden"/>
-                                                <div class="btn btn-icon btn-icon-xs btn-light shadow-default absolute z-1 size-5 -top-0.5 -right-0.5 rounded-full"
-                                                     data-image-input-remove="" data-tooltip="#image_input_tooltip"
-                                                     data-tooltip-trigger="hover">
-                                                    <i class="ki-outline ki-cross">
-                                                    </i>
-                                                </div>
-                                                <span class="tooltip" id="image_input_tooltip">
-   Click to remove or revert
-  </span>
-                                                <div class="image-input-placeholder rounded-full border-2 border-success image-input-empty:border-gray-300"
-                                                     style="background-image:url(assetsBackend/media/avatars/blank.png)">
-                                                    <div class="image-input-preview rounded-full">
-                                                    </div>
-                                                    <div class="flex items-center justify-center cursor-pointer h-5 left-0 right-0 bottom-0 bg-dark-clarity absolute">
-                                                        <svg class="fill-light opacity-80" height="12"
-                                                             viewbox="0 0 14 12" width="14"
-                                                             xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M11.6665 2.64585H11.2232C11.0873 2.64749 10.9538 2.61053 10.8382 2.53928C10.7225 2.46803 10.6295 2.36541 10.5698 2.24335L10.0448 1.19918C9.91266 0.931853 9.70808 0.707007 9.45438 0.550249C9.20068 0.393491 8.90806 0.311121 8.60984 0.312517H5.38984C5.09162 0.311121 4.799 0.393491 4.5453 0.550249C4.2916 0.707007 4.08701 0.931853 3.95484 1.19918L3.42984 2.24335C3.37021 2.36541 3.27716 2.46803 3.1615 2.53928C3.04584 2.61053 2.91234 2.64749 2.7765 2.64585H2.33317C1.90772 2.64585 1.49969 2.81486 1.19885 3.1157C0.898014 3.41654 0.729004 3.82457 0.729004 4.25002V10.0834C0.729004 10.5088 0.898014 10.9168 1.19885 11.2177C1.49969 11.5185 1.90772 11.6875 2.33317 11.6875H11.6665C12.092 11.6875 12.5 11.5185 12.8008 11.2177C13.1017 10.9168 13.2707 10.5088 13.2707 10.0834V4.25002C13.2707 3.82457 13.1017 3.41654 12.8008 3.1157C12.5 2.81486 12.092 2.64585 11.6665 2.64585ZM6.99984 9.64585C6.39413 9.64585 5.80203 9.46624 5.2984 9.12973C4.79478 8.79321 4.40225 8.31492 4.17046 7.75532C3.93866 7.19572 3.87802 6.57995 3.99618 5.98589C4.11435 5.39182 4.40602 4.84613 4.83432 4.41784C5.26262 3.98954 5.80831 3.69786 6.40237 3.5797C6.99644 3.46153 7.61221 3.52218 8.1718 3.75397C8.7314 3.98576 9.2097 4.37829 9.54621 4.88192C9.88272 5.38554 10.0623 5.97765 10.0623 6.58335C10.0608 7.3951 9.73765 8.17317 9.16365 8.74716C8.58965 9.32116 7.81159 9.64431 6.99984 9.64585Z"
-                                                                  fill="">
-                                                            </path>
-                                                            <path d="M7 8.77087C8.20812 8.77087 9.1875 7.7915 9.1875 6.58337C9.1875 5.37525 8.20812 4.39587 7 4.39587C5.79188 4.39587 4.8125 5.37525 4.8125 6.58337C4.8125 7.7915 5.79188 8.77087 7 8.77087Z"
-                                                                  fill="">
-                                                            </path>
-                                                        </svg>
-                                                    </div>
-                                                </div>
+                                            <div class="image-input size-[500px]" data-image-input="true">
+                                                <input id="twitter-image-input" accept=".png, .jpg, .jpeg" name="twitter_image" type="file" class="custom-file-input" style="display: none;"/>
+                                                <button type="button" class="custom-file-button" id="upload-twitter-image-button">
+                                                    <i class="ki-solid ki-add-files text-2xl"></i>
+                                                </button>
+                                                <button type="button" onclick="removeTwitterImage()" class="custom-remove-button">
+                                                    <i class="ki-solid ki-trash text-2xl"></i>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
+
+                                    <!-- Tercer bloque: Imagen OG (Open Graph) -->
                                     <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
                                         <div class="flex flex-col max-w-72 w-full">
                                             <div class="text-gray-900 text-sm font-semibold">
@@ -142,43 +154,89 @@
                                             </div>
                                         </div>
                                         <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
-                                            <img class="mt-2"
+                                            <img id="og-image-preview"
+                                                 class="mt-2"
                                                  src="{{ $metatags->og_image ? asset($metatags->og_image) : asset('/assetsBackend/media/avatars/blank.png') }}"
-                                                 style="height:100px;"/>
+                                                 style="height:100px;" />
                                         </div>
                                         <div class="flex justify-center items-center">
-                                            <div class="image-input size-[70px]" data-image-input="true">
-                                                <input accept=".png, .jpg, .jpeg" name="avatar" type="file"/>
-                                                <input name="avatar_remove" type="hidden"/>
-                                                <div class="btn btn-icon btn-icon-xs btn-light shadow-default absolute z-1 size-5 -top-0.5 -right-0.5 rounded-full"
-                                                     data-image-input-remove="" data-tooltip="#image_input_tooltip"
-                                                     data-tooltip-trigger="hover">
-                                                    <i class="ki-outline ki-cross">
-                                                    </i>
-                                                </div>
-                                                <span class="tooltip" id="image_input_tooltip">
-   Click to remove or revert
-  </span>
-                                                <div class="image-input-placeholder rounded-full border-2 border-success image-input-empty:border-gray-300"
-                                                     style="background-image:url(assetsBackend/media/avatars/blank.png)">
-                                                    <div class="image-input-preview rounded-full">
-                                                    </div>
-                                                    <div class="flex items-center justify-center cursor-pointer h-5 left-0 right-0 bottom-0 bg-dark-clarity absolute">
-                                                        <svg class="fill-light opacity-80" height="12"
-                                                             viewbox="0 0 14 12" width="14"
-                                                             xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M11.6665 2.64585H11.2232C11.0873 2.64749 10.9538 2.61053 10.8382 2.53928C10.7225 2.46803 10.6295 2.36541 10.5698 2.24335L10.0448 1.19918C9.91266 0.931853 9.70808 0.707007 9.45438 0.550249C9.20068 0.393491 8.90806 0.311121 8.60984 0.312517H5.38984C5.09162 0.311121 4.799 0.393491 4.5453 0.550249C4.2916 0.707007 4.08701 0.931853 3.95484 1.19918L3.42984 2.24335C3.37021 2.36541 3.27716 2.46803 3.1615 2.53928C3.04584 2.61053 2.91234 2.64749 2.7765 2.64585H2.33317C1.90772 2.64585 1.49969 2.81486 1.19885 3.1157C0.898014 3.41654 0.729004 3.82457 0.729004 4.25002V10.0834C0.729004 10.5088 0.898014 10.9168 1.19885 11.2177C1.49969 11.5185 1.90772 11.6875 2.33317 11.6875H11.6665C12.092 11.6875 12.5 11.5185 12.8008 11.2177C13.1017 10.9168 13.2707 10.5088 13.2707 10.0834V4.25002C13.2707 3.82457 13.1017 3.41654 12.8008 3.1157C12.5 2.81486 12.092 2.64585 11.6665 2.64585ZM6.99984 9.64585C6.39413 9.64585 5.80203 9.46624 5.2984 9.12973C4.79478 8.79321 4.40225 8.31492 4.17046 7.75532C3.93866 7.19572 3.87802 6.57995 3.99618 5.98589C4.11435 5.39182 4.40602 4.84613 4.83432 4.41784C5.26262 3.98954 5.80831 3.69786 6.40237 3.5797C6.99644 3.46153 7.61221 3.52218 8.1718 3.75397C8.7314 3.98576 9.2097 4.37829 9.54621 4.88192C9.88272 5.38554 10.0623 5.97765 10.0623 6.58335C10.0608 7.3951 9.73765 8.17317 9.16365 8.74716C8.58965 9.32116 7.81159 9.64431 6.99984 9.64585Z"
-                                                                  fill="">
-                                                            </path>
-                                                            <path d="M7 8.77087C8.20812 8.77087 9.1875 7.7915 9.1875 6.58337C9.1875 5.37525 8.20812 4.39587 7 4.39587C5.79188 4.39587 4.8125 5.37525 4.8125 6.58337C4.8125 7.7915 5.79188 8.77087 7 8.77087Z"
-                                                                  fill="">
-                                                            </path>
-                                                        </svg>
-                                                    </div>
-                                                </div>
+                                            <div class="image-input size-[500px]" data-image-input="true">
+                                                <input id="og-image-input" accept=".png, .jpg, .jpeg" name="og_image" type="file" class="custom-file-input" style="display: none;"/>
+                                                <button type="button" class="custom-file-button" id="upload-og-image-button">
+                                                    <i class="ki-solid ki-add-files text-2xl"></i>
+                                                </button>
+                                                <button type="button" onclick="removeOgImage()" class="custom-remove-button">
+                                                    <i class="ki-solid ki-trash text-2xl"></i>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
+
+                                    <script>
+                                        // Funciones para el primer bloque (Favicon)
+                                        document.getElementById('upload-favicon-button').addEventListener('click', function() {
+                                            document.getElementById('favicon-input').click();
+                                        });
+
+                                        document.getElementById('favicon-input').addEventListener('change', function(event) {
+                                            const file = event.target.files[0];
+                                            if (file) {
+                                                const reader = new FileReader();
+                                                reader.onload = function(e) {
+                                                    document.getElementById('favicon-preview').src = e.target.result;
+                                                };
+                                                reader.readAsDataURL(file);
+                                            }
+                                        });
+
+                                        function removeFavicon() {
+                                            document.getElementById('favicon-preview').src = '/assetsBackend/media/avatars/blank.png';
+                                            document.getElementById('favicon-input').value = '';
+                                        }
+
+                                        // Funciones para el segundo bloque (Imagen de Twitter)
+                                        document.getElementById('upload-twitter-image-button').addEventListener('click', function() {
+                                            document.getElementById('twitter-image-input').click();
+                                        });
+
+                                        document.getElementById('twitter-image-input').addEventListener('change', function(event) {
+                                            const file = event.target.files[0];
+                                            if (file) {
+                                                const reader = new FileReader();
+                                                reader.onload = function(e) {
+                                                    document.getElementById('twitter-image-preview').src = e.target.result;
+                                                };
+                                                reader.readAsDataURL(file);
+                                            }
+                                        });
+
+                                        function removeTwitterImage() {
+                                            document.getElementById('twitter-image-preview').src = '/assetsBackend/media/avatars/blank.png';
+                                            document.getElementById('twitter-image-input').value = '';
+                                        }
+
+                                        // Funciones para el tercer bloque (Imagen OG)
+                                        document.getElementById('upload-og-image-button').addEventListener('click', function() {
+                                            document.getElementById('og-image-input').click();
+                                        });
+
+                                        document.getElementById('og-image-input').addEventListener('change', function(event) {
+                                            const file = event.target.files[0];
+                                            if (file) {
+                                                const reader = new FileReader();
+                                                reader.onload = function(e) {
+                                                    document.getElementById('og-image-preview').src = e.target.result;
+                                                };
+                                                reader.readAsDataURL(file);
+                                            }
+                                        });
+
+                                        function removeOgImage() {
+                                            document.getElementById('og-image-preview').src = '/assetsBackend/media/avatars/blank.png';
+                                            document.getElementById('og-image-input').value = '';
+                                        }
+                                    </script>
+
 
                                     <div class="border-t border-gray-200 my-7.5"></div>
 

@@ -3,8 +3,9 @@
 namespace App\Repositories;
 
 use App\Models\Metatag;
+use App\Interfaces\MetatagRepositoryInterface;
 
-class MetatagRepository
+class MetatagRepository implements MetatagRepositoryInterface
 {
     protected $model;
 
@@ -13,9 +14,13 @@ class MetatagRepository
         $this->model = $model;
     }
 
-    public function getFirst()
+    public function getFirst(): ?Metatag
     {
         return $this->model->first();
     }
-    
+
+    public function update(Metatag $metatag, array $data): bool
+    {
+        return $metatag->update($data);
+    }
 }

@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\MetatagRequest;
+use App\Models\Metatag;
 use App\Services\MetatagService;
 use Illuminate\Http\RedirectResponse;
-use App\Models\Metatag;
-
+use Illuminate\View\View;
 
 class MetaTagsController extends Controller
 {
@@ -17,7 +17,7 @@ class MetaTagsController extends Controller
         $this->service = $service;
     }
 
-    public function index()
+    public function index(): View
     {
         $metatags = $this->service->getFirstMetatags();
         return view('backend.metatag.index', compact('metatags'));
@@ -25,15 +25,6 @@ class MetaTagsController extends Controller
 
     public function update(MetatagRequest $request, Metatag $metatag): RedirectResponse
     {
-        try {
-            $validatedData = $request->validated();
-            $metatag->update($validatedData);
-            return redirect()->route('metatags.index')
-                ->with('success', 'Meta tag actualizado exitosamente');
-        } catch (\Exception $e) {
-            return redirect()->route('metatags.index')
-                ->with('error', 'An error occurred while updating the meta tag: ' . $e->getMessage());
-        }
+        return $this->service->updateMetatag($request, $metatag);
     }
-
 }
