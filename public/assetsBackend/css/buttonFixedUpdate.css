@@ -1,0 +1,41 @@
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.pulse-button {
+    animation: pulse 2s ease-in-out infinite;
+    transition: transform 0.5s ease-in-out;
+}
+
+.pulse-button {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: enterAnimation 0.5s forwards, pulse 5s ease-in-out infinite 0.5s;
+}
+
+@keyframes enterAnimation {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-primary {
+    background-color: #B12A38;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}

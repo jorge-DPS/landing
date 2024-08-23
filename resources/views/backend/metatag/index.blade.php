@@ -36,18 +36,17 @@
             <div class="grid gap-5 lg:gap-7.5">
                 <div class="col-span-2">
                     <div class="flex flex-col gap-5 lg:gap-7.5">
-
                         <div class="card min-w-full">
                             <div class="card-header gap-2">
                                 <h3 class="card-title">
-                                    Enalces
+                                    Enalces y datos relevantes para el Sitema Web
                                 </h3>
                             </div>
                             <div class="card-body lg:py-7.5 py-5">
                                 <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14">
                                     <div class="flex flex-col max-w-72 w-full">
                                         <div class="text-gray-900 text-sm font-semibold">
-                                            favicon
+                                            Icono favorito (favicon)
                                         </div>
                                     </div>
                                     <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
@@ -82,7 +81,7 @@
                                 <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
                                     <div class="flex flex-col max-w-72 w-full">
                                         <div class="text-gray-900 text-sm font-semibold">
-                                            twitter_image
+                                            Imagen de Twitter
                                         </div>
                                     </div>
                                     <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
@@ -117,7 +116,7 @@
                                 <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
                                     <div class="flex flex-col max-w-72 w-full">
                                         <div class="text-gray-900 text-sm font-semibold">
-                                            og_image
+                                            Imagen OG (Open Graph)
                                         </div>
                                     </div>
                                     <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
@@ -149,12 +148,13 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="border-t border-gray-200 my-7.5">
-                                </div>
+
+                                <div class="border-t border-gray-200 my-7.5"></div>
+
                                 <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14">
                                     <div class="flex flex-col max-w-72 w-full">
                                         <div class="text-gray-900 text-sm font-semibold">
-                                            page_name
+                                            Nombre de la página
                                         </div>
                                     </div>
                                     <label class="input">
@@ -164,11 +164,10 @@
                                         </input>
                                     </label>
                                 </div>
-
                                 <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
                                     <div class="flex flex-col max-w-72 w-full">
                                         <div class="text-gray-900 text-sm font-semibold">
-                                            title
+                                            Título
                                         </div>
                                     </div>
                                     <label class="input">
@@ -178,11 +177,10 @@
                                         </input>
                                     </label>
                                 </div>
-
                                 <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
                                     <div class="flex flex-col max-w-72 w-full">
                                         <div class="text-gray-900 text-sm font-semibold">
-                                            description
+                                            Descripción
                                         </div>
                                     </div>
                                     <label class="input">
@@ -192,11 +190,10 @@
                                         </input>
                                     </label>
                                 </div>
-
                                 <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
                                     <div class="flex flex-col max-w-72 w-full">
                                         <div class="text-gray-900 text-sm font-semibold">
-                                            keywords
+                                            Palabras clave (keywords)
                                         </div>
                                     </div>
                                     <label class="input">
@@ -209,7 +206,7 @@
                                 <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
                                     <div class="flex flex-col max-w-72 w-full">
                                         <div class="text-gray-900 text-sm font-semibold">
-                                            author
+                                            Autor
                                         </div>
                                     </div>
                                     <label class="input">
@@ -222,7 +219,7 @@
                                 <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
                                     <div class="flex flex-col max-w-72 w-full">
                                         <div class="text-gray-900 text-sm font-semibold">
-                                            robots
+                                            Palabras clasve (robots)
                                         </div>
                                     </div>
                                     <label class="input">
@@ -235,7 +232,7 @@
                                 <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
                                     <div class="flex flex-col max-w-72 w-full">
                                         <div class="text-gray-900 text-sm font-semibold">
-                                            canonical
+                                            Enlace canónica (canonical)
                                         </div>
                                     </div>
                                     <label class="input">
@@ -249,7 +246,7 @@
                                 <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
                                     <div class="flex flex-col max-w-72 w-full">
                                         <div class="text-gray-900 text-sm font-semibold">
-                                            og_title
+                                            Título OG (Open Graph)
                                         </div>
                                     </div>
                                     <label class="input">
@@ -262,7 +259,7 @@
                                 <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
                                     <div class="flex flex-col max-w-72 w-full">
                                         <div class="text-gray-900 text-sm font-semibold">
-                                            og_description
+                                            Descripción OG (Open Graph)
                                         </div>
                                     </div>
                                     <label class="input">
@@ -275,7 +272,7 @@
                                 <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
                                     <div class="flex flex-col max-w-72 w-full">
                                         <div class="text-gray-900 text-sm font-semibold">
-                                            og_type
+                                            Tipo OG (Open Graph)
                                         </div>
                                     </div>
                                     <label class="input">
@@ -289,7 +286,7 @@
                                 <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
                                     <div class="flex flex-col max-w-72 w-full">
                                         <div class="text-gray-900 text-sm font-semibold">
-                                            twitter_card
+                                            Tarjeta de Twitter
                                         </div>
                                     </div>
                                     <label class="input">
@@ -302,7 +299,7 @@
                                 <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
                                     <div class="flex flex-col max-w-72 w-full">
                                         <div class="text-gray-900 text-sm font-semibold">
-                                            twitter_title
+                                            Título de Twitter
                                         </div>
                                     </div>
                                     <label class="input">
@@ -315,7 +312,7 @@
                                 <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
                                     <div class="flex flex-col max-w-72 w-full">
                                         <div class="text-gray-900 text-sm font-semibold">
-                                            twitter_description
+                                            Descripción de Twitter
                                         </div>
                                     </div>
                                     <label class="input">
@@ -327,10 +324,17 @@
                                 </div>
                                 <div class="border-t border-gray-200 my-7.5"></div>
                                 <div class="flex justify-end" style="position: fixed; bottom: 65px; right: 70px; z-index: 1000;">
-                                    <button class="btn btn-primary">
+                                    <button class="btn btn-primary pulse-button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-outline icon-tabler-device-floppy">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                            <path d="M6 4h10l4 4v10a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2"/>
+                                            <path d="M12 14m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/>
+                                            <path d="M14 4l0 4l-6 0l0 -4"/>
+                                        </svg>
                                         Actualizar
                                     </button>
                                 </div>
+
                             </div>
                         </div>
                     </div>
