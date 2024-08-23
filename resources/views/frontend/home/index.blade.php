@@ -89,11 +89,10 @@
                                 <div class="mx-[10%] md:mx-[15px]">
                                     <div id="intro-section"
                                          class="relative overflow-hidden text-white w-[48%] xl:w-[60%] md:w-[70%] sm:w-[80%] xs:w-full">
-                                        <h6 class="font-medium uppercase tracking-[3px]">Welcome to School in
-                                            <span class="text-edyellow">NY</span></h6>
-                                        <h2 class="font-bold text-[clamp(35px,4.57vw,80px)] leading-[1.13] mb-[15px]">
-                                            The Best School in Your Town
-                                        </h2>
+                                        <h6 class="font-medium uppercase tracking-[3px]">{{ $carr->small_title }}</h6>
+                                        <h3 class="font-bold text-[clamp(35px,4.57vw,80px)] leading-[1.13] mb-[15px]">
+                                            {{ $carr->big_title }}
+                                        </h3>
                                         <p class="leading-[1.75] mb-[41px]">{{ $carr->description }}</p>
                                         <div class="flex items-center gap-[20px]">
                                             <a href="contact.html" class="ed-btn">Apply now</a>

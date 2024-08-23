@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('short_logo')->nullable();
             $table->string('dark_logo')->nullable();
             $table->string('light_logo')->nullable();
-            $table->boolean('state')->nullable();
+            $table->boolean('status')->nullable();
             $table->timestamps();
         });
     }

@@ -13,9 +13,9 @@ class MetatagRepository
         $this->model = $model;
     }
 
-    public function getAll()
+    public function getFirst()
     {
-        return $this->model->all();
+        return $this->model->first();
     }
 
     public function findByPageName(string $pageName)

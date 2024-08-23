@@ -25,7 +25,7 @@ class InitCompanySeed extends Seeder
             'short_logo' => 'short_logo.jpg',
             'dark_logo' => 'dark_logo.jpg',
             'light_logo' => 'light_logo.jpg',
-            'state' => 1
+            'status' => 1
         ]);
     }
 }

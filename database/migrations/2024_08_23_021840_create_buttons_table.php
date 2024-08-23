@@ -11,8 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('metatags', function (Blueprint $table) {
-            $table->string('favicon')->nullable();
+        Schema::create('buttons', function (Blueprint $table) {
+            $table->id();
+            $table->string('text');
+            $table->string('url');
+            $table->boolean('is_active');
+            $table->morphs('buttonable');
+            $table->timestamps();
         });
     }
 
@@ -21,8 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('metatags', function (Blueprint $table) {
-            $table->dropColumn('favicon');
-        });
+        Schema::dropIfExists('buttons');
     }
 };

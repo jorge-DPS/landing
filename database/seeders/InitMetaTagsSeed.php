@@ -13,22 +13,22 @@ class InitMetaTagsSeed extends Seeder
     public function run(): void
     {
         DB::table('metatags')->insert([
-            'page_name' => 'inicio',
-            'title' => 'Bienvenidos a la U. E. Saint George',
-            'description' => 'Descubre un ambiente de aprendizaje innovador y de calidad en la U. E. Saint George, donde cada estudiante alcanza su máximo potencial.',
+            'page_name' => 'Saint George System',
+            'title' => 'Saint George School',
+            'description' => 'Descubre por qué somos líderes en educación y desarrollo estudiantil.',
             'keywords' => 'colegio, educación, Saint George, aprendizaje, estudiantes',
-            'author' => 'U. E. Saint George',
+            'author' => 'Desarrollamelo',
             'robots' => 'index, follow',
-            'canonical' => 'https://www.uesanjorge.edu',
-            'og_title' => 'U. E. Saint George - Home',
-            'og_description' => 'Explora nuestro colegio y descubre por qué somos líderes en educación integral y desarrollo estudiantil.',
-            'og_image' => 'https://www.uesanjorge.edu/og_imagen_inicio.jpg',
+            'canonical' => 'https://www.saintgeorge.edu.bo',
+            'og_title' => 'Saint George School',
+            'og_description' => 'Descubre por qué somos líderes en educación y desarrollo estudiantil.',
+            'og_image' => '/favicon.png',
             'og_type' => 'website',
-            'twitter_card' => 'summary_large_image',
-            'twitter_title' => 'Bienvenidos a la U. E. Saint George',
-            'twitter_description' => 'Únete a nuestra comunidad y descubre un colegio que inspira y educa para el futuro.',
-            'twitter_image' => 'https://www.uesanjorge.edu/twitter_imagen_inicio.jpg',
-            'favicon' => 'https://www.uesanjorge.edu/favicon.ico',
+            'twitter_card' => 'Ejmplo descriptivo',
+            'twitter_title' => 'Ejmplo descriptivo',
+            'twitter_description' => 'Ejmplo descriptivo',
+            'twitter_image' => '/favicon.png',
+            'favicon' => '/favicon.png',
         ]);
     }
 }

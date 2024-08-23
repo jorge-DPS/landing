@@ -13,9 +13,9 @@ class MetatagService
         $this->repository = $repository;
     }
 
-    public function getAllMetatags()
+    public function getFirstMetatags()
     {
-        return $this->repository->getAll();
+        return $this->repository->getFirst();
     }
 
     public function getMetatagByPageName(string $pageName)

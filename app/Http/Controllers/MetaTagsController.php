@@ -18,7 +18,7 @@ class MetaTagsController extends Controller
 
     public function index()
     {
-        $metatags = $this->service->getAllMetatags();
+        $metatags = $this->service->getFirstMetatags();
         return view('backend.metatag.index', compact('metatags'));
     }
 

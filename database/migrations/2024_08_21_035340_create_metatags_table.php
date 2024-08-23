@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('twitter_title')->nullable();
             $table->string('twitter_description', 160)->nullable();
             $table->string('twitter_image')->nullable();
+            $table->string('favicon')->nullable();
             $table->timestamps();
         });
     }

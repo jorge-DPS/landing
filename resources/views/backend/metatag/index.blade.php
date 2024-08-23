@@ -19,8 +19,6 @@
 @endsection
 
 @section('content')
-
-    {{ $metatags }}
     <main class="grow content pt-5" id="content" role="content">
         <div class="container-fixed">
             <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
@@ -38,14 +36,7 @@
             <div class="grid gap-5 lg:gap-7.5">
                 <div class="col-span-2">
                     <div class="flex flex-col gap-5 lg:gap-7.5">
-                        <style>
-                            .branding-bg {
-                                background-image: url('/assetsBackend/media/images/2600x1200/bg-5.png');
-                            }
-                            .dark .branding-bg {
-                                background-image: url('/assetsBackend/media/images/2600x1200/bg-5-dark.png');
-                            }
-                        </style>
+
                         <div class="card min-w-full">
                             <div class="card-header gap-2">
                                 <h3 class="card-title">
@@ -60,7 +51,7 @@
                                         </div>
                                     </div>
                                     <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
-                                        <img alt="" class="h-[35px] mt-2" src="assetsBackend/media/brand-logos/hex-lab.svg"/>
+                                        <img class="mt-2" src="{{ $metatags->favicon ? asset($metatags->favicon) : asset('/assetsBackend/media/avatars/blank.png') }}" style="height:100px;"/>
                                     </div>
                                     <div class="flex justify-center items-center">
                                         <div class="image-input size-[70px]" data-image-input="true">
@@ -95,7 +86,7 @@
                                         </div>
                                     </div>
                                     <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
-                                        <img alt="" class="h-[35px] mt-2" src="assetsBackend/media/brand-logos/hex-lab.svg"/>
+                                        <img class="mt-2" src="{{ $metatags->twitter_image ? asset($metatags->twitter_image) : asset('/assetsBackend/media/avatars/blank.png') }}" style="height:100px;"/>
                                     </div>
                                     <div class="flex justify-center items-center">
                                         <div class="image-input size-[70px]" data-image-input="true">
@@ -130,7 +121,7 @@
                                         </div>
                                     </div>
                                     <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
-                                        <img alt="" class="h-[35px] mt-2" src="assetsBackend/media/brand-logos/hex-lab.svg"/>
+                                        <img class="mt-2" src="{{ $metatags->og_image ? asset($metatags->og_image) : asset('/assetsBackend/media/avatars/blank.png') }}" style="height:100px;"/>
                                     </div>
                                     <div class="flex justify-center items-center">
                                         <div class="image-input size-[70px]" data-image-input="true">
@@ -169,7 +160,7 @@
                                     <label class="input">
                                         <i class="ki-solid ki-information-2 text-primary text-2xl">
                                         </i>
-                                        <input type="text" value="">
+                                        <input type="text" value="{{ $metatags->page_name }}" placeholder="No asignado">
                                         </input>
                                     </label>
                                 </div>
@@ -183,7 +174,7 @@
                                     <label class="input">
                                         <i class="ki-solid ki-information-2 text-primary text-2xl">
                                         </i>
-                                        <input type="text" value="">
+                                        <input type="text" value="{{ $metatags->title }}">
                                         </input>
                                     </label>
                                 </div>
@@ -197,7 +188,7 @@
                                     <label class="input">
                                         <i class="ki-solid ki-information-2 text-primary text-2xl">
                                         </i>
-                                        <input type="text" value="">
+                                        <input type="text" value="{{ $metatags->description }}">
                                         </input>
                                     </label>
                                 </div>
@@ -211,7 +202,7 @@
                                     <label class="input">
                                         <i class="ki-solid ki-information-2 text-primary text-2xl">
                                         </i>
-                                        <input type="text" value="">
+                                        <input type="text" value="{{ $metatags->keywords }}">
                                         </input>
                                     </label>
                                 </div>
@@ -224,7 +215,7 @@
                                     <label class="input">
                                         <i class="ki-solid ki-information-2 text-primary text-2xl">
                                         </i>
-                                        <input type="text" value="">
+                                        <input type="text" value="{{ $metatags->author }}" readonly>
                                         </input>
                                     </label>
                                 </div>
@@ -237,7 +228,7 @@
                                     <label class="input">
                                         <i class="ki-solid ki-information-2 text-primary text-2xl">
                                         </i>
-                                        <input type="text" value="">
+                                        <input type="text" value="{{ $metatags->robots }}">
                                         </input>
                                     </label>
                                 </div>
@@ -250,7 +241,7 @@
                                     <label class="input">
                                         <i class="ki-solid ki-information-2 text-primary text-2xl">
                                         </i>
-                                        <input type="text" value="">
+                                        <input type="text" value="{{ $metatags->canonical }}">
                                         </input>
                                     </label>
                                 </div>
@@ -264,7 +255,7 @@
                                     <label class="input">
                                         <i class="ki-solid ki-information-2 text-primary text-2xl">
                                         </i>
-                                        <input type="text" value="">
+                                        <input type="text" value="{{ $metatags->og_title }}">
                                         </input>
                                     </label>
                                 </div>
@@ -277,7 +268,7 @@
                                     <label class="input">
                                         <i class="ki-solid ki-information-2 text-primary text-2xl">
                                         </i>
-                                        <input type="text" value="">
+                                        <input type="text" value="{{ $metatags->og_description }}">
                                         </input>
                                     </label>
                                 </div>
@@ -290,7 +281,7 @@
                                     <label class="input">
                                         <i class="ki-solid ki-information-2 text-primary text-2xl">
                                         </i>
-                                        <input type="text" value="">
+                                        <input type="text" value="{{ $metatags->og_type }}">
                                         </input>
                                     </label>
                                 </div>
@@ -304,7 +295,7 @@
                                     <label class="input">
                                         <i class="ki-solid ki-information-2 text-primary text-2xl">
                                         </i>
-                                        <input type="text" value="">
+                                        <input type="text" value="{{ $metatags->twitter_card }}">
                                         </input>
                                     </label>
                                 </div>
@@ -317,7 +308,7 @@
                                     <label class="input">
                                         <i class="ki-solid ki-information-2 text-primary text-2xl">
                                         </i>
-                                        <input type="text" value="">
+                                        <input type="text" value="{{ $metatags->twitter_title }}">
                                         </input>
                                     </label>
                                 </div>
@@ -330,7 +321,7 @@
                                     <label class="input">
                                         <i class="ki-solid ki-information-2 text-primary text-2xl">
                                         </i>
-                                        <input type="text" value="">
+                                        <input type="text" value="{{ $metatags->twitter_description }}">
                                         </input>
                                     </label>
                                 </div>
@@ -348,3 +339,6 @@
         </div>
     </main>
 @endsection
+
+
+

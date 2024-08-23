@@ -35,7 +35,6 @@
             <td>
                 <div class="flex items-center gap-2.5">
                     <img alt="" class="rounded-full size-9 shrink-0" src="{{ $user->avatar ? asset($user->avatar) : asset('/assetsBackend/media/avatars/blank.png') }}"/>
-
                     <div class="flex flex-col">
                         <a class="text-sm font-semibold text-gray-900 hover:text-primary-active mb-px" href="#">
                             {{ $user->name }}
