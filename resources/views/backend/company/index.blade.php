@@ -308,7 +308,7 @@
                                 <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14">
                                     <div class="flex flex-col max-w-72 w-full">
                                         <div class="text-gray-900 text-sm font-semibold">
-                                            company_name
+                                            Nombre de la empresa
                                         </div>
                                     </div>
                                     <label class="input">
@@ -321,7 +321,7 @@
                                 <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
                                     <div class="flex flex-col max-w-72 w-full">
                                         <div class="text-gray-900 text-sm font-semibold">
-                                            owner_name
+                                            Nombre del propietario
                                         </div>
                                     </div>
                                     <label class="input">
@@ -334,7 +334,7 @@
                                 <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
                                     <div class="flex flex-col max-w-72 w-full">
                                         <div class="text-gray-900 text-sm font-semibold">
-                                            description
+                                            Descripción
                                         </div>
                                     </div>
                                     <label class="input">
@@ -347,7 +347,7 @@
                                 <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
                                     <div class="flex flex-col max-w-72 w-full">
                                         <div class="text-gray-900 text-sm font-semibold">
-                                            phone
+                                            Telefono
                                         </div>
                                     </div>
                                     <label class="input">
@@ -360,7 +360,7 @@
                                 <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
                                     <div class="flex flex-col max-w-72 w-full">
                                         <div class="text-gray-900 text-sm font-semibold">
-                                            mobile
+                                            Celular
                                         </div>
                                     </div>
                                     <label class="input">
@@ -373,7 +373,7 @@
                                 <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
                                     <div class="flex flex-col max-w-72 w-full">
                                         <div class="text-gray-900 text-sm font-semibold">
-                                            address
+                                            Dirección
                                         </div>
                                     </div>
                                     <label class="input">
@@ -396,7 +396,7 @@
                                             <path d="M12 14m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/>
                                             <path d="M14 4l0 4l-6 0l0 -4"/>
                                         </svg>
-                                        Actualizar todo
+                                        Actualizar todos
                                     </button>
                                 </div>
                             </div>

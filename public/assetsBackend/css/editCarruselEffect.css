@@ -1,4 +1,3 @@
-/* changes in the edition sample - YovanEnovore */
 .card-link {
     display: block;
     color: inherit;
@@ -14,20 +13,20 @@
 
 .edit-text {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 30%;
+    left: 35%;
     transform: translate(-50%, -50%) scale(0);
     transition: all 0.5s ease-in-out;
     color: #FFFFFF;
-    font-size: 2rem;
-    background-color: #48ff00;
+    font-size: 20PX;
+    background-color: #B12A38;
     padding: 15px;
     border-radius: 15px;
     opacity: 0;
     pointer-events: none;
     z-index: 10;
-    box-shadow: 0 0 20px rgb(0, 55, 65);
-    filter: blur(5px);
+    box-shadow: 0 0 50px rgba(82, 2, 13, 0.7);
+    filter: blur(50px);
 }
 
 .card-link:hover .edit-text {

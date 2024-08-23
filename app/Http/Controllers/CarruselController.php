@@ -28,7 +28,7 @@ class CarruselController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.carrusel.create');
     }
 
     /**
@@ -52,7 +52,7 @@ class CarruselController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('backend.carrusel.edit');
     }
 
     /**

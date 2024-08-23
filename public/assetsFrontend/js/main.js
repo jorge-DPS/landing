@@ -80,11 +80,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // BANNER SLIDER JS START
+    // UPDATE DELAY IN MILLISECONDS
     new Swiper(".ed-banner-slider", {
         slidesPerView: 1,
         loop: true,
         autoplay: {
-            delay: 5000, // Cambia 5000 por el tiempo en milisegundos que desees (5000 ms = 5 segundos)
+            //CARRUSEL CHANGE TIME
+            delay: 2000,
         },
         navigation: {
             prevEl: ".ed-banner-slider .prev",
@@ -92,10 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // BANNER SLIDER JS END
 
-
-    // GALLERY SLIDER JS START 
     new Swiper(".ed-gallery-slider", {
         slidesPerView: "auto",
         centeredSlides: true,

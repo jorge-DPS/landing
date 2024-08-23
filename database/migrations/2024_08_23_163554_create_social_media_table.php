@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('social_links', function (Blueprint $table) {
+        Schema::create('social_media', function (Blueprint $table) {
             $table->id();
-            $table->string('platform'); // Ejemplo: 'Facebook', 'Twitter', etc.
+            $table->string('platform');
             $table->string('url');
-            $table->morphs('linkable');
+            $table->morphs('socialable');
             $table->timestamps();
         });
-
     }
 
     /**
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('social_links');
+        Schema::dropIfExists('social_media');
     }
 };

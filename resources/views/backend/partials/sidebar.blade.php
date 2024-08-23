@@ -107,7 +107,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="menu-item {{ Request::is('metatags', 'carrusel', 'company') ? 'here show' : '' }}" data-menu-item-toggle="accordion" data-menu-item-trigger="click">
+                <div class="menu-item {{ Request::is('metatags', 'carrusel', 'carrusel/*', 'company') ? 'here show' : '' }}" data-menu-item-toggle="accordion" data-menu-item-trigger="click">
                     <div
                             class="menu-link flex items-center grow cursor-pointer border border-transparent gap-[10px] pl-[10px] pr-[10px] py-[6px]"
                             tabindex="0">
@@ -152,7 +152,7 @@
            </span>
                             </a>
                         </div>
-                        <div class="menu-item {{ Request::is('carrusel') ? 'active' : '' }}">
+                        <div class="menu-item {{ Request::is('carrusel', 'carrusel/*') ? 'active' : '' }}">
                             <a class="menu-link gap-[14px] pl-[10px] pr-[10px] py-[8px] border border-transparent items-center grow menu-item-active:bg-secondary-active dark:menu-item-active:bg-coal-300 dark:menu-item-active:border-gray-100 menu-item-active:rounded-lg hover:bg-secondary-active dark:hover:bg-coal-300 dark:hover:border-gray-100 hover:rounded-lg"
                                href="{{ route('carrusel.index') }}" tabindex="0">
            <span

@@ -32,8 +32,8 @@
                     </div>
                 </div>
                 <div class="flex items-center gap-2.5">
-                    <a class="btn btn-sm btn-light" href="#">
-                        Agregar nuevo deslizador
+                    <a class="btn btn-primary pulse-button" href="{{ route('carrusel.create') }}">
+                        Agregar nuevo
                     </a>
                 </div>
             </div>
@@ -42,7 +42,7 @@
             <div class="flex flex-col items-stretch gap-5 lg:gap-7.5">
                 <div class="flex flex-wrap items-center gap-5 justify-between">
                     <h3 class="text-lg text-gray-900 font-semibold">
-                        {{ $countCarrusel }} CAMBIOS
+                        {{ $countCarrusel }} Páginas
                     </h3>
                     <div class="btn-tabs" data-tabs="true">
                         <a class="btn btn-icon active" data-tab-toggle="#works_cards" href="#">
@@ -55,14 +55,13 @@
                         </a>
                     </div>
                 </div>
-                <!-- end: toolbar -->
+
                 <div id="works_cards">
                     <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 lg:gap-7.5">
-
                         @foreach($carrusel as $car)
-                            <a href="#" class="card-link">
+                            <a href="{{ route('carrusel.edit',$car->id) }}" class="card-link">
                                 <div class="card border-0">
-                                    <img alt="" class="w-full h-auto rounded-t-xl" src="assetsBackend/media/images/600x400/21.jpg"/>
+                                    <img alt="" class="w-full h-auto rounded-t-xl" src="{{ $car->desktop_background ? asset($car->desktop_background) : asset('/assetsBackend/media/avatars/blank.png') }}"/>
                                     <div class="card-border card-rounded-b flex flex-col gap-2 px-5 py-4.5">
                                         <div class="text-lg font-semibold text-gray-900 hover:text-primary">
                                             {{ $car->big_title }}
@@ -79,16 +78,6 @@
                                 </div>
                             </a>
                         @endforeach
-
-                        <style>
-                            .offer-bg {
-                                background-image: url('/static/metronic-tailwind-html/dist/assets/media/images/2600x1200/bg-4.png');
-                            }
-
-                            .dark .offer-bg {
-                                background-image: url('/static/metronic-tailwind-html/dist/assets/media/images/2600x1200/bg-4-dark.png');
-                            }
-                        </style>
                         <a class="card border-2 border-dashed border-brand-clarity bg-center bg-[length:750px] bg-no-repeat offer-bg"
                            href="#">
                             <div class="card-body grid items-center">

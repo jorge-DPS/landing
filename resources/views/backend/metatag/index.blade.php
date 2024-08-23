@@ -219,7 +219,7 @@
                                 <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
                                     <div class="flex flex-col max-w-72 w-full">
                                         <div class="text-gray-900 text-sm font-semibold">
-                                            Palabras clasve (robots)
+                                            Palabras claves (robots)
                                         </div>
                                     </div>
                                     <label class="input">

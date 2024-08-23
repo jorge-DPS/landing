@@ -9,3 +9,4 @@
 <link href="{{ asset('assetsBackend/css/styles.css') }}" rel="stylesheet"/>
 <link href="{{ asset('assetsBackend/css/editCarruselEffect.css') }}" rel="stylesheet"/>
 <link href="{{ asset('assetsBackend/css/buttonFixedUpdate.css') }}" rel="stylesheet"/>
+<link href="{{ asset('assetsBackend/css/scrollMaster.css') }}" rel="stylesheet"/>

@@ -81,11 +81,12 @@
     <main>
         <section>
             <div class="ed-banner-slider swiper relative">
+
                 <div class="swiper-wrapper">
                     @foreach($carrusels as $carr)
                         <div class="swiper-slide">
                             <div class="pb-[205px] bg-no-repeat bg-center bg-cover relative z-[1] before:absolute before:-z-[1] before:inset-0 before:bg-edblue/70 before:pointer-events-none"
-                                 style="background-image: url('{{ asset('assetsFrontend/img/banner-bg-1.jpg') }}'); padding-top: 200px;">
+                                 style="background-image: url('{{ asset($carr->desktop_background) }}'); padding-top: 200px;">
                                 <div class="mx-[10%] md:mx-[15px]">
                                     <div id="intro-section"
                                          class="relative overflow-hidden text-white w-[48%] xl:w-[60%] md:w-[70%] sm:w-[80%] xs:w-full">
@@ -106,6 +107,7 @@
                         </div>
                     @endforeach
                 </div>
+
 
                 <!-- nav -->
                 <div class="ed-banner-slider-nav absolute z-[1] top-[50%] xs:top-[80%] right-[130px] md:right-[60px] sm:right-[40px] xs:hidden flex flex-col gap-[15px] *:w-[40px] *:h-[40px] *:rounded-full *:border *:border-white/20 *:text-white *:text-[18px]">
@@ -1097,7 +1099,9 @@
 
                             <h4 class="et-blog__title text-[20px] sm:text-[18px] font-semibold leading-[1.6] mb-[20px]">
                                 <a href="blog-details.html" class="hover:text-edpurple">Which Yoga Hybrid Is Right For
-                                    You?</a></h4>
+                                    You?</a>
+                                {{ asset('{{ $carr->desktop_background')}}
+                            </h4>
 
                             <a href="blog-details.html"
                                class="font-semibold text-[16px] text-edgray inline-flex items-center gap-[10px] hover:text-edpurple">Read

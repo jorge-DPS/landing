@@ -17,7 +17,7 @@ class InitMetaTagsSeed extends Seeder
             'title' => 'Saint George School',
             'description' => 'Descubre por qué somos líderes en educación y desarrollo estudiantil.',
             'keywords' => 'colegio, educación, Saint George, aprendizaje, estudiantes',
-            'author' => 'Desarrollamelo by YovanEnovore',
+            'author' => 'Desarrollamelo',
             'robots' => 'index, follow',
             'canonical' => 'https://www.saintgeorge.edu.bo',
             'og_title' => 'Saint George School',
