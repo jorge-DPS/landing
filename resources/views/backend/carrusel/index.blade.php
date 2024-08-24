@@ -20,6 +20,182 @@
 @endsection
 
 @section('content')
+
+    <style>
+        /* From Uiverse.io by D3OXY */
+        .card {
+            position: relative;
+            width: 350px;
+            aspect-ratio: 15/9;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            perspective: 1000px;
+            box-shadow: 0 0 0 5px #ffffff80;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin: 10px; /* Espacio entre tarjetas */
+        }
+
+        .card svg {
+            width: 48px;
+            fill: #333;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card__image {
+            width: 100%;
+            height: 100%;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+        }
+
+        .card__content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #f2f2f2;
+            transform: rotateX(-90deg);
+            transform-origin: bottom;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card:hover .card__content {
+            transform: rotateX(0deg);
+        }
+
+        .card__title {
+            margin: 0;
+            font-size: 20px;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .card:hover svg {
+            scale: 0;
+        }
+
+        .card__description {
+            margin: 15px 0 15px;
+            font-size: 12px;
+            color: #777;
+            line-height: 1.4;
+        }
+
+        .card__button {
+            padding: 5px;
+            border-radius: 8px;
+            background: #777;
+            border: none;
+            color: white;
+        }
+
+        .secondary {
+            background: transparent;
+            color: #777;
+            border: 1px solid #777;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .card__icon {
+            position: absolute;
+            top: 60%;
+            right: 70%;
+            font-size: 34px;
+            color: rgba(255, 255, 255);
+            background: rgba(82, 2, 13, 0.7);
+            border-radius: 10px;
+            width: auto;
+            padding: 12px;
+        }
+
+
+        /* tiempo de espera */
+        .slidersss {
+            --slider-width: 200px;
+            --slider-height: 8px;
+            --slider-bg: #d1d5db;
+            --slider-thumb-bg: #b12a38;
+            --slider-thumb-size: 18px;
+            --slider-thumb-border-radius: 50%;
+            --slider-border-radius: 10px;
+            --slider-transition: 0.3s ease;
+        }
+
+        .slidersss {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .slidersss .level {
+            -webkit-appearance: none;
+            appearance: none;
+            width: var(--slider-width);
+            height: var(--slider-height);
+            background: var(--slider-bg);
+            border-radius: var(--slider-border-radius);
+            outline: none;
+            cursor: pointer;
+            transition: background var(--slider-transition);
+        }
+
+        .slidersss .level:hover {
+            background: #a1a1aa;
+        }
+
+        .slidersss .level::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: var(--slider-thumb-size);
+            height: var(--slider-thumb-size);
+            background: var(--slider-thumb-bg);
+            border-radius: var(--slider-thumb-border-radius);
+            cursor: pointer;
+            transition: background var(--slider-transition), transform 0.15s ease;
+        }
+
+        .slidersss .level::-webkit-slider-thumb:hover {
+            background: #5b020b;
+            transform: scale(1.1);
+        }
+
+        .slidersss .level::-moz-range-thumb {
+            width: var(--slider-thumb-size);
+            height: var(--slider-thumb-size);
+            background: var(--slider-thumb-bg);
+            border-radius: var(--slider-thumb-border-radius);
+            cursor: pointer;
+            transition: background var(--slider-transition), transform 0.15s ease;
+        }
+
+        .slidersss .level::-moz-range-thumb:hover {
+            background: #6366f1;
+            transform: scale(1.1);
+        }
+
+        .slidersss .level-value {
+            font-size: 14px;
+            color: #4b5563;
+            min-width: 30px;
+            text-align: center;
+        }
+
+    </style>
+
     <main class="grow content pt-5" id="content" role="content">
         <div class="container-fixed">
             <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
@@ -45,76 +221,41 @@
                         {{ $countCarrusel }} Páginas
                     </h3>
                     <div class="btn-tabs" data-tabs="true">
-                        <a class="btn btn-icon active" data-tab-toggle="#works_cards" href="#">
-                            <i class="ki-filled ki-category">
-                            </i>
-                        </a>
-                        <a class="btn btn-icon" data-tab-toggle="#works_list" href="#">
-                            <i class="ki-filled ki-row-horizontal">
-                            </i>
-                        </a>
+                        <span>Cambio</span>
+                        <label class="slidersss">
+                            <input type="range" class="level" min="1" max="50" value="10" id="sliderRange" oninput="updateSliderValue(this.value)">
+                            <span class="level-value" id="sliderValue">2s</span>
+                        </label>
                     </div>
                 </div>
 
                 <div id="works_cards">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 lg:gap-7.5">
-                        @foreach($carrusel as $car)
-                            <a href="{{ route('carrusel.edit',$car->id) }}" class="card-link">
-                                <div class="card border-0">
+                        <div class="cards-container">
+                            @foreach($carrusel as $car)
+                                <div class="card">
+                                    <i class="ki-duotone ki-eye card__icon"></i>
                                     <img alt="" class="rounded-t-xl"
-                                         src="{{ $car->desktop_background ? asset($car->desktop_background) : asset('/assetsBackend/media/avatars/blank.png') }}"
-                                         style="width: 320px; max-width: 350px; max-height: 130px;"/>
-                                    <div class="card-border card-rounded-b flex flex-col gap-2 px-5 py-4.5">
-                                        <div class="text-lg font-semibold text-gray-900 hover:text-primary">
-                                            {{ $car->big_title }}
-                                        </div>
-                                        <div class="flex items-center justify-between grow">
-                                            <div class="flex items-center grow">
-                        <span class="text-2sm font-medium text-gray-700 hover:text-primary mb-px">
-                            {{ $car->description }}
-                        </span>
-                                            </div>
-                                            <i class="ki-filled ki-eye"></i>
-                                        </div>
-                                        <span class="edit-text">Editar</span>
+                                         src="{{ $car->desktop_background ? asset($car->desktop_background) : asset('/assetsBackend/media/avatars/blank.png') }}"/>
+                                    <div class="card__content">
+                                        <p class="card__title">{{ $car->small_title }}</p>
+                                        <p class="card__title">{{ $car->big_title }}</p>
+                                        <p class="card__description">{{ $car->description }}</p>
+                                        <a class="btn btn-primary" target="_blank" href="{{ url('/') }}">En línea</a>
+                                        <a class="btn btn-secondary" href="{{ route('carrusel.edit', $car->id) }}">Editar</a>
                                     </div>
                                 </div>
-                            </a>
-                        @endforeach
-                    </div>
-                </div>
-                <div class="hidden" id="works_list">
-                    <div class="flex flex-col gap-5 lg:gap-7.5">
-                        @foreach($carrusel as $car)
-                            <a href="{{ route('carrusel.edit', $car->id) }}" class="card-link">
-                                <div class="card border-0 p-5">
-                                    <div class="flex flex-wrap justify-between items-center gap-7">
-                                        <div class="flex flex-wrap items-center gap-5">
-                                            <img alt="" class="rounded-md max-h-20 max-w-full shrink-0"
-                                                 src="{{ $car->desktop_background ? asset($car->desktop_background) : asset('/assetsBackend/media/avatars/blank.png') }}"
-                                                 style="width: 320px; max-width: 350px; max-height: 130px;"/>
-                                            <div class="grid grid-cols gap-1">
-                                                <div class="text-lg font-semibold text-gray-900 hover:text-primary mb-px">
-                                                    {{ $car->big_title }}
-                                                </div>
-                                                <span class="text-sm font-medium text-gray-600">
-                        {{ $car->description }}
-                    </span>
-                                            </div>
-                                        </div>
-                                        <div class="flex flex-wrap items-center gap-5 lg:gap-7.5">
-                                            <span class="edit-text text-2sm font-medium text-gray-700 hover:text-primary-active">
-                    Editar
-                </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        @endforeach
-
-                    </div>
+                            @endforeach
+                        </div>
                 </div>
             </div>
         </div>
     </main>
 @endsection
+
+@push('scripts')
+    <script>
+        function updateSliderValue(value) {
+            document.getElementById('sliderValue').textContent = value + 's';
+        }
+    </script>
+@endpush

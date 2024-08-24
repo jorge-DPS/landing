@@ -47,6 +47,7 @@
 @endsection
 
 @push('scripts')
+
     <?php if (session('success')) { ?>
     <script>
         Swal.fire({
@@ -73,7 +74,6 @@
         });
     </script>
     <?php } ?>
-
     @if ($errors->any())
         <script>
             Swal.fire({

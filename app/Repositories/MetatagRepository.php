@@ -3,9 +3,9 @@
 namespace App\Repositories;
 
 use App\Models\Metatag;
-use App\Interfaces\MetatagRepositoryInterface;
+use App\Interfaces\MetatagInterface;
 
-class MetatagRepository implements MetatagRepositoryInterface
+class MetatagRepository implements MetatagInterface
 {
     protected $model;
 

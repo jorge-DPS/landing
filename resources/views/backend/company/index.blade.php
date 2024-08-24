@@ -28,8 +28,8 @@
                         Datos empresariales
                     </h1>
                     <div class="flex items-center gap-2 text-sm font-medium text-gray-600">
-                        La datos de la empresa son para personalizar el sitio es crucial para proporcionar información
-                        relevante y optimizada sobre tu sitio web.
+                        La datos de la empresa son crucial para proporcionar información
+                        relevante y optimizada sobre tu empresa.
                     </div>
                 </div>
             </div>
@@ -39,7 +39,10 @@
                 <div class="col-span-2">
                     <div class="flex flex-col gap-5 lg:gap-7.5">
                         <div class="card min-w-full">
-                            <form action="{{ route('company.update',$companies->id) }}" method="POST">
+                            <form id="updateInfoCompany" action="{{ route('company.update',$companies->id) }}"
+                                  method="POST"
+                                  enctype="multipart/form-data"
+                            >
                                 @csrf
                                 @method('PUT')
                                 <div class="card-header gap-2">
@@ -51,279 +54,14 @@
                                     <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14">
                                         <div class="flex flex-col max-w-72 w-full">
                                             <div class="text-gray-900 text-sm font-semibold">
-                                                Logo grande
-                                            </div>
-                                        </div>
-                                        <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
-                                            <img class="mt-2"
-                                                 src="{{ $companies->big_logo ? asset($companies->big_logo) : asset('/assetsBackend/media/avatars/blank.png') }}"
-                                                 style="height:100px;"/>
-                                        </div>
-                                        <div class="flex justify-center items-center">
-                                            <div class="image-input size-[70px]" data-image-input="true">
-                                                <input accept=".png, .jpg, .jpeg" name="avatar" type="file"/>
-                                                <input name="avatar_remove" type="hidden"/>
-                                                <div class="btn btn-icon btn-icon-xs btn-light shadow-default absolute z-1 size-5 -top-0.5 -right-0.5 rounded-full"
-                                                     data-image-input-remove="" data-tooltip="#image_input_tooltip"
-                                                     data-tooltip-trigger="hover">
-                                                    <i class="ki-outline ki-cross">
-                                                    </i>
-                                                </div>
-                                                <span class="tooltip" id="image_input_tooltip">
-   Click to remove or revert
-  </span>
-                                                <div class="image-input-placeholder rounded-full border-2 border-success image-input-empty:border-gray-300"
-                                                     style="background-image:url(assetsBackend/media/avatars/blank.png)">
-                                                    <div class="image-input-preview rounded-full">
-                                                    </div>
-                                                    <div class="flex items-center justify-center cursor-pointer h-5 left-0 right-0 bottom-0 bg-dark-clarity absolute">
-                                                        <svg class="fill-light opacity-80" height="12"
-                                                             viewbox="0 0 14 12"
-                                                             width="14" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M11.6665 2.64585H11.2232C11.0873 2.64749 10.9538 2.61053 10.8382 2.53928C10.7225 2.46803 10.6295 2.36541 10.5698 2.24335L10.0448 1.19918C9.91266 0.931853 9.70808 0.707007 9.45438 0.550249C9.20068 0.393491 8.90806 0.311121 8.60984 0.312517H5.38984C5.09162 0.311121 4.799 0.393491 4.5453 0.550249C4.2916 0.707007 4.08701 0.931853 3.95484 1.19918L3.42984 2.24335C3.37021 2.36541 3.27716 2.46803 3.1615 2.53928C3.04584 2.61053 2.91234 2.64749 2.7765 2.64585H2.33317C1.90772 2.64585 1.49969 2.81486 1.19885 3.1157C0.898014 3.41654 0.729004 3.82457 0.729004 4.25002V10.0834C0.729004 10.5088 0.898014 10.9168 1.19885 11.2177C1.49969 11.5185 1.90772 11.6875 2.33317 11.6875H11.6665C12.092 11.6875 12.5 11.5185 12.8008 11.2177C13.1017 10.9168 13.2707 10.5088 13.2707 10.0834V4.25002C13.2707 3.82457 13.1017 3.41654 12.8008 3.1157C12.5 2.81486 12.092 2.64585 11.6665 2.64585ZM6.99984 9.64585C6.39413 9.64585 5.80203 9.46624 5.2984 9.12973C4.79478 8.79321 4.40225 8.31492 4.17046 7.75532C3.93866 7.19572 3.87802 6.57995 3.99618 5.98589C4.11435 5.39182 4.40602 4.84613 4.83432 4.41784C5.26262 3.98954 5.80831 3.69786 6.40237 3.5797C6.99644 3.46153 7.61221 3.52218 8.1718 3.75397C8.7314 3.98576 9.2097 4.37829 9.54621 4.88192C9.88272 5.38554 10.0623 5.97765 10.0623 6.58335C10.0608 7.3951 9.73765 8.17317 9.16365 8.74716C8.58965 9.32116 7.81159 9.64431 6.99984 9.64585Z"
-                                                                  fill="">
-                                                            </path>
-                                                            <path d="M7 8.77087C8.20812 8.77087 9.1875 7.7915 9.1875 6.58337C9.1875 5.37525 8.20812 4.39587 7 4.39587C5.79188 4.39587 4.8125 5.37525 4.8125 6.58337C4.8125 7.7915 5.79188 8.77087 7 8.77087Z"
-                                                                  fill="">
-                                                            </path>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
-                                        <div class="flex flex-col max-w-72 w-full">
-                                            <div class="text-gray-900 text-sm font-semibold">
-                                                Logo pequeño
-                                            </div>
-                                        </div>
-                                        <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
-                                            <img class="mt-2"
-                                                 src="{{ $companies->big_logo ? asset($companies->big_logo) : asset('/assetsBackend/media/avatars/blank.png') }}"
-                                                 style="height:100px;"/>
-                                        </div>
-                                        <div class="flex justify-center items-center">
-                                            <div class="image-input size-[70px]" data-image-input="true">
-                                                <input accept=".png, .jpg, .jpeg" name="avatar" type="file"/>
-                                                <input name="avatar_remove" type="hidden"/>
-                                                <div class="btn btn-icon btn-icon-xs btn-light shadow-default absolute z-1 size-5 -top-0.5 -right-0.5 rounded-full"
-                                                     data-image-input-remove="" data-tooltip="#image_input_tooltip"
-                                                     data-tooltip-trigger="hover">
-                                                    <i class="ki-outline ki-cross">
-                                                    </i>
-                                                </div>
-                                                <span class="tooltip" id="image_input_tooltip">
-   Click to remove or revert
-  </span>
-                                                <div class="image-input-placeholder rounded-full border-2 border-success image-input-empty:border-gray-300"
-                                                     style="background-image:url(assetsBackend/media/avatars/blank.png)">
-                                                    <div class="image-input-preview rounded-full">
-                                                    </div>
-                                                    <div class="flex items-center justify-center cursor-pointer h-5 left-0 right-0 bottom-0 bg-dark-clarity absolute">
-                                                        <svg class="fill-light opacity-80" height="12"
-                                                             viewbox="0 0 14 12"
-                                                             width="14" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M11.6665 2.64585H11.2232C11.0873 2.64749 10.9538 2.61053 10.8382 2.53928C10.7225 2.46803 10.6295 2.36541 10.5698 2.24335L10.0448 1.19918C9.91266 0.931853 9.70808 0.707007 9.45438 0.550249C9.20068 0.393491 8.90806 0.311121 8.60984 0.312517H5.38984C5.09162 0.311121 4.799 0.393491 4.5453 0.550249C4.2916 0.707007 4.08701 0.931853 3.95484 1.19918L3.42984 2.24335C3.37021 2.36541 3.27716 2.46803 3.1615 2.53928C3.04584 2.61053 2.91234 2.64749 2.7765 2.64585H2.33317C1.90772 2.64585 1.49969 2.81486 1.19885 3.1157C0.898014 3.41654 0.729004 3.82457 0.729004 4.25002V10.0834C0.729004 10.5088 0.898014 10.9168 1.19885 11.2177C1.49969 11.5185 1.90772 11.6875 2.33317 11.6875H11.6665C12.092 11.6875 12.5 11.5185 12.8008 11.2177C13.1017 10.9168 13.2707 10.5088 13.2707 10.0834V4.25002C13.2707 3.82457 13.1017 3.41654 12.8008 3.1157C12.5 2.81486 12.092 2.64585 11.6665 2.64585ZM6.99984 9.64585C6.39413 9.64585 5.80203 9.46624 5.2984 9.12973C4.79478 8.79321 4.40225 8.31492 4.17046 7.75532C3.93866 7.19572 3.87802 6.57995 3.99618 5.98589C4.11435 5.39182 4.40602 4.84613 4.83432 4.41784C5.26262 3.98954 5.80831 3.69786 6.40237 3.5797C6.99644 3.46153 7.61221 3.52218 8.1718 3.75397C8.7314 3.98576 9.2097 4.37829 9.54621 4.88192C9.88272 5.38554 10.0623 5.97765 10.0623 6.58335C10.0608 7.3951 9.73765 8.17317 9.16365 8.74716C8.58965 9.32116 7.81159 9.64431 6.99984 9.64585Z"
-                                                                  fill="">
-                                                            </path>
-                                                            <path d="M7 8.77087C8.20812 8.77087 9.1875 7.7915 9.1875 6.58337C9.1875 5.37525 8.20812 4.39587 7 4.39587C5.79188 4.39587 4.8125 5.37525 4.8125 6.58337C4.8125 7.7915 5.79188 8.77087 7 8.77087Z"
-                                                                  fill="">
-                                                            </path>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
-                                        <div class="flex flex-col max-w-72 w-full">
-                                            <div class="text-gray-900 text-sm font-semibold">
-                                                Logo corto
-                                            </div>
-                                        </div>
-                                        <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
-                                            <img class="mt-2"
-                                                 src="{{ $companies->big_logo ? asset($companies->big_logo) : asset('/assetsBackend/media/avatars/blank.png') }}"
-                                                 style="height:100px;"/>
-                                        </div>
-                                        <div class="flex justify-center items-center">
-                                            <div class="image-input size-[70px]" data-image-input="true">
-                                                <input accept=".png, .jpg, .jpeg" name="avatar" type="file"/>
-                                                <input name="avatar_remove" type="hidden"/>
-                                                <div class="btn btn-icon btn-icon-xs btn-light shadow-default absolute z-1 size-5 -top-0.5 -right-0.5 rounded-full"
-                                                     data-image-input-remove="" data-tooltip="#image_input_tooltip"
-                                                     data-tooltip-trigger="hover">
-                                                    <i class="ki-outline ki-cross">
-                                                    </i>
-                                                </div>
-                                                <span class="tooltip" id="image_input_tooltip">
-   Click to remove or revert
-  </span>
-                                                <div class="image-input-placeholder rounded-full border-2 border-success image-input-empty:border-gray-300"
-                                                     style="background-image:url(assetsBackend/media/avatars/blank.png)">
-                                                    <div class="image-input-preview rounded-full">
-                                                    </div>
-                                                    <div class="flex items-center justify-center cursor-pointer h-5 left-0 right-0 bottom-0 bg-dark-clarity absolute">
-                                                        <svg class="fill-light opacity-80" height="12"
-                                                             viewbox="0 0 14 12"
-                                                             width="14" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M11.6665 2.64585H11.2232C11.0873 2.64749 10.9538 2.61053 10.8382 2.53928C10.7225 2.46803 10.6295 2.36541 10.5698 2.24335L10.0448 1.19918C9.91266 0.931853 9.70808 0.707007 9.45438 0.550249C9.20068 0.393491 8.90806 0.311121 8.60984 0.312517H5.38984C5.09162 0.311121 4.799 0.393491 4.5453 0.550249C4.2916 0.707007 4.08701 0.931853 3.95484 1.19918L3.42984 2.24335C3.37021 2.36541 3.27716 2.46803 3.1615 2.53928C3.04584 2.61053 2.91234 2.64749 2.7765 2.64585H2.33317C1.90772 2.64585 1.49969 2.81486 1.19885 3.1157C0.898014 3.41654 0.729004 3.82457 0.729004 4.25002V10.0834C0.729004 10.5088 0.898014 10.9168 1.19885 11.2177C1.49969 11.5185 1.90772 11.6875 2.33317 11.6875H11.6665C12.092 11.6875 12.5 11.5185 12.8008 11.2177C13.1017 10.9168 13.2707 10.5088 13.2707 10.0834V4.25002C13.2707 3.82457 13.1017 3.41654 12.8008 3.1157C12.5 2.81486 12.092 2.64585 11.6665 2.64585ZM6.99984 9.64585C6.39413 9.64585 5.80203 9.46624 5.2984 9.12973C4.79478 8.79321 4.40225 8.31492 4.17046 7.75532C3.93866 7.19572 3.87802 6.57995 3.99618 5.98589C4.11435 5.39182 4.40602 4.84613 4.83432 4.41784C5.26262 3.98954 5.80831 3.69786 6.40237 3.5797C6.99644 3.46153 7.61221 3.52218 8.1718 3.75397C8.7314 3.98576 9.2097 4.37829 9.54621 4.88192C9.88272 5.38554 10.0623 5.97765 10.0623 6.58335C10.0608 7.3951 9.73765 8.17317 9.16365 8.74716C8.58965 9.32116 7.81159 9.64431 6.99984 9.64585Z"
-                                                                  fill="">
-                                                            </path>
-                                                            <path d="M7 8.77087C8.20812 8.77087 9.1875 7.7915 9.1875 6.58337C9.1875 5.37525 8.20812 4.39587 7 4.39587C5.79188 4.39587 4.8125 5.37525 4.8125 6.58337C4.8125 7.7915 5.79188 8.77087 7 8.77087Z"
-                                                                  fill="">
-                                                            </path>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14">
-                                        <div class="flex flex-col max-w-72 w-full">
-                                            <div class="text-gray-900 text-sm font-semibold">
-                                                Logo ancho
-                                            </div>
-                                        </div>
-                                        <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
-                                            <img class="mt-2"
-                                                 src="{{ $companies->big_logo ? asset($companies->big_logo) : asset('/assetsBackend/media/avatars/blank.png') }}"
-                                                 style="height:100px;"/>
-                                        </div>
-                                        <div class="flex justify-center items-center">
-                                            <div class="image-input size-[70px]" data-image-input="true">
-                                                <input accept=".png, .jpg, .jpeg" name="avatar" type="file"/>
-                                                <input name="avatar_remove" type="hidden"/>
-                                                <div class="btn btn-icon btn-icon-xs btn-light shadow-default absolute z-1 size-5 -top-0.5 -right-0.5 rounded-full"
-                                                     data-image-input-remove="" data-tooltip="#image_input_tooltip"
-                                                     data-tooltip-trigger="hover">
-                                                    <i class="ki-outline ki-cross">
-                                                    </i>
-                                                </div>
-                                                <span class="tooltip" id="image_input_tooltip">
-   Click to remove or revert
-  </span>
-                                                <div class="image-input-placeholder rounded-full border-2 border-success image-input-empty:border-gray-300"
-                                                     style="background-image:url(assetsBackend/media/avatars/blank.png)">
-                                                    <div class="image-input-preview rounded-full">
-                                                    </div>
-                                                    <div class="flex items-center justify-center cursor-pointer h-5 left-0 right-0 bottom-0 bg-dark-clarity absolute">
-                                                        <svg class="fill-light opacity-80" height="12"
-                                                             viewbox="0 0 14 12"
-                                                             width="14" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M11.6665 2.64585H11.2232C11.0873 2.64749 10.9538 2.61053 10.8382 2.53928C10.7225 2.46803 10.6295 2.36541 10.5698 2.24335L10.0448 1.19918C9.91266 0.931853 9.70808 0.707007 9.45438 0.550249C9.20068 0.393491 8.90806 0.311121 8.60984 0.312517H5.38984C5.09162 0.311121 4.799 0.393491 4.5453 0.550249C4.2916 0.707007 4.08701 0.931853 3.95484 1.19918L3.42984 2.24335C3.37021 2.36541 3.27716 2.46803 3.1615 2.53928C3.04584 2.61053 2.91234 2.64749 2.7765 2.64585H2.33317C1.90772 2.64585 1.49969 2.81486 1.19885 3.1157C0.898014 3.41654 0.729004 3.82457 0.729004 4.25002V10.0834C0.729004 10.5088 0.898014 10.9168 1.19885 11.2177C1.49969 11.5185 1.90772 11.6875 2.33317 11.6875H11.6665C12.092 11.6875 12.5 11.5185 12.8008 11.2177C13.1017 10.9168 13.2707 10.5088 13.2707 10.0834V4.25002C13.2707 3.82457 13.1017 3.41654 12.8008 3.1157C12.5 2.81486 12.092 2.64585 11.6665 2.64585ZM6.99984 9.64585C6.39413 9.64585 5.80203 9.46624 5.2984 9.12973C4.79478 8.79321 4.40225 8.31492 4.17046 7.75532C3.93866 7.19572 3.87802 6.57995 3.99618 5.98589C4.11435 5.39182 4.40602 4.84613 4.83432 4.41784C5.26262 3.98954 5.80831 3.69786 6.40237 3.5797C6.99644 3.46153 7.61221 3.52218 8.1718 3.75397C8.7314 3.98576 9.2097 4.37829 9.54621 4.88192C9.88272 5.38554 10.0623 5.97765 10.0623 6.58335C10.0608 7.3951 9.73765 8.17317 9.16365 8.74716C8.58965 9.32116 7.81159 9.64431 6.99984 9.64585Z"
-                                                                  fill="">
-                                                            </path>
-                                                            <path d="M7 8.77087C8.20812 8.77087 9.1875 7.7915 9.1875 6.58337C9.1875 5.37525 8.20812 4.39587 7 4.39587C5.79188 4.39587 4.8125 5.37525 4.8125 6.58337C4.8125 7.7915 5.79188 8.77087 7 8.77087Z"
-                                                                  fill="">
-                                                            </path>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
-                                        <div class="flex flex-col max-w-72 w-full">
-                                            <div class="text-gray-900 text-sm font-semibold">
-                                                Logo oscuro
-                                            </div>
-                                        </div>
-                                        <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
-                                            <img class="mt-2"
-                                                 src="{{ $companies->big_logo ? asset($companies->big_logo) : asset('/assetsBackend/media/avatars/blank.png') }}"
-                                                 style="height:100px;"/>
-                                        </div>
-                                        <div class="flex justify-center items-center">
-                                            <div class="image-input size-[70px]" data-image-input="true">
-                                                <input accept=".png, .jpg, .jpeg" name="avatar" type="file"/>
-                                                <input name="avatar_remove" type="hidden"/>
-                                                <div class="btn btn-icon btn-icon-xs btn-light shadow-default absolute z-1 size-5 -top-0.5 -right-0.5 rounded-full"
-                                                     data-image-input-remove="" data-tooltip="#image_input_tooltip"
-                                                     data-tooltip-trigger="hover">
-                                                    <i class="ki-outline ki-cross">
-                                                    </i>
-                                                </div>
-                                                <span class="tooltip" id="image_input_tooltip">
-   Click to remove or revert
-  </span>
-                                                <div class="image-input-placeholder rounded-full border-2 border-success image-input-empty:border-gray-300"
-                                                     style="background-image:url(assetsBackend/media/avatars/blank.png)">
-                                                    <div class="image-input-preview rounded-full">
-                                                    </div>
-                                                    <div class="flex items-center justify-center cursor-pointer h-5 left-0 right-0 bottom-0 bg-dark-clarity absolute">
-                                                        <svg class="fill-light opacity-80" height="12"
-                                                             viewbox="0 0 14 12"
-                                                             width="14" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M11.6665 2.64585H11.2232C11.0873 2.64749 10.9538 2.61053 10.8382 2.53928C10.7225 2.46803 10.6295 2.36541 10.5698 2.24335L10.0448 1.19918C9.91266 0.931853 9.70808 0.707007 9.45438 0.550249C9.20068 0.393491 8.90806 0.311121 8.60984 0.312517H5.38984C5.09162 0.311121 4.799 0.393491 4.5453 0.550249C4.2916 0.707007 4.08701 0.931853 3.95484 1.19918L3.42984 2.24335C3.37021 2.36541 3.27716 2.46803 3.1615 2.53928C3.04584 2.61053 2.91234 2.64749 2.7765 2.64585H2.33317C1.90772 2.64585 1.49969 2.81486 1.19885 3.1157C0.898014 3.41654 0.729004 3.82457 0.729004 4.25002V10.0834C0.729004 10.5088 0.898014 10.9168 1.19885 11.2177C1.49969 11.5185 1.90772 11.6875 2.33317 11.6875H11.6665C12.092 11.6875 12.5 11.5185 12.8008 11.2177C13.1017 10.9168 13.2707 10.5088 13.2707 10.0834V4.25002C13.2707 3.82457 13.1017 3.41654 12.8008 3.1157C12.5 2.81486 12.092 2.64585 11.6665 2.64585ZM6.99984 9.64585C6.39413 9.64585 5.80203 9.46624 5.2984 9.12973C4.79478 8.79321 4.40225 8.31492 4.17046 7.75532C3.93866 7.19572 3.87802 6.57995 3.99618 5.98589C4.11435 5.39182 4.40602 4.84613 4.83432 4.41784C5.26262 3.98954 5.80831 3.69786 6.40237 3.5797C6.99644 3.46153 7.61221 3.52218 8.1718 3.75397C8.7314 3.98576 9.2097 4.37829 9.54621 4.88192C9.88272 5.38554 10.0623 5.97765 10.0623 6.58335C10.0608 7.3951 9.73765 8.17317 9.16365 8.74716C8.58965 9.32116 7.81159 9.64431 6.99984 9.64585Z"
-                                                                  fill="">
-                                                            </path>
-                                                            <path d="M7 8.77087C8.20812 8.77087 9.1875 7.7915 9.1875 6.58337C9.1875 5.37525 8.20812 4.39587 7 4.39587C5.79188 4.39587 4.8125 5.37525 4.8125 6.58337C4.8125 7.7915 5.79188 8.77087 7 8.77087Z"
-                                                                  fill="">
-                                                            </path>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
-                                        <div class="flex flex-col max-w-72 w-full">
-                                            <div class="text-gray-900 text-sm font-semibold">
-                                                Logo claro
-                                            </div>
-                                        </div>
-                                        <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
-                                            <img class="mt-2"
-                                                 src="{{ $companies->big_logo ? asset($companies->big_logo) : asset('/assetsBackend/media/avatars/blank.png') }}"
-                                                 style="height:100px;"/>
-                                        </div>
-                                        <div class="flex justify-center items-center">
-                                            <div class="image-input size-[70px]" data-image-input="true">
-                                                <input accept=".png, .jpg, .jpeg" name="avatar" type="file"/>
-                                                <input name="avatar_remove" type="hidden"/>
-                                                <div class="btn btn-icon btn-icon-xs btn-light shadow-default absolute z-1 size-5 -top-0.5 -right-0.5 rounded-full"
-                                                     data-image-input-remove="" data-tooltip="#image_input_tooltip"
-                                                     data-tooltip-trigger="hover">
-                                                    <i class="ki-outline ki-cross">
-                                                    </i>
-                                                </div>
-                                                <span class="tooltip" id="image_input_tooltip">
-   Click to remove or revert
-  </span>
-                                                <div class="image-input-placeholder rounded-full border-2 border-success image-input-empty:border-gray-300"
-                                                     style="background-image:url(assetsBackend/media/avatars/blank.png)">
-                                                    <div class="image-input-preview rounded-full">
-                                                    </div>
-                                                    <div class="flex items-center justify-center cursor-pointer h-5 left-0 right-0 bottom-0 bg-dark-clarity absolute">
-                                                        <svg class="fill-light opacity-80" height="12"
-                                                             viewbox="0 0 14 12"
-                                                             width="14" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M11.6665 2.64585H11.2232C11.0873 2.64749 10.9538 2.61053 10.8382 2.53928C10.7225 2.46803 10.6295 2.36541 10.5698 2.24335L10.0448 1.19918C9.91266 0.931853 9.70808 0.707007 9.45438 0.550249C9.20068 0.393491 8.90806 0.311121 8.60984 0.312517H5.38984C5.09162 0.311121 4.799 0.393491 4.5453 0.550249C4.2916 0.707007 4.08701 0.931853 3.95484 1.19918L3.42984 2.24335C3.37021 2.36541 3.27716 2.46803 3.1615 2.53928C3.04584 2.61053 2.91234 2.64749 2.7765 2.64585H2.33317C1.90772 2.64585 1.49969 2.81486 1.19885 3.1157C0.898014 3.41654 0.729004 3.82457 0.729004 4.25002V10.0834C0.729004 10.5088 0.898014 10.9168 1.19885 11.2177C1.49969 11.5185 1.90772 11.6875 2.33317 11.6875H11.6665C12.092 11.6875 12.5 11.5185 12.8008 11.2177C13.1017 10.9168 13.2707 10.5088 13.2707 10.0834V4.25002C13.2707 3.82457 13.1017 3.41654 12.8008 3.1157C12.5 2.81486 12.092 2.64585 11.6665 2.64585ZM6.99984 9.64585C6.39413 9.64585 5.80203 9.46624 5.2984 9.12973C4.79478 8.79321 4.40225 8.31492 4.17046 7.75532C3.93866 7.19572 3.87802 6.57995 3.99618 5.98589C4.11435 5.39182 4.40602 4.84613 4.83432 4.41784C5.26262 3.98954 5.80831 3.69786 6.40237 3.5797C6.99644 3.46153 7.61221 3.52218 8.1718 3.75397C8.7314 3.98576 9.2097 4.37829 9.54621 4.88192C9.88272 5.38554 10.0623 5.97765 10.0623 6.58335C10.0608 7.3951 9.73765 8.17317 9.16365 8.74716C8.58965 9.32116 7.81159 9.64431 6.99984 9.64585Z"
-                                                                  fill="">
-                                                            </path>
-                                                            <path d="M7 8.77087C8.20812 8.77087 9.1875 7.7915 9.1875 6.58337C9.1875 5.37525 8.20812 4.39587 7 4.39587C5.79188 4.39587 4.8125 5.37525 4.8125 6.58337C4.8125 7.7915 5.79188 8.77087 7 8.77087Z"
-                                                                  fill="">
-                                                            </path>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="border-t border-gray-200 my-7.5">
-                                    </div>
-                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14">
-                                        <div class="flex flex-col max-w-72 w-full">
-                                            <div class="text-gray-900 text-sm font-semibold">
                                                 Nombre de la empresa
                                             </div>
                                         </div>
                                         <label class="input">
                                             <i class="ki-solid ki-information-2 text-school text-2xl">
                                             </i>
-                                            <input type="text" value="{{ $companies->company_name }}">
+                                            <input type="text" value="{{ $companies->company_name }}"
+                                                   name="company_name">
                                             </input>
                                         </label>
                                     </div>
@@ -336,7 +74,7 @@
                                         <label class="input">
                                             <i class="ki-solid ki-information-2 text-school text-2xl">
                                             </i>
-                                            <input type="text" value="{{ $companies->owner_name }}">
+                                            <input type="text" value="{{ $companies->owner_name }}" name="owner_name">
                                             </input>
                                         </label>
                                     </div>
@@ -349,7 +87,7 @@
                                         <label class="input">
                                             <i class="ki-solid ki-information-2 text-school text-2xl">
                                             </i>
-                                            <input type="text" value="{{ $companies->description }}">
+                                            <input type="text" value="{{ $companies->description }}" name="description">
                                             </input>
                                         </label>
                                     </div>
@@ -362,7 +100,7 @@
                                         <label class="input">
                                             <i class="ki-solid ki-information-2 text-school text-2xl">
                                             </i>
-                                            <input type="text" value="{{ $companies->phone }}">
+                                            <input type="text" value="{{ $companies->phone }}" name="phone">
                                             </input>
                                         </label>
                                     </div>
@@ -375,7 +113,7 @@
                                         <label class="input">
                                             <i class="ki-solid ki-information-2 text-school text-2xl">
                                             </i>
-                                            <input type="text" value="{{ $companies->mobile }}">
+                                            <input type="text" value="{{ $companies->mobile }}" name="mobile">
                                             </input>
                                         </label>
                                     </div>
@@ -388,25 +126,142 @@
                                         <label class="input">
                                             <i class="ki-solid ki-information-2 text-school text-2xl">
                                             </i>
-                                            <input type="text" value="{{ $companies->address }}">
+                                            <input type="text" value="{{ $companies->address }}" name="address">
                                             </input>
                                         </label>
                                     </div>
                                     <div class="border-t border-gray-200 my-7.5"></div>
-                                    <div class="flex justify-end"
-                                         style="position: fixed; bottom: 65px; right: 70px; z-index: 1000;">
-                                        <button class="btn btn-primary pulse-button">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                 stroke-linecap="round" stroke-linejoin="round"
-                                                 class="icon icon-tabler icon-tabler-outline icon-tabler-device-floppy">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                                <path d="M6 4h10l4 4v10a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2"/>
-                                                <path d="M12 14m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/>
-                                                <path d="M14 4l0 4l-6 0l0 -4"/>
-                                            </svg>
-                                            Actualizar todos
-                                        </button>
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Logo grande (big)
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
+                                            <img id="logo-big-preview"
+                                                 class="mt-2"
+                                                 src="{{ $companies->big_logo ? asset($companies->big_logo) : asset('/assetsBackend/media/avatars/blank.png') }}"
+                                                 style="height:100px;"/>
+                                        </div>
+                                        <div class="flex justify-center items-center">
+                                            <div class="image-input size-[500px]" data-image-input="true">
+                                                <input id="logo-big-input" accept=".png, .jpg, .jpeg" name="big_logo"
+                                                       type="file" class="custom-file-input" style="display: none;"/>
+                                                <button type="button" class="upload-button" id="upload-logo-big-button">
+                                                    <i class="ki-duotone ki-file-up text-2xl upload-svgIcon"></i>
+                                                </button>
+                                                <button type="button" class="delete-button ml-5"
+                                                        onclick="removeLogoBig()">
+                                                    <i class="ki-solid ki-trash text-2xl delete-svgIcon"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Logo pequeño (small)
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
+                                            <img id="logo-small-preview"
+                                                 class="mt-2"
+                                                 src="{{ $companies->small_logo ? asset($companies->small_logo) : asset('/assetsBackend/media/avatars/blank.png') }}"
+                                                 style="height:100px;"/>
+                                        </div>
+                                        <div class="flex justify-center items-center">
+                                            <div class="image-input size-[500px]" data-image-input="true">
+                                                <input id="logo-small-input" accept=".png, .jpg, .jpeg"
+                                                       name="small_logo"
+                                                       type="file" class="custom-file-input" style="display: none;"/>
+                                                <button type="button" class="upload-button"
+                                                        id="upload-logo-small-button">
+                                                    <i class="ki-duotone ki-file-up text-2xl upload-svgIcon"></i>
+                                                </button>
+                                                <button type="button" class="delete-button ml-5"
+                                                        onclick="removeLogoSmall()">
+                                                    <i class="ki-solid ki-trash text-2xl delete-svgIcon"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Logo oscuro (dark)
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
+                                            <img id="logo-dark-preview"
+                                                 class="mt-2"
+                                                 src="{{ $companies->dark_logo ? asset($companies->dark_logo) : asset('/assetsBackend/media/avatars/blank.png') }}"
+                                                 style="height:100px;"/>
+                                        </div>
+                                        <div class="flex justify-center items-center">
+                                            <div class="image-input size-[500px]" data-image-input="true">
+                                                <input id="logo-dark-input" accept=".png, .jpg, .jpeg" name="dark_logo"
+                                                       type="file" class="custom-file-input" style="display: none;"/>
+                                                <button type="button" class="upload-button"
+                                                        id="upload-logo-dark-button">
+                                                    <i class="ki-duotone ki-file-up text-2xl upload-svgIcon"></i>
+                                                </button>
+                                                <button type="button" class="delete-button ml-5"
+                                                        onclick="removeLogoDark()">
+                                                    <i class="ki-solid ki-trash text-2xl delete-svgIcon"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Logo claro (light)
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
+                                            <img id="logo-light-preview"
+                                                 class="mt-2"
+                                                 src="{{ $companies->light_logo ? asset($companies->light_logo) : asset('/assetsBackend/media/avatars/blank.png') }}"
+                                                 style="height:100px;"/>
+                                        </div>
+                                        <div class="flex justify-center items-center">
+                                            <div class="image-input size-[500px]" data-image-input="true">
+                                                <input id="logo-light-input" accept=".png, .jpg, .jpeg"
+                                                       name="light_logo"
+                                                       type="file" class="custom-file-input" style="display: none;"/>
+                                                <button type="button" class="upload-button"
+                                                        id="upload-logo-light-button">
+                                                    <i class="ki-duotone ki-file-up text-2xl upload-svgIcon"></i>
+                                                </button>
+                                                <button type="button" class="delete-button ml-5"
+                                                        onclick="removeLogoLight()">
+                                                    <i class="ki-solid ki-trash text-2xl delete-svgIcon"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="border-t border-gray-200 my-7.5"></div>
+                                    <div class="btn-conteiner"
+                                         style="position: fixed; bottom: 60px; right: 50px; z-index: 1000;">
+                                        <a class="btn-content" href="#" onclick="enviarFormulario(); return false;">
+                                            <span class="btn-title">ACTUALIZAR</span>
+                                            <span class="icon-arrow">
+      <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg"
+      >
+        <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <path id="arrow-icon-one"
+                d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z"
+                fill="#FFFFFF"></path>
+          <path id="arrow-icon-two"
+                d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z"
+                fill="#FFFFFF"></path>
+          <path id="arrow-icon-three"
+                d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z"
+                fill="#FFFFFF"></path>
+        </g>
+      </svg>
+    </span>
+                                        </a>
                                     </div>
                                 </div>
                             </form>
@@ -417,3 +272,150 @@
         </div>
     </main>
 @endsection
+
+@push('scripts')
+    <?php if (session('success')) { ?>
+    <script>
+        Swal.fire({
+            position: "top-end",
+            title: "!Registro exitoso¡",
+            text: "{{ session('success') }}",
+            showConfirmButton: false,
+            icon: "success",
+            timer: 2000,
+            scrollbarPadding: false,
+            heightAuto: false,
+            backdrop: false,
+            customClass: {
+                popup: 'swal-alert-success',
+                title: 'swal-title-overlay',
+                content: 'swal-content-overlay'
+            },
+            didOpen: () => {
+                document.body.classList.add('swal-open');
+            },
+            willClose: () => {
+                document.body.classList.remove('swal-open');
+            }
+        });
+    </script>
+    <?php } ?>
+    @if ($errors->any())
+        <script>
+            Swal.fire({
+                position: "top-end",
+                title: "¡Error!",
+                text: "{{ $errors->first() }}",
+                icon: "error",
+                showConfirmButton: false,
+                timer: 5000,
+                scrollbarPadding: false,
+                heightAuto: false,
+                backdrop: false,
+                customClass: {
+                    popup: 'swal-alert-danger',
+                    title: 'swal-title-overlay',
+                    content: 'swal-content-overlay'
+                },
+                didOpen: () => {
+                    document.body.classList.add('swal-open');
+                },
+                willClose: () => {
+                    document.body.classList.remove('swal-open');
+                }
+            });
+        </script>
+    @endif
+    <script>
+        // Logo grande (big)
+        document.getElementById('upload-logo-big-button').addEventListener('click', function () {
+            document.getElementById('logo-big-input').click();
+        });
+
+        document.getElementById('logo-big-input').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('logo-big-preview').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        function removeLogoBig() {
+            document.getElementById('logo-big-preview').src = '/assetsBackend/media/avatars/blank.png';
+            document.getElementById('logo-big-input').value = '';
+        }
+
+        // Logo pequeño (small)
+        document.getElementById('upload-logo-small-button').addEventListener('click', function () {
+            document.getElementById('logo-small-input').click();
+        });
+
+        document.getElementById('logo-small-input').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('logo-small-preview').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        function removeLogoSmall() {
+            document.getElementById('logo-small-preview').src = '/assetsBackend/media/avatars/blank.png';
+            document.getElementById('logo-small-input').value = '';
+        }
+
+        // Logo oscuro (dark)
+        document.getElementById('upload-logo-dark-button').addEventListener('click', function () {
+            document.getElementById('logo-dark-input').click();
+        });
+
+        document.getElementById('logo-dark-input').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('logo-dark-preview').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        function removeLogoDark() {
+            document.getElementById('logo-dark-preview').src = '/assetsBackend/media/avatars/blank.png';
+            document.getElementById('logo-dark-input').value = '';
+        }
+
+        // Logo claro (light)
+        document.getElementById('upload-logo-light-button').addEventListener('click', function () {
+            document.getElementById('logo-light-input').click();
+        });
+
+        document.getElementById('logo-light-input').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('logo-light-preview').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        function removeLogoLight() {
+            document.getElementById('logo-light-preview').src = '/assetsBackend/media/avatars/blank.png';
+            document.getElementById('logo-light-input').value = '';
+        }
+
+    </script>
+    <script>
+        function enviarFormulario() {
+            mostrarCargando();
+            document.getElementById('updateInfoCompany').submit();
+        }
+    </script>
+@endpush

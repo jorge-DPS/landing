@@ -7702,12 +7702,12 @@ label.rating-label {
 }
 
 .menu-item.active > .menu-link .menu-item-active\:text-primary {
-  color: var(--tw-primary);
+  color: var(--color-shool);
 }
 
 .menu-item.active > .menu-link .menu-item-active\:before\:bg-primary::before {
   content: var(--tw-content);
-  background-color: var(--tw-primary);
+  background-color: var(--color-shool);
 }
 
 .menu-item.active > .menu-label.menu-item-active\:rounded-lg {
@@ -7739,7 +7739,7 @@ label.rating-label {
 }
 
 .menu-item.active > .menu-label.menu-item-active\:text-primary {
-  color: var(--tw-primary);
+  color: var(--color-shool);
 }
 
 .menu-item.active > .menu-label.menu-item-active\:before\:bg-primary::before {
@@ -7756,7 +7756,7 @@ label.rating-label {
 }
 
 .menu-item.active > .menu-label .menu-item-active\:border-b-primary {
-  border-bottom-color: var(--tw-primary);
+  border-bottom-color: var(--color-shool);
 }
 
 .menu-item.active > .menu-label .menu-item-active\:\!bg-light {
@@ -7973,11 +7973,11 @@ label.rating-label {
 }
 
 .menu-link:hover.menu-link-hover\:\!text-primary {
-  color: var(--tw-primary) !important;
+  color: var(--color-shool) !important;
 }
 
 .menu-link:hover.menu-link-hover\:text-primary {
-  color: var(--tw-primary);
+  color: var(--color-shool);
 }
 
 .menu-link:hover .menu-link-hover\:border-gray-200 {
@@ -7989,11 +7989,11 @@ label.rating-label {
 }
 
 .menu-link:hover .menu-link-hover\:\!text-primary {
-  color: var(--tw-primary) !important;
+  color: var(--color-shool) !important;
 }
 
 .menu-link:hover .menu-link-hover\:text-primary {
-  color: var(--tw-primary);
+  color: var(--color-shool);
 }
 
 [data-accordion-item].active.accordion-active\:block {

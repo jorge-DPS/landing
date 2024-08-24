@@ -3,33 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use App\Services\CompanyService;
 use App\Http\Requests\CompanyRequest;
 use App\models\Company;
+use Illuminate\View\View;
 
 class CompanyController extends Controller
 {
-    private $companyService;
+    private $service;
 
-    public function __construct(CompanyService $companyService)
+    public function __construct(CompanyService $service)
     {
-        $this->companyService = $companyService;
+        $this->service = $service;
     }
 
-    public function index()
+    public function index(): View
     {
-        $companies = $this->companyService->getFirstCompany();
+        $companies = $this->service->getFirstCompanys();
         return view('backend.company.index', compact('companies'));
     }
 
-    public function update(CompanyRequest $request, Company $product): RedirectResponse
+    public function update(CompanyRequest $request, Company $company): RedirectResponse
     {
-
-        $product->update($request->validated());
-
-        return redirect()->route('company.index')
-            ->with('success','Product updated successfully');
+        return $this->service->updateCompany($request, $company);
     }
-
 }
