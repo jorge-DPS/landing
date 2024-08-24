@@ -52,7 +52,8 @@ class CarruselController extends Controller
      */
     public function edit(string $id)
     {
-        return view('backend.carrusel.edit');
+        $carrusel = $this->service->getCarrusel($id);
+        return view('backend.carrusel.edit', compact('carrusel'));
     }
 
     /**

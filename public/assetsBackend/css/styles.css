@@ -1662,7 +1662,7 @@ video {
 }
 
 .menu-default .menu-item .menu-link:hover .menu-icon i {
-  color: var(--tw-primary);
+  color: var(--color-shool);
 }
 
 .menu-default .menu-item.active > .menu-link .menu-title, .menu-default .menu-item.show > .menu-link .menu-title, .menu-default .menu-item.here > .menu-link .menu-title, .menu-default .menu-item.focus > .menu-link .menu-title {
@@ -1670,7 +1670,7 @@ video {
 }
 
 .menu-default .menu-item.active > .menu-link .menu-icon i, .menu-default .menu-item.show > .menu-link .menu-icon i, .menu-default .menu-item.here > .menu-link .menu-icon i, .menu-default .menu-item.focus > .menu-link .menu-icon i {
-  color: var(--tw-primary);
+  color: var(--color-shool);
 }
 
 .menu-default .menu-item.active > .menu-link, .menu-default .menu-item.here > .menu-link {

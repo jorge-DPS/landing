@@ -14,6 +14,15 @@
 
 <body class="flex h-full demo1 sidebar-fixed header-fixed bg-[#fefefe] dark:bg-coal-500">
 <script src="{{ asset('assetsBackend/js/login/utilitis.js') }}"></script>
+<div id="cargando-overlay" class="overlay">
+    <div class="loader">
+        <div class="box-1">
+        </div>
+        <span>
+         Cargando....
+     </span>
+    </div>
+</div>
 <div class="flex grow">
     @include('backend.partials.sidebar')
     <div class="wrapper flex grow flex-col">

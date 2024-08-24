@@ -13,8 +13,13 @@
        </span>
         <i class="ki-filled ki-right text-gray-500 text-3xs">
         </i>
-        <span class="text-gray-700">
+        <span class="text-gray-600">
         {{ Breadcrumbs::render('carrusel.index') }}
+       </span>
+        <i class="ki-filled ki-right text-gray-500 text-3xs">
+        </i>
+        <span class="text-gray-700">
+        {{ Breadcrumbs::render('carrusel.create') }}
        </span>
     </div>
 @endsection

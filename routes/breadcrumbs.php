@@ -12,5 +12,17 @@ Breadcrumbs::for('backend.user.index', function (BreadcrumbTrail $trail) {
 });
 
 Breadcrumbs::for('carrusel.index', function (BreadcrumbTrail $trail) {
-    $trail->push('Carrusel de contenido', route('carrusel.index'));
+    $trail->push('Carrusel', route('carrusel.index'));
+});
+
+Breadcrumbs::for('carrusel.create', function (BreadcrumbTrail $trail) {
+    $trail->push('Crear carrusel', route('carrusel.create'));
+});
+
+Breadcrumbs::for('carrusel.edit', function (BreadcrumbTrail $trail, $carrusel) {
+    $trail->push('Editar carrusel', route('carrusel.edit', $carrusel->id));
+});
+
+Breadcrumbs::for('metatags.index', function (BreadcrumbTrail $trail) {
+    $trail->push('Metatags', route('metatags.index'));
 });

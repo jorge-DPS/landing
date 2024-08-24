@@ -12,3 +12,4 @@
 <link href="{{ asset('assetsBackend/css/scrollMaster.css') }}" rel="stylesheet"/>
 <link rel="stylesheet" href="{{ asset('assetsBackend/vendors/sweet/sweetalert2.css') }}">
 <link rel="stylesheet" href="{{ asset('assetsBackend/css/swetAlert.css') }}">
+<link rel="stylesheet" href="{{ asset('assetsBackend/css/globalLoader.css') }}">

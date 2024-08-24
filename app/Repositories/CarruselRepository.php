@@ -18,4 +18,9 @@ class CarruselRepository
         return $this->model->all();
     }
 
+    public function getById($id)
+    {
+        return $this->model->find($id);
+    }
+
 }
