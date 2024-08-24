@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Services\CarruselService;
+use App\models\Carrusel;
+use App\Http\Requests\CarruselRequest;
 
 class CarruselController extends Controller
 {
@@ -34,11 +37,16 @@ class CarruselController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
-    }
 
+    public function store(CarruselRequest $request): RedirectResponse
+    {
+        $data = $request->validated();
+
+        // Llama al servicio para crear el Carrusel
+        $this->service->createCarrusel($data);
+
+        return redirect()->route('carrusel.index')->with('success', 'Carrusel creado exitosamente.');
+    }
     /**
      * Display the specified resource.
      */

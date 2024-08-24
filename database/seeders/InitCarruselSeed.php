@@ -17,7 +17,6 @@ class InitCarruselSeed extends Seeder
                 'mobile_background' => '/assetsFrontend/img/banner-bg-1.jpg',
                 'desktop_background' => '/assetsFrontend/img/banner-bg-1.jpg',
                 'tablet_background' => '/assetsFrontend/img/banner-bg-1.jpg',
-                'others' => 'extra_info1',
                 'status' => 1,
             ],
             [
@@ -27,7 +26,6 @@ class InitCarruselSeed extends Seeder
                 'mobile_background' => '/assetsFrontend/img/banner-bg-4.jpg',
                 'desktop_background' => '/assetsFrontend/img/banner-bg-4.jpg',
                 'tablet_background' => '/assetsFrontend/img/banner-bg-4.jpg',
-                'others' => 'extra_info2',
                 'status' => 1,
             ],
             [
@@ -37,7 +35,6 @@ class InitCarruselSeed extends Seeder
                 'mobile_background' => '/assetsFrontend/img/banner-bg-3.jpg',
                 'desktop_background' => '/assetsFrontend/img/banner-bg-3.jpg',
                 'tablet_background' => '/assetsFrontend/img/banner-bg-3.jpg',
-                'others' => 'extra_info3',
                 'status' => 1,
             ]
         ];

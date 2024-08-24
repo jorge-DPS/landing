@@ -30,7 +30,6 @@ class CompanyService
     {
         try {
             $validatedData = $request->validated();
-            //dd($validatedData);
 
             if ($request->hasFile('big_logo')) {
                 $logoNewBig = saveStorage($request->file('big_logo'), 'big_logos');

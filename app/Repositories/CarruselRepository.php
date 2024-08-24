@@ -23,4 +23,19 @@ class CarruselRepository
         return $this->model->find($id);
     }
 
+    public function create(array $data): Carrusel
+    {
+        return $this->model->create($data);
+    }
+
+    public function update(Carrusel $carrusel, array $data): bool
+    {
+        return $carrusel->update($data);
+    }
+
+    public function delete(Carrusel $carrusel): bool
+    {
+        return $carrusel->delete();
+    }
+
 }

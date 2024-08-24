@@ -13,12 +13,9 @@ class Carrusel extends Model
         'small_title',
         'big_title',
         'description',
-        'primary_button',
-        'secondary_button',
         'mobile_background',
         'desktop_background',
         'tablet_background',
-        'others',
         'status'
     ];
 }

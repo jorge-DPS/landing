@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('mobile_background')->nullable();
             $table->string('desktop_background')->nullable();
             $table->string('tablet_background')->nullable();
-            $table->string('others')->nullable();
             $table->boolean('status')->default(1);
             $table->timestamps();
         });
