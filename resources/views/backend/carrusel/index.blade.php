@@ -256,9 +256,9 @@
                                 <img alt="" class="rounded-t-xl"
                                      src="{{ $car->desktop_background ? asset($car->desktop_background) : asset('/assetsBackend/media/avatars/blank.png') }}"/>
                                 <div class="card__content">
-                                    <p class="card__title">{{ $car->small_title }}</p>
+                                    <p class="card__title">{{ Str::limit($car->small_title, 40) }}</p>
                                     <p class="card__title">{{ $car->big_title }}</p>
-                                    <p class="card__description">{{ $car->description }}</p>
+                                    <p class="card__description">{{ Str::limit($car->description), 40 }}</p>
                                     <a class="btn-primary" target="_blank" href="{{ url('/') }}">En línea</a>
                                     <a class="btn btn-secondary"
                                        href="{{ route('carrusel.edit', $car->id) }}">Editar</a>

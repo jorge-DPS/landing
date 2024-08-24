@@ -1,5 +1,14 @@
 <?php
 
+use App\Http\Controllers\CoverController;
+use App\Http\Controllers\CoverSectionController;
+use App\Http\Controllers\EmployeController;
+use App\Http\Controllers\GallerySectionController;
+use App\Http\Controllers\MenuController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\PeopleController;
+use App\Http\Controllers\PersonSectionController;
+use App\Http\Controllers\SectionTypeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\UserController;
@@ -34,6 +43,16 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('metatags', MetaTagsController::class);
     Route::resource('carrusel', CarruselController::class);
     Route::resource('company', CompanyController::class);
+    Route::resource('menu', MenuController::class);
+    Route::resource('pages', PageController::class);
+    Route::resource('employe', EmployeController::class);
+    Route::resource('cover', CoverController::class);
+    Route::resource('people', PeopleController::class);
+    Route::resource('section-type', SectionTypeController::class);
+    Route::resource('person-section', PersonSectionController::class);
+    Route::resource('galery-section', GallerySectionController::class);
+    Route::resource('cover-section', CoverSectionController::class);
+
 
 });
 

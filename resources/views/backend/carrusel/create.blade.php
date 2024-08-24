@@ -24,23 +24,23 @@
     </div>
 @endsection
 
-    @section('content')
-        <main class="grow content pt-5" id="content" role="content">
-            <div class="container-fixed">
-                <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
-                    <div class="flex flex-col justify-center gap-2">
-                        <h1 class="text-xl font-semibold leading-none text-gray-900">
-                            Agreagar nuevo carrusel
-                        </h1>
-                        <div class="flex items-center gap-2 text-sm font-medium text-gray-600">
-                           Un carrusel es un desplegador de información en el inicio del la página.
-                        </div>
+@section('content')
+    <main class="grow content pt-5" id="content" role="content">
+        <div class="container-fixed">
+            <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
+                <div class="flex flex-col justify-center gap-2">
+                    <h1 class="text-xl font-semibold leading-none text-gray-900">
+                        Agreagar nuevo carrusel
+                    </h1>
+                    <div class="flex items-center gap-2 text-sm font-medium text-gray-600">
+                        Un carrusel es un desplegador de información en el inicio del la página.
                     </div>
-                    <div class="flex items-center gap-2.5">
-                        <div class="btn-conteiner">
-                            <a class="btn-content" href="{{ route('carrusel.index') }}">
-                                <span class="btn-title">TODOS</span>
-                                <span class="icon-arrow">
+                </div>
+                <div class="flex items-center gap-2.5">
+                    <div class="btn-conteiner">
+                        <a class="btn-content" href="{{ route('carrusel.index') }}">
+                            <span class="btn-title">TODOS</span>
+                            <span class="icon-arrow">
       <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg"
       >
         <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -56,156 +56,162 @@
         </g>
       </svg>
     </span>
-                            </a>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="container-fixed">
-                <div class="grid gap-5 lg:gap-7.5">
-                    <div class="col-span-2">
-                        <div class="flex flex-col gap-5 lg:gap-7.5">
+        </div>
+        <div class="container-fixed">
+            <div class="grid gap-5 lg:gap-7.5">
+                <div class="col-span-2">
+                    <div class="flex flex-col gap-5 lg:gap-7.5">
 
-                            <div class="card min-w-full">
-                                <form id="createCarrusel" action="{{ route('carrusel.store') }}"
-                                      method="POST"
-                                      enctype="multipart/form-data">
-                                    @csrf
-                                    <div class="card-header gap-2">
-                                        <h3 class="card-title">
-                                            Datos de para mostrar
-                                        </h3>
+                        <div class="card min-w-full">
+                            <form id="createCarrusel" action="{{ route('carrusel.store') }}"
+                                  method="POST"
+                                  enctype="multipart/form-data">
+                                @csrf
+                                <div class="card-header gap-2">
+                                    <h3 class="card-title">
+                                        Datos de para mostrar
+                                    </h3>
+                                </div>
+                                <div class="card-body lg:py-7.5 py-5">
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Título pequeño
+                                            </div>
+                                        </div>
+                                        <label class="input">
+                                            <input type="text" value=""
+                                                   placeholder="Este título aprece primero."
+                                                   name="small_title"
+                                                   required
+                                            />
+                                        </label>
                                     </div>
-                                    <div class="card-body lg:py-7.5 py-5">
-                                        <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14">
-                                            <div class="flex flex-col max-w-72 w-full">
-                                                <div class="text-gray-900 text-sm font-semibold">
-                                                    Título pequeño
-                                                </div>
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Título grande
                                             </div>
-                                            <label class="input">
-                                                <input type="text" value=""
-                                                       placeholder="Este título aprece primero."
-                                                       name="small_title"
-                                                       required
-                                                />
-                                            </label>
                                         </div>
-                                        <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
-                                            <div class="flex flex-col max-w-72 w-full">
-                                                <div class="text-gray-900 text-sm font-semibold">
-                                                    Título grande
-                                                </div>
+                                        <label class="input">
+                                            <input type="text"
+                                                   value=""
+                                                   name="big_title"
+                                                   placeholder="Segundo título que parece."
+                                                   required
+                                            />
+                                        </label>
+                                    </div>
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Descripción
                                             </div>
-                                            <label class="input">
-                                                <input type="text"
-                                                       value=""
-                                                       name="big_title"
-                                                       placeholder="Segundo título que parece."
-                                                       required
-                                                />
-                                            </label>
                                         </div>
-                                        <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
-                                            <div class="flex flex-col max-w-72 w-full">
-                                                <div class="text-gray-900 text-sm font-semibold">
-                                                    Descripción
-                                                </div>
-                                            </div>
-                                            <label class="w-full">
+                                        <label class="w-full">
                                                 <textarea
                                                         name="description"
                                                         class="textarea w-full"
                                                         placeholder="Agregar su descripción..."
                                                         rows="6"
                                                 ></textarea>
-                                            </label>
-                                        </div>
-                                        <div class="border-t border-gray-200 my-7.5"></div>
-                                        <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
-                                            <div class="flex flex-col max-w-72 w-full">
-                                                <div class="text-gray-900 text-sm font-semibold">
-                                                    Fondo para celulares (mobile)
-                                                </div>
-                                            </div>
-                                            <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
-                                                <img id="mobile-bg-preview"
-                                                     class="mt-2"
-                                                     src="{{ asset('/assetsBackend/media/avatars/blank.png') }}"
-                                                     style="height:100px;"/>
-                                            </div>
-                                            <div class="flex justify-center items-center">
-                                                <div class="image-input size-[500px]" data-image-input="true">
-                                                    <input id="mobile-bg-input" accept=".png, .jpg, .jpeg" name="mobile_background"
-                                                           type="file" class="custom-file-input" style="display: none;"/>
-                                                    <button type="button" class="upload-button" id="upload-mobile-bg-button">
-                                                        <i class="ki-duotone ki-file-up text-2xl upload-svgIcon"></i>
-                                                    </button>
-                                                    <button type="button" class="delete-button ml-5"
-                                                            onclick="removeMobileBg()">
-                                                        <i class="ki-solid ki-trash text-2xl delete-svgIcon"></i>
-                                                    </button>
-                                                </div>
+                                        </label>
+                                    </div>
+                                    <div class="border-t border-gray-200 my-7.5"></div>
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Fondo para celulares (mobile)
                                             </div>
                                         </div>
-                                        <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
-                                            <div class="flex flex-col max-w-72 w-full">
-                                                <div class="text-gray-900 text-sm font-semibold">
-                                                    Fondo para monitor (desktop)
-                                                </div>
-                                            </div>
-                                            <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
-                                                <img id="desktop-bg-preview"
-                                                     class="mt-2"
-                                                     src="{{ asset('/assetsBackend/media/avatars/blank.png') }}"
-                                                     style="height:100px;"/>
-                                            </div>
-                                            <div class="flex justify-center items-center">
-                                                <div class="image-input size-[500px]" data-image-input="true">
-                                                    <input id="desktop-bg-input" accept=".png, .jpg, .jpeg" name="desktop_background"
-                                                           type="file" class="custom-file-input" style="display: none;"/>
-                                                    <button type="button" class="upload-button" id="upload-desktop-bg-button">
-                                                        <i class="ki-duotone ki-file-up text-2xl upload-svgIcon"></i>
-                                                    </button>
-                                                    <button type="button" class="delete-button ml-5"
-                                                            onclick="removeDesktopBg()">
-                                                        <i class="ki-solid ki-trash text-2xl delete-svgIcon"></i>
-                                                    </button>
-                                                </div>
+                                        <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
+                                            <img id="mobile-bg-preview"
+                                                 class="mt-2"
+                                                 src="{{ asset('/assetsBackend/media/avatars/blank.png') }}"
+                                                 style="height:100px;"/>
+                                        </div>
+                                        <div class="flex justify-center items-center">
+                                            <div class="image-input size-[500px]" data-image-input="true">
+                                                <input id="mobile-bg-input" accept=".png, .jpg, .jpeg"
+                                                       name="mobile_background"
+                                                       type="file" class="custom-file-input" style="display: none;"/>
+                                                <button type="button" class="upload-button"
+                                                        id="upload-mobile-bg-button">
+                                                    <i class="ki-duotone ki-file-up text-2xl upload-svgIcon"></i>
+                                                </button>
+                                                <button type="button" class="delete-button ml-5"
+                                                        onclick="removeMobileBg()">
+                                                    <i class="ki-solid ki-trash text-2xl delete-svgIcon"></i>
+                                                </button>
                                             </div>
                                         </div>
-                                        <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
-                                            <div class="flex flex-col max-w-72 w-full">
-                                                <div class="text-gray-900 text-sm font-semibold">
-                                                    Fondo para tableta (tablet)
-                                                </div>
-                                            </div>
-                                            <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
-                                                <img id="tablet-bg-preview"
-                                                     class="mt-2"
-                                                     src="{{ asset('/assetsBackend/media/avatars/blank.png') }}"
-                                                     style="height:100px;"/>
-                                            </div>
-                                            <div class="flex justify-center items-center">
-                                                <div class="image-input size-[500px]" data-image-input="true">
-                                                    <input id="tablet-bg-input" accept=".png, .jpg, .jpeg" name="tablet_background"
-                                                           type="file" class="custom-file-input" style="display: none;"/>
-                                                    <button type="button" class="upload-button" id="upload-tablet-bg-button">
-                                                        <i class="ki-duotone ki-file-up text-2xl upload-svgIcon"></i>
-                                                    </button>
-                                                    <button type="button" class="delete-button ml-5"
-                                                            onclick="removeTabletBg()">
-                                                        <i class="ki-solid ki-trash text-2xl delete-svgIcon"></i>
-                                                    </button>
-                                                </div>
+                                    </div>
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Fondo para monitor (desktop)
                                             </div>
                                         </div>
-                                        <div class="border-t border-gray-200 my-7.5"></div>
-                                        <div class="flex justify-end">
-                                            <div class="btn-conteiner">
-                                                <a class="btn-content" href="#" onclick="enviarFormulario(); return false;">
-                                                    <span class="btn-title">CREAR</span>
-                                                    <span class="icon-arrow">
+                                        <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
+                                            <img id="desktop-bg-preview"
+                                                 class="mt-2"
+                                                 src="{{ asset('/assetsBackend/media/avatars/blank.png') }}"
+                                                 style="height:100px;"/>
+                                        </div>
+                                        <div class="flex justify-center items-center">
+                                            <div class="image-input size-[500px]" data-image-input="true">
+                                                <input id="desktop-bg-input" accept=".png, .jpg, .jpeg"
+                                                       name="desktop_background"
+                                                       type="file" class="custom-file-input" style="display: none;"/>
+                                                <button type="button" class="upload-button"
+                                                        id="upload-desktop-bg-button">
+                                                    <i class="ki-duotone ki-file-up text-2xl upload-svgIcon"></i>
+                                                </button>
+                                                <button type="button" class="delete-button ml-5"
+                                                        onclick="removeDesktopBg()">
+                                                    <i class="ki-solid ki-trash text-2xl delete-svgIcon"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Fondo para tableta (tablet)
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
+                                            <img id="tablet-bg-preview"
+                                                 class="mt-2"
+                                                 src="{{ asset('/assetsBackend/media/avatars/blank.png') }}"
+                                                 style="height:100px;"/>
+                                        </div>
+                                        <div class="flex justify-center items-center">
+                                            <div class="image-input size-[500px]" data-image-input="true">
+                                                <input id="tablet-bg-input" accept=".png, .jpg, .jpeg"
+                                                       name="tablet_background"
+                                                       type="file" class="custom-file-input" style="display: none;"/>
+                                                <button type="button" class="upload-button"
+                                                        id="upload-tablet-bg-button">
+                                                    <i class="ki-duotone ki-file-up text-2xl upload-svgIcon"></i>
+                                                </button>
+                                                <button type="button" class="delete-button ml-5"
+                                                        onclick="removeTabletBg()">
+                                                    <i class="ki-solid ki-trash text-2xl delete-svgIcon"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="border-t border-gray-200 my-7.5"></div>
+                                    <div class="flex justify-end">
+                                        <div class="btn-conteiner">
+                                            <a class="btn-content" href="#" onclick="enviarFormulario(); return false;">
+                                                <span class="btn-title">CREAR</span>
+                                                <span class="icon-arrow">
       <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg"
       >
         <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -221,36 +227,62 @@
         </g>
       </svg>
     </span>
-                                                </a>
-                                            </div>
+                                            </a>
                                         </div>
                                     </div>
-                                </form>
-                            </div>
-
+                                </div>
+                            </form>
                         </div>
+
                     </div>
                 </div>
             </div>
-        </main>
-    @endsection
+        </div>
+    </main>
+@endsection
 
-    @push('scripts')
+@push('scripts')
 
-        <?php if (session('success')) { ?>
+    <?php if (session('success')) { ?>
+    <script>
+        Swal.fire({
+            position: "top-end",
+            title: "!Registro exitoso¡",
+            text: "{{ session('success') }}",
+            showConfirmButton: false,
+            icon: "success",
+            timer: 2000,
+            scrollbarPadding: false,
+            heightAuto: false,
+            backdrop: false,
+            customClass: {
+                popup: 'swal-alert-success',
+                title: 'swal-title-overlay',
+                content: 'swal-content-overlay'
+            },
+            didOpen: () => {
+                document.body.classList.add('swal-open');
+            },
+            willClose: () => {
+                document.body.classList.remove('swal-open');
+            }
+        });
+    </script>
+    <?php } ?>
+    @if ($errors->any())
         <script>
             Swal.fire({
                 position: "top-end",
-                title: "!Registro exitoso¡",
-                text: "{{ session('success') }}",
+                title: "¡Error!",
+                text: "{{ $errors->first() }}",
+                icon: "error",
                 showConfirmButton: false,
-                icon: "success",
-                timer: 2000,
+                timer: 5000,
                 scrollbarPadding: false,
                 heightAuto: false,
                 backdrop: false,
                 customClass: {
-                    popup: 'swal-alert-success',
+                    popup: 'swal-alert-danger',
                     title: 'swal-title-overlay',
                     content: 'swal-content-overlay'
                 },
@@ -262,103 +294,77 @@
                 }
             });
         </script>
-        <?php } ?>
-        @if ($errors->any())
-            <script>
-                Swal.fire({
-                    position: "top-end",
-                    title: "¡Error!",
-                    text: "{{ $errors->first() }}",
-                    icon: "error",
-                    showConfirmButton: false,
-                    timer: 5000,
-                    scrollbarPadding: false,
-                    heightAuto: false,
-                    backdrop: false,
-                    customClass: {
-                        popup: 'swal-alert-danger',
-                        title: 'swal-title-overlay',
-                        content: 'swal-content-overlay'
-                    },
-                    didOpen: () => {
-                        document.body.classList.add('swal-open');
-                    },
-                    willClose: () => {
-                        document.body.classList.remove('swal-open');
-                    }
-                });
-            </script>
-        @endif
+    @endif
 
-        <script>
-            document.getElementById('upload-mobile-bg-button').addEventListener('click', function () {
-                document.getElementById('mobile-bg-input').click();
-            });
+    <script>
+        document.getElementById('upload-mobile-bg-button').addEventListener('click', function () {
+            document.getElementById('mobile-bg-input').click();
+        });
 
-            document.getElementById('mobile-bg-input').addEventListener('change', function (event) {
-                const file = event.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function (e) {
-                        document.getElementById('mobile-bg-preview').src = e.target.result;
-                    };
-                    reader.readAsDataURL(file);
-                }
-            });
-
-            function removeMobileBg() {
-                document.getElementById('mobile-bg-preview').src = '/assetsBackend/media/avatars/blank.png';
-                document.getElementById('mobile-bg-input').value = '';
+        document.getElementById('mobile-bg-input').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('mobile-bg-preview').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
             }
+        });
 
-            document.getElementById('upload-desktop-bg-button').addEventListener('click', function () {
-                document.getElementById('desktop-bg-input').click();
-            });
+        function removeMobileBg() {
+            document.getElementById('mobile-bg-preview').src = '/assetsBackend/media/avatars/blank.png';
+            document.getElementById('mobile-bg-input').value = '';
+        }
 
-            document.getElementById('desktop-bg-input').addEventListener('change', function (event) {
-                const file = event.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function (e) {
-                        document.getElementById('desktop-bg-preview').src = e.target.result;
-                    };
-                    reader.readAsDataURL(file);
-                }
-            });
+        document.getElementById('upload-desktop-bg-button').addEventListener('click', function () {
+            document.getElementById('desktop-bg-input').click();
+        });
 
-            function removeDesktopBg() {
-                document.getElementById('desktop-bg-preview').src = '/assetsBackend/media/avatars/blank.png';
-                document.getElementById('desktop-bg-input').value = '';
+        document.getElementById('desktop-bg-input').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('desktop-bg-preview').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
             }
+        });
 
-            document.getElementById('upload-tablet-bg-button').addEventListener('click', function () {
-                document.getElementById('tablet-bg-input').click();
-            });
+        function removeDesktopBg() {
+            document.getElementById('desktop-bg-preview').src = '/assetsBackend/media/avatars/blank.png';
+            document.getElementById('desktop-bg-input').value = '';
+        }
 
-            document.getElementById('tablet-bg-input').addEventListener('change', function (event) {
-                const file = event.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function (e) {
-                        document.getElementById('tablet-bg-preview').src = e.target.result;
-                    };
-                    reader.readAsDataURL(file);
-                }
-            });
+        document.getElementById('upload-tablet-bg-button').addEventListener('click', function () {
+            document.getElementById('tablet-bg-input').click();
+        });
 
-            function removeTabletBg() {
-                document.getElementById('tablet-bg-preview').src = '/assetsBackend/media/avatars/blank.png';
-                document.getElementById('tablet-bg-input').value = '';
+        document.getElementById('tablet-bg-input').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('tablet-bg-preview').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
             }
-        </script>
+        });
 
-        <script>
-            function enviarFormulario() {
-                mostrarCargando();
-                document.getElementById('createCarrusel').submit();
-            }
-        </script>
-    @endpush
+        function removeTabletBg() {
+            document.getElementById('tablet-bg-preview').src = '/assetsBackend/media/avatars/blank.png';
+            document.getElementById('tablet-bg-input').value = '';
+        }
+    </script>
+
+    <script>
+        function enviarFormulario() {
+            mostrarCargando();
+            document.getElementById('createCarrusel').submit();
+        }
+    </script>
+@endpush
 
 
 

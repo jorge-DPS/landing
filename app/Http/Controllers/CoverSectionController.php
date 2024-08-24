@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CoverSection;
 use Illuminate\Http\Request;
 
-class MenuController extends Controller
+class CoverSectionController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('backend.menu.index');
+        return view('backend.coverSection.index');
     }
 
     /**
@@ -33,7 +34,7 @@ class MenuController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(CoverSection $coverSection)
     {
         //
     }
@@ -41,7 +42,7 @@ class MenuController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(CoverSection $coverSection)
     {
         //
     }
@@ -49,7 +50,7 @@ class MenuController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, CoverSection $coverSection)
     {
         //
     }
@@ -57,7 +58,7 @@ class MenuController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(CoverSection $coverSection)
     {
         //
     }
