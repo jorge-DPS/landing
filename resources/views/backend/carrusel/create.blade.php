@@ -207,6 +207,48 @@
                                         </div>
                                     </div>
                                     <div class="border-t border-gray-200 my-7.5"></div>
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Título pequeño
+                                            </div>
+                                        </div>
+
+                                        <div x-data="buttonManager()" class="mt-4 w-full">
+                                            <template x-for="(button, index) in buttons" :key="index">
+                                                <div class="w-full">
+                                                    <label class="input">
+                                                        <input type="text"
+                                                               x-model="button.name"
+                                                               value=""
+                                                               name="big_title"
+                                                               placeholder="Segundo título que parece."
+                                                               @input="validateFields(index)"
+                                                        />
+                                                    </label>
+                                                    <label class="input" style="margin-bottom: 10px;">
+                                                        <input type="text"
+                                                               x-model="button.link"
+                                                               value=""
+                                                               name="big_title"
+                                                               placeholder="Segundo título que parece."
+                                                               @input="validateFields(index)"
+                                                        />
+                                                    </label>
+                                                </div>
+                                            </template>
+
+                                            <!-- Botón para agregar un nuevo conjunto de campos -->
+                                            <button type="button" class="btn btn-success mt-3" @click.prevent="addButton" x-show="canAddButton">
+                                                Agregar Nuevo Botón
+                                            </button>
+                                        </div>
+
+                                        </label>
+                                    </div>
+
+                                    <div class="border-t border-gray-200 my-7.5"></div>
+
                                     <div class="flex justify-end">
                                         <div class="btn-conteiner">
                                             <a class="btn-content" href="#" onclick="enviarFormulario(); return false;">
@@ -243,6 +285,30 @@
 
 @push('scripts')
 
+
+    <script>
+        function buttonManager() {
+            return {
+                buttons: [{ name: '', link: '' }],
+                canAddButton: false,
+
+                validateFields(index) {
+                    if (this.buttons[index].name && this.buttons[index].link) {
+                        this.canAddButton = true;
+                    } else {
+                        this.canAddButton = false;
+                    }
+                },
+
+                addButton() {
+                    if (this.canAddButton) {
+                        this.buttons.push({ name: '', link: '' });
+                        this.canAddButton = false;
+                    }
+                }
+            }
+        }
+    </script>
     <?php if (session('success')) { ?>
     <script>
         Swal.fire({
@@ -360,10 +426,11 @@
 
     <script>
         function enviarFormulario() {
-            mostrarCargando();
-            document.getElementById('createCarrusel').submit();
+            // Lógica para enviar el formulario
+            document.querySelector('form').submit();
         }
     </script>
+
 @endpush
 
 

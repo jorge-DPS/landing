@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('text');
             $table->string('url');
-            $table->boolean('is_active');
+            $table->boolean('status')->default(1);
             $table->morphs('buttonable');
             $table->timestamps();
         });

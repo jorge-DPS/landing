@@ -9,3 +9,5 @@
         document.getElementById('cargando-overlay').style.display = 'flex';
     }
 </script>
+
+<script src="{{ asset('assetsBackend/vendors/alpinejs/js/alpine.js') }}"></script>

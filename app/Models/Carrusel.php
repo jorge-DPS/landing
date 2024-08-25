@@ -18,4 +18,9 @@ class Carrusel extends Model
         'tablet_background',
         'status'
     ];
+
+    public function buttons()
+    {
+        return $this->morphMany(Button::class, 'buttonable');
+    }
 }

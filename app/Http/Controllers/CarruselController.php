@@ -41,8 +41,8 @@ class CarruselController extends Controller
     public function store(CarruselRequest $request): RedirectResponse
     {
         $data = $request->validated();
+        dd($data);
 
-        // Llama al servicio para crear el Carrusel
         $this->service->createCarrusel($data);
 
         return redirect()->route('carrusel.index')->with('success', 'Carrusel creado exitosamente.');

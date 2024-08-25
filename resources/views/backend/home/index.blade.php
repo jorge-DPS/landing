@@ -25,18 +25,16 @@
                         Dashboard
                     </h1>
                     <div class="flex items-center gap-2 text-sm font-medium text-gray-600">
-                        Central Hub for Personal Customization
+                        Optimiza tu perfil
                     </div>
                 </div>
                 <div class="flex items-center gap-2.5">
-                    <a class="btn btn-sm btn-light" href="html/demo1/public-profile/profiles/default.html">
-                        View Profile
+                    <a class="btn btn-sm btn-light" href="{{ route('user.profile') }}">
+                        Ver perfil
                     </a>
                 </div>
             </div>
         </div>
-        <!-- end: container -->
-        <!-- begin: container -->
         <div class="container-fixed">
             <div class="grid gap-5 lg:gap-7.5">
                 <!-- begin: grid -->
@@ -137,8 +135,6 @@
                                         </a>
                                     </h2>
                                     <p class="text-sm font-medium text-gray-700 leading-5.5">
-                                        Acceso de usuario eficiente a nuestro sistema.
-                                        <br>
                                         Interfaz de adminitración.
                                     </p>
                                 </div>
