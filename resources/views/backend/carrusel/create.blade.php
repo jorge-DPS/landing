@@ -210,7 +210,7 @@
                                     <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14">
                                         <div class="flex flex-col max-w-72 w-full">
                                             <div class="text-gray-900 text-sm font-semibold">
-                                                Título pequeño
+                                                Botones relacionado con el carrusel
                                             </div>
                                         </div>
 
@@ -221,24 +221,23 @@
                                                         <input type="text"
                                                                x-model="button.name"
                                                                value=""
-                                                               name="big_title"
-                                                               placeholder="Segundo título que parece."
+                                                               :name="'buttons[' + index + '][name]'"
+                                                               placeholder="Título del botón"
                                                                @input="validateFields(index)"
                                                         />
                                                     </label>
+                                                    <br>
                                                     <label class="input" style="margin-bottom: 10px;">
                                                         <input type="text"
                                                                x-model="button.link"
                                                                value=""
-                                                               name="big_title"
-                                                               placeholder="Segundo título que parece."
+                                                               :name="'buttons[' + index + '][link]'"
+                                                               placeholder="Botón para (url), (enlace), (link), (https://ejemplo.bo.edu)."
                                                                @input="validateFields(index)"
                                                         />
                                                     </label>
                                                 </div>
                                             </template>
-
-                                            <!-- Botón para agregar un nuevo conjunto de campos -->
                                             <button type="button" class="btn btn-success mt-3" @click.prevent="addButton" x-show="canAddButton">
                                                 Agregar Nuevo Botón
                                             </button>
@@ -251,7 +250,8 @@
 
                                     <div class="flex justify-end">
                                         <div class="btn-conteiner">
-                                            <a class="btn-content" href="#" onclick="enviarFormulario(); return false;">
+                                                <a class="btn-content" href="javascript:void(0);" onclick="enviarFormulario(); return false;">
+
                                                 <span class="btn-title">CREAR</span>
                                                 <span class="icon-arrow">
       <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -425,9 +425,10 @@
     </script>
 
     <script>
+
         function enviarFormulario() {
-            // Lógica para enviar el formulario
-            document.querySelector('form').submit();
+            mostrarCargando();
+            document.getElementById('createCarrusel').submit();
         }
     </script>
 

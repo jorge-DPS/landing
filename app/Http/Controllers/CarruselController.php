@@ -40,8 +40,9 @@ class CarruselController extends Controller
 
     public function store(CarruselRequest $request): RedirectResponse
     {
+        dd($request->all());
         $data = $request->validated();
-        dd($data);
+
 
         $this->service->createCarrusel($data);
 
