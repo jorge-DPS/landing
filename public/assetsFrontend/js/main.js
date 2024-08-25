@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
         loop: true,
         autoplay: {
             //CARRUSEL CHANGE TIME
-            delay: 2000,
+            delay: window.carruselConfig.interval || 1000,
         },
         navigation: {
             prevEl: ".ed-banner-slider .prev",

@@ -239,11 +239,10 @@
                         {{ $countCarrusel }} Páginas
                     </h3>
                     <div class="btn-tabs" data-tabs="true">
-                        <span>Cambio</span>
+                        <span>Tiempo de cambio</span>
                         <label class="slidersss">
-                            <input type="range" class="level" min="1" max="50" value="10" id="sliderRange"
-                                   oninput="updateSliderValue(this.value)">
-                            <span class="level-value" id="sliderValue">2s</span>
+                            <input type="range" class="level" min="1" max="50" value="{{ $carruselTime }}" id="sliderRange">
+                            <span class="level-value" id="sliderValue">{{ $carruselTime }}s</span>
                         </label>
                     </div>
                 </div>
@@ -277,5 +276,61 @@
         function updateSliderValue(value) {
             document.getElementById('sliderValue').textContent = value + 's';
         }
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const slider = document.getElementById('sliderRange');
+            const sliderValue = document.getElementById('sliderValue');
+
+            slider.addEventListener('input', function() {
+                sliderValue.textContent = this.value + 's';
+            });
+
+            slider.addEventListener('change', function() {
+                const seconds = this.value;
+                $.ajax({
+                    url: "{{ route('backend.configuracion.updateTimeCarrusel') }}",
+                    type: "PUT",
+                    data: {
+                        _token: "{{ csrf_token() }}",
+                        seconds: seconds
+                    },
+                    success: function(response) {
+                        if (response.Codigo === 0) {
+                            Swal.fire({
+                                position: "top-end",
+                                title: "!Registro exitoso¡",
+                                text: response.Mensaje,
+                                showConfirmButton: false,
+                                icon: "success",
+                                timer: 2000,
+                                scrollbarPadding: false,
+                                heightAuto: false,
+                                backdrop: false,
+                                customClass: {
+                                    popup: 'swal-alert-success',
+                                    title: 'swal-title-overlay',
+                                    content: 'swal-content-overlay'
+                                },
+                                didOpen: () => {
+                                    document.body.classList.add('swal-open');
+                                },
+                                willClose: () => {
+                                    document.body.classList.remove('swal-open');
+                                }
+                            });
+
+
+                        } else {
+                            alertaError(response.Mensaje);
+                        }
+                    },
+                    error: function() {
+                        alertaError("Error al actualizar el tiempo de carrusel.");
+                    }
+                });
+            });
+        });
     </script>
 @endpush

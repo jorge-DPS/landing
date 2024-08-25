@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class GlobalConfiguration extends Model
 {
     use HasFactory;
+
+    protected $table = 'global_configuration';
+
+    protected $fillable = [
+        'carrusel_time',
+    ];
 }

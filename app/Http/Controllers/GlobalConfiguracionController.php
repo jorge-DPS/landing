@@ -7,6 +7,27 @@ use Illuminate\Http\Request;
 
 class GlobalConfiguracionController extends Controller
 {
+    public function updateTimeCarrusel(Request $request)
+    {
+        try {
+            $globalConfig = GlobalConfiguration::first();
+            $globalConfig->carrusel_time = $request->input('seconds');
+            $globalConfig->save();
+
+            return response()->json([
+                'Codigo' => 0,
+                'Data' => null,
+                'Mensaje' => 'Tiempo actualizado correctamente.'
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'Codigo' => 1,
+                'Data' => null,
+                'Mensaje' => $e->getMessage(),
+            ]);
+        }
+    }
+
     /**
      * Display a listing of the resource.
      */

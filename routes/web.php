@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\GlobalConfiguracionController;
 use App\Http\Controllers\CoverController;
 use App\Http\Controllers\CoverSectionController;
 use App\Http\Controllers\EmployeController;
@@ -52,6 +52,9 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('person-section', PersonSectionController::class);
     Route::resource('galery-section', GallerySectionController::class);
     Route::resource('cover-section', CoverSectionController::class);
+
+    Route::put('updateTimeCarrusel', [GlobalConfiguracionController::class, 'updateTimeCarrusel'])->name('backend.configuracion.updateTimeCarrusel');
+
 
 
 });
