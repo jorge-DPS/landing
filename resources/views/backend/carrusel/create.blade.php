@@ -210,7 +210,7 @@
                                     <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14">
                                         <div class="flex flex-col max-w-72 w-full">
                                             <div class="text-gray-900 text-sm font-semibold">
-                                                Botones relacionado con el carrusel
+                                                Agragar botones
                                             </div>
                                         </div>
 
@@ -220,17 +220,16 @@
                                                     <label class="input">
                                                         <input type="text"
                                                                x-model="button.name"
-                                                               value=""
                                                                :name="'buttons[' + index + '][name]'"
                                                                placeholder="Título del botón"
                                                                @input="validateFields(index)"
+                                                               :id="'button-name-' + index"
                                                         />
                                                     </label>
                                                     <br>
                                                     <label class="input" style="margin-bottom: 10px;">
                                                         <input type="text"
                                                                x-model="button.link"
-                                                               value=""
                                                                :name="'buttons[' + index + '][link]'"
                                                                placeholder="Botón para (url), (enlace), (link), (https://ejemplo.bo.edu)."
                                                                @input="validateFields(index)"
@@ -238,11 +237,10 @@
                                                     </label>
                                                 </div>
                                             </template>
-                                            <button type="button" class="btn btn-success mt-3" @click.prevent="addButton" x-show="canAddButton">
-                                                Agregar Nuevo Botón
+                                            <button type="button" class="btn btn-primary mt-3" @click.prevent="addButtonAndFocus()" x-show="canAddButton">
+                                                Agregar nuevo botón
                                             </button>
                                         </div>
-
                                         </label>
                                     </div>
 
@@ -284,8 +282,6 @@
 @endsection
 
 @push('scripts')
-
-
     <script>
         function buttonManager() {
             return {
@@ -293,19 +289,17 @@
                 canAddButton: false,
 
                 validateFields(index) {
-                    if (this.buttons[index].name && this.buttons[index].link) {
-                        this.canAddButton = true;
-                    } else {
-                        this.canAddButton = false;
-                    }
+                    this.canAddButton = this.buttons[index].name && this.buttons[index].link;
                 },
 
-                addButton() {
-                    if (this.canAddButton) {
-                        this.buttons.push({ name: '', link: '' });
-                        this.canAddButton = false;
-                    }
-                }
+                addButtonAndFocus() {
+                    this.buttons.push({ name: '', link: '' });
+                    this.canAddButton = false;
+
+                    this.$nextTick(() => {
+                        document.getElementById('button-name-' + (this.buttons.length - 1)).focus();
+                    });
+                },
             }
         }
     </script>

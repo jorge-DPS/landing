@@ -14,15 +14,63 @@
 
 <body class="flex h-full demo1 sidebar-fixed header-fixed bg-[#fefefe] dark:bg-coal-500">
 <script src="{{ asset('assetsBackend/js/login/utilitis.js') }}"></script>
+<style>
+
+    /* From Uiverse.io by vikramsinghnegi */
+    .blob {
+        width: 112px;
+        height: 112px;
+        display: grid;
+        background: #fff;
+        filter: blur(5.6px) contrast(10);
+        padding: 11.2px;
+        mix-blend-mode: darken;
+    }
+
+    .blob:before,
+    .blob:after {
+        content: "";
+        grid-area: 1/1;
+        width: 44.8px;
+        height: 44.8px;
+        background: rgb(177, 42, 56);
+        animation: blob-rhf26m 2s infinite;
+    }
+
+    .blob:after {
+        animation-delay: -1s;
+    }
+
+    @keyframes blob-rhf26m {
+        0% {
+            transform: translate(0, 0);
+        }
+
+        25% {
+            transform: translate(100%, 0);
+        }
+
+        50% {
+            transform: translate(100%, 100%);
+        }
+
+        75% {
+            transform: translate(0, 100%);
+        }
+
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
+</style>
 <div id="cargando-overlay" class="overlay">
     <div class="loader">
-        <div class="box-1">
-        </div>
-        <span>
-         Cargando....
-     </span>
+        <div class="blob"></div>
     </div>
 </div>
+
+
 <div class="flex grow">
     @include('backend.partials.sidebar')
     <div class="wrapper flex grow flex-col">

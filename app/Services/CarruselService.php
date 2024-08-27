@@ -26,6 +26,7 @@ class CarruselService
 
     public function createCarrusel(array $data): Carrusel
     {
+        //dd($data);
         // Manejo de archivos
         if (isset($data['mobile_background']) && $data['mobile_background'] instanceof \Illuminate\Http\UploadedFile) {
             $data['mobile_background'] = saveStorage($data['mobile_background'], 'mobile_backgrounds');
@@ -39,7 +40,23 @@ class CarruselService
             $data['tablet_background'] = saveStorage($data['tablet_background'], 'tablet_backgrounds');
         }
 
-        return $this->repository->create($data);
+        $carrusel = $this->repository->create($data);
+
+        //dd($carrusel);
+
+        if (isset($data['buttons']) && is_array($data['buttons'])) {
+            foreach ($data['buttons'] as $buttonData) {
+                $carrusel->buttons()->create([
+                    'text' => $buttonData['name'],
+                    'url' => $buttonData['link'],
+                    'status' => true,
+                ]);
+
+            }
+        }
+
+        return $carrusel;
+
     }
 
     public function updateCarrusel(Carrusel $carrusel, array $data): bool

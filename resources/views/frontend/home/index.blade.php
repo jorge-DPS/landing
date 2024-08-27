@@ -96,10 +96,15 @@
                                         </h3>
                                         <p class="leading-[1.75] mb-[41px]">{{ $carr->description }}</p>
                                         <div class="flex items-center gap-[20px]">
-                                            <a href="contact.html" class="ed-btn">Apply now</a>
-                                            <a href="about.html"
-                                               class="ed-btn !bg-transparent border border-white hover:!bg-white hover:text-edpurple">About
-                                                us</a>
+                                            @if($carr->buttons->isNotEmpty())
+                                                <div class="buttons">
+                                                    @foreach($carr->buttons as $button)
+                                                        <a href="{{ $button->url }}" class="ed-btn">
+                                                            {{ $button->text }}
+                                                        </a>
+                                                    @endforeach
+                                                </div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>

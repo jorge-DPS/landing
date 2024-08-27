@@ -38,11 +38,9 @@ class CarruselController extends Controller
      * Store a newly created resource in storage.
      */
 
-    public function store(CarruselRequest $request): RedirectResponse
+    public function store(Request $request): RedirectResponse
     {
-        dd($request->all());
-        $data = $request->validated();
-
+        $data = ($request->all());
 
         $this->service->createCarrusel($data);
 
