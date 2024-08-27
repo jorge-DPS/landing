@@ -3,15 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Services\MenuService;
 
 class MenuController extends Controller
 {
+    protected $menuService;
+
+    public function __construct(MenuService $menuService)
+    {
+        $this->menuService = $menuService;
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('backend.menu.index');
+        $menus = $this->menuService->getAll();
+        return view('backend.menu.index', compact('menus'));
     }
 
     /**

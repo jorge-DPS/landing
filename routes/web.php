@@ -23,13 +23,13 @@ Route::get('/', function () {
     return view('frontend.home.index', compact('carrusels'));
 });
 
-//auth route
+//authRoute
 Route::get('login', [AuthController::class, 'index'])->name('login');
 Route::post('post-login', [AuthController::class, 'postLogin'])->name('login.post');
 Route::get('dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
-//general route
+//generalRoute
 Route::middleware(['auth'])->group(function () {
 
     Route::group(['prefix' => 'usuarios'], function () {
@@ -39,7 +39,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('user.profile');
     Route::post('/profile', [ProfileController::class, 'store'])->name('user.profile.store');
 
-    //rutasNative
+    //nativeRoute
     Route::resource('metatags', MetaTagsController::class);
     Route::resource('carrusel', CarruselController::class);
     Route::resource('company', CompanyController::class);

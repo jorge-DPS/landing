@@ -17,5 +17,6 @@ class InitSysSeed extends Seeder
         $this->call(InitMetaTagsSeed::class);
         $this->call(DatabaseSeeder::class);
         $this->call(GlobalConfSeed::class);
+        $this->call(MenuSeed::class);
     }
 }
