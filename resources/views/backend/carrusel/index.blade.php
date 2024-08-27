@@ -22,7 +22,6 @@
 @section('content')
 
     <style>
-        /* From Uiverse.io by D3OXY */
         .card {
             position: relative;
             width: 350px;
@@ -210,7 +209,7 @@
                 <div class="flex items-center gap-2.5">
                     <div class="btn-conteiner">
                         <a class="btn-content" href="{{ route('carrusel.create') }}">
-                            <span class="btn-title">CREAR</span>
+                            <span class="btn-title">AGREGAR NUEVO</span>
                             <span class="icon-arrow">
       <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg"
       >

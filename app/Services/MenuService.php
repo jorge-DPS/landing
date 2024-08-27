@@ -24,6 +24,24 @@ class MenuService
         return $this->repository->getById($id);
     }
 
+    public function create(array $data)
+    {
+        $menu = $this->repository->create($data);
+
+        if (isset($data['page']) && is_array($data['page'])) {
+            foreach ($data['page'] as $pageData) {
+                $menu->pages()->create([
+                    'title' => $pageData['title'],
+                    'description' => $pageData['description'],
+                    'seo_title' => $pageData['seo_title'],
+                    'menu_id' => $menu->id,
+                ]);
+            }
+        }
+
+        return $menu;
+    }
+
 
 
     public function updateCarrusel(Menu $menu, array $data): bool

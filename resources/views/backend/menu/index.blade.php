@@ -32,8 +32,8 @@
                 </div>
                 <div class="flex items-center gap-2.5">
                     <div class="btn-conteiner">
-                        <button class="btn-content" data-modal-toggle="#modal_5">
-                            <span class="btn-title">CREAR</span>
+                        <a class="btn-content" href="{{ route('menu.create') }}">
+                            <span class="btn-title">AGREGAR NUEVO</span>
                             <span class="icon-arrow">
       <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg"
       >
@@ -50,7 +50,7 @@
         </g>
       </svg>
     </span>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -84,9 +84,60 @@
             </div>
         </div>
     </main>
-    @include('backend.menu.modal')
 @endsection
 
 @push('scripts')
+    <?php if (session('success')) { ?>
+    <script>
+        Swal.fire({
+            position: "top-end",
+            title: "!Registro exitoso¡",
+            text: "{{ session('success') }}",
+            showConfirmButton: false,
+            icon: "success",
+            timer: 2000,
+            scrollbarPadding: false,
+            heightAuto: false,
+            backdrop: false,
+            customClass: {
+                popup: 'swal-alert-success',
+                title: 'swal-title-overlay',
+                content: 'swal-content-overlay'
+            },
+            didOpen: () => {
+                document.body.classList.add('swal-open');
+            },
+            willClose: () => {
+                document.body.classList.remove('swal-open');
+            }
+        });
+    </script>
+    <?php } ?>
+    @if ($errors->any())
+        <script>
+            Swal.fire({
+                position: "top-end",
+                title: "¡Error!",
+                text: "{{ $errors->first() }}",
+                icon: "error",
+                showConfirmButton: false,
+                timer: 5000,
+                scrollbarPadding: false,
+                heightAuto: false,
+                backdrop: false,
+                customClass: {
+                    popup: 'swal-alert-danger',
+                    title: 'swal-title-overlay',
+                    content: 'swal-content-overlay'
+                },
+                didOpen: () => {
+                    document.body.classList.add('swal-open');
+                },
+                willClose: () => {
+                    document.body.classList.remove('swal-open');
+                }
+            });
+        </script>
+    @endif
 
 @endpush

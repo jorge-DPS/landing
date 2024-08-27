@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Page extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'description',
+        'seo_title',
+        'menu_id',
+    ];
+
+    public function menu()
+    {
+        return $this->belongsTo(Menu::class);
+    }
+
 }

@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('title')
-    <title>Crear carrusel</title>
+    <title>Crear menu</title>
 @endsection
 
 @section('breadcrumbs')
@@ -38,8 +38,8 @@
                 </div>
                 <div class="flex items-center gap-2.5">
                     <div class="btn-conteiner">
-                        <a class="btn-content" href="{{ route('carrusel.index') }}">
-                            <span class="btn-title">TODOS</span>
+                        <a class="btn-content" href="{{ route('menu.index') }}">
+                            <span class="btn-title">VER TODOS</span>
                             <span class="icon-arrow">
       <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg"
       >
@@ -67,7 +67,7 @@
                     <div class="flex flex-col gap-5 lg:gap-7.5">
 
                         <div class="card min-w-full">
-                            <form id="createCarrusel" action="{{ route('carrusel.store') }}"
+                            <form id="createCarrusel" action="{{ route('menu.store') }}"
                                   method="POST"
                                   enctype="multipart/form-data">
                                 @csrf
@@ -80,13 +80,13 @@
                                     <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14">
                                         <div class="flex flex-col max-w-72 w-full">
                                             <div class="text-gray-900 text-sm font-semibold">
-                                                Título pequeño
+                                                Título
                                             </div>
                                         </div>
                                         <label class="input">
                                             <input type="text" value=""
                                                    placeholder="Este título aprece primero."
-                                                   name="small_title"
+                                                   name="title"
                                                    required
                                             />
                                         </label>
@@ -94,160 +94,75 @@
                                     <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
                                         <div class="flex flex-col max-w-72 w-full">
                                             <div class="text-gray-900 text-sm font-semibold">
-                                                Título grande
+                                                Orden
                                             </div>
                                         </div>
                                         <label class="input">
-                                            <input type="text"
+                                            <input type="number"
                                                    value=""
-                                                   name="big_title"
+                                                   name="order"
                                                    placeholder="Segundo título que parece."
                                                    required
                                             />
                                         </label>
                                     </div>
-                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
-                                        <div class="flex flex-col max-w-72 w-full">
-                                            <div class="text-gray-900 text-sm font-semibold">
-                                                Descripción
-                                            </div>
-                                        </div>
-                                        <label class="w-full">
-                                                <textarea
-                                                        name="description"
-                                                        class="textarea w-full"
-                                                        placeholder="Agregar su descripción..."
-                                                        rows="6"
-                                                ></textarea>
-                                        </label>
-                                    </div>
                                     <div class="border-t border-gray-200 my-7.5"></div>
-                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
-                                        <div class="flex flex-col max-w-72 w-full">
-                                            <div class="text-gray-900 text-sm font-semibold">
-                                                Fondo para celulares (mobile)
-                                            </div>
-                                        </div>
-                                        <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
-                                            <img id="mobile-bg-preview"
-                                                 class="mt-2"
-                                                 src="{{ asset('/assetsBackend/media/avatars/blank.png') }}"
-                                                 style="height:100px;"/>
-                                        </div>
-                                        <div class="flex justify-center items-center">
-                                            <div class="image-input size-[500px]" data-image-input="true">
-                                                <input id="mobile-bg-input" accept=".png, .jpg, .jpeg"
-                                                       name="mobile_background"
-                                                       type="file" class="custom-file-input" style="display: none;"/>
-                                                <button type="button" class="upload-button"
-                                                        id="upload-mobile-bg-button">
-                                                    <i class="ki-duotone ki-file-up text-2xl upload-svgIcon"></i>
-                                                </button>
-                                                <button type="button" class="delete-button ml-5"
-                                                        onclick="removeMobileBg()">
-                                                    <i class="ki-solid ki-trash text-2xl delete-svgIcon"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
-                                        <div class="flex flex-col max-w-72 w-full">
-                                            <div class="text-gray-900 text-sm font-semibold">
-                                                Fondo para monitor (desktop)
-                                            </div>
-                                        </div>
-                                        <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
-                                            <img id="desktop-bg-preview"
-                                                 class="mt-2"
-                                                 src="{{ asset('/assetsBackend/media/avatars/blank.png') }}"
-                                                 style="height:100px;"/>
-                                        </div>
-                                        <div class="flex justify-center items-center">
-                                            <div class="image-input size-[500px]" data-image-input="true">
-                                                <input id="desktop-bg-input" accept=".png, .jpg, .jpeg"
-                                                       name="desktop_background"
-                                                       type="file" class="custom-file-input" style="display: none;"/>
-                                                <button type="button" class="upload-button"
-                                                        id="upload-desktop-bg-button">
-                                                    <i class="ki-duotone ki-file-up text-2xl upload-svgIcon"></i>
-                                                </button>
-                                                <button type="button" class="delete-button ml-5"
-                                                        onclick="removeDesktopBg()">
-                                                    <i class="ki-solid ki-trash text-2xl delete-svgIcon"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
-                                        <div class="flex flex-col max-w-72 w-full">
-                                            <div class="text-gray-900 text-sm font-semibold">
-                                                Fondo para tableta (tablet)
-                                            </div>
-                                        </div>
-                                        <div class="flex flex-wrap sm:flex-nowrap w-full gap-5 lg:gap-7.5">
-                                            <img id="tablet-bg-preview"
-                                                 class="mt-2"
-                                                 src="{{ asset('/assetsBackend/media/avatars/blank.png') }}"
-                                                 style="height:100px;"/>
-                                        </div>
-                                        <div class="flex justify-center items-center">
-                                            <div class="image-input size-[500px]" data-image-input="true">
-                                                <input id="tablet-bg-input" accept=".png, .jpg, .jpeg"
-                                                       name="tablet_background"
-                                                       type="file" class="custom-file-input" style="display: none;"/>
-                                                <button type="button" class="upload-button"
-                                                        id="upload-tablet-bg-button">
-                                                    <i class="ki-duotone ki-file-up text-2xl upload-svgIcon"></i>
-                                                </button>
-                                                <button type="button" class="delete-button ml-5"
-                                                        onclick="removeTabletBg()">
-                                                    <i class="ki-solid ki-trash text-2xl delete-svgIcon"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="border-t border-gray-200 my-7.5"></div>
-
                                     <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14">
                                         <div class="flex flex-col max-w-72 w-full">
                                             <div class="text-gray-900 text-sm font-semibold">
-                                                Agragar botones
+                                                Agragar páginas
                                             </div>
                                         </div>
 
+
                                         <div x-data="buttonManager()" class="mt-4 w-full">
-                                            <template x-for="(button, index) in buttons" :key="index">
-                                                <div class="w-full">
-                                                    <div class="flex flex-col max-w-72 w-20">
-                                                        <div class="text-gray-900 text-sm font-semibold">
-                                                            Botón <span x-text="index + 1"></span>
-                                                        </div>
-                                                    </div>
+                                            <template x-for="(page, index) in pages" :key="index">
+                                                <div class="w-full mt-5">
+                                                    <label class="text-gray-900 text-sm font-semibold">Título de la página:</label>
                                                     <label class="input">
                                                         <input type="text"
-                                                               x-model="button.name"
-                                                               :name="'buttons[' + index + '][name]'"
-                                                               placeholder="Título del botón"
-                                                               @input="validateFields(index)"
-                                                               :id="'button-name-' + index"
+                                                               x-model="page.title"
+                                                               :name="'page[' + index + '][title]'"
+                                                               placeholder="Ejemplo"
+                                                               @input="validateFields()"
+                                                               :id="'page-title-' + index"
                                                         />
                                                     </label>
                                                     <br>
-                                                    <label class="input" style="margin-bottom: 10px;">
+                                                    <label class="text-gray-900 text-sm font-semibold">Descripción de la página:</label>
+                                                    <label class="input">
                                                         <input type="text"
-                                                               x-model="button.link"
-                                                               :name="'buttons[' + index + '][link]'"
-                                                               placeholder="Botón para (url), (enlace), (link), (https://ejemplo.bo.edu)."
-                                                               @input="validateFields(index)"
+                                                               x-model="page.description"
+                                                               :name="'page[' + index + '][description]'"
+                                                               placeholder="Ejemplo"
+                                                               @input="validateFields()"
                                                         />
                                                     </label>
-                                                    <div class="border-t border-gray-200 my-7.5"></div>
+                                                    <br>
+                                                    <label class="text-gray-900 text-sm font-semibold">Optimización para Motores de Búsqueda - SEO:</label>
+                                                    <label class="input">
+                                                        <input type="text"
+                                                               x-model="page.seo_title"
+                                                               :name="'page[' + index + '][seo_title]'"
+                                                               placeholder="Ejemplo"
+                                                               @input="validateFields()"
+                                                        />
+                                                    </label>
                                                 </div>
                                             </template>
-                                            <button type="button" class="btn btn-primary mt-3" @click.prevent="addButtonAndFocus()" x-show="canAddButton && buttons.length < maxButtons">
+
+                                            <!-- Botón solo aparece cuando todos los campos están llenos -->
+                                            <button type="button" class="btn btn-primary mt-5"
+                                                    @click.prevent="addButtonAndFocus()"
+                                                    x-show="canAddButton"
+                                                    x-bind:disabled="!canAddButton">
                                                 Agregar nuevo botón
                                             </button>
                                         </div>
+
+
+
+
                                         </label>
                                     </div>
 
@@ -255,7 +170,7 @@
 
                                     <div class="flex justify-end">
                                         <div class="btn-conteiner">
-                                                <a class="btn-content" href="javascript:void(0);" onclick="enviarFormulario(); return false;">
+                                            <a class="btn-content" href="javascript:void(0);" onclick="enviarFormulario(); return false;">
 
                                                 <span class="btn-title">CREAR</span>
                                                 <span class="icon-arrow">
@@ -290,56 +205,27 @@
 
 @push('scripts')
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         function buttonManager() {
             return {
-                buttons: [{ name: '', link: '' }],
-                maxButtons: 3,
+                pages: [{ title: '', description: '', seo_title: '' }],
+                canAddButton: false,
 
-                validateFields(index) {
-                    this.canAddButton = this.buttons.every(button => button.name && button.link);
+                validateFields() {
+                    this.canAddButton = this.pages.every(page => page.title && page.description && page.seo_title);
                 },
 
                 addButtonAndFocus() {
-                    if (this.buttons.length < this.maxButtons) {
-                        this.buttons.push({ name: '', link: '' });
-                        this.canAddButton = false;
+                    this.pages.push({ title: '', description: '', seo_title: '' });
+                    this.canAddButton = false;
 
-                        this.$nextTick(() => {
-                            document.getElementById('button-name-' + (this.buttons.length - 1)).focus();
-                        });
-
-                        if (this.buttons.length === this.maxButtons) {
-                            Swal.fire({
-                                position: "top-end",
-                                title: "Límite de botones alcanzado",
-                                text: "Has agregado el último botón permitido. No se pueden agregar más botones.",
-                                showConfirmButton: false,
-                                icon: "warning",
-                                timer: 5000,
-                                scrollbarPadding: false,
-                                heightAuto: false,
-                                backdrop: false,
-                                customClass: {
-                                    popup: 'swal-alert-success',
-                                    title: 'swal-title-overlay',
-                                    content: 'swal-content-overlay'
-                                },
-                                didOpen: () => {
-                                    document.body.classList.add('swal-open');
-                                },
-                                willClose: () => {
-                                    document.body.classList.remove('swal-open');
-                                }
-                            });
-                        }
-                    }
+                    this.$nextTick(() => {
+                        document.getElementById('page-title-' + (this.pages.length - 1)).focus();
+                    });
                 },
             }
         }
     </script>
-
 
     <?php if (session('success')) { ?>
     <script>

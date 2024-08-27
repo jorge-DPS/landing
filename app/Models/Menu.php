@@ -13,4 +13,9 @@ class Menu extends Model
         'title',
         'order',
     ];
+
+    public function pages()
+    {
+        return $this->hasMany(Page::class);
+    }
 }
