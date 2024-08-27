@@ -1,16 +1,3 @@
-<style>
-    #table_respaldo tbody tr:hover {
-        background-color: #e0f7fa;
-    }
-
-    #table_respaldo tbody tr {
-        cursor: pointer;
-    }
-
-    #table_respaldo tbody tr.sortable-chosen {
-        background-color: #b2ebf2;
-    }
-</style>
 <table id="table_respaldo" class="table table-auto table-border" data-datatable-table="true">
     <thead>
     <tr>
@@ -154,13 +141,7 @@
                     </div>
                 </div>
             </td>
-
-
         </tr>
     @endforeach
     </tbody>
 </table>
-
-@push('scripts')
-
-@endpush

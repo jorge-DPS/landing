@@ -38,7 +38,35 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $menu = $this->menuService->getCarrusel($request->button_id);
+
+        if (is_object($menu) && isset($menu->id)) {
+            $menu_id = $menu->id;
+        } else {
+            return redirect()->back()->withErrors(['menu_id' => 'Menu not found.']);
+        }
+
+        if ($request->has('page') && is_array($request->page)) {
+            foreach ($request->page as $pageData) {
+                $data = [
+                    'title' => $pageData['title'] ?? null,
+                    'description' => $pageData['description'] ?? null,
+                    'seo_title' => $pageData['seo_title'] ?? null,
+                    'menu_id' => $menu_id,
+                ];
+
+                if (empty($data['title']) || empty($data['description']) || empty($data['seo_title'])) {
+                    return redirect()->back()->withErrors(['message' => 'Title, Description, and SEO Title are required for all pages.']);
+                }
+
+                $this->pageService->createPage($data);
+            }
+        } else {
+            return redirect()->back()->withErrors(['message' => 'No page data provided.']);
+        }
+
+        // Redirect to the pages index route
+        return redirect()->route('pages.index');
     }
 
     /**

@@ -19,9 +19,9 @@ CSS INDEX
 */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 :root {
-  --ed-blue: #241442;
-  --ed-purple: #5B3AEE;
-  --ed-yellow: #F8BC24;
+  --ed-blue: #4f1317;
+  --ed-purple: #B12A38;
+  --ed-yellow: #B12A38;
   --ed-gray: #4F536C;
   --ed-gray2: #445375;
   --black: #000;
@@ -62,7 +62,7 @@ p {
 
 .ed-section-sub-title {
   font-weight: 600;
-  color: var(--ed-purple);
+  color: #B12A38;
   text-transform: uppercase;
   padding-right: 10px;
   display: inline-block;
@@ -78,7 +78,7 @@ p {
   transform: translateY(-50%);
   height: 10px;
   width: 48px;
-  background: linear-gradient(90deg, rgb(91, 58, 238) 3px, rgba(255, 255, 255, 0) 3px, rgba(255, 255, 255, 0) 8px, rgb(91, 58, 238) 8px, rgb(91, 58, 238) 13px, rgba(255, 255, 255, 0) 13px, rgba(255, 255, 255, 0) 18px, rgba(255, 255, 255, 0) 18px, rgb(91, 58, 238) 0);
+  background: #B12A38;
 }
 .ed-section-sub-title--white {
   color: var(--white);
@@ -126,10 +126,10 @@ p {
 
 .ed-single-accordion-item.open .ed-single-accordion-item__header i {
   transform: rotate(90deg);
-  color: var(--ed-purple);
+  color: #B12A38;
 }
 .ed-single-accordion-item.open .ed-single-accordion-item__title {
-  color: var(--ed-purple);
+  color: #B12A38;
 }
 .ed-single-accordion-item.open .ed-single-accordion-item__body {
   grid-template-rows: 1fr;
@@ -171,7 +171,7 @@ p {
   }
 }
 .ed-header-nav a:hover {
-  color: var(--ed-purple);
+  color: #B12A38;
 }
 .ed-header-nav .has-sub-menu {
   display: grid;
@@ -269,7 +269,7 @@ p {
   color: var(--white);
 }
 .ed-header--2 .ed-header-nav > li > a:hover {
-  color: var(--ed-yellow);
+  color: #B12A38;
 }
 .ed-header--2.to-be-fixed.ed-sticky {
   background-color: var(--ed-blue);
@@ -307,7 +307,7 @@ p {
 }
 @media screen and (max-width: 1199px) {
   .ss-main .ss-values .ss-placeholder {
-    color: var(--ed-blue);
+    color: #B12A38;
   }
 }
 
@@ -347,7 +347,7 @@ p {
 }
 
 .mixitup-control-active {
-  background-color: var(--ed-purple);
+  background-color: #B12A38;
   color: var(--white);
 }
 
@@ -357,7 +357,7 @@ p {
 }
 
 .ed-course-details-tab-navs button.active {
-  background-color: var(--ed-purple);
+  background-color: #B12A38;
   color: var(--white);
 }
 .ed-course-details-tabs .ed-tab {

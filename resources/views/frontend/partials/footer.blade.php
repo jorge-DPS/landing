@@ -48,13 +48,204 @@
 
 
             <div class="max-w-[300px]">
-                <h6 class="font-semibold text-[18px] pb-[15px] mb-[30px] relative before:absolute before:bottom-0 before:left-0 before:h-[1.5px] before:w-[20px] before:bg-edyellow after:absolute after:bottom-0 after:left-[30px] after:h-[1.5px] after:w-[63px] after:bg-white">Newsletter</h6>
                 <div>
-                    <p class="text-[#d9d9d9]/80 mb-[21px]">Sign up to seargin weekly newsletter to get the latest updates.</p>
-                    <form class="border border-white/20 rounded-full flex h-[56px] p-[4px]">
-                        <input type="email" name="email" placeholder="Enter Email Address" class="text-[14px] bg-transparent w-full rounded-full focus:outline-none px-[20px]">
-                        <button class="bg-edyellow rounded-full aspect-square flex items-center justify-center hover:bg-edpurple"><img src="assetsFrontend/img/icon/submit-icon.svg" alt="icon"></button>
-                    </form>
+                    <style>
+                        .brutal-subscribe__container {
+                            width: 100%;
+                            max-width: 500px;
+                            background-color: #fff;
+                            border: 5px solid #000;
+                            position: relative;
+                            overflow: hidden;
+                            box-shadow: 15px 15px 0 rgba(0, 0, 0, 0.605);
+                            transition: transform 0.3s, box-shadow 0.3s;
+                        }
+
+                        .brutal-subscribe__container:hover {
+                            transform: translate(-5px, -5px);
+                            box-shadow: 20px 20px 0 rgba(0, 0, 0, 0.2);
+                        }
+
+                        .brutal-subscribe__header {
+                            background-color: #000;
+                            color: #fff;
+                            padding: 20px;
+                            position: relative;
+                            overflow: hidden;
+                        }
+
+                        .brutal-subscribe__header::before {
+                            content: "";
+                            position: absolute;
+                            top: -50%;
+                            left: -50%;
+                            width: 200%;
+                            height: 200%;
+                            background: repeating-linear-gradient(
+                                    45deg,
+                                    #ff0 0,
+                                    #ff0 10px,
+                                    #000 10px,
+                                    #000 20px
+                            );
+                            opacity: 0.1;
+                            animation: stripe-animation 20s linear infinite;
+                        }
+
+                        @keyframes stripe-animation {
+                            0% {
+                                transform: rotate(0deg);
+                            }
+                            100% {
+                                transform: rotate(360deg);
+                            }
+                        }
+
+                        .brutal-subscribe__title {
+                            display: block;
+                            font-size: 36px;
+                            font-weight: bold;
+                            position: relative;
+                            z-index: 1;
+                            text-shadow: 3px 3px 0 rgb(140, 140, 19);
+                        }
+
+                        .brutal-subscribe__subtitle {
+                            display: block;
+                            font-size: 14px;
+                            position: relative;
+                            z-index: 1;
+                        }
+
+                        .brutal-subscribe__form {
+                            padding: 20px;
+                        }
+
+                        .brutal-subscribe__input {
+                            width: calc(100% - 26px);
+                            padding: 10px;
+                            border: 3px solid #000;
+                            font-family: inherit;
+                            font-size: 16px;
+                            margin-bottom: 10px;
+                            transition: transform 0.3s, background-color 0.3s;
+                        }
+
+                        .brutal-subscribe__input:focus {
+                            outline: none;
+                            background-color: #ff0;
+                            transform: scale(1.05);
+                        }
+
+                        .brutal-subscribe__button {
+                            width: 60%;
+                            padding: 10px;
+                            background-color: #000;
+                            color: #fff;
+                            border: 3px solid #000;
+                            font-family: inherit;
+                            font-size: 18px;
+                            font-weight: bold;
+                            cursor: pointer;
+                            transition: all 0.3s;
+                            position: relative;
+                            overflow: hidden;
+                        }
+
+                        .brutal-subscribe__button::after {
+                            content: "→";
+                            position: absolute;
+                            top: 50%;
+                            right: -30px;
+                            transform: translateY(-50%);
+                            transition: right 0.3s;
+                        }
+
+                        .brutal-subscribe__button:hover {
+                            background-color: #ff0;
+                            color: #000;
+                        }
+
+                        .brutal-subscribe__button:hover::after {
+                            right: 10px;
+                        }
+
+                        .brutal-subscribe__button:active {
+                            transform: scale(0.95);
+                        }
+
+                        .brutal-subscribe__decor {
+                            position: absolute;
+                            bottom: -10px;
+                            right: -10px;
+                            background-color: #ff0;
+                            color: #000;
+                            padding: 5px 10px;
+                            transform: rotate(-5deg);
+                            font-weight: bold;
+                            font-size: 24px;
+                            border: 3px solid #000;
+                            transition: transform 0.3s;
+                        }
+
+                        .brutal-subscribe__container:hover .brutal-subscribe__decor {
+                            transform: rotate(3deg) scale(1);
+                        }
+
+                        @media (max-width: 500px) {
+                            .brutal-subscribe__container {
+                                width: 90%;
+                            }
+                        }
+
+                        @keyframes glitch {
+                            0% {
+                                transform: translate(0);
+                            }
+                            20% {
+                                transform: translate(-2px, 2px);
+                            }
+                            40% {
+                                transform: translate(-2px, -2px);
+                            }
+                            60% {
+                                transform: translate(2px, 2px);
+                            }
+                            80% {
+                                transform: translate(2px, -2px);
+                            }
+                            100% {
+                                transform: translate(0);
+                            }
+                        }
+
+                        .brutal-subscribe__container:hover .brutal-subscribe__title {
+                            animation: glitch 0.3s infinite;
+                        }
+
+                    </style>
+                    <div class="brutal-subscribe">
+                        <div class="brutal-subscribe__container">
+                            <div class="brutal-subscribe__header">
+                                <span class="brutal-subscribe__title">NIHILISM</span>
+                                <span class="brutal-subscribe__subtitle"
+                                >FROM THE VOID WE WILL SEND YOU</span
+                                >
+                            </div>
+                            <form class="brutal-subscribe__form">
+                                <input
+                                        type="email"
+                                        class="brutal-subscribe__input"
+                                        placeholder="YOUR@EMAIL.COM"
+                                        required=""
+                                />
+                                <button type="submit" class="brutal-subscribe__button">SUBSCRIBE</button>
+                            </form>
+                            <div class="brutal-subscribe__decor">WEEKLY</div>
+                        </div>
+                    </div>
+
+
                     <div class="flex gap-[20px] mt-[30px]">
                         <span class="pl-[30px] font-medium text-[#d9d9d9] relative before:absolute before:left-0 before:top-[50%] before:-translate-y-[50%] before:h-[1px] before:w-[20px] before:bg-[#d9d9d9]">Follow on</span>
                         <span class="inline-flex gap-[16px] text-[#d9d9d9]">

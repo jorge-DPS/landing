@@ -1,6 +1,6 @@
 <style>
     #table_respaldo tbody tr:hover {
-        background-color: #e0f7fa;
+        background-color: rgba(177, 42, 56, 0.14);
     }
 
     #table_respaldo tbody tr {
@@ -8,7 +8,7 @@
     }
 
     #table_respaldo tbody tr.sortable-chosen {
-        background-color: #b2ebf2;
+        background-color: rgba(213, 65, 80, 0.27);
     }
 </style>
 <table id="table_respaldo" class="table table-auto table-border" data-datatable-table="true">
@@ -123,11 +123,22 @@
                     </div>
                 </div>
             </td>
-
-
         </tr>
     @endforeach
     </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="7">
+            <div style="display: flex; align-items: center; padding: 8px; background-color: rgba(236,91,103,0.18); font-size: 12px; color: #2d0000; border-radius: 20px;">
+                <i class="ki-solid ki-information-2 text-primary text-2xl" style="margin-right: 8px;"></i>
+                <span>
+                    Para reorganizar las filas de la tabla <strong>debes arrastrar al lugar</strong>.
+                    el nuevo orden será procesado automáticamente.
+                </span>
+            </div>
+        </td>
+    </tr>
+    </tfoot>
 </table>
 
 @push('scripts')

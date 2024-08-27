@@ -138,12 +138,12 @@
                         <span class="icon">
                             <img src="assetsFrontend/img/feature-1.svg" alt="feature" class="mb-[11px]">
                         </span>
-                        <h4 class="font-semibold text-[24px] xl:text-[22px] mb-[3px] text-edblue"><a href="#"
-                                                                                                     class="hover:text-edpurple">School
+                        <h4 class="font-semibold text-[24px] xl:text-[22px] mb-[3px] text-school"><a href="#"
+                                                                                                     class="hover:text-school">School
                                 Life</a></h4>
                         <p class="text-edgray2 group-hover:text-black mb-[18px]">Eimply dummy text printing ypese tting
                             industry. Ipsum has been the</p>
-                        <a href="#" class="text-edblue hover:text-edpurple"><span class="text-[14px]"><i
+                        <a href="#" class="text-school hover:text-school"><span class="text-[14px]"><i
                                         class="fa-solid fa-angle-right"></i></span> View More</a>
                     </div>
 
@@ -152,12 +152,12 @@
                         <span class="icon">
                             <img src="assetsFrontend/img/feature-2.svg" alt="feature" class="mb-[11px]">
                         </span>
-                        <h4 class="font-semibold text-[24px] xl:text-[22px] mb-[3px] text-edblue"><a href="#"
-                                                                                                     class="hover:text-edpurple">Academics </a>
+                        <h4 class="font-semibold text-[24px] xl:text-[22px] mb-[3px] text-school"><a href="#"
+                                                                                                     class="hover:text-school">Academics </a>
                         </h4>
                         <p class="text-black group-hover:text-black mb-[18px]">Eimply dummy text printing ypese tting
                             industry. Ipsum has been the</p>
-                        <a href="#" class="text-edblue hover:text-edpurple"><span class="text-[14px]"><i
+                        <a href="#" class="text-school hover:text-school"><span class="text-[14px]"><i
                                         class="fa-solid fa-angle-right"></i></span> View More</a>
                     </div>
 
@@ -166,8 +166,8 @@
                         <span class="icon">
                             <img src="assetsFrontend/img/feature-3.svg" alt="feature" class="mb-[11px]">
                         </span>
-                        <h4 class="font-semibold text-[24px] xl:text-[22px] mb-[3px] text-edblue"><a href="#"
-                                                                                                     class="hover:text-edpurple">Community</a>
+                        <h4 class="font-semibold text-[24px] xl:text-[22px] mb-[3px] text-school"><a href="#"
+                                                                                                     class="hover:text-school">Community</a>
                         </h4>
                         <p class="text-edgray2 group-hover:text-black mb-[18px]">Eimply dummy text printing ypese tting
                             industry. Ipsum has been the</p>

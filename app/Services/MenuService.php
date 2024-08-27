@@ -30,12 +30,14 @@ class MenuService
 
         if (isset($data['page']) && is_array($data['page'])) {
             foreach ($data['page'] as $pageData) {
-                $menu->pages()->create([
-                    'title' => $pageData['title'],
-                    'description' => $pageData['description'],
-                    'seo_title' => $pageData['seo_title'],
-                    'menu_id' => $menu->id,
-                ]);
+                if (!empty($pageData['title']) && !empty($pageData['description']) && !empty($pageData['seo_title'])) {
+                    $menu->pages()->create([
+                        'title' => $pageData['title'],
+                        'description' => $pageData['description'],
+                        'seo_title' => $pageData['seo_title'],
+                        'menu_id' => $menu->id,
+                    ]);
+                }
             }
         }
 
