@@ -3,15 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Services\PageService;
+use App\Services\MenuService;
 class PageController extends Controller
 {
+    protected $pageService;
+    protected $menuService;
+
+    public function __construct(PageService $pageService, MenuService $menuService)
+    {
+        $this->pageService = $pageService;
+        $this->menuService = $menuService;
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('backend.pages.index');
+        $pages = $this->pageService->getAllPages();
+        return view('backend.pages.index', compact('pages'));
     }
 
     /**
@@ -19,7 +29,8 @@ class PageController extends Controller
      */
     public function create()
     {
-        //
+        $botones = $this->menuService->getAll();
+        return view('backend.pages.create', compact('botones'));
     }
 
     /**

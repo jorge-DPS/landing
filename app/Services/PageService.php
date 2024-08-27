@@ -2,13 +2,13 @@
 
 namespace App\Services;
 
-use App\Repositories\Contracts\PageRepositoryInterface;
+use App\Repositories\PageRepository;
 
 class PageService
 {
     protected $pageRepository;
 
-    public function __construct(PageRepositoryInterface $pageRepository)
+    public function __construct(PageRepository $pageRepository)
     {
         $this->pageRepository = $pageRepository;
     }
