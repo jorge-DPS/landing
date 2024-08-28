@@ -227,21 +227,21 @@
                     <div class="brutal-subscribe">
                         <div class="brutal-subscribe__container">
                             <div class="brutal-subscribe__header">
-                                <span class="brutal-subscribe__title">NIHILISM</span>
+                                <span class="brutal-subscribe__title">S-GEORGE</span>
                                 <span class="brutal-subscribe__subtitle"
-                                >FROM THE VOID WE WILL SEND YOU</span
+                                >QUIERES RECIBIR INFORMACIÓN</span
                                 >
                             </div>
                             <form class="brutal-subscribe__form">
                                 <input
                                         type="email"
                                         class="brutal-subscribe__input"
-                                        placeholder="YOUR@EMAIL.COM"
+                                        placeholder="tucorreo@ejemplo.com"
                                         required=""
                                 />
-                                <button type="submit" class="brutal-subscribe__button">SUBSCRIBE</button>
+                                <button type="submit" class="brutal-subscribe__button">SUSCRIBETE</button>
                             </form>
-                            <div class="brutal-subscribe__decor">WEEKLY</div>
+                            <div class="brutal-subscribe__decor">SCHOOL</div>
                         </div>
                     </div>
 

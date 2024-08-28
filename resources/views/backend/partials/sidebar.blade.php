@@ -74,7 +74,7 @@
          ADMINISTRACIÓN
         </span>
                 </div>
-                <div class="menu-item {{ Request::is('users', 'users/*', 'profile', 'people') ? 'here show' : '' }}" data-menu-item-toggle="accordion" data-menu-item-trigger="click">
+                <div class="menu-item {{ Request::is('users', 'users/*', 'profile', 'people', 'people/*') ? 'here show' : '' }}" data-menu-item-toggle="accordion" data-menu-item-trigger="click">
                     <div
                             class="menu-link flex items-center grow cursor-pointer border border-transparent gap-[10px] pl-[10px] pr-[10px] py-[6px]"
                             tabindex="0">
@@ -110,7 +110,7 @@
                     </div>
                     <div
                             class="menu-accordion gap-0.5 pl-[10px] relative before:absolute before:left-[20px] before:top-0 before:bottom-0 before:border-l before:border-gray-200">
-                        <div class="menu-item {{ Request::is('people') ? 'active' : '' }}">
+                        <div class="menu-item {{ Request::is('people', 'people/*') ? 'active' : '' }}">
                             <a class="menu-link gap-[14px] pl-[10px] pr-[10px] py-[8px] border border-transparent items-center grow menu-item-active:bg-secondary-active dark:menu-item-active:bg-coal-300 dark:menu-item-active:border-gray-100 menu-item-active:rounded-lg hover:bg-secondary-active dark:hover:bg-coal-300 dark:hover:border-gray-100 hover:rounded-lg"
                                href="{{ route('people.index') }}" tabindex="0">
            <span

@@ -15,7 +15,7 @@ class MenuRepository
 
     public function getAll()
     {
-        return $this->model->all();
+        return $this->model->with('pages')->get();
     }
 
     public function getById($id)

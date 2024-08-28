@@ -1,26 +1,31 @@
 <?php
-use App\Http\Controllers\GlobalConfiguracionController;
+
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\CarruselController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\CoverController;
 use App\Http\Controllers\CoverSectionController;
 use App\Http\Controllers\EmployeController;
 use App\Http\Controllers\GallerySectionController;
+use App\Http\Controllers\GlobalConfiguracionController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\MetaTagsController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\PersonSectionController;
-use App\Http\Controllers\SectionTypeController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\MetaTagsController;
-use App\Http\Controllers\CarruselController;
-use App\Http\Controllers\CompanyController;
-use App\Models\Carrusel;
+use App\Http\Controllers\SectionTypeController;
+use App\Http\Controllers\UserController;
+use App\Services\CarruselService;
+use App\Services\MenuService;
 
-Route::get('/', function () {
-    $carrusels = Carrusel::all();
-    return view('frontend.home.index', compact('carrusels'));
+Route::get('/', function (
+    CarruselService $serviceCarrusel,
+    MenuService     $menuService
+) {
+    $carrusels = $serviceCarrusel->getAllCarrusel();
+    $menuGeneral = $menuService->getAll();
+    return view('frontend.home.index', compact('carrusels', 'menuGeneral'));
 });
 
 //authRoute
@@ -49,7 +54,6 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('cover-section', CoverSectionController::class);
 
     Route::put('updateTimeCarrusel', [GlobalConfiguracionController::class, 'updateTimeCarrusel'])->name('backend.configuracion.updateTimeCarrusel');
-
 
 
 });

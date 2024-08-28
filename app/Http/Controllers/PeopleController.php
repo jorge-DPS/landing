@@ -4,9 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\People;
 use Illuminate\Http\Request;
+use App\Services\PeopleService;
 
 class PeopleController extends Controller
 {
+    private $peopleService;
+
+    public function __construct(PeopleService $peopleService)
+    {
+        $this->peopleService = $peopleService;
+    }
     /**
      * Display a listing of the resource.
      */
@@ -20,46 +27,38 @@ class PeopleController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.people.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $this->peopleService->createPerson($request->all());
+        return redirect()->route('persons.index')->with('success', 'Persona creada correctamente.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(People $people)
+    public function edit($id)
     {
-        //
+        $person = $this->personService->getPersonById($id);
+        return view('persons.edit', compact('person'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(People $people)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|string|max:255',
+            'position' => 'nullable|string|max:255',
+            'image' => 'nullable|string',
+            'status' => 'required|boolean',
+            'person_section_id' => 'required|exists:person_sections,id',
+        ]);
+
+        $this->personService->updatePerson($id, $request->all());
+        return redirect()->route('persons.index')->with('success', 'Persona actualizada correctamente.');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, People $people)
+    public function destroy($id)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(People $people)
-    {
-        //
+        $this->personService->deletePerson($id);
+        return redirect()->route('persons.index')->with('success', 'Persona eliminada correctamente.');
     }
 }

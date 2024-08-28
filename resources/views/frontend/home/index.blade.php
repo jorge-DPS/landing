@@ -81,7 +81,6 @@
     <main>
         <section>
             <div class="ed-banner-slider swiper relative">
-
                 <div class="swiper-wrapper">
                     @foreach($carrusels as $carr)
                         <div class="swiper-slide">

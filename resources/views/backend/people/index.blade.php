@@ -40,7 +40,7 @@
                 </div>
                 <div class="flex items-center gap-2.5">
                     <div class="btn-conteiner">
-                        <a class="btn-content" href="{{ route('users.create') }}">
+                        <a class="btn-content" href="{{ route('people.create') }}">
                             <span class="btn-title">AGREGAR NUEVO</span>
                             <span class="icon-arrow">
       <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg"
