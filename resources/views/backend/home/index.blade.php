@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 <div class="flex items-center gap-2.5">
-                    <a class="btn btn-sm btn-light" href="{{ route('user.profile') }}">
+                    <a class="btn btn-sm btn-light" href="{{ route('profile.index') }}">
                         Ver perfil
                     </a>
                 </div>

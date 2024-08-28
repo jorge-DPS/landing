@@ -32,14 +32,9 @@ Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 //generalRoute
 Route::middleware(['auth'])->group(function () {
 
-    Route::group(['prefix' => 'usuarios'], function () {
-        Route::get('/', [UserController::class, 'index'])->name('backend.user.index');
-    });
-
-    Route::get('/profile', [ProfileController::class, 'index'])->name('user.profile');
-    Route::post('/profile', [ProfileController::class, 'store'])->name('user.profile.store');
-
     //nativeRoute
+    Route::resource('users', UserController::class);
+    Route::resource('profile', ProfileController::class);
     Route::resource('metatags', MetaTagsController::class);
     Route::resource('carrusel', CarruselController::class);
     Route::resource('company', CompanyController::class);

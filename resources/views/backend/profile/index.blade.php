@@ -14,7 +14,7 @@
         <i class="ki-filled ki-right text-gray-500 text-3xs">
         </i>
         <span class="text-gray-700">
-        {{ Breadcrumbs::render('backend.user.index') }}
+        {{ Breadcrumbs::render('users.index') }}
        </span>
     </div>
 @endsection
@@ -26,7 +26,7 @@
                 <div class="col-span-1">
                     <div class="grid gap-5 lg:gap-7.5">
                         <div class="card min-w-full">
-                            <form id="updateProfile" method="POST" action="{{ route('user.profile.store') }}"
+                            <form id="updateProfile" method="POST" action="{{ route('profile.store') }}"
                                   enctype="multipart/form-data">
                                 @csrf
                                 <div class="card-header">

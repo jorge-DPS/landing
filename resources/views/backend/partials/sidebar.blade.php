@@ -7,9 +7,10 @@
     <div
             class="sidebar-header hidden lg:flex items-center relative justify-between px-3 lg:px-6 shrink-0"
             id="sidebar_header">
-        <a href="{{ url('dashboard') }}">
-            <img class="default-logo min-h-[22px] max-w-none" src="assetsBackend/media/app/default-logo-dark.svg"/>
-            <img class="small-logo min-h-[22px] max-w-none" src="assetsBackend/media/app/mini-logo.svg"/>
+        <a href="{{ url('dashboard') }}" class="flex items-center justify-center">
+            <img class="default-logo min-h-[22px] max-w-none" src="favicon.png" style="max-width: 30px;"/>
+            <span class="default-logo text-gray-800 text-center tracking-widest uppercase ml-5" style="font-size: 20px;">Saint George</span>
+            <img class="small-logo min-h-[22px] max-w-none" src="favicon.png" style="max-width: 30px;"/>
         </a>
         <div data-toggle="body" data-toggle-class="sidebar-collapse" id="sidebar_toggle">
             <div class="hidden [html.dark_&amp;]:block">
@@ -73,7 +74,7 @@
          ADMINISTRACIÓN
         </span>
                 </div>
-                <div class="menu-item {{ Request::is('usuarios', 'profile', 'people') ? 'here show' : '' }}" data-menu-item-toggle="accordion" data-menu-item-trigger="click">
+                <div class="menu-item {{ Request::is('users', 'users/*', 'profile', 'people') ? 'here show' : '' }}" data-menu-item-toggle="accordion" data-menu-item-trigger="click">
                     <div
                             class="menu-link flex items-center grow cursor-pointer border border-transparent gap-[10px] pl-[10px] pr-[10px] py-[6px]"
                             tabindex="0">
@@ -94,9 +95,9 @@
                     </div>
                     <div
                             class="menu-accordion gap-0.5 pl-[10px] relative before:absolute before:left-[20px] before:top-0 before:bottom-0 before:border-l before:border-gray-200">
-                        <div class="menu-item {{ Request::is('usuarios') ? 'active' : '' }}">
+                        <div class="menu-item {{ Request::is('users', 'users/*') ? 'active' : '' }}">
                             <a class="menu-link gap-[14px] pl-[10px] pr-[10px] py-[8px] border border-transparent items-center grow menu-item-active:bg-secondary-active dark:menu-item-active:bg-coal-300 dark:menu-item-active:border-gray-100 menu-item-active:rounded-lg hover:bg-secondary-active dark:hover:bg-coal-300 dark:hover:border-gray-100 hover:rounded-lg"
-                               href="{{ route('backend.user.index') }}" tabindex="0">
+                               href="{{ route('users.index') }}" tabindex="0">
            <span
                    class="menu-bullet flex w-[6px] relative before:absolute before:top-0 before:size-[6px] before:rounded-full before:-translate-x-1/2 before:-translate-y-1/2 menu-item-active:before:bg-primary menu-item-hover:before:bg-primary">
            </span>
@@ -126,7 +127,7 @@
                             class="menu-accordion gap-0.5 pl-[10px] relative before:absolute before:left-[20px] before:top-0 before:bottom-0 before:border-l before:border-gray-200">
                         <div class="menu-item {{ Request::is('profile') ? 'active' : '' }}">
                             <a class="menu-link gap-[14px] pl-[10px] pr-[10px] py-[8px] border border-transparent items-center grow menu-item-active:bg-secondary-active dark:menu-item-active:bg-coal-300 dark:menu-item-active:border-gray-100 menu-item-active:rounded-lg hover:bg-secondary-active dark:hover:bg-coal-300 dark:hover:border-gray-100 hover:rounded-lg"
-                               href="{{ route('user.profile') }}" tabindex="0">
+                               href="{{ route('profile.index') }}" tabindex="0">
            <span
                    class="menu-bullet flex w-[6px] relative before:absolute before:top-0 before:size-[6px] before:rounded-full before:-translate-x-1/2 before:-translate-y-1/2 menu-item-active:before:bg-primary menu-item-hover:before:bg-primary">
            </span>

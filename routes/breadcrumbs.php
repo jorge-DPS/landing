@@ -7,8 +7,8 @@ Breadcrumbs::for('home', function (BreadcrumbTrail $trail) {
     $trail->push('Inicio', url('/'));
 });
 
-Breadcrumbs::for('backend.user.index', function (BreadcrumbTrail $trail) {
-    $trail->push('Usuarios', route('backend.user.index'));
+Breadcrumbs::for('users.index', function (BreadcrumbTrail $trail) {
+    $trail->push('Usuarios', route('users.index'));
 });
 
 Breadcrumbs::for('carrusel.index', function (BreadcrumbTrail $trail) {

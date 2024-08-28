@@ -20,9 +20,7 @@
 @endsection
 
 @section('content')
-    <main class="grow content pt-5" id="content" role="content">
-        Empleado
-    </main>
+
 @endsection
 
 @push('scripts')

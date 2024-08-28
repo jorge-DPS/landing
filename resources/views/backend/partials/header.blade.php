@@ -61,7 +61,7 @@
                {{ auth()->user()->name }}
               </span>
                                     <a class="text-xs text-gray-600 hover:text-primary font-medium leading-none"
-                                       href="{{ route('user.profile') }}">
+                                       href="{{ route('profile.index') }}">
                                         {{ auth()->user()->email }}
                                     </a>
                                 </div>
@@ -72,7 +72,7 @@
                         </div>
                         <div class="flex flex-col" data-menu-dismiss="true">
                             <div class="menu-item">
-                                <a class="menu-link" href="{{ route('user.profile') }}">
+                                <a class="menu-link" href="{{ route('profile.index') }}">
              <span class="menu-icon">
               <i class="ki-filled ki-profile-circle">
               </i>
