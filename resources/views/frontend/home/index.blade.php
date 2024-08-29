@@ -111,9 +111,6 @@
                         </div>
                     @endforeach
                 </div>
-
-
-                <!-- nav -->
                 <div class="ed-banner-slider-nav absolute z-[1] top-[50%] xs:top-[80%] right-[130px] md:right-[60px] sm:right-[40px] xs:hidden flex flex-col gap-[15px] *:w-[40px] *:h-[40px] *:rounded-full *:border *:border-white/20 *:text-white *:text-[18px]">
                     <button class="prev hover:bg-edyellow hover:border-edyellow hover:text-black">
                         <i class="fa-solid fa-angle-up"></i>
@@ -123,12 +120,8 @@
                     </button>
                 </div>
             </div>
-
         </section>
-        <!-- BANNER SECTION END -->
 
-
-        <!-- FEATURES SECTION START -->
         <section class="-mt-[70px] relative z-[2]">
             <div class="mx-[19.71%] xxxl:mx-[14.71%] xxl:mx-[9.71%] xl:mx-[5.71%] md:mx-[12px]">
                 <div class="grid grid-cols-3 md:grid-cols-2 xs:grid-cols-1 gap-[30px]">
@@ -176,10 +169,7 @@
                 </div>
             </div>
         </section>
-        <!-- FEATURES SECTION END -->
 
-
-        <!-- ABOUT SECTION START -->
         <section class="py-[120px] xl:py-[80px] md:py-[60px]">
             <div class="mx-[19.71%] xxxl:mx-[14.71%] xxl:mx-[9.71%] xl:mx-[5.71%] md:mx-[12px]">
                 <div class="flex md:flex-col justify-between items-center gap-x-[60px] xl:gap-x-[40px] gap-y-[40px]">

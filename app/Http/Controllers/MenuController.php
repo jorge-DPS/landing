@@ -34,6 +34,14 @@ class MenuController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+
+        if (isset($data['order'])) {
+            $existingMenu = $this->menuService->findByOrder($data['order']);
+            if ($existingMenu) {
+                return redirect(route('menu.create'))->withErrors(['errors' => 'La orden ya existe']);
+            }
+        }
+
         //dd($request->all());
         $this->menuService->create($data);
         return redirect()->route('menu.index')->with('success', 'Menu creado exitosamente.');
@@ -57,5 +65,25 @@ class MenuController extends Controller
     {
         $this->pageService->deletePage($id);
         return response()->json(null, 204);
+    }
+
+    public function updateOrder(Request $request)
+    {
+        try {
+
+            $this->menuService->updateOrder($request->all());
+            $updatedView = $this->menuService->rendernewOrderMenu();
+            return response()->json([
+                'Codigo' => 0,
+                'Data' => $updatedView,
+                'Mensaje' => 'Orden actualizado correctamente',
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'Codigo' => 1,
+                'Data' => null,
+                'Mensaje' => $e->getMessage(),
+            ]);
+        }
     }
 }

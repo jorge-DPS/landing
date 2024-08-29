@@ -31,7 +31,7 @@
                                 @csrf
                                 <div class="card-header">
                                     <h3 class="card-title">
-                                        Personal Info
+                                        Información personal
                                     </h3>
                                 </div>
                                 <div class="card-table scrollable-x-auto pb-3">
@@ -41,8 +41,10 @@
                                                 Foto de perfil
                                             </td>
                                             <td class="py-2 text-gray-600 min-w-32 text-2sm">
-                                                <img src="{{ asset(auth()->user()->avatar) }}"
-                                                     style="width:80px;margin-top: 10px;">
+                                                <img
+                                                        alt="Imagen de perfil"
+                                                        class="size-16 rounded-full border-2 border-success"
+                                                        src="{{ auth()->user()->avatar ? asset(auth()->user()->avatar) : asset('/assetsBackend/media/avatars/blank.png') }}">
                                             </td>
                                             <td class="py-2 text-center">
                                                 <div class="flex justify-center items-center">
@@ -61,7 +63,7 @@
                                                 {{ auth()->user()->name }}
                                             </td>
                                             <td class="py-2 text-center">
-                                                <input class="form-control" type="text" id="name" name="name"
+                                                <input class="input form-control" type="text" id="name" name="name"
                                                        value="{{ auth()->user()->name }}" autofocus=""/>
                                             </td>
                                         </tr>
@@ -73,33 +75,8 @@
                                                 {{ auth()->user()->email }}
                                             </td>
                                             <td class="py-3 text-center">
-                                                <input class="form-control" type="text" id="email" name="email"
+                                                <input class="input form-control" type="text" id="email" name="email"
                                                        value="{{ auth()->user()->email }}" autofocus="">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="py-3">
-                                                Password
-                                            </td>
-                                            <td class="py-3 text-gray-700 text-sm">
-                                                *****
-                                            </td>
-                                            <td class="py-3 text-center">
-                                                <input class="form-control" type="password" id="password"
-                                                       name="password"
-                                                       autofocus="">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="py-3">
-                                                Confirmar password
-                                            </td>
-                                            <td class="py-3 text-gray-700 text-sm">
-                                                *****
-                                            </td>
-                                            <td class="py-3 text-center">
-                                                <input class="form-control" type="password" id="confirm_password"
-                                                       name="confirm_password" autofocus="">
                                             </td>
                                         </tr>
                                         <tr>
@@ -110,7 +87,7 @@
                                                 {{ auth()->user()->phone }}
                                             </td>
                                             <td class="py-3 text-center">
-                                                <input class="form-control" type="text" id="phone" name="phone"
+                                                <input class="input form-control" type="text" id="phone" name="phone"
                                                        value="{{ auth()->user()->phone }}" autofocus="">
                                             </td>
                                         </tr>
@@ -122,16 +99,53 @@
                                                 {{ auth()->user()->city }}
                                             </td>
                                             <td class="py-3 text-center">
-                                                <input class="form-control" type="text" id="city" name="city"
+                                                <input class="input form-control" type="text" id="city" name="city"
                                                        value="{{ auth()->user()->city }}" autofocus="">
                                             </td>
                                         </tr>
+
                                     </table>
+
+                                    <div class="border-t border-gray-200 my-7.5"></div>
+
+                                    <div class="card-header">
+                                        <h3 class="card-title">
+                                            Información de seguridad
+                                        </h3>
+                                    </div>
+                                    <table class="table align-middle text-sm text-gray-500">
+                                        <tr>
+                                            <td class="py-3">
+                                                Clave de seguridad
+                                            </td>
+                                            <td></td>
+                                            <td class="text-center">
+                                                <input class="input form-control" type="password" id="password"
+                                                       name="password"
+                                                       autofocus="">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-3">
+                                                Confirmar clave de seguridad
+                                            </td>
+                                            <td></td>
+                                            <td class="text-center">
+                                                <input class="input form-control" type="password" id="confirm_password"
+                                                       name="confirm_password" autofocus="">
+                                            </td>
+                                        </tr>
+
+                                    </table>
+
                                 </div>
+
+
+
                                 <div class="flex justify-end">
                                     <div class="btn-conteiner p-10">
                                         <a class="btn-content" href="#" onclick="enviarFormulario(); return false;">
-                                            <span class="btn-title">CREAR</span>
+                                            <span class="btn-title">ACTUALIZAR</span>
                                             <span class="icon-arrow">
       <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg"
       >

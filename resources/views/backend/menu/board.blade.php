@@ -11,7 +11,7 @@
         background-color: rgba(213, 65, 80, 0.27);
     }
 </style>
-<table id="table_respaldo" class="table table-auto table-border" data-datatable-table="true">
+<table id="table_respaldo" class="table table-auto table-border" data-datatable-table="false">
     <thead>
     <tr>
         <th class="w-[30px] text-center">
@@ -46,6 +46,7 @@
                     </div>
                 </div>
             </td>
+            <input type="hidden" class="id" value="{{ $user->id }}">
 
             <td>{{ $user->title }}</td>
             <td class="text-center">
@@ -153,11 +154,9 @@
                 onEnd: function (evt) {
                     const order = Array.from(tableBody.children).map((row, index) => {
                         const idElement = row.querySelector('.id');
-                        const idConexionElement = row.querySelector('.id_conexion');
 
-                        if (idElement && idConexionElement) {
+                        if (idElement) {
                             return {
-                                id_conexion: idConexionElement.value,
                                 id: idElement.value,
                                 order: index + 1
                             };
@@ -168,18 +167,39 @@
                     }).filter(item => item !== null);
 
                     $.ajax({
-                        url: "",
+                        url: "{{ route('backup.connection.updateOrder') }}",
                         type: 'POST',
                         data: JSON.stringify(order),
                         contentType: 'application/json',
                         headers: {
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')  // CSRF token desde el meta
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         },
 
                         success: function(response) {
                             if (response.Codigo == 0) {
                                 $('#table_respaldo tbody').html($(response.Data).find('tbody').html());
-                                toastr.success(response.Mensaje);
+                                Swal.fire({
+                                    position: "top-end",
+                                    title: "Reordenado exitoso",
+                                    text: response.Mensaje,
+                                    showConfirmButton: false,
+                                    icon: "success",
+                                    timer: 3000,
+                                    scrollbarPadding: false,
+                                    heightAuto: false,
+                                    backdrop: false,
+                                    customClass: {
+                                        popup: 'swal-alert-success',
+                                        title: 'swal-title-overlay',
+                                        content: 'swal-content-overlay'
+                                    },
+                                    didOpen: () => {
+                                        document.body.classList.add('swal-open');
+                                    },
+                                    willClose: () => {
+                                        document.body.classList.remove('swal-open');
+                                    }
+                                });
                             } else {
                                 executeExample('error', response.Mensaje);
                             }
@@ -193,5 +213,6 @@
                 }
             });
         });
+
     </script>
 @endpush

@@ -24,7 +24,7 @@
     <style>
         .card {
             position: relative;
-            width: 350px;
+            width: 300px;
             aspect-ratio: 15/9;
             background-color: #f2f2f2;
             border-radius: 10px;
@@ -73,7 +73,7 @@
 
         .card__title {
             margin: 0;
-            font-size: 20px;
+            font-size: 16px;
             color: #333;
             font-weight: 700;
         }
@@ -254,8 +254,8 @@
                                 <img alt="" class="rounded-t-xl"
                                      src="{{ $car->desktop_background ? asset($car->desktop_background) : asset('/assetsBackend/media/avatars/blank.png') }}"/>
                                 <div class="card__content">
-                                    <p class="card__title">{{ Str::limit($car->small_title, 40) }}</p>
-                                    <p class="card__title">{{ $car->big_title }}</p>
+                                    <p class="card__title">{{ Str::limit($car->small_title, 30) }}</p>
+                                    <p class="card__title">{{ Str::limit($car->big_title, 20) }}</p>
                                     <p class="card__description">{{ Str::limit($car->description), 40 }}</p>
                                     <a class="btn-primary" target="_blank" href="{{ url('/') }}">En línea</a>
                                     <a class="btn btn-secondary"

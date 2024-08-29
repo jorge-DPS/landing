@@ -44,6 +44,11 @@ class MenuService
         return $menu;
     }
 
+    public function findByOrder($order)
+    {
+        return $this->repository->findByOrder($order);
+    }
+
 
 
     public function updateCarrusel(Menu $menu, array $data): bool
@@ -54,6 +59,18 @@ class MenuService
     public function deleteMenu(Carrusel $menu): bool
     {
         return $this->repository->delete($menu);
+    }
+
+    public function updateOrder($data)
+    {
+        return $this->repository->updateOrder($data);
+    }
+
+    public function rendernewOrderMenu()
+    {
+        $menus = $this->getAll();
+        $view = view('backend.menu.index', compact('menus'))->render();
+        return $view;
     }
 
 }

@@ -9,7 +9,7 @@
             id="sidebar_header">
         <a href="{{ url('dashboard') }}" class="flex items-center justify-center">
             <img class="default-logo min-h-[22px] max-w-none" src="favicon.png" style="max-width: 30px;"/>
-            <span class="default-logo text-gray-800 text-center tracking-widest uppercase ml-5" style="font-size: 20px;">Saint George</span>
+            <span class="default-logo text-gray-800 text-center tracking-widest uppercase ml-5" style="font-size: 16px;">Saint George</span>
             <img class="small-logo min-h-[22px] max-w-none" src="favicon.png" style="max-width: 30px;"/>
         </a>
         <div data-toggle="body" data-toggle-class="sidebar-collapse" id="sidebar_toggle">
@@ -204,7 +204,7 @@
            </span>
                                 <span
                                         class="menu-title text-2sm font-medium text-gray-700 menu-item-active:text-primary menu-item-active:font-semibold menu-link-hover:!text-primary">
-            Menú público
+            Menú
            </span>
                             </a>
                         </div>

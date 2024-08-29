@@ -3,9 +3,7 @@
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CarruselController;
 use App\Http\Controllers\CompanyController;
-use App\Http\Controllers\CoverController;
 use App\Http\Controllers\CoverSectionController;
-use App\Http\Controllers\EmployeController;
 use App\Http\Controllers\GallerySectionController;
 use App\Http\Controllers\GlobalConfiguracionController;
 use App\Http\Controllers\MenuController;
@@ -25,7 +23,13 @@ Route::get('/', function (
 ) {
     $carrusels = $serviceCarrusel->getAllCarrusel();
     $menuGeneral = $menuService->getAll();
-    return view('frontend.home.index', compact('carrusels', 'menuGeneral'));
+    return view(
+        'frontend.home.index',
+        compact(
+            'carrusels',
+            'menuGeneral'
+        )
+    );
 });
 
 //authRoute
@@ -45,8 +49,6 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('company', CompanyController::class);
     Route::resource('menu', MenuController::class);
     Route::resource('pages', PageController::class);
-    Route::resource('employe', EmployeController::class);
-    Route::resource('cover', CoverController::class);
     Route::resource('people', PeopleController::class);
     Route::resource('section-type', SectionTypeController::class);
     Route::resource('person-section', PersonSectionController::class);
@@ -54,6 +56,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('cover-section', CoverSectionController::class);
 
     Route::put('updateTimeCarrusel', [GlobalConfiguracionController::class, 'updateTimeCarrusel'])->name('backend.configuracion.updateTimeCarrusel');
+    Route::post('/updateOrderMenu', [MenuController::class, 'updateOrder'])->name('backup.connection.updateOrder');
+
 
 
 });

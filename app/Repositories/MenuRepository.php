@@ -15,8 +15,9 @@ class MenuRepository
 
     public function getAll()
     {
-        return $this->model->with('pages')->get();
+        return $this->model->with('pages')->orderBy('order')->get();
     }
+
 
     public function getById($id)
     {
@@ -36,6 +37,19 @@ class MenuRepository
     public function delete(Menu $menu): bool
     {
         return $menu->delete();
+    }
+
+    public function findByOrder($order)
+    {
+        return $this->model->where('order', $order)->first();
+    }
+
+    public function updateOrder(array $data)
+    {
+        foreach ($data as $item) {
+            $this->model->where('id', $item['id'])
+                ->update(['order' => $item['order']]);
+        }
     }
 
 }

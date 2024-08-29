@@ -50,15 +50,16 @@
                         position: relative;
                         display: flex;
                         gap: 25px;
+                        padding-right: 10px
                     }
 
                     .custom-menu li {
                         position: relative;
                         list-style: none;
-                        width: 60px;
-                        height: 60px;
+                        width: 50px;
+                        height: 50px;
                         background: #fff;
-                        border-radius: 60px;
+                        border-radius: 50px;
                         cursor: pointer;
                         display: flex;
                         justify-content: center;
@@ -68,7 +69,7 @@
                     }
 
                     .custom-menu li:hover {
-                        width: 180px;
+                        width: 80px;
                         box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
                     }
 
@@ -76,7 +77,7 @@
                         content: "";
                         position: absolute;
                         inset: 0;
-                        border-radius: 60px;
+                        border-radius: 50px;
                         background: linear-gradient(45deg, var(--i), var(--j));
                         opacity: 0;
                         transition: 0.5s;
@@ -106,7 +107,7 @@
 
                     .custom-menu li .icon {
                         color: #777;
-                        font-size: 1.5em;
+                        font-size: 1.6em;
                         transition: 0.5s;
                         transition-delay: 0.25s;
                     }
@@ -123,7 +124,7 @@
 
                     .custom-menu li .title {
                         color: #fff;
-                        font-size: 1.1em;
+                        font-size: 12px;
                         text-transform: uppercase;
                         letter-spacing: 0.1em;
                         transform: scale(0);
@@ -138,10 +139,7 @@
 
                 </style>
 
-
-
-
-                <div class="flex items-center gap-x-[60px] xxs:gap-[30px]">
+                <div class="logo-container flex items-center">
                     <a href="{{ route('login') }}">
                         <ul class="custom-menu">
                             <li style="--i:#B12A38;--j:#B12A38;">
@@ -150,12 +148,8 @@
                             </li>
                         </ul>
                     </a>
-                </div>
-
-                <div class="logo-container flex items-center">
-                    <img src="character.jpg" alt="Character Logo" class="logo-character">
+                    <img src="character.jpg" alt="Character Logo" class="logo-character" style="padding-right: 8px;">
                     <img src="berlitz.jpg" alt="Berlitz Logo" class="logo-berlitz">
-
                 </div>
             </div>
             <button type="button" class="ed-mobile-menu-open-btn hidden lg:inline-block text-edblue text-[18px]"><i
