@@ -45,110 +45,129 @@
                         margin-right: 0;
                     }
 
-                    /* btnLogin */
-                    .custom-menu {
-                        position: relative;
-                        display: flex;
-                        gap: 25px;
-                        padding-right: 10px
-                    }
 
-                    .custom-menu li {
-                        position: relative;
-                        list-style: none;
-                        width: 50px;
-                        height: 50px;
-                        background: #fff;
-                        border-radius: 50px;
-                        cursor: pointer;
-                        display: flex;
-                        justify-content: center;
+                    /* From Uiverse.io by rahulgarg99 */
+                    .button1 {
+                        line-height: 1;
+                        text-decoration: none;
+                        display: inline-flex;
                         align-items: center;
-                        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-                        transition: 0.5s;
-                    }
-
-                    .custom-menu li:hover {
-                        width: 80px;
-                        box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
-                    }
-
-                    .custom-menu li::before {
-                        content: "";
-                        position: absolute;
-                        inset: 0;
-                        border-radius: 50px;
-                        background: linear-gradient(45deg, var(--i), var(--j));
-                        opacity: 0;
-                        transition: 0.5s;
-                    }
-
-                    .custom-menu li:hover::before {
-                        opacity: 1;
-                    }
-
-                    .custom-menu li::after {
-                        content: "";
-                        position: absolute;
-                        top: 10px;
-                        width: 100%;
-                        height: 100%;
-                        border-radius: 60px;
-                        background: linear-gradient(45deg, var(--i), var(--j));
-                        transition: 0.5s;
-                        filter: blur(15px);
-                        z-index: -1;
-                        opacity: 0;
-                    }
-
-                    .custom-menu li:hover::after {
-                        opacity: 0.5;
-                    }
-
-                    .custom-menu li .icon {
-                        color: #777;
-                        font-size: 1.6em;
-                        transition: 0.5s;
-                        transition-delay: 0.25s;
-                    }
-
-                    .custom-menu li:hover .icon {
-                        transform: scale(0);
+                        gap: 0.75rem;
+                        background-color: #b12a38;
                         color: #fff;
-                        transition-delay: 0s;
-                    }
-
-                    .custom-menu li span {
-                        position: absolute;
-                    }
-
-                    .custom-menu li .title {
-                        color: #fff;
+                        border-radius: 10rem;
+                        font-weight: 600;
+                        padding: 0.5rem 1.5rem;
+                        padding-left: 20px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        transition: background-color 0.3s;
                         font-size: 12px;
-                        text-transform: uppercase;
-                        letter-spacing: 0.1em;
-                        transform: scale(0);
-                        transition: 0.5s;
-                        transition-delay: 0s;
                     }
 
-                    .custom-menu li:hover .title {
-                        transform: scale(1);
-                        transition-delay: 0.25s;
+                    .button1__icon-wrapper {
+                        flex-shrink: 0;
+                        width: 20px;
+                        height: 20px;
+                        position: relative;
+                        color: #b12a38;
+                        background-color: #fff;
+                        border-radius: 50%;
+                        display: grid;
+                        place-items: center;
+                        overflow: hidden;
+                    }
+
+                    .button1:hover {
+                        background-color: #fff;
+                        color: #b12a38;
+                    }
+
+                    .button1:hover .button1__icon-wrapper {
+                        color: #fff;
+                        background-color: #b12a38;
+                    }
+
+                    .button1__icon-svg--copy {
+                        position: absolute;
+                        transform: translate(-150%, 150%);
+                    }
+
+                    .button1:hover .button1__icon-svg:first-child {
+                        transition: transform 0.3s ease-in-out;
+                        transform: translate(150%, -150%);
+                    }
+
+                    .button1:hover .button1__icon-svg--copy {
+                        transition: transform 0.3s ease-in-out 0.1s;
+                        transform: translate(0);
                     }
 
                 </style>
 
                 <div class="logo-container flex items-center">
-                    <a href="{{ route('login') }}">
-                        <ul class="custom-menu">
-                            <li style="--i:#B12A38;--j:#B12A38;">
-                                <span class="icon">🔐</span>
-                                <span class="title">Acceder</span>
-                            </li>
-                        </ul>
+                    <a href="{{ route('login') }}" class="button1" style="--clr: #7808d0; margin-right: 5px;">
+  <span class="button1__icon-wrapper">
+    <svg
+            viewBox="0 0 14 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="button1__icon-svg"
+            width="10"
+    >
+      <path
+              d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+              fill="currentColor"
+      ></path>
+    </svg>
+
+    <svg
+            viewBox="0 0 14 15"
+            fill="none"
+            width="10"
+            xmlns="http://www.w3.org/2000/svg"
+            class="button1__icon-svg button1__icon-svg--copy"
+    >
+      <path
+              d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+              fill="currentColor"
+      ></path>
+    </svg>
+  </span>
+                        POSTULANTE
                     </a>
-                    <img src="character.jpg" alt="Character Logo" class="logo-character" style="padding-right: 8px;">
+                    <a href="#" class="button1" style="--clr: #7808d0; margin-right: 10px;">
+  <span class="button1__icon-wrapper">
+    <svg
+            viewBox="0 0 14 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="button1__icon-svg"
+            width="10"
+    >
+      <path
+              d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+              fill="currentColor"
+      ></path>
+    </svg>
+
+    <svg
+            viewBox="0 0 14 15"
+            fill="none"
+            width="10"
+            xmlns="http://www.w3.org/2000/svg"
+            class="button1__icon-svg button1__icon-svg--copy"
+    >
+      <path
+              d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+              fill="currentColor"
+      ></path>
+    </svg>
+  </span>
+                        EST. REGULAR
+                    </a>
+                    <img src="character.jpg" alt="Character Logo" class="logo-character" style="padding-right: 10px;">
                     <img src="berlitz.jpg" alt="Berlitz Logo" class="logo-berlitz">
                 </div>
             </div>

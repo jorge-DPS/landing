@@ -100,4 +100,12 @@ class PageController extends Controller
     {
         //
     }
+
+    public function configuration($id)
+    {
+        //dd($id);
+        $page = $this->pageService->getPageById($id);
+
+        return view('backend.pages.configuration', compact('page'));
+    }
 }

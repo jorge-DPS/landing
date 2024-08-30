@@ -277,19 +277,19 @@
     <?php if (session('success')) { ?>
     <script>
         Swal.fire({
-            position: "top-end",
             title: "!Registro exitoso¡",
             text: "{{ session('success') }}",
             showConfirmButton: false,
+            confirmButtonText: '¡Entendido!',
             icon: "success",
-            timer: 2000,
+            timer: 10000,
             scrollbarPadding: false,
             heightAuto: false,
             backdrop: false,
             customClass: {
                 popup: 'swal-alert-success',
                 title: 'swal-title-overlay',
-                content: 'swal-content-overlay'
+                content: 'swal-content-overlay',
             },
             didOpen: () => {
                 document.body.classList.add('swal-open');

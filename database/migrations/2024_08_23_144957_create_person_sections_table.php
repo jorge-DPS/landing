@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('person_sections', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->foreignId('section_id')->constrained('sections')->onDelete('cascade');
+            $table->foreignId('section_id')->constrained('sections_public')->onDelete('cascade');
             $table->timestamps();
         });
     }

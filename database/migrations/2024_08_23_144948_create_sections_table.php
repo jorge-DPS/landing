@@ -8,7 +8,7 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('sections', function (Blueprint $table) {
+        Schema::create('sections_public', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->foreignId('section_type_id')->constrained('section_types')->onDelete('cascade');

@@ -47,7 +47,10 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('metatags', MetaTagsController::class);
     Route::resource('carrusel', CarruselController::class);
     Route::resource('company', CompanyController::class);
+
     Route::resource('menu', MenuController::class);
+    Route::get('/pages/configuracion/{id}', [PageController::class, 'configuration'])->name('pages.configuracion');
+
     Route::resource('pages', PageController::class);
     Route::resource('people', PeopleController::class);
     Route::resource('section-type', SectionTypeController::class);

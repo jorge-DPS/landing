@@ -78,7 +78,7 @@
               </i>
              </span>
                                     <span class="menu-title">
-              My Profile
+              Mi perfil
              </span>
                                 </a>
                             </div>
@@ -95,9 +95,9 @@
              </span>
                                     <div
                                             class="flex items-center gap-1.5 rounded-md border border-gray-300 text-gray-600 p-1.5 text-2xs font-medium shrink-0">
-                                        English
+                                        Español
                                         <img alt="" class="inline-block size-3.5 rounded-full"
-                                             src="assetsBackend/media/flags/united-states.svg"/>
+                                             src="assetsBackend/media/flags/bolivia.svg"/>
                                     </div>
                                 </div>
                                 <div
@@ -105,54 +105,14 @@
                                     <div class="menu-item active">
                                         <a class="menu-link h-10" href="#">
                <span class="menu-icon">
-                <img alt="" class="inline-block size-4 rounded-full" src="assetsBackend/media/flags/united-states.svg"/>
+                <img alt="" class="inline-block size-4 rounded-full" src="assetsBackend/media/flags/bolivia.svg"/>
                </span>
                                             <span class="menu-title">
-                English
+                Español
                </span>
                                             <span class="menu-badge">
                 <i class="ki-solid ki-check-circle text-success text-base">
                 </i>
-               </span>
-                                        </a>
-                                    </div>
-                                    <div class="menu-item">
-                                        <a class="menu-link h-10" href="#">
-               <span class="menu-icon">
-                <img alt="" class="inline-block size-4 rounded-full" src="assetsBackend/media/flags/spain.svg"/>
-               </span>
-                                            <span class="menu-title">
-                Spanish
-               </span>
-                                        </a>
-                                    </div>
-                                    <div class="menu-item">
-                                        <a class="menu-link h-10" href="#">
-               <span class="menu-icon">
-                <img alt="" class="inline-block size-4 rounded-full" src="assetsBackend/media/flags/germany.svg"/>
-               </span>
-                                            <span class="menu-title">
-                German
-               </span>
-                                        </a>
-                                    </div>
-                                    <div class="menu-item">
-                                        <a class="menu-link h-10" href="#">
-               <span class="menu-icon">
-                <img alt="" class="inline-block size-4 rounded-full" src="assetsBackend/media/flags/japan.svg"/>
-               </span>
-                                            <span class="menu-title">
-                Japanese
-               </span>
-                                        </a>
-                                    </div>
-                                    <div class="menu-item">
-                                        <a class="menu-link h-10" href="#">
-               <span class="menu-icon">
-                <img alt="" class="inline-block size-4 rounded-full" src="assetsBackend/media/flags/france.svg"/>
-               </span>
-                                            <span class="menu-title">
-                French
                </span>
                                         </a>
                                     </div>

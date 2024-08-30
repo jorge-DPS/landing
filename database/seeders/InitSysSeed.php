@@ -18,5 +18,6 @@ class InitSysSeed extends Seeder
         $this->call(DatabaseSeeder::class);
         $this->call(GlobalConfSeed::class);
         $this->call(MenuSeed::class);
+        $this->call(TypesSeed::class);
     }
 }

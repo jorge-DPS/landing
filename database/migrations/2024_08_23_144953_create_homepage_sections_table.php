@@ -13,8 +13,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('subtitle')->nullable();
             $table->text('details')->nullable();
-            $table->string('image')->nullable();
-            $table->foreignId('section_id')->constrained('sections')->onDelete('cascade');
+            $table->foreignId('section_id')->constrained('sections_public')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -38,7 +38,7 @@
         <th class="min-w-[180px]">
                <span class="sort">
                 <span class="sort-label">
-                 Menú relacionado
+                 Menú vínculado
                 </span>
                 <span class="sort-icon">
                 </span>
@@ -65,7 +65,13 @@
             <td>{{ $pag->title }}</td>
             <td>{{ $pag->description }}</td>
             <td>{{ $pag->seo_title }}</td>
-            <td>{{ $pag->menu->title }}</td>
+            <td>
+                <span class="badge badge-primary badge-pill gap-1.5">
+ <span class="badge badge-dot badge-light size-1.5">
+ </span>
+ {{ $pag->menu->title }}
+</span>
+            </td>
             <td class="text-center">
                 <div class="menu flex-inline" data-menu="true">
                     <div class="menu-item" data-menu-item-offset="0, 10px"
@@ -79,48 +85,24 @@
                         <div class="menu-dropdown menu-default w-full max-w-[175px]"
                              data-menu-dismiss="true">
                             <div class="menu-item">
-                                <a class="menu-link" href="#">
-                    <span class="menu-icon">
-                     <i class="ki-filled ki-search-list">
-                     </i>
-                    </span>
-                                    <span class="menu-title">
-                     View
-                    </span>
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link" href="#">
+                                <a class="menu-link" href="{{ route('pages.configuracion', $pag->id) }}">
                     <span class="menu-icon">
                      <i class="ki-filled ki-file-up">
                      </i>
                     </span>
                                     <span class="menu-title">
-                     Export
+                     Configuración
                     </span>
                                 </a>
                             </div>
-                            <div class="menu-separator">
-                            </div>
                             <div class="menu-item">
-                                <a class="menu-link" href="#">
+                                <a class="menu-link" href="{{ route('pages.edit', $pag->id) }}">
                     <span class="menu-icon">
                      <i class="ki-filled ki-pencil">
                      </i>
                     </span>
                                     <span class="menu-title">
-                     Edit
-                    </span>
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link" href="#">
-                    <span class="menu-icon">
-                     <i class="ki-filled ki-copy">
-                     </i>
-                    </span>
-                                    <span class="menu-title">
-                     Make a copy
+                     Editar
                     </span>
                                 </a>
                             </div>
@@ -133,7 +115,7 @@
                      </i>
                     </span>
                                     <span class="menu-title">
-                     Remove
+                     Eliminar
                     </span>
                                 </a>
                             </div>
