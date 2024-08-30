@@ -24,4 +24,10 @@ class Company extends Model
         'light_logo',
         'state',
     ];
+
+    public function socialMedia()
+    {
+        return $this->morphMany(SocialMedia::class, 'socialable');
+    }
 }
+
