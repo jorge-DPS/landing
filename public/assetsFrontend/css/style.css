@@ -1,6 +1,6 @@
 /*!
-Template Name: Edutics - Education HTML Template
-Author: temptics pro
+Template Name: SaninGoerge - Education HTML Template
+Author: Yovan Enovore
 Version: 1.0
 
 -----------------------------------------------------------------------------------
@@ -160,7 +160,7 @@ p {
   display: block;
   line-height: 3;
   font-weight: 500;
-  color: var(--ed-blue);
+  color: var(--ed-black);
 }
 @media screen and (max-width: 1199px) {
   .ed-header-nav a {

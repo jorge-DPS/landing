@@ -25,6 +25,9 @@
 @endsection
 
 @section('content')
+
+    <link rel="stylesheet" href="{{ asset('assetsBackend/css/select2.css') }}">
+
     <main class="grow content pt-5" id="content" role="content">
         <div class="container-fixed">
             <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
@@ -82,40 +85,6 @@
                                             </div>
                                         </div>
 
-                                        <style>
-                                            .select2-container--none .select2-selection--single {
-                                                background-color: #fff;
-                                                border: 2px solid #b12a38;
-                                                border-radius: 4px;
-                                                height: 50px;
-                                                padding: 10px;
-                                            }
-
-                                            .select2-container--none .select2-selection--single .select2-selection__rendered {
-                                                color: #333;
-                                                line-height: 1.6;
-                                            }
-
-                                            .select2-container--none .select2-selection--single .select2-selection__arrow {
-                                                height: 50%;
-                                                right: 10px;
-                                                top: 50%;
-                                                transform: translateY(-50%);
-                                            }
-
-                                            .select2-container--none .select2-selection__arrow b {
-                                                border-color: #b12a38 transparent transparent transparent;
-                                                border-style: solid;
-                                                border-width: 5px 4px 0 4px;
-                                            }
-
-                                            .select2-container--none .select2-results__option--highlighted[aria-selected] {
-                                                background-color: #b12a38;
-                                                color: #fff;
-                                            }
-
-
-                                        </style>
 
                                         <select class="custom-select w-full" name="button_id">
                                             <option value="">Selecionar un menú</option>

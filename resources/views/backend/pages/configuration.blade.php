@@ -19,328 +19,210 @@
 @endsection
 
 @section('content')
-    <style>
-        .custom-content-wrapper .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 15px;
-        }
-
-        .custom-content-wrapper .menu {
-            position: sticky;
-            top: 0;
-            background-color: #f7f7f9;
-            padding: 10px 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-            border-radius: 8px;
-        }
-
-        .custom-content-wrapper .button {
-            display: inline-flex;
-            align-items: center;
-            padding: 8px 18px;
-            border-radius: 6px;
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.85em;
-            margin-right: 8px;
-            cursor: pointer;
-            transition: background-color 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .custom-content-wrapper .button.blue {
-            background-color: #007bff;
-        }
-
-        .custom-content-wrapper .button.green {
-            background-color: #28a745;
-        }
-
-        .custom-content-wrapper .button.yellow {
-            background-color: #ffc107;
-            color: #333;
-        }
-
-        .custom-content-wrapper .button:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .custom-content-wrapper .button svg {
-            margin-right: 6px;
-        }
-
-        /* Contenedor de las secciones usando Grid */
-        .content-wrapper {
-            display: flex;
-            gap: 20px;
-            padding: 0 20px;
-        }
-
-        .dynamic-section {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .static-section {
-            flex: 2;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-
-        .dynamic-section .section {
-            border: 1px solid #e3e6f0;
-            padding: 10px;
-            border-radius: 8px;
-            background-color: #ffffff;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            margin-bottom: 20px;
-            transition: transform 0.2s ease;
-        }
-
-        .static-section .section {
-            border: 1px solid #e3e6f0;
-            padding: 10px;
-            border-radius: 8px;
-            background-color: #ffffff;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            min-height: 150px;
-            transition: transform 0.2s ease;
-        }
-
-        .custom-content-wrapper .section:hover {
-            transform: translateY(-3px);
-        }
-
-        .custom-content-wrapper .section .title {
-            font-size: 1em;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #343a40;
-        }
-
-        .custom-content-wrapper .section .content {
-            margin-bottom: 10px;
-            color: #6c757d;
-            font-size: 0.85em;
-        }
-
-        .custom-content-wrapper .section.blue {
-            background-color: #e9f7ff;
-        }
-
-        .custom-content-wrapper .section.green {
-            background-color: #e6f9e9;
-        }
-
-        .custom-content-wrapper .section.yellow {
-            background-color: #fff9e6;
-        }
-
-        .custom-content-wrapper .form-group {
-            margin-bottom: 12px;
-        }
-
-        .custom-content-wrapper .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
-            color: #495057;
-        }
-
-        .custom-content-wrapper .form-group input,
-        .custom-content-wrapper .form-group textarea {
-            width: 100%;
-            padding: 6px 10px;
-            border: 1px solid #ced4da;
-            border-radius: 6px;
-            font-size: 0.8em;
-            color: #495057;
-            background-color: #f8f9fa;
-            transition: border-color 0.2s ease;
-        }
-
-        .custom-content-wrapper .form-group input:focus,
-        .custom-content-wrapper .form-group textarea:focus {
-            border-color: #80bdff;
-            outline: none;
-            box-shadow: 0 0 3px rgba(128, 189, 255, 0.4);
-        }
-
-        .custom-content-wrapper .form-group textarea {
-            resize: vertical;
-            height: 60px;
-        }
-
-        .custom-content-wrapper .section button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 6px 10px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 0.8em;
-            transition: background-color 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .custom-content-wrapper .section button:hover {
-            background-color: #0056b3;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .custom-content-wrapper .section h3 {
-            margin-top: 10px;
-            font-size: 0.95em;
-            font-weight: 600;
-            color: #343a40;
-            margin-bottom: 8px;
-        }
-
-        .custom-content-wrapper .section .form-group input[type="text"] {
-            background-color: #fff;
-        }
-
-        .json-output {
-            background-color: #f8f9fa;
-            padding: 8px;
-            border-radius: 6px;
-            font-family: monospace;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            font-size: 0.75em;
-            color: #495057;
-            border: 1px solid #ced4da;
-            margin-top: 10px;
-        }
-    </style>
-
-
-    <main x-data="dynamicContent()" class="custom-content-wrapper grow content pt-5">
-        <div class="menu">
-            <button class="button blue" @click="addSection('persona')">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16"
-                     height="16">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
-                </svg>
-                Añadir Persona
-            </button>
-            <button class="button green" @click="addSection('galeria')">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16"
-                     height="16">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
-                </svg>
-                Añadir Galería
-            </button>
-            <button class="button yellow" @click="addSection('portada')">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16"
-                     height="16">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
-                </svg>
-                Añadir Portada
-            </button>
-        </div>
-
-        <div class="content-wrapper">
-            <div class="dynamic-section">
-                <template x-for="section in sections" :key="section.id">
-                    <div :id="'section-' + section.id" :class="section.className" class="section">
-                        <h2 class="title" x-text="section.title"></h2>
-                        <p class="content" x-text="section.content"></p>
-                        <form>
-                            <div class="form-group">
-                                <label :for="section.inputId">Título:</label>
-                                <input type="text" :id="section.inputId" name="title">
-                            </div>
-                            <template x-if="section.className === 'section yellow'">
-                                <div>
-                                    <div class="form-group">
-                                        <label for="subtitle">Subtítulo:</label>
-                                        <input type="text" id="subtitle" x-model="section.subtitle" name="subtitle">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="details">Detalles:</label>
-                                        <textarea id="details" x-model="section.details" name="details"></textarea>
-                                    </div>
-                                </div>
-                            </template>
-                            <template x-if="section.className === 'section blue'">
-                                <div>
-                                    <h3>Personas</h3>
-                                    <template x-for="(person, index) in section.persons" :key="index">
-                                        <div class="form-group">
-                                            <label>Nombre:</label>
-                                            <input type="text" x-model="person.name" placeholder="Nombre de la persona">
-                                            <label>Rol:</label>
-                                            <input type="text" x-model="person.role" placeholder="Rol de la persona">
-                                        </div>
-                                    </template>
-                                    <button type="button" @click="addPerson(section)">Añadir Persona</button>
-                                </div>
-                            </template>
-                            <template x-if="section.className === 'section green'">
-                                <div>
-                                    <h3>Recursos</h3>
-                                    <template x-for="(resource, index) in section.resources" :key="index">
-                                        <div class="form-group">
-                                            <label>Nombre del recurso:</label>
-                                            <input type="text" x-model="resource.name" placeholder="Nombre del recurso">
-                                            <label>Tipo de recurso:</label>
-                                            <input type="text" x-model="resource.type" placeholder="Tipo de recurso (imagen, video)">
-                                        </div>
-                                    </template>
-                                    <button type="button" @click="addResource(section)">Añadir Recurso</button>
-                                </div>
-                            </template>
-                            <template x-if="section.className === 'section yellow'">
-                                <div>
-                                    <h3>Botones</h3>
-                                    <template x-for="(button, index) in section.buttons" :key="index">
-                                        <div class="form-group">
-                                            <label>Etiqueta del botón:</label>
-                                            <input type="text" x-model="button.label" placeholder="Etiqueta del botón">
-                                            <label>Enlace del botón:</label>
-                                            <input type="text" x-model="button.link" placeholder="Enlace del botón">
-                                        </div>
-                                    </template>
-                                    <button type="button" @click="addButton(section)">Añadir Botón</button>
-
-                                    <h3>Recursos</h3>
-                                    <template x-for="(resource, index) in section.resources" :key="index">
-                                        <div class="form-group">
-                                            <label>Nombre del recurso:</label>
-                                            <input type="text" x-model="resource.name" placeholder="Nombre del recurso">
-                                            <label>Tipo de recurso:</label>
-                                            <input type="text" x-model="resource.type" placeholder="Tipo de recurso (imagen, video)">
-                                        </div>
-                                    </template>
-                                    <button type="button" @click="addResource(section)">Añadir Recurso</button>
-                                </div>
-                            </template>
-
-                        </form>
+    <link rel="stylesheet" href="{{ asset('assetsBackend/css/select2.css') }}">
+    <main class="grow content pt-5" id="content" role="content">
+        <div class="container-fixed">
+            <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
+                <div class="flex flex-col justify-center gap-2">
+                    <h1 class="text-xl font-semibold leading-none text-gray-900">
+                        Secciones públicas
+                    </h1>
+                    <div class="flex items-center gap-2 text-sm font-medium text-gray-600">
+                        Adminitración general de secciones web
                     </div>
-                </template>
-            </div>
+                </div>
+                <div class="flex items-center gap-2.5">
+                    <button class="btn btn-primary" data-modal-toggle="#createSection">
+                        Agregar
+                    </button>
+                    <div class="modal modal-dialog modal-center max-w-[600px]" data-modal="true"
+                         data-modal-backdrop="false" data-modal-persistent="true" id="createSection">
+                        <div class="modal-content shadow-lg"
+                             style="background: #ffffff; border: 3px solid rgba(177,42,56,0.37); border-radius: 10px;">
 
-            <div id="sections-container" class="static-section">
-                <template x-for="section in finalizedSections" :key="section.id" reverse>
-                    <div :id="'static-section-' + section.id" :class="section.className" class="section">
-                        <h2 class="title" x-text="section.title"></h2>
-                        <p class="content" x-text="section.content"></p>
-                        <div class="json-output">
-                            <strong>JSON Data:</strong>
-                            hola
+                            <div class="modal-header">
+                                <h3 class="modal-title">
+                                    Agregar una sección nueva
+                                </h3>
+                                <button class="btn btn-xs btn-icon btn-danger" data-modal-dismiss="true">
+                                    <i class="ki-outline ki-cross">
+                                    </i>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="postForm">
+                                    <input type="hidden" value="{{ $page->id }}" name="page_id">
+                                    <div class="w-full mt-2 mb-2">
+                                        <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
+                                            <label class="form-label max-w-32">
+                                                Nombre
+                                            </label>
+                                            <div class="flex flex-col w-full gap-1">
+                                                <input id="sectionTitle" class="input" name="title"
+                                                       placeholder="Agragar un nombre"
+                                                       type="text" value=""/>
+                                                <span class="form-hint text-gray-500">
+    El nombre de la sección es obligatorio
+   </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-full">
+                                        <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5 mt-2">
+                                            <label class="form-label max-w-32">
+                                                Tipo de sección
+                                            </label>
+                                            <div class="flex flex-col w-full gap-1">
+                                                <select class="select" name="section_type_id">
+                                                    <option value="">
+                                                        Seleccionar una opción
+                                                    </option>
+                                                    @foreach($sectionType as $secc)
+                                                        <option value=" {{$secc->id}}">
+                                                            {{$secc->name}}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                                <span class="text-xs text-gray-500">
+    El tipo es obligatorio
+   </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex justify-end">
+                                        <button class="btn btn-primary" data-modal-toggle="#modal_6_2">
+                                            Guardar
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+
                         </div>
                     </div>
-                </template>
+
+                </div>
+            </div>
+        </div>
+        <div class="container-fixed">
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-5 lg:gap-7.5">
+                <div class="col-span-1">
+                    <div class="grid gap-5 lg:gap-7.5">
+                        <div class="card">
+                            <div class="card-header gap-2">
+                                <h3 class="card-title">
+                                    Secciones vínculadas
+                                </h3>
+                            </div>
+                            <div class="card-body pb-7.5">
+                                <div class="grid gap-2.5">
+                                    <table class="min-w-full divide-y divide-gray-200">
+                                        <tbody class="bg-white divide-y divide-gray-200" id="sortable">
+                                        @foreach($sectionsAll as $section)
+                                            <tr data-id="{{ $section->id }}" class="hover:bg-gray-50 cursor-pointer">
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                    <div class="relative size-[50px] shrink-0">
+                                                        <svg class="w-full h-full
+                        @if($section->section_type_id == 1) fill-blue-200 stroke-blue-500
+                        @elseif($section->section_type_id == 2) fill-green-200 stroke-green-500
+                        @elseif($section->section_type_id == 3) fill-yellow-200 stroke-yellow-500
+                        @endif"
+                                                             fill="none" height="48" viewbox="0 0 44 48" width="44"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506
+                        18.4282V29.5718C43.6506 33.859 41.3634 37.8205 37.6506 39.9641L28 45.5359C24.2872 47.6795 19.7128 47.6795 16 45.5359L6.34937
+                        39.9641C2.63655 37.8205 0.349365 33.859 0.349365 29.5718V18.4282C0.349365 14.141 2.63655 10.1795 6.34937 8.0359L16 2.4641Z"
+                                                                  fill="">
+                                                            </path>
+                                                            <path d="M16.25 2.89711C19.8081 0.842838 24.1919 0.842837 27.75 2.89711L37.4006 8.46891C40.9587 10.5232 43.1506 14.3196 43.1506
+                        18.4282V29.5718C43.1506 33.6804 40.9587 37.4768 37.4006 39.5311L27.75 45.1029C24.1919 47.1572 19.8081 47.1572 16.25 45.1029L6.59937
+                        39.5311C3.04125 37.4768 0.849365 33.6803 0.849365 29.5718V18.4282C0.849365 14.3196 3.04125 10.5232 6.59937 8.46891L16.25 2.89711Z"
+                                                                  stroke="">
+                                                            </path>
+                                                        </svg>
+                                                        <div class="absolute leading-none left-2/4 top-2/4 -translate-y-2/4 -translate-x-2/4">
+                                                            @if($section->section_type_id == 1)
+                                                                <img src="{{ asset('assetsBackend/media/illustrations/persons.svg') }}"
+                                                                     alt="Persona">
+                                                            @elseif($section->section_type_id == 2)
+                                                                <img src="{{ asset('assetsBackend/media/illustrations/galery.svg') }}"
+                                                                     alt="Galería">
+                                                            @elseif($section->section_type_id == 3)
+                                                                <img src="{{ asset('assetsBackend/media/illustrations/cover.svg') }}"
+                                                                     alt="Portada">
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                    {{ $section->title }}
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                    <i class="ki-filled ki-arrow-up-down"></i>
+                                                    <a href="" class="btn btn-sm btn-icon btn-clear btn-primary">
+                                                        <i class="ki-filled ki-notepad-edit"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-1">
+                    <div class="grid gap-5 lg:gap-7.5">
+                        <style>
+                            .start-now-bg {
+                                background-image: url('/assetsBackend/media/images/2600x1200/bg-5.png');
+                            }
+
+                            .dark .start-now-bg {
+                                background-image: url('/assetsBackend/media/images/2600x1200/bg-5-dark.png');
+                            }
+                        </style>
+                        <div class="card flex-col gap-5 justify-between bg-[center_top_1.3rem] bg-no-repeat pt-5 lg:pt-10 px-5 start-now-bg bg-[length:700px]">
+                            <div class="text-center">
+                                <h3 class="text-gray-900 text-lg font-semibold leading-6 mb-1.5">
+                                    Sección portada
+                                </h3>
+                            </div>
+                            <div class="text-center">
+                                <img alt="" class="dark:hidden max-h-[300px]"
+                                     src="assetsBackend/media/example/cover.webp"/>
+                                <img alt="" class="light:hidden max-h-[300px]"
+                                     src="assetsBackend/media/example/cover.webp"/>
+                            </div>
+                        </div>
+                        <div class="card flex-col gap-5 justify-between bg-[center_top_1.3rem] bg-no-repeat pt-5 lg:pt-10 px-5 start-now-bg bg-[length:700px]">
+                            <div class="text-center">
+                                <h3 class="text-gray-900 text-lg font-semibold leading-6 mb-1.5">
+                                    Sección persona
+                                </h3>
+                            </div>
+                            <div class="text-center">
+                                <img alt="" class="dark:hidden max-h-[300px]"
+                                     src="assetsBackend/media/example/person.webp"/>
+                                <img alt="" class="light:hidden max-h-[300px]"
+                                     src="assetsBackend/media/example/person.webp"/>
+                            </div>
+                        </div>
+                        <div class="card flex-col gap-5 justify-between bg-[center_top_1.3rem] bg-no-repeat pt-5 lg:pt-10 px-5 start-now-bg bg-[length:700px]">
+                            <div class="text-center">
+                                <h3 class="text-gray-900 text-lg font-semibold leading-6 mb-1.5">
+                                    Sección galeria
+                                </h3>
+                            </div>
+                            <div class="text-center">
+                                <img alt="" class="dark:hidden max-h-[300px]"
+                                     src="assetsBackend/media/example/galery.webp"/>
+                                <img alt="" class="light:hidden max-h-[300px]"
+                                     src="assetsBackend/media/example/galery.webp"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -348,127 +230,105 @@
 
 @push('scripts')
     <script>
-        function dynamicContent() {
-            return {
-                sections: [],
-                finalizedSections: [],
-                addSection(type) {
-                    if (this.sections.length > 0) {
-                        const lastSection = this.sections[this.sections.length - 1];
-                        const inputs = document.querySelectorAll(`#section-${lastSection.id} input, #section-${lastSection.id} textarea`);
+        document.addEventListener('DOMContentLoaded', function () {
 
-                        let isValid = true;
-                        inputs.forEach(input => {
-                            if (input.value.trim() === '') {
-                                isValid = false;
-                                input.focus();
+            const modal = document.getElementById('createSection');
+            const titleInput = document.getElementById('sectionTitle');
+
+            function setFocus() {
+                if (modal && titleInput) {
+                    setTimeout(function () {
+                        titleInput.focus();
+                    }, 100);
+                }
+            }
+
+            modal.addEventListener('show', setFocus);
+
+            document.querySelector('[data-modal-toggle="#createSection"]').addEventListener('click', function () {
+                setFocus();
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('#postForm').on('submit', function (event) {
+                event.preventDefault();
+                var formData = new FormData(this);
+                $.ajax({
+                    url: '{{ route('section.store') }}',
+                    method: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (response) {
+
+                        const modalEl = document.querySelector('#createSection');
+                        const modal = KTModal.getInstance(modalEl);
+                        $('#postForm')[0].reset();
+                        modal.hide();
+                        Swal.fire({
+                            position: 'top-end',
+                            title: response.success ? '¡Éxito!' : '¡Error!',
+                            text: response.message,
+                            icon: response.success ? 'success' : 'error',
+                            showConfirmButton: false,
+                            timer: 2000,
+                            scrollbarPadding: false,
+                            heightAuto: false,
+                            backdrop: false,
+                            customClass: {
+                                popup: response.success ? 'swal-alert-success' : 'swal-alert-danger',
+                                title: 'swal-title-overlay',
+                                content: 'swal-content-overlay'
+                            },
+                            didOpen: () => {
+                                document.body.classList.add('swal-open');
+                            },
+                            willClose: () => {
+                                document.body.classList.remove('swal-open');
+                            }
+                        });
+                    },
+                    error: function (xhr) {
+                        let errorMessage = 'Ocurrió un error inesperado';
+                        try {
+                            let response = JSON.parse(xhr.responseText);
+                            if (response.message) {
+                                errorMessage = response.message;
+                            }
+                        } catch (e) {
+                            console.error('Error al analizar la respuesta JSON:', e);
+                        }
+                        Swal.fire({
+                            position: 'top-end',
+                            title: '¡Error!',
+                            text: errorMessage,
+                            icon: 'error',
+                            showConfirmButton: false,
+                            timer: 5000,
+                            scrollbarPadding: false,
+                            heightAuto: false,
+                            backdrop: false,
+                            customClass: {
+                                popup: 'swal-alert-danger',
+                                title: 'swal-title-overlay',
+                                content: 'swal-content-overlay'
+                            },
+                            didOpen: () => {
+                                document.body.classList.add('swal-open');
+                            },
+                            willClose: () => {
+                                document.body.classList.remove('swal-open');
                             }
                         });
 
-                        if (!isValid) {
-                            Swal.fire({
-                                position: "top-end",
-                                title: "Advertencia",
-                                text: "Debe completar la sección anterior antes de agregar una nueva.",
-                                icon: "warning",
-                                showConfirmButton: true,
-                                confirmButtonText: "Entendido",
-                                scrollbarPadding: false,
-                                heightAuto: false,
-                                backdrop: false,
-                                customClass: {
-                                    popup: 'swal-alert-warning',
-                                    title: 'swal-title-overlay',
-                                    content: 'swal-content-overlay',
-                                    confirmButton: 'swal-confirm-button-warning'
 
-                                },
-                                didOpen: () => {
-                                    document.body.classList.add('swal-open');
-                                },
-                                willClose: () => {
-                                    document.body.classList.remove('swal-open');
-                                }
-                            });
-                            return;
-                        }
-
-                        this.finalizeSection(this.sections[0]);
                     }
-
-                    let section = {
-                        id: Date.now(),
-                        title: '',
-                        content: '',
-                        className: '',
-                        inputId: '',
-                        persons: [],
-                        resources: [],
-                        buttons: []
-                    };
-
-                    if (type === 'persona') {
-                        section.title = 'Persona';
-                        section.content = 'persona...';
-                        section.className = 'section blue';
-                        section.inputId = 'nombrePersona' + section.id;
-                    } else if (type === 'galeria') {
-                        section.title = 'Galería';
-                        section.content = 'galería...';
-                        section.className = 'section green';
-                        section.inputId = 'nombreGaleria' + section.id;
-                    } else if (type === 'portada') {
-                        section.title = 'Portada';
-                        section.content = 'portada...';
-                        section.className = 'section yellow';
-                        section.inputId = 'nombrePortada' + section.id;
-
-                        section.subtitle = '';
-                        section.details = '';
-                    }
-
-                    this.sections.push(section);
-
-                    this.$nextTick(() => {
-                        const newSection = document.querySelector(`#section-${section.id} input`);
-                        if (newSection) {
-                            newSection.focus();
-                        }
-                    });
-                },
-                finalizeSection(section) {
-                    this.finalizedSections.unshift(section);
-                    this.sections = this.sections.filter(s => s.id !== section.id);
-                },
-                addPerson(section) {
-                    section.persons.push({ name: '', role: '' });
-                    this.$nextTick(() => {
-                        const inputs = document.querySelectorAll(`#section-${section.id} input`);
-                        if (inputs.length > 0) {
-                            inputs[inputs.length - 2].focus();
-                        }
-                    });
-                },
-                addResource(section) {
-                    section.resources.push({ name: '', type: '' });
-                    this.$nextTick(() => {
-                        const inputs = document.querySelectorAll(`#section-${section.id} input`);
-                        if (inputs.length > 0) {
-                            inputs[inputs.length - 2].focus();
-                        }
-                    });
-                },
-                addButton(section) {
-                    section.buttons.push({ label: '', link: '' });
-                    this.$nextTick(() => {
-                        const inputs = document.querySelectorAll(`#section-${section.id} input`);
-                        if (inputs.length > 0) {
-                            inputs[inputs.length - 2].focus();
-                        }
-                    });
-                }
-            }
-        }
+                });
+            });
+        });
     </script>
 
 @endpush

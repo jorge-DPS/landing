@@ -16,7 +16,7 @@ use App\Http\Controllers\SectionTypeController;
 use App\Http\Controllers\UserController;
 use App\Services\CarruselService;
 use App\Services\MenuService;
-
+use App\Http\Controllers\SectionController;
 Route::get('/', function (
     CarruselService $serviceCarrusel,
     MenuService     $menuService
@@ -57,6 +57,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('person-section', PersonSectionController::class);
     Route::resource('galery-section', GallerySectionController::class);
     Route::resource('cover-section', CoverSectionController::class);
+
+    Route::resource('section', SectionController::class);
 
     Route::put('updateTimeCarrusel', [GlobalConfiguracionController::class, 'updateTimeCarrusel'])->name('backend.configuracion.updateTimeCarrusel');
     Route::post('/updateOrderMenu', [MenuController::class, 'updateOrder'])->name('backup.connection.updateOrder');

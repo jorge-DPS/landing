@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SeccionType;
+use App\Models\Section;
 use Illuminate\Http\Request;
 use App\Services\PageService;
 use App\Services\MenuService;
@@ -103,9 +105,10 @@ class PageController extends Controller
 
     public function configuration($id)
     {
-        //dd($id);
+        $sectionsAll = Section::where('page_id', $id)->get();
         $page = $this->pageService->getPageById($id);
+        $sectionType = SeccionType::all();
 
-        return view('backend.pages.configuration', compact('page'));
+        return view('backend.pages.configuration', compact('page', 'sectionType', 'sectionsAll'));
     }
 }

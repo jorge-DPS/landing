@@ -20,7 +20,8 @@
 @endsection
 
 @section('content')
-
+//about portada
+de
     <style>
         /* Prefijo personalizado para evitar conflictos */
         .custom-container {

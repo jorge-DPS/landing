@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Section extends Model
 {
     use HasFactory;
+
+    protected $table = 'sections_public';
+
+    protected $fillable = [
+        'title',
+        'section_type_id',
+        'page_id'
+    ];
+
 }

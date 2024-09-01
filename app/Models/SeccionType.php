@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class SeccionType extends Model
 {
     use HasFactory;
+
+    protected $table = 'section_types';
+
+    protected $fillable = [
+        'name'
+    ];
+
 }
