@@ -19,6 +19,19 @@
 @endsection
 
 @section('content')
+    <style>
+        #table_respaldo tbody tr:hover {
+            background-color: rgba(177, 42, 56, 0.14);
+        }
+
+        #table_respaldo tbody tr {
+            cursor: pointer;
+        }
+
+        #table_respaldo tbody tr.sortable-chosen {
+            background-color: rgba(213, 65, 80, 0.27);
+        }
+    </style>
     <link rel="stylesheet" href="{{ asset('assetsBackend/css/select2.css') }}">
     <main class="grow content pt-5" id="content" role="content">
         <div class="container-fixed">
@@ -115,7 +128,7 @@
                             </div>
                             <div class="card-body pb-7.5">
                                 <div class="grid gap-2.5">
-                                    <table class="min-w-full divide-y divide-gray-200">
+                                    <table id="table_respaldo" class="min-w-full divide-y divide-gray-200">
                                         <tbody class="bg-white divide-y divide-gray-200" id="sortable">
                                         @foreach($sectionsAll as $section)
                                             <tr data-id="{{ $section->id }}" class="hover:bg-gray-50 cursor-pointer">
@@ -331,4 +344,76 @@
         });
     </script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tableBody = document.getElementById('table_respaldo').getElementsByTagName('tbody')[0];
+            new Sortable(tableBody, {
+                animation: 150,
+                handle: 'tr',
+                onEnd: function (evt) {
+                    const order = Array.from(tableBody.children).map((row, index) => {
+                        const idElement = row.querySelector('.id');
+
+                        if (idElement) {
+                            return {
+                                id: idElement.value,
+                                order: index + 1
+                            };
+                        } else {
+                            console.error('Could not find necessary elements in row:', row);
+                            return null;
+                        }
+                    }).filter(item => item !== null);
+
+                    $.ajax({
+                        url: "",
+                        type: 'POST',
+                        data: JSON.stringify(order),
+                        contentType: 'application/json',
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+
+                        success: function(response) {
+                            if (response.Codigo == 0) {
+                                $('#table_respaldo tbody').html($(response.Data).find('tbody').html());
+                                Swal.fire({
+                                    position: "top-end",
+                                    title: "Reordenado exitoso",
+                                    text: response.Mensaje,
+                                    showConfirmButton: false,
+                                    icon: "success",
+                                    timer: 3000,
+                                    scrollbarPadding: false,
+                                    heightAuto: false,
+                                    backdrop: false,
+                                    customClass: {
+                                        popup: 'swal-alert-success',
+                                        title: 'swal-title-overlay',
+                                        content: 'swal-content-overlay'
+                                    },
+                                    didOpen: () => {
+                                        document.body.classList.add('swal-open');
+                                    },
+                                    willClose: () => {
+                                        document.body.classList.remove('swal-open');
+                                    }
+                                });
+                            } else {
+                                executeExample('error', response.Mensaje);
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            console.error('Error:', error);
+                        }
+                    });
+
+
+                }
+            });
+        });
+
+    </script>
 @endpush
