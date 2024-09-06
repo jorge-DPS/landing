@@ -19,7 +19,7 @@
                                 @if($menu->pages->isNotEmpty())
                                     <ul class="ed-header-submenu">
                                         @foreach($menu->pages as $page)
-                                            <li><a href="">{{ $page->title }}</a></li>
+                                            <li><a href="{{ url('page', $page->slug) }}">{{ $page->title }}</a></li>
                                         @endforeach
                                     </ul>
                                 @endif

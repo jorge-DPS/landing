@@ -12,11 +12,14 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\PersonSectionController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PublicPageController;
 use App\Http\Controllers\SectionTypeController;
 use App\Http\Controllers\UserController;
 use App\Services\CarruselService;
 use App\Services\MenuService;
 use App\Http\Controllers\SectionController;
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function (
     CarruselService $serviceCarrusel,
     MenuService     $menuService
@@ -63,7 +66,5 @@ Route::middleware(['auth'])->group(function () {
     Route::put('updateTimeCarrusel', [GlobalConfiguracionController::class, 'updateTimeCarrusel'])->name('backend.configuracion.updateTimeCarrusel');
     Route::post('/updateOrderMenu', [MenuController::class, 'updateOrder'])->name('backup.connection.updateOrder');
 
-
-
+    Route::get('page/{slug}', [PublicPageController::class, 'show']);
 });
-

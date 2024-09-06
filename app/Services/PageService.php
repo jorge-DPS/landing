@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Repositories\PageRepository;
+use Illuminate\Support\Str;
 
 class PageService
 {
@@ -25,6 +26,7 @@ class PageService
 
     public function createPage(array $data)
     {
+        $data['slug'] = Str::uuid();
         return $this->pageRepository->create($data);
     }
 
