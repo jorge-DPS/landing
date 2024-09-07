@@ -35,7 +35,7 @@ class PublicPageController extends Controller
      */
     public function show(string $slug)
     {
-        dd($slug);
+        
         return view('frontend.pages.show');
     }
 
