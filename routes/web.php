@@ -16,7 +16,7 @@ use App\Http\Controllers\PublicPageController;
 use App\Http\Controllers\SectionTypeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SectionController;
-use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Route; 
 
 Route::get('/', function () {
     return view('frontend.home.index');
@@ -42,7 +42,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('company', CompanyController::class);
 
     Route::resource('menu', MenuController::class);
-    Route::get('/pages/configuracion/{id}', [PageController::class, 'configuration'])->name('pages.configuracion');
+    Route::get('/pages/configuracion/{id}', [SectionController::class, 'index'])->name('pages.configuration.index');
+    Route::get('/pages/configuracion/edit/{id}', [SectionController::class, 'edit'])->name('pages.configuration.edit');
 
     Route::resource('pages', PageController::class);
     Route::resource('people', PeopleController::class);

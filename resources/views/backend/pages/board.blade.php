@@ -85,7 +85,7 @@
                         <div class="menu-dropdown menu-default w-full max-w-[175px]"
                              data-menu-dismiss="true">
                             <div class="menu-item">
-                                <a class="menu-link" href="{{ route('pages.configuracion', $pag->id) }}">
+                                <a class="menu-link" href="{{ route('pages.configuration.index', $pag->id) }}">
                     <span class="menu-icon">
                      <i class="ki-filled ki-file-up">
                      </i>

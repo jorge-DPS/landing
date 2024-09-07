@@ -1,29 +1,53 @@
 <?php
-
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Http\Requests\SectionRequest;
+use App\Services\PageService;
 use App\Models\Section;
+use App\Models\SeccionType;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Exceptions;
+use App\Http\Requests\SectionRequest;
+
 
 class SectionController extends Controller
 {
+    protected $pageService;
+
+    public function __construct(PageService $pageService)
+    {
+        $this->pageService = $pageService;
+    }
+
+    public function index($id)
+    {
+        $sectionsAll = Section::where('page_id', $id)->get();
+        $page = $this->pageService->getPageById($id);
+        $sectionType = SeccionType::all();
+
+        return view('backend.pagesConfigurations.index', compact('page', 'sectionType', 'sectionsAll'));
+    }
+
+    public function edit($id)
+    {
+        $section = Section::find($id);
+        $sectionType = SeccionType::all();
+        return view('backend.pagesConfigurations.edit', compact('section', 'sectionType'));
+    }
 
     public function store(SectionRequest $request)
     {
         try {
-            Section::create($request->validated());
+            $section = Section::create($request->validated());
             return response()->json([
                 'success' => true,
-                'message' => 'Sección creada exitosamente'
+                'message' => 'Sección creada exitosamente',
+                'section' => $section
             ]);
-
-        } catch (Exception $e) {
+        } catch (Exceptions $e) {
             return response()->json([
                 'success' => false,
-                'message' => 'Ocurrió un error al intentar crear la sección. Por favor, inténtalo de nuevo más tarde.'
-            ]);
+                'message' => 'Error al crear la sección'
+            ], 500);
         }
     }
-
 }
