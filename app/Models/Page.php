@@ -14,6 +14,7 @@ class Page extends Model
         'description',
         'seo_title',
         'menu_id',
+        'slug', 
     ];
 
     public function menu()

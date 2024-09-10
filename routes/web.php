@@ -12,25 +12,18 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\PersonSectionController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PublicPageController;
 use App\Http\Controllers\SectionTypeController;
 use App\Http\Controllers\UserController;
-use App\Services\CarruselService;
-use App\Services\MenuService;
 use App\Http\Controllers\SectionController;
-Route::get('/', function (
-    CarruselService $serviceCarrusel,
-    MenuService     $menuService
-) {
-    $carrusels = $serviceCarrusel->getAllCarrusel();
-    $menuGeneral = $menuService->getAll();
-    return view(
-        'frontend.home.index',
-        compact(
-            'carrusels',
-            'menuGeneral'
-        )
-    );
+use Illuminate\Support\Facades\Route; 
+
+Route::get('/', function () {
+    return view('frontend.home.index');
 });
+
+Route::get('p/{slug}', [PublicPageController::class, 'show']);
+
 
 //authRoute
 Route::get('login', [AuthController::class, 'index'])->name('login');
@@ -49,7 +42,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('company', CompanyController::class);
 
     Route::resource('menu', MenuController::class);
-    Route::get('/pages/configuracion/{id}', [PageController::class, 'configuration'])->name('pages.configuracion');
+    Route::get('/pages/configuracion/{id}', [SectionController::class, 'index'])->name('pages.configuration.index');
+    Route::get('/pages/configuracion/edit/{id}', [SectionController::class, 'edit'])->name('pages.configuration.edit');
 
     Route::resource('pages', PageController::class);
     Route::resource('people', PeopleController::class);
@@ -63,7 +57,4 @@ Route::middleware(['auth'])->group(function () {
     Route::put('updateTimeCarrusel', [GlobalConfiguracionController::class, 'updateTimeCarrusel'])->name('backend.configuracion.updateTimeCarrusel');
     Route::post('/updateOrderMenu', [MenuController::class, 'updateOrder'])->name('backup.connection.updateOrder');
 
-
-
 });
-

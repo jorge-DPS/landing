@@ -102,13 +102,5 @@ class PageController extends Controller
     {
         //
     }
-
-    public function configuration($id)
-    {
-        $sectionsAll = Section::where('page_id', $id)->get();
-        $page = $this->pageService->getPageById($id);
-        $sectionType = SeccionType::all();
-
-        return view('backend.pages.configuration', compact('page', 'sectionType', 'sectionsAll'));
-    }
+    
 }

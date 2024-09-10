@@ -2,8 +2,8 @@
     <div class="px-[30px] xxl:px-[15px] lg:px-[20px] lg:py-[18px] flex justify-between to-be-fixed"
          style="padding-bottom: 9px; padding-top: 9px;">
         <div class="logo flex items-center">
-            <a href="index.html" class="flex items-center">
-                <img src="favicon.png" alt="logo" class="logo" style="width: 40px; margin-right: 10px;">
+            <a href="{{ url('/')}}" class="flex items-center">
+                <img src="{{ asset('favicon.png') }}" alt="logo" class="logo" style="width: 40px; margin-right: 10px;">
                 <h2 style="font-size: 20px;">Saint George</h2>
             </a>
         </div>
@@ -13,13 +13,16 @@
 
                 <div class="ed-header-nav-container">
                     <ul class="to-go-to-sidebar-in-mobile ed-header-nav flex lg:flex-col gap-x-[43px] xl:gap-x-[33px] font-kanit text-[17px] font-normal">
+                        <a href="{{ url('/')}}">Inicio</a>
                         @foreach($menuGeneral as $menu)
                             <li class="has-sub-menu relative">
                                 <a role="button">{{ $menu->title }}</a>
                                 @if($menu->pages->isNotEmpty())
                                     <ul class="ed-header-submenu">
                                         @foreach($menu->pages as $page)
-                                            <li><a href="">{{ $page->title }}</a></li>
+                                            <li>
+                                                <a href="{{ url('p', $page->slug) }}" target="_blank">{{ $page->title }}</a>
+                                            </li>
                                         @endforeach
                                     </ul>
                                 @endif
@@ -46,7 +49,6 @@
                     }
 
 
-                    /* From Uiverse.io by rahulgarg99 */
                     .button1 {
                         line-height: 1;
                         text-decoration: none;
@@ -167,8 +169,8 @@
   </span>
                         EST. REGULAR
                     </a>
-                    <img src="character.jpg" alt="Character Logo" class="logo-character" style="padding-right: 10px;">
-                    <img src="berlitz.jpg" alt="Berlitz Logo" class="logo-berlitz">
+                    <img src="{{ asset('character.jpg') }}" alt="Character Logo" class="logo-character" style="padding-right: 10px;">
+                    <img src="{{ asset('berlitz.jpg') }}" alt="Berlitz Logo" class="logo-berlitz">
                 </div>
             </div>
             <button type="button" class="ed-mobile-menu-open-btn hidden lg:inline-block text-edblue text-[18px]"><i
