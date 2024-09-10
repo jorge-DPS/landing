@@ -5,8 +5,8 @@
         <span class="text-gray-500">
          2024©
         </span>
-                <a class="text-gray-600 hover:text-primary" href="https://yovanenovore.site">
-                    YovanEnovore Inc.
+                <a class="text-gray-600 hover:text-primary" target="_blank" href="https://desarrollamelo.com">
+                    Saint George by Desarrollamelo
                 </a>
             </div>
             <nav class="flex order-1 md:order-2 gap-4 font-normal text-2sm text-gray-600">
