@@ -41,30 +41,49 @@ class MenuController extends Controller
                 return redirect(route('menu.create'))->withErrors(['errors' => 'La orden ya existe']);
             }
         }
-
-        //dd($request->all());
         $this->menuService->create($data);
         return redirect()->route('menu.index')->with('success', 'Menu creado exitosamente.');
 
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $data = $request->validate([
-            'title' => 'sometimes|required|string|max:255',
-            'description' => 'nullable|string',
-            'seo_title' => 'nullable|string|max:255',
-            'menu_id' => 'sometimes|required|exists:menus,id',
-        ]);
-
-        $page = $this->pageService->updatePage($id, $data);
-        return response()->json($page);
+        try {
+            $this->menuService->update($request->all(), $request->id);
+            $updatedView = $this->menuService->rendernewOrderMenu();
+            return response()->json([
+                'Codigo' => 0,
+                'Data' => $updatedView,
+                'Mensaje' => 'Menu actualizado correctamente',
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'Codigo' => 1,
+                'Data' => null,
+                'Mensaje' => $e->getMessage(),
+            ]);
+        }
     }
+        
 
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $this->pageService->deletePage($id);
-        return response()->json(null, 204);
+        try {
+            $this->menuService->delete($request->id);
+            $updatedView = $this->menuService->rendernewOrderMenu();
+            return response()->json([
+                'Codigo' => 0,
+                'Data' => $updatedView,
+                'Mensaje' => 'Menu eliminado correctamente',
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'Codigo' => 1,
+                'Data' => null,
+                'Mensaje' => $e->getMessage(),
+            ]);
+        }
+
     }
 
     public function updateOrder(Request $request)

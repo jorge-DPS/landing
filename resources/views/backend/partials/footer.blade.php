@@ -5,22 +5,16 @@
         <span class="text-gray-500">
          2024©
         </span>
-                <a class="text-gray-600 hover:text-primary" target="_blank" href="https://desarrollamelo.com">
-                    Saint George by Desarrollamelo
+                <a class="text-gray-600 hover:text-primary" target="_blank" href="/">
+                    Saint George
                 </a>
             </div>
             <nav class="flex order-1 md:order-2 gap-4 font-normal text-2sm text-gray-600">
                 <a class="hover:text-primary"
-                   href="https://devs.keenthemes.com/question/understanding-metronic-themeforest-license-a-comprehensive-guide">
-                    FAQ
-                </a>
-                <a class="hover:text-primary" href="https://devs.keenthemes.com">
-                    Support
-                </a>
-                <a class="hover:text-primary"
-                   href="https://devs.keenthemes.com/question/understanding-metronic-themeforest-license-a-comprehensive-guide">
-                    License
-                </a>
+                target="_blank"
+                   href="https://desarrollamelo.com">
+                    by Desarrollamelo
+                </a>          
             </nav>
         </div>
     </div>

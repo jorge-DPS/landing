@@ -42,6 +42,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('company', CompanyController::class);
 
     Route::resource('menu', MenuController::class);
+    Route::delete('menu/delete', [MenuController::class, 'destroy'])->name('menu.delete');
+    Route::post('menu/update', [MenuController::class, 'update'])->name('menu.update');
     Route::get('/pages/configuracion/{id}', [SectionController::class, 'index'])->name('pages.configuration.index');
     Route::get('/pages/configuracion/edit/{id}', [SectionController::class, 'edit'])->name('pages.configuration.edit');
 

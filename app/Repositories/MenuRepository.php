@@ -29,14 +29,14 @@ class MenuRepository
         return $this->model->create($data);
     }
 
-    public function update(Menu $menu, array $data): bool
+    public function update($data, $id)
     {
-        return $menu->update($data);
+        return $this->model->where('id', $id)->update($data);
     }
 
-    public function delete(Menu $menu): bool
+    public function delete($id)
     {
-        return $menu->delete();
+        return $this->model->destroy($id);
     }
 
     public function findByOrder($order)
@@ -51,5 +51,4 @@ class MenuRepository
                 ->update(['order' => $item['order']]);
         }
     }
-
 }

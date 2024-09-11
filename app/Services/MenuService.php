@@ -51,14 +51,9 @@ class MenuService
 
 
 
-    public function updateCarrusel(Menu $menu, array $data): bool
+    public function update($data, $id)
     {
-        return $this->repository->update($menu, $data);
-    }
-
-    public function deleteMenu(Carrusel $menu): bool
-    {
-        return $this->repository->delete($menu);
+        return $this->repository->update($data, $id);
     }
 
     public function updateOrder($data)
@@ -71,6 +66,11 @@ class MenuService
         $menus = $this->getAll();
         $view = view('backend.menu.index', compact('menus'))->render();
         return $view;
+    }
+
+    public function delete($id)
+    {
+        return $this->repository->delete($id);
     }
 
 }
