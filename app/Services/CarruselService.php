@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Button;
 use App\Models\Carrusel;
 use App\Repositories\CarruselRepository;
 
@@ -46,9 +47,10 @@ class CarruselService
 
         if (isset($data['buttons']) && is_array($data['buttons'])) {
             foreach ($data['buttons'] as $buttonData) {
+           //     if(isset($buttonData['name'] ) )
                 $carrusel->buttons()->create([
-                    'text' => $buttonData['name'],
-                    'url' => $buttonData['link'],
+                    'text' => $buttonData['name']??'',
+                    'url' => $buttonData['link']??'',
                     'status' => true,
                 ]);
 
