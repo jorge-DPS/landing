@@ -169,9 +169,18 @@
                                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                                         {{ $section->title }}
                                                     </td>
+
+
+
+
+
                                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                                         <i class="ki-filled ki-arrow-up-down"></i>
-                                                        <a href="{{ route('pages.configuration.edit', $section->id) }}"
+                                                        <a href="{{ route('pages.configuration.employees', [$page, $section]) }}" title="configurar"
+                                                            class="btn btn-sm btn-icon btn-clear btn-primary">
+                                                            <i class="ki-filled ki-setting-2"></i>
+                                                        </a>
+                                                        <a href="{{ route('pages.configuration.edit', $section->id) }}" title="editar"
                                                             class="btn btn-sm btn-icon btn-clear btn-primary">
                                                             <i class="ki-filled ki-notepad-edit"></i>
                                                         </a>

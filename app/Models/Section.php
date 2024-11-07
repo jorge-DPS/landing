@@ -17,4 +17,9 @@ class Section extends Model
         'page_id'
     ];
 
+    public function page()
+    {
+        return $this->belongsTo(Page::class);
+    }
+
 }

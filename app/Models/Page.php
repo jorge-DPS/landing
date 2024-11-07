@@ -14,12 +14,17 @@ class Page extends Model
         'description',
         'seo_title',
         'menu_id',
-        'slug', 
+        'slug',
     ];
 
     public function menu()
     {
         return $this->belongsTo(Menu::class);
+    }
+
+    public function sections()
+    {
+        return $this->hasMany(Section::class);
     }
 
 }

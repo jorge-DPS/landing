@@ -16,7 +16,7 @@ use App\Http\Controllers\PublicPageController;
 use App\Http\Controllers\SectionTypeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SectionController;
-use Illuminate\Support\Facades\Route; 
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('frontend.home.index');
@@ -44,7 +44,9 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('menu', MenuController::class);
     Route::delete('menu/delete', [MenuController::class, 'destroy'])->name('menu.delete');
     Route::post('menu/update', [MenuController::class, 'update'])->name('menu.update');
-    Route::get('/pages/configuracion/{id}', [SectionController::class, 'index'])->name('pages.configuration.index');
+    // Route::get('/pages/configuracion/{id}', [SectionController::class, 'index'])->name('pages.configuration.index');
+    Route::get('/pages/configuracion/{page:title}', [SectionController::class, 'index'])->name('pages.configuration.index');
+    Route::get('/pages/configuracion/{page:title}/{section:title}', [SectionController::class, 'employees'])->name('pages.configuration.employees');
     Route::get('/pages/configuracion/edit/{id}', [SectionController::class, 'edit'])->name('pages.configuration.edit');
 
     Route::resource('pages', PageController::class);

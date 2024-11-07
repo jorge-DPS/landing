@@ -1,12 +1,13 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Services\PageService;
+use App\Models\Page;
 use App\Models\Section;
 use App\Models\SeccionType;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Exceptions;
+use App\Services\PageService;
 use App\Http\Requests\SectionRequest;
+use Illuminate\Support\Facades\Exceptions;
 
 
 class SectionController extends Controller
@@ -18,13 +19,21 @@ class SectionController extends Controller
         $this->pageService = $pageService;
     }
 
-    public function index($id)
+    public function index(Page $page)
     {
-        $sectionsAll = Section::where('page_id', $id)->get();
-        $page = $this->pageService->getPageById($id);
+        $sectionsAll = Section::where('page_id', $page->id)->get();
+        // dd($sectionsAll);
+        // dd($page);
+        // $page = $this->pageService->getPageById($page->id);
+
         $sectionType = SeccionType::all();
 
-        return view('backend.pagesConfigurations.index', compact('page', 'sectionType', 'sectionsAll'));
+        // return view('backend.pagesConfigurations.index', compact('page', 'sectionType', 'sectionsAll'));
+        return view('backend.pagesConfigurations.index', [
+            'page' => $page,
+            'sectionType' => $sectionType,
+            'sectionsAll' => $sectionsAll
+        ]);
     }
 
     public function edit($id)
@@ -49,5 +58,16 @@ class SectionController extends Controller
                 'message' => 'Error al crear la sección'
             ], 500);
         }
+    }
+
+    public function employees(Page $page, Section $section)
+    {
+        // dd($section);
+
+        $sections = $page->sections; // si es hasMany
+        return view('backend.pagesConfigurations.employees.index', [
+            'page' => $page,
+            'sections' => $sections,
+        ]);
     }
 }
