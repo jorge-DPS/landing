@@ -1,0 +1,291 @@
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.pulse-button {
+    animation: pulse 2s ease-in-out infinite;
+    transition: transform 0.5s ease-in-out;
+}
+
+.pulse-button {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: enterAnimation 0.5s forwards,
+    pulse 2s ease-in-out infinite 0.5s, /* duración del sacudido (ajustable -> shake) :) */ shake 0.1s ease-in-out 2 forwards 1s;
+}
+
+
+@keyframes enterAnimation {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-primary {
+    background-color: #B12A38;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 15px;
+    outline: none;
+    font-size: 14px;
+}
+
+.btn-primary:hover {
+    background-color: #d53342;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-10px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(10px);
+    }
+}
+
+
+/* delete */
+.delete-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 40%;
+    background-color: rgb(177, 42, 56);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    position: relative;
+}
+
+.delete-svgIcon {
+    width: 20px;
+    transition-duration: 0.3s;
+    color: white;
+}
+
+.delete-svgIcon path {
+    fill: white;
+}
+
+.delete-button:hover {
+    width: 180px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    background-color: rgba(177, 42, 56, 0.92);
+    align-items: center;
+}
+
+.delete-button:hover .delete-svgIcon {
+    width: 20px;
+    transition-duration: 0.3s;
+    transform: translateY(60%);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.delete-button::before {
+    display: none;
+    content: "Eliminar imagen";
+    color: white;
+    transition-duration: 0.3s;
+    font-size: 2px;
+}
+
+.delete-button:hover::before {
+    display: block;
+    padding-right: 10px;
+    font-size: 13px;
+    opacity: 1;
+    transform: translateY(0px);
+    transition-duration: 0.3s;
+}
+
+/* upload */
+.upload-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 40%;
+    background-color: rgb(15, 155, 36);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    position: relative;
+}
+
+.upload-svgIcon {
+    width: 20px;
+    transition-duration: 0.3s;
+    color: white;
+}
+
+.upload-svgIcon path {
+    fill: white;
+}
+
+.upload-button:hover {
+    width: 180px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    background-color: rgba(15, 155, 36, 0.96);
+    align-items: center;
+}
+
+.upload-button:hover .upload-svgIcon {
+    width: 20px;
+    transition-duration: 0.3s;
+    transform: translateY(60%);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.upload-button::before {
+    display: none;
+    content: "Subir imagen";
+    color: white;
+    transition-duration: 0.3s;
+    font-size: 2px;
+}
+
+.upload-button:hover::before {
+    display: block;
+    padding-right: 10px;
+    font-size: 13px;
+    opacity: 1;
+    transform: translateY(0px);
+    transition-duration: 0.3s;
+}
+
+
+/* envio */
+.btn-conteiner {
+    display: flex;
+    justify-content: center;
+    --color-text: #ffffff;
+    --color-background: #b12a38;
+    --color-outline: #ff145b80;
+    --color-shadow: #00000080;
+}
+
+.btn-content {
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--color-text);
+    background: var(--color-background);
+    transition: 1s;
+    border-radius: 60px;
+    box-shadow: 0 0 0.2em 0 var(--color-background);
+}
+
+.btn-content:hover, .btn-content:focus {
+    transition: 0.5s;
+    -webkit-animation: btn-content 1s;
+    animation: btn-content 1s;
+    outline: 0.1em solid transparent;
+    outline-offset: 0.2em;
+    box-shadow: 0 0 0.4em 0 var(--color-background);
+}
+
+.btn-content .icon-arrow {
+    transition: 0.5s;
+    margin-right: 0px;
+    transform: scale(0.6);
+}
+
+.btn-content:hover .icon-arrow {
+    transition: 0.5s;
+    margin-right: 25px;
+}
+
+.icon-arrow {
+    width: 20px;
+    margin-left: 15px;
+    position: relative;
+    top: 6%;
+}
+
+/* SVG */
+#arrow-icon-one {
+    transition: 0.4s;
+    transform: translateX(-60%);
+}
+
+#arrow-icon-two {
+    transition: 0.5s;
+    transform: translateX(-30%);
+}
+
+.btn-content:hover #arrow-icon-three {
+    animation: color_anim 1s infinite 0.2s;
+}
+
+.btn-content:hover #arrow-icon-one {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.6s;
+}
+
+.btn-content:hover #arrow-icon-two {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.4s;
+}
+
+/* SVG animations */
+@keyframes color_anim {
+    0% {
+        fill: white;
+    }
+
+    50% {
+        fill: var(--color-background);
+    }
+
+    100% {
+        fill: white;
+    }
+}
+
+/* Button animations */
+@-webkit-keyframes btn-content {
+    0% {
+        outline: 0.2em solid var(--color-background);
+        outline-offset: 0;
+    }
+}
+
+@keyframes btn-content {
+    0% {
+        outline: 0.2em solid var(--color-background);
+        outline-offset: 0;
+    }
+}
