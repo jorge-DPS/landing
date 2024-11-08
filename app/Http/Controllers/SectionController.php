@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\Page;
@@ -62,12 +63,12 @@ class SectionController extends Controller
 
     public function employees(Page $page, Section $section)
     {
-        // dd($section);
+        // Cargar empleados de la sección específica
+        $employees = $section->employees;
 
-        $sections = $page->sections; // si es hasMany
         return view('backend.pagesConfigurations.employees.index', [
-            'page' => $page,
-            'sections' => $sections,
+            'section' => $section,
+            'employees' => $employees,
         ]);
     }
 }

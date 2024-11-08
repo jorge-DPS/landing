@@ -1,0 +1,135 @@
+@extends('backend.layouts.app')
+
+@section('title')
+    <title>Crear Empleado</title>
+@endsection
+
+@section('breadcrumbs')
+    <div class="flex [.header_&amp;]:below-lg:hidden items-center gap-1.25 text-xs lg:text-sm font-medium mb-2.5 lg:mb-0"
+         data-reparent="true" data-reparent-mode="prepend|lg:prepend"
+         data-reparent-target="#content_container|lg:#header_container">
+       <span class="text-gray-600">
+        {{ Breadcrumbs::render('home') }}
+       </span>
+        <i class="ki-filled ki-right text-gray-500 text-3xs"></i>
+        <span class="text-gray-600">
+        {{ Breadcrumbs::render('employees.index', $page, $section) }}
+       </span>
+        <i class="ki-filled ki-right text-gray-500 text-3xs"></i>
+        <span class="text-gray-700">
+            {{ Breadcrumbs::render('employees.create', $page, $section) }}
+       </span>
+    </div>
+{{--
+    <div class="flex [.header_&amp;]:below-lg:hidden items-center gap-1.25 text-xs lg:text-sm font-medium mb-2.5 lg:mb-0"
+         data-reparent="true" data-reparent-mode="prepend|lg:prepend"
+         data-reparent-target="#content_container|lg:#header_container">
+         {{ Breadcrumbs::render('employees.create', $page, $section) }}
+    </div> --}}
+@endsection
+
+@section('content')
+    <main class="grow content pt-5" id="content" role="content">
+        <div class="container-fixed">
+            <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
+                <div class="flex flex-col justify-center gap-2">
+                    <h1 class="text-xl font-semibold leading-none text-gray-900">
+                        Agregar Nuevo Empleado
+                    </h1>
+                </div>
+                <div class="flex items-center gap-2.5">
+                    <div class="btn-conteiner">
+                        <a class="btn-content" href="{{ route('employees.index', ['page' => $page->id, 'section' => $section->id]) }}">
+                            <span class="btn-title">TODOS</span>
+                            <span class="icon-arrow">
+                                <!-- Icon SVG -->
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fixed">
+            <div class="grid gap-5 lg:gap-7.5">
+                <div class="col-span-2">
+                    <div class="flex flex-col gap-5 lg:gap-7.5">
+                        <div class="card min-w-full">
+                            <form id="createEmployee" action="{{ route('employees.store', ['page' => $page->id, 'section' => $section->id]) }}"
+                                  method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="card-header gap-2">
+                                    <h3 class="card-title">Datos del Empleado</h3>
+                                </div>
+                                <div class="card-body lg:py-7.5 py-5">
+                                    <!-- Nombre -->
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">Nombre</div>
+                                        </div>
+                                        <label class="input">
+                                            <input type="text" value="{{ old('name') }}" name="name" required placeholder="Nombre del empleado" />
+                                        </label>
+                                    </div>
+
+                                    <!-- Posición -->
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">Posición</div>
+                                        </div>
+                                        <label class="input">
+                                            <input type="text" value="{{ old('position') }}" name="position" placeholder="Cargo del empleado" />
+                                        </label>
+                                    </div>
+
+                                    <!-- Imagen -->
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">Imagen</div>
+                                        </div>
+                                        <label class="input">
+                                            <input type="file" name="image" accept="image/*" />
+                                        </label>
+                                    </div>
+
+                                    <!-- Estado -->
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">Estado</div>
+                                        </div>
+                                        <label class="input">
+                                            <select name="status" required>
+                                                <option value="1" {{ old('status', 1) == 1 ? 'selected' : '' }}>Activo</option>
+                                                <option value="0" {{ old('status', 1) == 0 ? 'selected' : '' }}>Inactivo</option>
+                                            </select>
+                                        </label>
+                                    </div>
+
+                                    <div class="border-t border-gray-200 my-7.5"></div>
+                                    <div class="flex justify-end">
+                                        <div class="btn-conteiner">
+                                            <a class="btn-content" href="javascript:void(0);" onclick="enviarFormulario(); return false;">
+                                                <span class="btn-title">CREAR</span>
+                                                <span class="icon-arrow">
+                                                    <!-- Icon SVG -->
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+@endsection
+
+@push('scripts')
+    <script>
+        function enviarFormulario() {
+            document.getElementById('createEmployee').submit();
+        }
+    </script>
+@endpush

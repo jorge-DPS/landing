@@ -1,22 +1,23 @@
 <?php
 
-use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\CarruselController;
-use App\Http\Controllers\CompanyController;
-use App\Http\Controllers\CoverSectionController;
-use App\Http\Controllers\GallerySectionController;
-use App\Http\Controllers\GlobalConfiguracionController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
-use App\Http\Controllers\MetaTagsController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\PeopleController;
-use App\Http\Controllers\PersonSectionController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SectionController;
+use App\Http\Controllers\CarruselController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\MetaTagsController;
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\PublicPageController;
 use App\Http\Controllers\SectionTypeController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\SectionController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CoverSectionController;
+use App\Http\Controllers\PersonSectionController;
+use App\Http\Controllers\GallerySectionController;
+use App\Http\Controllers\GlobalConfiguracionController;
 
 Route::get('/', function () {
     return view('frontend.home.index');
@@ -46,11 +47,17 @@ Route::middleware(['auth'])->group(function () {
     Route::post('menu/update', [MenuController::class, 'update'])->name('menu.update');
     // Route::get('/pages/configuracion/{id}', [SectionController::class, 'index'])->name('pages.configuration.index');
     Route::get('/pages/configuracion/{page:title}', [SectionController::class, 'index'])->name('pages.configuration.index');
-    Route::get('/pages/configuracion/{page:title}/{section:title}', [SectionController::class, 'employees'])->name('pages.configuration.employees');
+    // Route::get('/pages/configuracion/{page:title}/{section:title}', [SectionController::class, 'employees'])->name('pages.configuration.employees');
     Route::get('/pages/configuracion/edit/{id}', [SectionController::class, 'edit'])->name('pages.configuration.edit');
 
+
+    Route::prefix('/pages/configuracion/{page:title}/{section:title}')->group(function () {
+        Route::resource('employees', EmployeeController::class);
+    });
+
+
     Route::resource('pages', PageController::class);
-    Route::resource('people', PeopleController::class);
+    // Route::resource('people', PeopleController::class);
     Route::resource('section-type', SectionTypeController::class);
     Route::resource('person-section', PersonSectionController::class);
     Route::resource('galery-section', GallerySectionController::class);

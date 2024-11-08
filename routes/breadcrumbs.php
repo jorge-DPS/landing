@@ -26,3 +26,31 @@ Breadcrumbs::for('carrusel.edit', function (BreadcrumbTrail $trail, $carrusel) {
 Breadcrumbs::for('metatags.index', function (BreadcrumbTrail $trail) {
     $trail->push('Metatags', route('metatags.index'));
 });
+
+// Employee Index (Lista de empleados)
+// Breadcrumbs::for('employees.index', function (BreadcrumbTrail $trail, $page, $section) {
+//     $trail->parent('home');
+//     $trail->push('Configuración de Páginas', route('employees.index', ['page' => $page->id, 'section' => $section->id]));
+// });
+
+
+
+// Employee Index (Lista de empleados)
+Breadcrumbs::for('employees.index', function (BreadcrumbTrail $trail, $page, $section) {
+    $trail->push('Empleados', route('employees.index', ['page' => $page, 'section' => $section]));
+});
+
+// Employee Create (Agregar empleado)
+Breadcrumbs::for('employees.create', function (BreadcrumbTrail $trail, $page, $section) {
+    $trail->push('Agregar Empleado', route('employees.create', ['page' => $page->id, 'section' => $section->id]));
+});
+
+// Employee Edit (Editar empleado)
+Breadcrumbs::for('employees.edit', function (BreadcrumbTrail $trail, $page, $section, $employee) {
+    $trail->push('Editar Empleado', route('employees.edit', ['page' => $page->id, 'section' => $section->id, 'employee' => $employee->id]));
+});
+
+// Employee Show (Ver empleado)
+Breadcrumbs::for('employees.show', function (BreadcrumbTrail $trail, $page, $section, $employee) {
+    $trail->push('Ver Empleado', route('employees.show', ['page' => $page->id, 'section' => $section->id, 'employee' => $employee->id]));
+});
