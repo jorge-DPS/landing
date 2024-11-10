@@ -17,4 +17,18 @@ class Section extends Model
         'page_id'
     ];
 
+    public function page()
+    {
+        return $this->belongsTo(Page::class);
+    }
+
+    public function section()
+    {
+        return $this->belongsTo(Section::class, 'section_id');
+    }
+
+    public function employees()
+    {
+        return $this->hasMany(Employee::class, 'section_id', 'section_type_id');
+    }
 }
