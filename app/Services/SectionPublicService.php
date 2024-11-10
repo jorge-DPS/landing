@@ -1,6 +1,8 @@
 <?php
 
-namespace app\services;
+namespace App\Services;namespace App\Services;
+
+
 
 use App\Http\Requests\SectionRequest;
 use App\Models\Section;

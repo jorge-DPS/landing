@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 @section('title')
-    <title>Crear Empleado</title>
+    <title>Editar Empleado</title>
 @endsection
 
 @section('breadcrumbs')
@@ -17,7 +17,7 @@
        </span>
         <i class="ki-filled ki-right text-gray-500 text-3xs"></i>
         <span class="text-gray-700">
-            {{ Breadcrumbs::render('employees.create', $page, $section) }}
+            {{ Breadcrumbs::render('employees.edit', $page, $section, $employee) }}
        </span>
     </div>
 {{--
@@ -34,7 +34,7 @@
             <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
                 <div class="flex flex-col justify-center gap-2">
                     <h1 class="text-xl font-semibold leading-none text-gray-900">
-                        Agregar Nuevo Empleado
+                        Editar Empleado: {{ $employee->name }}
                     </h1>
                 </div>
                 <div class="flex items-center gap-2.5">
@@ -58,8 +58,7 @@
 
                             {{-- Depura los datos --}}
 
-                            {{-- {{ dd($page) }} --}}
-                            <livewire:backend.employee.employee-create :section="$section" :page="$page"/>
+                            <livewire:backend.employee.editar-employee :page="$page" :section="$section" :employee="$employee"/>
 
                         </div>
                     </div>

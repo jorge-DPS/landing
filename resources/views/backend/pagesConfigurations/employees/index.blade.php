@@ -67,17 +67,8 @@
                 </div>
             </div>
 
-            <div class="grid gap-5 lg:gap-7.5">
-                <div class="card">
-                    <div class="card-body">
-                        @if ($employees->isEmpty())
-                            <p class="text-center text-gray-500">No hay empleados asignados a esta sección.</p>
-                        @else
-                            <x-data-table-employees :employees="$employees" />
-                        @endif
-                    </div>
-                </div>
-            </div>
+
+            <livewire:backend.employee.mostrar-employees :employees="$employees" :page="$page" :section="$section"/>
         </div>
     </main>
 @endsection

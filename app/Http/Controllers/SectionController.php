@@ -37,11 +37,12 @@ class SectionController extends Controller
         ]);
     }
 
-    public function edit($id)
+    public function edit($id, Page $page, Section $section)
     {
+        // dd('desde section');
         $section = Section::find($id);
         $sectionType = SeccionType::all();
-        return view('backend.pagesConfigurations.edit', compact('section', 'sectionType'));
+        return view('backend.pagesConfigurations.edit', compact('section', 'page', 'sectionType'));
     }
 
     public function store(SectionRequest $request)
