@@ -23,9 +23,6 @@ class SectionController extends Controller
     public function index(Page $page)
     {
         $sectionsAll = Section::where('page_id', $page->id)->get();
-        // dd($sectionsAll);
-        // dd($page);
-        // $page = $this->pageService->getPageById($page->id);
 
         $sectionType = SeccionType::all();
 
@@ -37,39 +34,39 @@ class SectionController extends Controller
         ]);
     }
 
-    public function edit($id, Page $page, Section $section)
-    {
-        // dd('desde section');
-        $section = Section::find($id);
-        $sectionType = SeccionType::all();
-        return view('backend.pagesConfigurations.edit', compact('section', 'page', 'sectionType'));
-    }
+    // public function edit($id, Page $page, Section $section)
+    // {
+    //     // dd('desde section');
+    //     $section = Section::find($id);
+    //     $sectionType = SeccionType::all();
+    //     return view('backend.pagesConfigurations.edit', compact('section', 'page', 'sectionType'));
+    // }
 
-    public function store(SectionRequest $request)
-    {
-        try {
-            $section = Section::create($request->validated());
-            return response()->json([
-                'success' => true,
-                'message' => 'Sección creada exitosamente',
-                'section' => $section
-            ]);
-        } catch (Exceptions $e) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Error al crear la sección'
-            ], 500);
-        }
-    }
+    // public function store(SectionRequest $request)
+    // {
+    //     try {
+    //         $section = Section::create($request->validated());
+    //         return response()->json([
+    //             'success' => true,
+    //             'message' => 'Sección creada exitosamente',
+    //             'section' => $section
+    //         ]);
+    //     } catch (Exceptions $e) {
+    //         return response()->json([
+    //             'success' => false,
+    //             'message' => 'Error al crear la sección'
+    //         ], 500);
+    //     }
+    // }
 
-    public function employees(Page $page, Section $section)
-    {
-        // Cargar empleados de la sección específica
-        $employees = $section->employees;
+    // public function employees(Page $page, Section $section)
+    // {
+    //     // Cargar empleados de la sección específica
+    //     $employees = $section->employees;
 
-        return view('backend.pagesConfigurations.employees.index', [
-            'section' => $section,
-            'employees' => $employees,
-        ]);
-    }
+    //     return view('backend.pagesConfigurations.employees.index', [
+    //         'section' => $section,
+    //         'employees' => $employees,
+    //     ]);
+    // }
 }

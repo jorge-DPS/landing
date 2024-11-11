@@ -54,3 +54,8 @@ Breadcrumbs::for('employees.edit', function (BreadcrumbTrail $trail, $page, $sec
 Breadcrumbs::for('employees.show', function (BreadcrumbTrail $trail, $page, $section, $employee) {
     $trail->push('Ver Empleado', route('employees.show', ['page' => $page->id, 'section' => $section->id, 'employee' => $employee->id]));
 });
+
+// Imagenes Index (Lista de imagenes)
+Breadcrumbs::for('images.index', function (BreadcrumbTrail $trail, $page, $section) {
+    $trail->push('imagenes', route('images.index', ['page' => $page, 'section' => $section]));
+});
