@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ImagesController;
 use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ProfileController;
@@ -55,12 +56,17 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('employees', EmployeeController::class);
     });
 
+    Route::prefix('/pages/configuracion/{page:title}/{section:title}')->group(function (){
+        route::resource('images', ImagesController::class);
+        // [ImagesController::class, 'index'])->name('pages.configuration.images.index');
+    });
+
 
     Route::resource('pages', PageController::class);
     // Route::resource('people', PeopleController::class);
     Route::resource('section-type', SectionTypeController::class);
     Route::resource('person-section', PersonSectionController::class);
-    Route::resource('galery-section', GallerySectionController::class);
+    // Route::resource('galery-section', GallerySectionController::class);
     Route::resource('cover-section', CoverSectionController::class);
 
     Route::resource('section', SectionController::class);
