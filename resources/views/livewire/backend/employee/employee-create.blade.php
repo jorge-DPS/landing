@@ -96,3 +96,13 @@
         </div>
     </div>
 </form>
+<<<<<<< HEAD
+=======
+@push('scripts')
+    <script>
+        window.addEventListener('beforeunload', function (event) {
+            @this.call('clearTemporaryFiles');
+        });
+    </script>
+@endpush
+>>>>>>> 86c4e46 (images)

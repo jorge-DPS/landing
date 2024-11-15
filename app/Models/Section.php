@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Backend\SectionGalery\SectionGalery\Image;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -30,5 +31,11 @@ class Section extends Model
     public function employees()
     {
         return $this->hasMany(Employee::class, 'section_id', 'section_type_id');
+    }
+
+    // Relación con Image usando section_type_id
+    public function images()
+    {
+        return $this->hasMany(Image::class, 'section_id', 'section_type_id');
     }
 }

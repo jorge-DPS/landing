@@ -8950,9 +8950,13 @@
         "php": "^8.2"
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
     "platform-dev": {},
 =======
     "platform-dev": [],
 >>>>>>> ba3b737 (CRUD)
+=======
+    "platform-dev": {},
+>>>>>>> 86c4e46 (images)
     "plugin-api-version": "2.6.0"
 }

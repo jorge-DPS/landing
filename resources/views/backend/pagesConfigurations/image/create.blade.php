@@ -13,7 +13,7 @@
        </span>
         <i class="ki-filled ki-right text-gray-500 text-3xs"></i>
         <span class="text-gray-600">
-        {{ Breadcrumbs::render('images.index', $page, $section) }}
+        {{ Breadcrumbs::render('section-gallery.index', $page, $section) }}
        </span>
         {{-- <i class="ki-filled ki-right text-gray-500 text-3xs"></i>
         <span class="text-gray-700">
@@ -39,7 +39,7 @@
                 </div>
                 <div class="flex items-center gap-2.5">
                     <div class="btn-conteiner">
-                        <a class="btn-content" href="{{ route('images.index', ['page' => $page->id, 'section' => $section->id]) }}">
+                        <a class="btn-content" href="{{ route('image.index', ['page' => $page->id, 'section' => $section->id]) }}">
                             <span class="btn-title">TODOS</span>
                             <span class="icon-arrow">
                                 <!-- Icon SVG -->
@@ -59,8 +59,8 @@
                             {{-- Depura los datos --}}
 
                             {{-- {{ dd($page) }} --}}
-                            {{-- <livewire:backend.employee.employee-create :section="$section" :page="$page"/> --}}
-
+                            {{-- <livewire:backend.GalerySection.images-create :section="$section" :page="$page"/> --}}
+                            {{-- <livewire:backend.GalerySection.images-index :page="$page" :section="$section"/> --}}
                         </div>
                     </div>
                 </div>

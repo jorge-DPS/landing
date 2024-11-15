@@ -19,6 +19,7 @@ use App\Http\Controllers\CoverSectionController;
 use App\Http\Controllers\PersonSectionController;
 use App\Http\Controllers\GallerySectionController;
 use App\Http\Controllers\GlobalConfiguracionController;
+use App\Http\Controllers\Backend\SectionGallery\ImageController;
 
 Route::get('/', function () {
     return view('frontend.home.index');
@@ -56,9 +57,17 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('employees', EmployeeController::class);
     });
 
-    Route::prefix('/pages/configuracion/{page:title}/{section:title}')->group(function (){
-        route::resource('images', ImagesController::class);
-        // [ImagesController::class, 'index'])->name('pages.configuration.images.index');
+    // Route::prefix('/pages/configuracion/{page:title}/{section:title}')->group(function (){
+    //     route::resource('images', ImagesController::class);
+    //     // [ImagesController::class, 'index'])->name('pages.configuration.');
+    // });
+
+    // seccion Galeria:: imagenes
+    Route::prefix('/pages/configuracion/{page:title}/{section:title}')->group(function () {
+        Route::get('/images', [ImageController::class, 'index'])->name('section-gallery.index');
+        Route::get('/{sectionId}/create', [ImageController::class, 'create'])->name('section-gallery.create');
+        Route::post('/{sectionId}', [ImageController::class, 'store'])->name('section-gallery.store');
+        Route::delete('/{sectionId}/{imageId}', [ImageController::class, 'destroy'])->name('section-gallery.destroy');
     });
 
 
