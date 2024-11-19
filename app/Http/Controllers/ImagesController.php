@@ -14,7 +14,7 @@ class ImagesController extends Controller
         // Puedes agregar lógica aquí, como obtener imágenes relacionadas con la sección.
         $images = $section->images; // Suponiendo que tienes una relación 'images' en el modelo Section.
 
-        return view('backend.pagesConfigurations.image.index', compact('page', 'section', 'images'));
+        return view('backend.pagesConfigurations.image.index', compact('page', 'section'));
     }
 
     public function create(Page $page,  Section $section){

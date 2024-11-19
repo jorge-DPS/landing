@@ -181,11 +181,7 @@
                                                                 <i class="ki-filled ki-setting-2"></i>
                                                             </a>
                                                         @elseif($section->section_type_id == 2)
-<<<<<<< HEAD
-                                                            <a href="{{ route('images.index', [$page, $section]) }}" title="configurar imágenes" class="btn btn-sm btn-icon btn-clear btn-primary">
-=======
                                                             <a href="{{ route('section-gallery.index', [$page, $section]) }}" title="configurar imágenes" class="btn btn-sm btn-icon btn-clear btn-primary">
->>>>>>> 86c4e46 (images)
                                                                 <i class="ki-filled ki-setting-2"></i>
                                                             </a>
                                                         @elseif($section->section_type_id == 3)

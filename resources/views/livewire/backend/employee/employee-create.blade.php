@@ -96,8 +96,6 @@
         </div>
     </div>
 </form>
-<<<<<<< HEAD
-=======
 @push('scripts')
     <script>
         window.addEventListener('beforeunload', function (event) {
@@ -105,4 +103,3 @@
         });
     </script>
 @endpush
->>>>>>> 86c4e46 (images)
