@@ -101,7 +101,7 @@
                                         </div>
                                     </div>
                                     <div class="flex justify-end">
-                                        <button class="btn btn-primary" data-modal-toggle="#modal_6_2">
+                                        <button type="submit" class="btn btn-primary" data-modal-toggle="#modal_6_2">
                                             Guardar
                                         </button>
                                     </div>
@@ -181,7 +181,7 @@
                                                                 <i class="ki-filled ki-setting-2"></i>
                                                             </a>
                                                         @elseif($section->section_type_id == 2)
-                                                            <a href="{{ route('images.index', [$page, $section]) }}" title="configurar imágenes" class="btn btn-sm btn-icon btn-clear btn-primary">
+                                                            <a href="{{ route('section-gallery.index', [$page, $section]) }}" title="configurar imágenes" class="btn btn-sm btn-icon btn-clear btn-primary">
                                                                 <i class="ki-filled ki-setting-2"></i>
                                                             </a>
                                                         @elseif($section->section_type_id == 3)
@@ -216,10 +216,8 @@
                                         </h3>
                                     </div>
                                     <div class="text-center">
-                                        <img alt="Portada" class="dark:hidden max-h-[250px]"
-                                            src="assetsBackend/media/example/cover.webp" />
-                                        <img alt="Portada" class="light:hidden max-h-[250px]"
-                                            src="assetsBackend/media/example/cover.webp" />
+                                        <img alt="Portada" class="max-h-[250px]"
+                                            src="{{ asset('assetsBackend/media/example/cover.webp') }}" />
                                     </div>
                                 </div>
                             </div>
@@ -234,10 +232,8 @@
                                         </h3>
                                     </div>
                                     <div class="text-center">
-                                        <img alt="Persona" class="dark:hidden max-h-[250px]"
-                                            src="assetsBackend/media/example/person.webp" />
-                                        <img alt="Persona" class="light:hidden max-h-[250px]"
-                                            src="assetsBackend/media/example/person.webp" />
+                                        <img alt="Persona" class="max-h-[250px]"
+                                            src="{{ asset('assetsBackend/media/example/person.webp')}}" />
                                     </div>
                                 </div>
                             </div>
@@ -252,10 +248,8 @@
                                         </h3>
                                     </div>
                                     <div class="text-center">
-                                        <img alt="Galería" class="dark:hidden max-h-[250px]"
-                                            src="assetsBackend/media/example/galery.webp" />
-                                        <img alt="Galería" class="light:hidden max-h-[250px]"
-                                            src="assetsBackend/media/example/galery.webp" />
+                                        <img alt="Galería" class="max-h-[250px]"
+                                            src="{{ asset('assetsBackend/media/example/galery.webp')}}" />
                                     </div>
                                 </div>
                             </div>

@@ -19,6 +19,7 @@ use App\Http\Controllers\CoverSectionController;
 use App\Http\Controllers\PersonSectionController;
 use App\Http\Controllers\GallerySectionController;
 use App\Http\Controllers\GlobalConfiguracionController;
+use App\Http\Controllers\Backend\SectionGallery\ImageController;
 
 Route::get('/', function () {
     return view('frontend.home.index');
@@ -57,7 +58,7 @@ Route::middleware(['auth'])->group(function () {
     });
 
     Route::prefix('/pages/configuracion/{page:title}/{section:title}')->group(function (){
-        route::resource('images', ImagesController::class);
+        Route::get('/images', [ImageController::class, 'index'])->name('section-gallery.index');
         // [ImagesController::class, 'index'])->name('pages.configuration.images.index');
     });
 
