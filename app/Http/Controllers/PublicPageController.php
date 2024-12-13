@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Page;
 use Illuminate\Http\Request;
 
 class PublicPageController extends Controller
@@ -33,10 +34,13 @@ class PublicPageController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $slug)
+    public function show(Page $page)
     {
+        // dd($page);
         
-        return view('frontend.pages.show');
+        return view('frontend.pages.show', [
+            'page' => $page
+        ]);
     }
 
     /**

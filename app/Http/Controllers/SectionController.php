@@ -23,10 +23,12 @@ class SectionController extends Controller
     public function index(Page $page)
     {
         $sectionsAll = Section::where('page_id', $page->id)->get();
+        // dd($sectionsAll);
 
         $sectionType = SeccionType::all();
-
         // return view('backend.pagesConfigurations.index', compact('page', 'sectionType', 'sectionsAll'));
+
+        // $cover = Cover::where('section_id', $this->section->id)->first();
         return view('backend.pagesConfigurations.index', [
             'page' => $page,
             'sectionType' => $sectionType,
@@ -42,22 +44,28 @@ class SectionController extends Controller
     //     return view('backend.pagesConfigurations.edit', compact('section', 'page', 'sectionType'));
     // }
 
-    // public function store(SectionRequest $request)
-    // {
-    //     try {
-    //         $section = Section::create($request->validated());
-    //         return response()->json([
-    //             'success' => true,
-    //             'message' => 'Sección creada exitosamente',
-    //             'section' => $section
-    //         ]);
-    //     } catch (Exceptions $e) {
-    //         return response()->json([
-    //             'success' => false,
-    //             'message' => 'Error al crear la sección'
-    //         ], 500);
-    //     }
-    // }
+    public function store(Page $page, Request $request)
+    {
+        // dd($request);
+        // Validar los datos enviados
+        $datos = $request->validate([
+            'title' => 'required|string|max:255',
+            'section_type_id' => 'required|exists:section_types,id', // Asegúrate de que 'section_types' sea el nombre correcto de la tabla
+        ]);
+
+        // Crear una nueva sección con los datos validados
+        Section::create([
+            'title' => $datos['title'],
+            'section_type_id' => $datos['section_type_id'],
+            'page_id' => $page->id,  // Asumiendo que 'page_id' viene del modelo de página
+        ]);
+
+        // Redirigir después de guardar
+        return redirect()->route('pages.configuration.index', [
+            'page' => $page
+            ]
+        );
+    }
 
     // public function employees(Page $page, Section $section)
     // {
@@ -69,4 +77,14 @@ class SectionController extends Controller
     //         'employees' => $employees,
     //     ]);
     // }
+
+    public function destroy(Page $page, Section $section){
+        // El Laravel se encargará de buscar la sección con ese ID
+        // dd($page);
+        $section->delete();
+        session()->flash('message', 'Sección eliminada correctamente.');
+        return redirect()->route('pages.configuration.index', [
+            'page' => $page
+        ]);
+    }
 }

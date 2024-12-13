@@ -36,7 +36,7 @@ class ImagesCreate extends Component
             $imagen = $image->store('uploads/images', 'public'); // Guarda la imagen
             Image::create([
                 'filename' => basename($imagen),
-                'section_id' => $this->section->section_type_id, // section_id correcto
+                'section_id' => $this->section->id, // section_id correcto
             ]);
         }
         $this->reset('images'); // Limpia la propiedad de imágenes

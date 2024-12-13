@@ -62,7 +62,8 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form id="postForm">
+                                <form action="{{ route('pages.configuration.store', [$page]) }}" method="POST">
+                                    @csrf
                                     <input type="hidden" value="{{ $page->id }}" name="page_id">
                                     <div class="w-full mt-2 mb-2">
                                         <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
@@ -123,6 +124,11 @@
                                     Secciones vínculadas
                                 </h3>
                             </div>
+                            @if(session()->has('message'))
+    <div class="alert alert-success">
+        {{ session('message') }}
+    </div>
+@endif
                             <div class="card-body pb-7.5">
                                 <div class="grid gap-2.5">
                                     <table id="table_respaldo" class="min-w-full divide-y divide-gray-200">
@@ -140,14 +146,14 @@
                                                                 width="44" xmlns="http://www.w3.org/2000/svg">
                                                                 <path
                                                                     d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506
-                                                                                    18.4282V29.5718C43.6506 33.859 41.3634 37.8205 37.6506 39.9641L28 45.5359C24.2872 47.6795 19.7128 47.6795 16 45.5359L6.34937
-                                                                                    39.9641C2.63655 37.8205 0.349365 33.859 0.349365 29.5718V18.4282C0.349365 14.141 2.63655 10.1795 6.34937 8.0359L16 2.4641Z"
+                                                                                        18.4282V29.5718C43.6506 33.859 41.3634 37.8205 37.6506 39.9641L28 45.5359C24.2872 47.6795 19.7128 47.6795 16 45.5359L6.34937
+                                                                                        39.9641C2.63655 37.8205 0.349365 33.859 0.349365 29.5718V18.4282C0.349365 14.141 2.63655 10.1795 6.34937 8.0359L16 2.4641Z"
                                                                     fill="">
                                                                 </path>
                                                                 <path
                                                                     d="M16.25 2.89711C19.8081 0.842838 24.1919 0.842837 27.75 2.89711L37.4006 8.46891C40.9587 10.5232 43.1506 14.3196 43.1506
-                                                                                    18.4282V29.5718C43.1506 33.6804 40.9587 37.4768 37.4006 39.5311L27.75 45.1029C24.1919 47.1572 19.8081 47.1572 16.25 45.1029L6.59937
-                                                                                    39.5311C3.04125 37.4768 0.849365 33.6803 0.849365 29.5718V18.4282C0.849365 14.3196 3.04125 10.5232 6.59937 8.46891L16.25 2.89711Z"
+                                                                                        18.4282V29.5718C43.1506 33.6804 40.9587 37.4768 37.4006 39.5311L27.75 45.1029C24.1919 47.1572 19.8081 47.1572 16.25 45.1029L6.59937
+                                                                                        39.5311C3.04125 37.4768 0.849365 33.6803 0.849365 29.5718V18.4282C0.849365 14.3196 3.04125 10.5232 6.59937 8.46891L16.25 2.89711Z"
                                                                     stroke="">
                                                                 </path>
                                                             </svg>
@@ -170,28 +176,67 @@
                                                         {{ $section->title }}
                                                     </td>
 
+                                                    <td class=" flex items-center justify-items-end px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                        {{-- <i class="ki-filled ki-arrow-up-down"></i> --}}
+                                                        
+                                                        @if ($section->section_type_id == 1)
+                                                        {{-- <i class="ki-filled ki-eye"></i> --}}
+                                                        <div>
+                                                            <livewire:backend.status-section :section="$section" />
 
-
-
-
-                                                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                        <i class="ki-filled ki-arrow-up-down"></i>
-                                                        @if($section->section_type_id == 1)
-                                                            <a href="{{ route('employees.index', [$page, $section]) }}" title="configurar" class="btn btn-sm btn-icon btn-clear btn-primary">
+                                                        </div>
+                                                            <a href="{{ route('employees.index', [$page, $section]) }}"
+                                                                title="configurar"
+                                                                class="btn btn-sm btn-icon btn-clear btn-primary">
                                                                 <i class="ki-filled ki-setting-2"></i>
                                                             </a>
+
+                                                            <form action="{{ route('pages.configuration.delete', [$page, $section]) }}" method="POST" style="display:inline;">
+                                                                @csrf
+                                                                @method('DELETE') <!-- Esto indica que la solicitud será DELETE -->
+                                                                <button type="submit" class="btn btn-sm btn-icon btn-clear btn-primary">
+                                                                    <i class="ki-filled ki-basket"></i>
+                                                                </button>
+                                                            </form>
+                                                            
                                                         @elseif($section->section_type_id == 2)
-                                                            <a href="{{ route('section-gallery.index', [$page, $section]) }}" title="configurar imágenes" class="btn btn-sm btn-icon btn-clear btn-primary">
+                                                        <div>
+                                                            <livewire:backend.status-section :section="$section" />
+
+                                                        </div>
+                                                            <a href="{{ route('section-gallery.index', [$page, $section]) }}"
+                                                                title="configurar imágenes"
+                                                                class="btn btn-sm btn-icon btn-clear btn-primary">
                                                                 <i class="ki-filled ki-setting-2"></i>
                                                             </a>
+                                                            <form action="{{ route('pages.configuration.delete', [$page, $section]) }}" method="POST" style="display:inline;">
+                                                                @csrf
+                                                                @method('DELETE') <!-- Esto indica que la solicitud será DELETE -->
+                                                                <button type="submit" class="btn btn-sm btn-icon btn-clear btn-primary">
+                                                                    <i class="ki-filled ki-basket"></i>
+                                                                </button>
+                                                            </form>
                                                         @elseif($section->section_type_id == 3)
-                                                            <a href="{{ route('portada.index', [$page, $section]) }}" title="configurar portada" class="btn btn-sm btn-icon btn-clear btn-primary">
+                                                        <div>
+                                                            <livewire:backend.status-section :section="$section" />
+
+                                                        </div>
+                                                            <a href="{{ route('portada.index', [$page, $section]) }}"
+                                                                title="Configurar portada"
+                                                                class="btn btn-sm btn-icon btn-clear btn-primary">
                                                                 <i class="ki-filled ki-setting-2"></i>
                                                             </a>
+                                                            <form action="{{ route('pages.configuration.delete', [$page, $section]) }}" method="POST" style="display:inline;">
+                                                                @csrf
+                                                                @method('DELETE') <!-- Esto indica que la solicitud será DELETE -->
+                                                                <button type="submit" class="btn btn-sm btn-icon btn-clear btn-primary">
+                                                                    <i class="ki-filled ki-basket"></i>
+                                                                </button>
+                                                            </form>
+
+                                                            {{-- eliminar --}}
                                                         @endif
-                                                        <a href="{{ route('pages.configuration.edit', $section->id) }}" title="editar" class="btn btn-sm btn-icon btn-clear btn-primary">
-                                                            <i class="ki-filled ki-notepad-edit"></i>
-                                                        </a>
+
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -233,7 +278,7 @@
                                     </div>
                                     <div class="text-center">
                                         <img alt="Persona" class="max-h-[250px]"
-                                            src="{{ asset('assetsBackend/media/example/person.webp')}}" />
+                                            src="{{ asset('assetsBackend/media/example/person.webp') }}" />
                                     </div>
                                 </div>
                             </div>
@@ -249,7 +294,7 @@
                                     </div>
                                     <div class="text-center">
                                         <img alt="Galería" class="max-h-[250px]"
-                                            src="{{ asset('assetsBackend/media/example/galery.webp')}}" />
+                                            src="{{ asset('assetsBackend/media/example/galery.webp') }}" />
                                     </div>
                                 </div>
                             </div>
@@ -347,7 +392,7 @@
         });
     </script>
 
-    <script>
+    {{-- <script>
         $(document).ready(function() {
             $('#postForm').on('submit', function(event) {
                 event.preventDefault();
@@ -425,7 +470,7 @@
                 });
             });
         });
-    </script>
+    </script> --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
 
     <script>

@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('image')->nullable();  // Ruta de la imagen del empleado
             $table->boolean('status')->default(true);  // Estado (activo/inactivo)
             $table->unsignedBigInteger('section_id');  // Clave foránea para la sección
-            $table->foreign('section_id')->references('section_type_id')->on('sections_public')->onDelete('cascade');
+            // Aquí, referenciamos el 'id' de la tabla 'sections_public'
+            $table->foreign('section_id')->references('id')->on('sections_public')->onDelete('cascade');
             $table->timestamps();
         });
     }

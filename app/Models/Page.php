@@ -22,9 +22,9 @@ class Page extends Model
         return $this->belongsTo(Menu::class);
     }
 
-    public function sections()
+    public function sectionsPublic()
     {
-        return $this->hasMany(Section::class);
+        return $this->hasMany(Section::class, 'page_id');
     }
 
 }

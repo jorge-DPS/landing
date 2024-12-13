@@ -33,7 +33,14 @@ Breadcrumbs::for('metatags.index', function (BreadcrumbTrail $trail) {
 //     $trail->push('Configuración de Páginas', route('employees.index', ['page' => $page->id, 'section' => $section->id]));
 // });
 
+// portada
+Breadcrumbs::for('portada.index', function (BreadcrumbTrail $trail, $page, $section) {
+    $trail->push('Portadas', route('portada.index', ['page' => $page, 'section' => $section]));
+});
 
+Breadcrumbs::for('portada.create', function (BreadcrumbTrail $trail, $page, $section) {
+    $trail->push('Agregar portadas', route('portada.create', ['page' => $page, 'section' => $section]));
+});
 
 // Employee Index (Lista de empleados)
 Breadcrumbs::for('employees.index', function (BreadcrumbTrail $trail, $page, $section) {

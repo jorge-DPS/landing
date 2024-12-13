@@ -6,11 +6,11 @@
 
 @section('breadcrumbs')
     <div class="flex [.header_&amp;]:below-lg:hidden items-center gap-1.25 text-xs lg:text-sm font-medium mb-2.5 lg:mb-0"
-         data-reparent="true" data-reparent-mode="prepend|lg:prepend"
-         data-reparent-target="#content_container|lg:#header_container">
-       <span class="text-gray-600">
-        {{ Breadcrumbs::render('home') }}
-       </span>
+        data-reparent="true" data-reparent-mode="prepend|lg:prepend"
+        data-reparent-target="#content_container|lg:#header_container">
+        <span class="text-gray-600">
+            {{ Breadcrumbs::render('home') }}
+        </span>
     </div>
 @endsection
 
@@ -52,53 +52,56 @@
                             </style>
                             <div
                                 class="card flex-col justify-between gap-6 h-full bg-cover bg-[right_top_-1.7rem] bg-no-repeat channel-stats-bg">
-                                <img alt="" class="w-7 mt-4 ms-5" src="assetsBackend/media/brand-logos/linkedin-2.svg"/>
+                                <img alt="" class="w-7 mt-4 ms-5"
+                                    src="assetsBackend/media/brand-logos/linkedin-2.svg" />
                                 <div class="flex flex-col gap-1 pb-4 px-5">
-            <span class="text-3xl font-semibold text-gray-900">
-             9.3k
-            </span>
+                                    <span class="text-3xl font-semibold text-gray-900">
+                                        9.3k
+                                    </span>
                                     <span class="text-2sm font-medium text-gray-600">
-             Amazing mates
-            </span>
+                                        Amazing mates
+                                    </span>
                                 </div>
                             </div>
                             <div
                                 class="card flex-col justify-between gap-6 h-full bg-cover bg-[right_top_-1.7rem] bg-no-repeat channel-stats-bg">
-                                <img alt="" class="w-7 mt-4 ms-5" src="assetsBackend/media/brand-logos/youtube-2.svg"/>
+                                <img alt="" class="w-7 mt-4 ms-5"
+                                    src="assetsBackend/media/brand-logos/youtube-2.svg" />
                                 <div class="flex flex-col gap-1 pb-4 px-5">
-            <span class="text-3xl font-semibold text-gray-900">
-             24k
-            </span>
+                                    <span class="text-3xl font-semibold text-gray-900">
+                                        24k
+                                    </span>
                                     <span class="text-2sm font-medium text-gray-600">
-             Lessons Views
-            </span>
+                                        Lessons Views
+                                    </span>
                                 </div>
                             </div>
                             <div
                                 class="card flex-col justify-between gap-6 h-full bg-cover bg-[right_top_-1.7rem] bg-no-repeat channel-stats-bg">
-                                <img alt="" class="w-7 mt-4 ms-5" src="assetsBackend/media/brand-logos/instagram-03.svg"/>
+                                <img alt="" class="w-7 mt-4 ms-5"
+                                    src="assetsBackend/media/brand-logos/instagram-03.svg" />
                                 <div class="flex flex-col gap-1 pb-4 px-5">
-            <span class="text-3xl font-semibold text-gray-900">
-             608
-            </span>
+                                    <span class="text-3xl font-semibold text-gray-900">
+                                        608
+                                    </span>
                                     <span class="text-2sm font-medium text-gray-600">
-             New subscribers
-            </span>
+                                        New subscribers
+                                    </span>
                                 </div>
                             </div>
                             <div
                                 class="card flex-col justify-between gap-6 h-full bg-cover bg-[right_top_-1.7rem] bg-no-repeat channel-stats-bg">
                                 <img alt="" class="dark:hidden w-7 mt-4 ms-5"
-                                     src="assetsBackend/media/brand-logos/tiktok.svg"/>
+                                    src="assetsBackend/media/brand-logos/tiktok.svg" />
                                 <img alt="" class="light:hidden w-7 mt-4 ms-5"
-                                     src="assetsBackend/media/brand-logos/tiktok-dark.svg"/>
+                                    src="assetsBackend/media/brand-logos/tiktok-dark.svg" />
                                 <div class="flex flex-col gap-1 pb-4 px-5">
-            <span class="text-3xl font-semibold text-gray-900">
-             2.5k
-            </span>
+                                    <span class="text-3xl font-semibold text-gray-900">
+                                        2.5k
+                                    </span>
                                     <span class="text-2sm font-medium text-gray-600">
-             Stream audience
-            </span>
+                                        Stream audience
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -113,22 +116,21 @@
                                 background-image: url('/static/metronic-tailwind-html/dist/assets/media/images/2600x1600/2-dark.png');
                             }
                         </style>
-                        <div class="card h-full h-full">
+                        <div class="card h-full">
                             <div
                                 class="card-body p-10 bg-[length:80%] [background-position:175%_25%] bg-no-repeat entry-callout-bg">
                                 <div class="flex flex-col justify-center gap-4">
                                     <div class="flex -space-x-2">
 
                                         <div class="flex">
-                                            <img
-                                                class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-10"
-                                                src="favicon.png"/>
+                                            <img class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-10"
+                                                src="favicon.png" />
                                         </div>
 
                                     </div>
                                     <h2 class="text-1.5xl font-semibold text-gray-900">
                                         Hola bienvenido
-                                        <br/>
+                                        <br />
                                         A
                                         <a class="link" href="#">
                                             Saint George

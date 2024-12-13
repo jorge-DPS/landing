@@ -43,8 +43,9 @@ class MostrarEmployees extends Component
 
     public function render()
     {
+        // dd($this->section->id);
         // Usa section_id directamente si se refiere al ID relacionado
-        $employees = Employee::where('section_id', $this->section->section_type_id)
+        $employees = Employee::where('section_id', $this->section->id)
             ->paginate(3);
 
         return view('livewire.backend.employee.mostrar-employees', [

@@ -26,7 +26,9 @@ class PageService
 
     public function createPage(array $data)
     {
-        $data['slug'] = Str::uuid();
+        // Reemplazar "año" y "años" por "anio" y "anios" respectivamente
+        $titulo = str_replace(['año', 'años'], ['anio', 'anios'], $data['title']);
+        $data['slug'] = Str::slug($titulo);
         return $this->pageRepository->create($data);
     }
 

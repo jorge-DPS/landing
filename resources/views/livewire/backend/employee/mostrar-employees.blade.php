@@ -19,7 +19,8 @@
                     <td>
                         <img class="rounded-full size-9 shrink-0"
                             src="{{ asset('storage/employees/' . $employee->image) }}"
-                            alt="{{ 'imagen empleado: ' . $employee->name }}" />
+                            alt="{{ 'imagen empleado: ' . $employee->name }}"
+                            onerror="this.onerror=null;this.src='{{ asset('/assetsBackend/media/avatars/blank.png') }}';" />
                     </td>
                     <td>
                         {{ $employee->status ? 'Activo' : 'Inactivo' }}

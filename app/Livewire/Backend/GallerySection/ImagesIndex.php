@@ -38,7 +38,7 @@ class ImagesIndex extends Component
     
     public function render()
     {
-        $images = Image::where('section_id', $this->section->section_type_id)->paginate(10);
+        $images = Image::where('section_id', $this->section->id)->paginate(10);
 
         return view('livewire.backend.gallery-section.images-index', [
             'images' => $images,

@@ -15,6 +15,10 @@
     @include('frontend.partials.sidebar')
     @include('frontend.partials.header')
     @yield('content')
+    <!-- Page Content -->
+
+    {{-- <x-frontend.app-layout/> --}}
+
     @include('frontend.partials.footer')
     @include('frontend.layouts.scripts')
 </body>

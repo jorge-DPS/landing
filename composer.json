@@ -22,7 +22,9 @@
     },
     "autoload": {
         "files": [
-            "app/Helpers/helpers.php"
+            "app/Helpers/helpers.php",
+            "app/Helpers/clearTemporaryflies.php"
+
         ],
         "psr-4":{
             "App\\": "app/",

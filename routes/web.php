@@ -20,12 +20,13 @@ use App\Http\Controllers\PersonSectionController;
 use App\Http\Controllers\GallerySectionController;
 use App\Http\Controllers\GlobalConfiguracionController;
 use App\Http\Controllers\Backend\SectionGallery\ImageController;
+use App\Http\Controllers\Backend\SectionPortada\PortadaController;
 
 Route::get('/', function () {
     return view('frontend.home.index');
 });
 
-Route::get('p/{slug}', [PublicPageController::class, 'show']);
+Route::get('page/{page:slug}', [PublicPageController::class, 'show'])->name('page-content');
 
 
 //authRoute
@@ -49,12 +50,18 @@ Route::middleware(['auth'])->group(function () {
     Route::post('menu/update', [MenuController::class, 'update'])->name('menu.update');
     // Route::get('/pages/configuracion/{id}', [SectionController::class, 'index'])->name('pages.configuration.index');
     Route::get('/pages/configuracion/{page:title}', [SectionController::class, 'index'])->name('pages.configuration.index');
+    Route::post('/pages/configuracion/{page:title}', [SectionController::class, 'store'])->name('pages.configuration.store');
     // Route::get('/pages/configuracion/{page:title}/{section:title}', [SectionController::class, 'employees'])->name('pages.configuration.employees');
-    Route::get('/pages/configuracion/edit/{id}', [SectionController::class, 'edit'])->name('pages.configuration.edit');
+    // Route::get('/pages/configuracion/edit/{id}', [SectionController::class, 'edit'])->name('pages.configuration.edit');
+    Route::delete('/pages/configuracion/{page:title}/delete/{section}', [SectionController::class, 'destroy'])->name('pages.configuration.delete');
+
 
 
     Route::prefix('/pages/configuracion/{page:title}/{section:title}')->group(function () {
         Route::resource('employees', EmployeeController::class);
+        Route::get('/portada', [PortadaController::class, 'index'])->name('portada.index');
+        Route::get('/portada/crear', [PortadaController::class, 'create'])->name('portada.create');
+        Route::get('/portada/editar/{cover}', [PortadaController::class, 'edit'])->name('portada.edit');
     });
 
     Route::prefix('/pages/configuracion/{page:title}/{section:title}')->group(function (){
