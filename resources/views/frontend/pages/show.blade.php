@@ -14,7 +14,7 @@
 
         </section> --}}
 
-        {{ $page }}
+        {{-- {{ $page }} --}}
 
         <livewire:frontend.pages.page-content :page="$page"/>
     </main>

@@ -24,7 +24,7 @@
                                     <ul class="ed-header-submenu">
                                         @foreach ($menu->pages as $page)
                                             <li>
-                                                <a href="{{ url('p', $page->slug) }}"
+                                                <a href="{{ url('page', $page->slug) }}"
                                                     target="_blank">{{ $page->title }}</a>
                                             </li>
                                         @endforeach

@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use App\Models\Page;
+use App\Models\Employee;
 use App\Models\Backend\Pages\Cover;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Section extends Model
 {

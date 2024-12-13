@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Menu;
+use App\Models\Section;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Page extends Model
 {
@@ -22,9 +24,10 @@ class Page extends Model
         return $this->belongsTo(Menu::class);
     }
 
-    public function sectionsPublic()
+    public function sections()
     {
         return $this->hasMany(Section::class, 'page_id');
     }
+
 
 }
