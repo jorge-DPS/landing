@@ -25,8 +25,16 @@ class PageContent extends Component
         foreach ($page->sections as $section) {
             // Aquí puedes usar $section, que contiene los datos de cada sección pública
             // dd($section);
+
             // echo $section->nombre;  // Reemplaza 'nombre' con el campo adecuado
         }
+
+        // foreach ($page->sections as $section) {
+        //     // Aquí puedes usar $section, que contiene los datos de cada sección pública
+        //     // dd($section);
+
+        //     // echo $section->nombre;  // Reemplaza 'nombre' con el campo adecuado
+        // }
 
         // dd($this->page);
         return view('livewire.frontend.pages.page-content');
