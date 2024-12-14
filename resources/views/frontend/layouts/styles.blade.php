@@ -4,3 +4,4 @@
 <link rel="stylesheet" href="{{ asset('assetsFrontend/output.css') }}">
 <link rel="stylesheet" href="{{ asset('assetsFrontend/css/style.css') }}">
 <link href="{{ asset('assetsBackend/css/scrollMaster.css') }}" rel="stylesheet"/>
+{{-- @vite('resources/css/app.css') --}}

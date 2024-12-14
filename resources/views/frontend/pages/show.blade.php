@@ -6,17 +6,13 @@
 
 @section('content')
     <main>
-        {{-- <section>
-            <div class="ed-banner-slider swiper relative" style="padding: 30%">
-              YovanEnovore
-            </div>
 
+        {{-- <livewire:frontend.page.sections.cover :page="$page"/>
+        <livewire:frontend.page.sections.person :page="$page"/>
+        <livewire:frontend.page.sections.images :page="$page"/> --}}
 
-        </section> --}}
+        <livewire:frontend.page.index :page="$page"/>
 
-        {{-- {{ $page }} --}}
-
-        <livewire:frontend.pages.page-content :page="$page"/>
     </main>
 @endsection
 

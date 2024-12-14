@@ -17,6 +17,7 @@ class PortadaController extends Controller
         
         // Obtener la portada asociada a la sección
         $cover = Cover::where('section_id', $section->id)->first();
+        // dd($cover);
         return view('backend.pagesConfigurations.portada.index', [
             'page' => $page,
             'section' => $section,

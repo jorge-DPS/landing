@@ -27,6 +27,6 @@ class Cover extends Model
     // Relación con la sección (uno a uno)
     public function section()
     {
-        return $this->belongsTo(Section::class, 'section_id', 'id');
+        return $this->belongsTo(Section::class, 'section_id');
     }
 }

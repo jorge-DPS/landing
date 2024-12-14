@@ -40,7 +40,7 @@ class PortadaIndex extends Component
 
     public function render()
     {
-        // Obtener la portada asociada a la sección
+        // Obtener la portada asociada a la sección 
         $cover = Cover::where('section_id', $this->section->id)->first();
 
         return view('livewire.backend.section-portada.portada-index', [

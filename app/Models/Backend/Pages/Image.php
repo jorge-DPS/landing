@@ -17,6 +17,6 @@ class Image extends Model
     // Relación inversa con Section
     public function section()
     {
-        return $this->belongsTo(Section::class, 'section_id', 'id');
+        return $this->belongsTo(Section::class, 'section_id');
     }
 }

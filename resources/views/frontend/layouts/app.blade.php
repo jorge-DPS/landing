@@ -4,6 +4,8 @@
 <head>
     @include('frontend.layouts.metas')
     @include('frontend.layouts.styles')
+    {{-- @vite('resources/css/app.css') --}}
+    @livewireStyles
 </head>
 
 <body>
@@ -21,6 +23,7 @@
 
     @include('frontend.partials.footer')
     @include('frontend.layouts.scripts')
+    @livewireScripts
 </body>
 
 </html>

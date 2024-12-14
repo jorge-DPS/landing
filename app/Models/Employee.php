@@ -19,6 +19,6 @@ class Employee extends Model
 
     public function section()
     {
-        return $this->belongsTo(Section::class, 'section_id', 'id');
+        return $this->belongsTo(Section::class, 'section_id');
     }
 }
