@@ -9,10 +9,8 @@
                 <h2 style="font-size: 20px;">Saint George</h2>
             </a>
         </div>
-
         <div class="flex lg:items-center lg:gap-[60px] xxs:gap-[30px]">
             <div class="flex items-center gap-[100px] xl:gap-[30px] lg:gap-y-0">
-
                 <div class="ed-header-nav-container">
                     <ul
                         class="to-go-to-sidebar-in-mobile ed-header-nav flex lg:flex-col gap-x-[43px] xl:gap-x-[33px] font-kanit text-[17px] font-normal">
@@ -34,25 +32,20 @@
                         @endforeach
                     </ul>
                 </div>
-
                 <style>
                     .logo-container {
                         display: flex;
                         align-items: center;
                     }
-
                     .logo-berlitz {
                         width: 80px;
                         height: 40px;
                         margin-right: 10px;
                     }
-
                     .logo-character {
                         width: 60px;
                         margin-right: 0;
                     }
-
-
                     .button1 {
                         line-height: 1;
                         text-decoration: none;
@@ -71,7 +64,6 @@
                         transition: background-color 0.3s;
                         font-size: 12px;
                     }
-
                     .button1__icon-wrapper {
                         flex-shrink: 0;
                         width: 20px;
@@ -84,34 +76,30 @@
                         place-items: center;
                         overflow: hidden;
                     }
-
                     .button1:hover {
                         background-color: #fff;
                         color: #b12a38;
                     }
-
                     .button1:hover .button1__icon-wrapper {
                         color: #fff;
                         background-color: #b12a38;
                     }
-
                     .button1__icon-svg--copy {
                         position: absolute;
                         transform: translate(-150%, 150%);
                     }
-
                     .button1:hover .button1__icon-svg:first-child {
                         transition: transform 0.3s ease-in-out;
                         transform: translate(150%, -150%);
                     }
-
                     .button1:hover .button1__icon-svg--copy {
                         transition: transform 0.3s ease-in-out 0.1s;
                         transform: translate(0);
                     }
                 </style>
-
                 <div class="logo-container flex items-center">
+                    <a href="{{ route('login') }}" class="button1"
+                        style="--clr: #7808d0; margin-right: 5px;">
                     <a href="{{ route('login') }}" class="button1" style="--clr: #7808d0; margin-right: 5px;">
                         <span class="button1__icon-wrapper">
                             <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -120,7 +108,6 @@
                                     d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
                                     fill="currentColor"></path>
                             </svg>
-
                             <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg"
                                 class="button1__icon-svg button1__icon-svg--copy">
                                 <path
@@ -138,7 +125,6 @@
                                     d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
                                     fill="currentColor"></path>
                             </svg>
-
                             <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg"
                                 class="button1__icon-svg button1__icon-svg--copy">
                                 <path

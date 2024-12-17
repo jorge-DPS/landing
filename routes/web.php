@@ -21,12 +21,16 @@ use App\Http\Controllers\GallerySectionController;
 use App\Http\Controllers\GlobalConfiguracionController;
 use App\Http\Controllers\Backend\SectionGallery\ImageController;
 use App\Http\Controllers\Backend\SectionPortada\PortadaController;
+use App\Http\Controllers\Frontend\Pages\EmployeesController;
+use App\Http\Controllers\Frontend\Pages\GalleryController;
 
 Route::get('/', function () {
     return view('frontend.home.index');
 });
 
 Route::get('page/{page:slug}', [PublicPageController::class, 'show'])->name('page-content');
+Route::get('page/{page:slug}/people/{section:title}', [EmployeesController::class, 'employees'])->name('pages.employees');
+Route::get('page/{page:slug}/gallery/{section:title}', [GalleryController::class, 'gallery'])->name('page.gallery');
 
 
 //authRoute

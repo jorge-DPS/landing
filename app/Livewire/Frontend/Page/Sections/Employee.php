@@ -5,7 +5,7 @@ namespace App\Livewire\Frontend\Page\Sections;
 use App\Models\Section;
 use Livewire\Component;
 
-class Employees extends Component
+class Employee extends Component
 {
     public $section;
     public $page;
@@ -14,13 +14,13 @@ class Employees extends Component
     {
         $this->section = $section;
     }
+    
     public function render()
     {
         // Verifica si la relación 'employees' está cargada
         $employees = $this->section->employees;
         $name = $this->section->title;
-
-        return view('livewire.frontend.page.sections.employees', [
+        return view('livewire.frontend.page.sections.employee', [
             'page' => $this->page,
             'section' => $this->section,
             'employees' => $employees,

@@ -5,9 +5,9 @@
 @endsection
 
 @section('content')
-    <main>
 
-        <livewire:frontend.page.index :page="$page"/>
 
-    </main>
+        <livewire:frontend.page.pages.gallery :page="$page" :section="$section"/>
+
+
 @endsection

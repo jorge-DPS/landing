@@ -24,6 +24,7 @@ class Cover extends Component
         return view('livewire.frontend.page.sections.cover', [
             'cover' => $cover,
             'name' => $name,
+            'section' => $this->section,
         ]);
     }
 }

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="es-BO">
 
-<head>
-    @include('frontend.layouts.metas')
-    @include('frontend.layouts.styles')
-    {{-- @vite('resources/css/app.css') --}}
-    @livewireStyles
-</head>
+    <head>
+        @include('frontend.layouts.metas')
+        @include('frontend.layouts.styles')
+        {{-- @vite('resources/css/app.css') --}}
+        @livewireStyles
+    </head>
 
 <body>
     <div class="ed-overlay group">

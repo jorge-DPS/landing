@@ -17,20 +17,12 @@ class StatusSection extends Component
     }
 
     public function status(){
-        // Verifica el valor actual del `status`
-        // if ($this->section->status) {
-        //     // dd('verdad');
-        //     // Si el `status` está activo, lo desactivamos
-        //     $this->section->update(['status' => false]);
-        // } else {
-        //     // Si el `status` está inactivo, lo activamos
-        //     $this->section->update(['status' => true]);
-        //     // dd('falso');
-        // }
+     
+        dd($this->section);
 
         // Actualizar el estado directamente
         if ($this->section->status) {
-            Section::where('id', $this->section->id)->update(['status' => false]); // Cambia el status al valor contrario
+            Section::where('id', $this->section->id)->update(['status' => false]); //Cambia el status al valor contrario
             $this->estado = false;
         }else {
             Section::where('id', $this->section->id)->update(['status' => true]); // Cambia el status al valor contrario

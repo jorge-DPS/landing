@@ -7,7 +7,7 @@
 @section('content')
     <main>
 
-        <livewire:frontend.page.index :page="$page"/>
+        <livewire:frontend.page.pages.employees :page="$page" :section="$section"/>
 
     </main>
 @endsection
