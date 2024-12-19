@@ -11,7 +11,7 @@
     <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js"></script>
     @livewireStyles
-     @vite('resources/css/app.css')
+    @vite('resources/css/app.css')
 </head>
 
 <body class="flex h-full demo1 sidebar-fixed header-fixed bg-[#fefefe] dark:bg-coal-500">

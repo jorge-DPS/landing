@@ -20,6 +20,7 @@ class PortadaEdit extends Component
     public $button_text;
     public $button_url;
     public $open_in_new_tab;
+    public $image_position;
 
     public $image_new;
     public $section_id;
@@ -38,6 +39,7 @@ class PortadaEdit extends Component
         'button_text' => 'nullable|string|max:255',
         'button_url' => 'nullable|string',
         'open_in_new_tab' => 'required|boolean',
+        'image_position' => 'required',
     ];
 
     /**
@@ -59,6 +61,7 @@ class PortadaEdit extends Component
         $this->button_url = $cover->button_url;
         $this->open_in_new_tab = $cover->open_in_new_tab;
         $this->section_id = $section->id;
+        $this->image_position = $cover->image_position;
     }
 
     /**
@@ -67,6 +70,8 @@ class PortadaEdit extends Component
     public function editCover()
     {
         $datos = $this->validate(); // Valida los datos del formulario
+        // dd($this->cover->image_position);
+
 
         // Si se ha subido una nueva imagen, maneja la eliminación de la anterior
         if ($this->image_new) {
@@ -109,6 +114,7 @@ class PortadaEdit extends Component
      */
     protected function updateCover($datos)
     {
+        // dd($datos);
         $cover = Cover::find($this->cover->id); // Busca la portada a actualizar
         $cover->update($datos); // Actualiza la portada con los nuevos datos
     }

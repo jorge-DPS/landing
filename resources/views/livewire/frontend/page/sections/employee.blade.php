@@ -8,9 +8,9 @@
                 <h2 class="ed-section-title">{{ $name }}</h2>
             </div>
 
-            <a href="{{ route("pages.employees", [$page, $section]) }}" class="ed-btn !bg-transparent border border-edpurple !text-edpurple hover:!bg-edpurple hover:!text-white">view all teacher <span class="icon pl-[10px]"><i class="fa-solid fa-arrow-right-long"></i></span></a>
             @if ($employees->count() > 6)
-                
+            <a href="{{ route("pages.employees", [$page, $section]) }}" class="ed-btn !bg-transparent border border-edpurple !text-edpurple hover:!bg-edpurple hover:!text-white">mosrtrar todas las personas<span class="icon pl-[10px]"><i class="fa-solid fa-arrow-right-long"></i></span></a>
+            
             @endif
         </div>
 
@@ -53,9 +53,9 @@
     </div>
 
     <!-- vector -->
-    {{-- <div>
-        <img src="assets/img/teacher-vector-1.svg" alt="vecotr" class="pointer-events-none absolute -z-[1] bottom-0 left-0">
-        <img src="assets/img/teacher-vector-2.svg" alt="vecotr" class="pointer-events-none absolute -z-[1] top-[105px] right-0">
-    </div> --}}
+    <div>
+        <img src="{{ asset('assetsFrontend/img/teacher-vector-1.svg')}}" alt="vecotr" class="pointer-events-none absolute -z-[1] bottom-0 left-0">
+        <img src="{{ asset('assetsFrontend/img/teacher-vector-2.svg')}}" alt="vecotr" class="pointer-events-none absolute -z-[1] top-[105px] right-0">
+    </div>
 </section>
 <!-- TEACHER SECTION END -->

@@ -63,6 +63,7 @@
     <div class="mt-4">
         {{ $employees->links() }}
     </div>
+    
 </div>
 
 @push('scripts-backend-employees')

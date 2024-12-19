@@ -964,10 +964,8 @@
 
             <!-- vector -->
             <div>
-                <img src="assetsFrontend/img/teacher-vector-1.svg" alt="vecotr"
-                     class="pointer-events-none absolute -z-[1] bottom-0 left-0">
-                <img src="assetsFrontend/img/teacher-vector-2.svg" alt="vecotr"
-                     class="pointer-events-none absolute -z-[1] top-[105px] right-0">
+                <img src="assets/img/teacher-vector-1.svg" alt="vecotr" class="pointer-events-none absolute -z-[1] bottom-0 left-0">
+                <img src="assets/img/teacher-vector-2.svg" alt="vecotr" class="pointer-events-none absolute -z-[1] top-[105px] right-0">
             </div>
         </section>
         <!-- TEACHER SECTION END -->

@@ -39,8 +39,8 @@
                 </div>
                 <div class="flex items-center gap-2.5">
                     <div class="btn-conteiner">
-                        <a class="btn-content" href="{{ route('employees.index', ['page' => $page->id, 'section' => $section->id]) }}">
-                            <span class="btn-title">TODOS</span>
+                        <a class="btn-content" href="{{ route('pages.configuration.index', [$page]) }}">
+                            <span class="btn-title">Volver a secciones públicas</span>
                             <span class="icon-arrow">
                                 <!-- Icon SVG -->
                             </span>

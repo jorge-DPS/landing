@@ -166,6 +166,25 @@
             </div>
         </div>
 
+        {{-- Posicion de la Iamgen --}}
+        <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+            <div class="flex flex-col max-w-72 w-full">
+                <label class="text-gray-900 text-sm font-semibold" for="image_position">Posición de la imagen</label>
+            </div>
+            <div class="w-full">
+                <label>
+                    <select wire:model="image_position" id="image_position" class="select @error('image_position') is-invalid @enderror">
+                        <option value="left">Izquierda</option>
+                        <option value="right">Derecha</option>
+                    </select>
+                </label>
+                @error('image_position')
+                    <livewire:backend.alertas.mostrar-alerta :message="$message"/>
+                @enderror
+            </div>
+        </div>
+
+
         <div class="border-t border-gray-200 my-7.5"></div>
         <div class="flex justify-end">
             <div class="btn-conteiner">

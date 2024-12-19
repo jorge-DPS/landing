@@ -23,6 +23,7 @@ class PortadaCreate extends Component
     public $button_text;
     public $button_url;
     public $open_in_new_tab;
+    public $image_position;
 
     public $section;
     public $page;
@@ -38,6 +39,7 @@ class PortadaCreate extends Component
         'button_text' => 'nullable|string|max:255',
         'button_url' => 'nullable',
         'open_in_new_tab' => 'required|boolean',
+        'image_position' => 'required',
     ];
 
     
@@ -71,6 +73,7 @@ class PortadaCreate extends Component
             'button_url' => $datos['button_url'],
             'open_in_new_tab' => $datos['open_in_new_tab'],
             'section_id' => $this->section->id,
+            'image_position' => $datos['image_position']
         ]);
         // $this->reset();
         $this->reset('image'); // Limpia la propiedad de imágenes

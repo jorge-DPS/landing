@@ -9,7 +9,7 @@
             @break
 
             @case(2)
-                <livewire:frontend.page.sections.image :section="$section" :page="$page"/>
+                <livewire:frontend.page.sections.image :section="$section" :page="$page" />
             @break
 
             @case(3)
@@ -18,10 +18,9 @@
 
             @default
         @endswitch
-        @empty
-            <div>
-                No hay Secciones que mostrar
-            </div>
-        @endforelse
-
-    </div>
+    @empty
+        <div>
+            No hay Secciones que mostrar
+        </div>
+    @endforelse
+</div>

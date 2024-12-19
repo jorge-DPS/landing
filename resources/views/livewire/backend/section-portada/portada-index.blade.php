@@ -1,44 +1,91 @@
-<!-- resources/views/livewire/portadas-lista.blade.php -->
-<!-- resources/views/livewire/portadas-lista.blade.php -->
-<div class="flex justify-center items-center py-10">
-    <div class="bg-white shadow-xl rounded-lg overflow-hidden w-full max-w-4xl">
-        <div class="flex flex-col md:flex-row items-stretch">
-            <!-- Imagen a la izquierda -->
-            <div class="w-20 md:w-1/2">
-                <img src="{{ asset('storage/cover/images/' . $cover->image) }}" alt="Portada"
-                    class="w-80 h-80 object-cover"
-                    onerror="this.onerror=null;this.src='{{ asset('/assetsBackend/media/avatars/blank.png') }}';">
+<div>
+    <!-- Imagen -->
+    <div class="flex flex-col items-center mt-5">
+        <label class="text-gray-900 text-lg font-semibold mb-3">Imagen Actual</label>
+        <div class="w-full max-w-sm">
+            <img src="{{ asset('storage/cover/images' . '/' . $cover->image) }}" alt="{{ 'image cover: ' . $cover->title }}" class="rounded-md shadow-lg border border-gray-300">
+        </div>
+    </div>
+
+    <div class="card-body lg:py-7.5 py-5">
+        <!-- Título -->
+        <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14">
+            <div class="flex flex-col max-w-72 w-full">
+                <label class="text-gray-900 text-sm font-semibold">Título</label>
             </div>
+            <div class="w-full">
+                <div class="bg-gray-50 text-gray-900 border border-gray-300 rounded-md p-3 shadow-sm">{{ $cover->title }}</div>
+            </div>
+        </div>
 
-            <!-- Contenido a la derecha -->
-            <div class="flex flex-col justify-between p-1 w-full md:w-1/2">
-                <div>
-                    <h2 class="text-3xl font-bold text-gray-800">{{ $cover->title }}</h2>
-                    <p class="text-gray-600 mt-4 text-lg">{{ $cover->subtitle }}</p>
-                    <p class="text-gray-500 mt-4">{{ $cover->description }}</p>
-                </div>
-                <div class="mt-6">
-                    <p class="text-sm">
-                        <span class="font-bold">Estado:</span>
-                        <span class="{{ $cover->status ? 'text-green-500' : 'text-red-500' }}">
-                            {{ $cover->status ? 'Activo' : 'Inactivo' }}
-                        </span>
-                    </p>
-                </div>
-                {{-- <div class="mt-8 flex space-x-4">
-                    <!-- Botón de editar -->
-                    <a href="{{ route('portada.edit', [$page, $section, $cover]) }}" class="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-600 focus:outline-none">
-                        <i class="fas fa-edit"></i> Editar
-                    </a>
+        <!-- Subtítulo -->
+        <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+            <div class="flex flex-col max-w-72 w-full">
+                <label class="text-gray-900 text-sm font-semibold">Subtítulo</label>
+            </div>
+            <div class="w-full">
+                <div class="bg-gray-50 text-gray-900 border border-gray-300 rounded-md p-3 shadow-sm">{{ $cover->subtitle }}</div>
+            </div>
+        </div>
 
-                    <!-- Botón de eliminar -->
-                    <button wire:click="$dispatch('showAlertCover',  { cover: {{ $cover}}, section: {{ $section }} })" class="bg-red-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-red-600 focus:outline-none">
-                        <i class="fas fa-trash"></i> Eliminar
-                    </button>
-                </div> --}}
+        <!-- Descripción -->
+        <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+            <div class="flex flex-col max-w-72 w-full">
+                <label class="text-gray-900 text-sm font-semibold">Descripción</label>
+            </div>
+            <div class="w-full">
+                <div class="bg-gray-50 text-gray-900 border border-gray-300 rounded-md p-3 shadow-sm">{{ $cover->description }}</div>
+            </div>
+        </div>
+
+        <!-- Estado -->
+        <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+            <div class="flex flex-col max-w-72 w-full">
+                <label class="text-gray-900 text-sm font-semibold">Estado</label>
+            </div>
+            <div class="w-full">
+                <div class="bg-gray-50 text-gray-900 border border-gray-300 rounded-md p-3 shadow-sm">{{ $cover->status == 1 ? 'Activo' : 'Inactivo' }}</div>
+            </div>
+        </div>
+
+        <!-- Botón de texto -->
+        <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+            <div class="flex flex-col max-w-72 w-full">
+                <label class="text-gray-900 text-sm font-semibold">Texto del botón</label>
+            </div>
+            <div class="w-full">
+                <div class="bg-gray-50 text-gray-900 border border-gray-300 rounded-md p-3 shadow-sm">{{ $cover->button_text }}</div>
+            </div>
+        </div>
+
+        <!-- URL del botón -->
+        <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+            <div class="flex flex-col max-w-72 w-full">
+                <label class="text-gray-900 text-sm font-semibold">URL del botón</label>
+            </div>
+            <div class="w-full">
+                <div class="bg-gray-50 text-gray-900 border border-gray-300 rounded-md p-3 shadow-sm">{{ $cover->button_url }}</div>
+            </div>
+        </div>
+
+        <!-- Abrir en nueva pestaña -->
+        <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+            <div class="flex flex-col max-w-72 w-full">
+                <label class="text-gray-900 text-sm font-semibold">Abrir en nueva pestaña</label>
+            </div>
+            <div class="w-full">
+                <div class="bg-gray-50 text-gray-900 border border-gray-300 rounded-md p-3 shadow-sm">{{ $cover->open_in_new_tab == 1 ? 'Sí' : 'No' }}</div>
+            </div>
+        </div>
+
+        <!-- Posición de la Imagen -->
+        <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+            <div class="flex flex-col max-w-72 w-full">
+                <label class="text-gray-900 text-sm font-semibold">Posición de la imagen</label>
+            </div>
+            <div class="w-full">
+                <div class="bg-gray-50 text-gray-900 border border-gray-300 rounded-md p-3 shadow-sm">{{ $cover->image_position == 'left' ? 'Izquierda' : 'Derecha' }}</div>
             </div>
         </div>
     </div>
 </div>
-
-

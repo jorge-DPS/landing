@@ -34,7 +34,7 @@
             
         <a href="{{ route('page.gallery', [$page, $section]) }}"
             class="ed-btn !bg-transparent border border-edpurple !text-edpurple hover:!bg-edpurple hover:!text-white">
-                view all teacher 
+                mostrar todas las imagenes
             <span class="icon pl-[10px]">
                 <i class="fa-solid fa-arrow-right-long"></i>
             </span>
