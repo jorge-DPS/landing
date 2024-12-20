@@ -16,14 +16,14 @@ class EmployeeCreate extends Component
     public $name;
     public $position;
     public $image;
-    public $status;
+    // public $status;
     public $section_id;
 
     protected $rules = [
         'name' => 'required|string|max:255',
         'position' => 'required|string|max:255',
         'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
-        'status' => 'required|boolean',
+        // 'status' => 'required|boolean',
         'section_id' => 'required', // Verificación de existencia
     ];
 
@@ -49,7 +49,7 @@ class EmployeeCreate extends Component
             'name' => $datos['name'],
             'position' => $datos['position'],
             'image' => $datos['image'],
-            'status' => $datos['status'],
+            'status' => 1,
             'section_id' => $this->section_id, // Utilizar el ID correcto
         ]);
 

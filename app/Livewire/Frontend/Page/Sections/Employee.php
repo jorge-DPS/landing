@@ -18,7 +18,8 @@ class Employee extends Component
     public function render()
     {
         // Verifica si la relación 'employees' está cargada
-        $employees = $this->section->employees;
+        $employees = $this->section->employees()->where('status', 1)->get();
+        // dd($employees);
         $name = $this->section->title;
         return view('livewire.frontend.page.sections.employee', [
             'page' => $this->page,

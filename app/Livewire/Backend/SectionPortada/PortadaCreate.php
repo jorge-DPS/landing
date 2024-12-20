@@ -35,7 +35,7 @@ class PortadaCreate extends Component
         'subtitle' => 'required|string|max:255',
         'description' => 'required|string',
         'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:1024', // Validación para la imagen
-        'status' => 'required|boolean',
+        // 'status' => 'required|boolean',
         'button_text' => 'nullable|string|max:255',
         'button_url' => 'nullable',
         'open_in_new_tab' => 'required|boolean',
@@ -48,14 +48,14 @@ class PortadaCreate extends Component
     {
         $this->page = $page;
         $this->section = $section;
-        // $this->section_id = $section->id; // Inicializar `section_id` desde el modelo
+        $this->status = $section->status;
     }
 
     public function createCover()
     {
-        // Validar los datos
-        
+        // Validar los datos        
         $datos = $this->validate();
+        
         if ($this->image) {
             $imagen = $this->image->store('cover/images', 'public');
             $datos['image'] = basename($imagen); // Solo el nombre de la imagen
@@ -68,13 +68,14 @@ class PortadaCreate extends Component
             'subtitle' => $datos['subtitle'],
             'description' => $datos['description'],
             'image' => $datos['image'],  // Guardar la ruta de la imagen
-            'status' => $datos['status'],
+            // 'status' => 1,
             'button_text' => $datos['button_text'],
             'button_url' => $datos['button_url'],
             'open_in_new_tab' => $datos['open_in_new_tab'],
             'section_id' => $this->section->id,
             'image_position' => $datos['image_position']
         ]);
+        $this->section->update(['status' => 1]);
         // $this->reset();
         $this->reset('image'); // Limpia la propiedad de imágenes
 
@@ -101,6 +102,8 @@ class PortadaCreate extends Component
 
     public function render()
     {
+        // dd($this->status);
+        // dd($this->section);
         return view('livewire.backend.section-portada.portada-create');
     }
 }

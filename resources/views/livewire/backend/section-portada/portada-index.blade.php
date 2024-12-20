@@ -44,7 +44,7 @@
                 <label class="text-gray-900 text-sm font-semibold">Estado</label>
             </div>
             <div class="w-full">
-                <div class="bg-gray-50 text-gray-900 border border-gray-300 rounded-md p-3 shadow-sm">{{ $cover->status == 1 ? 'Activo' : 'Inactivo' }}</div>
+                <div class="bg-gray-50 text-gray-900 border border-gray-300 rounded-md p-3 shadow-sm">{{ $estado == 1 ? 'Activo' : 'Inactivo' }}</div>
             </div>
         </div>
 

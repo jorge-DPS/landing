@@ -20,10 +20,14 @@ class PortadaIndex extends Component
     public $section;
     public $page;
 
+    //estado
+    public $estado;
+
     public function mount(Section $section, Page $page)
     {
         $this->section = $section;
         $this->page = $page;
+        $this->estado = $this->section->status;
     }
 
     public function deleteCover(Cover $cover, Section $section)

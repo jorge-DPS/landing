@@ -16,9 +16,16 @@ class Index extends Component
 
     public function render()
     {
-        $page = Page::with(['sections.employees', 'sections.cover', 'sections.images'])->find($this->page->id);
-
-        // Obtener las secciones relacionadas con la página
+        $page = Page::with([
+            'sections' => function ($query) {
+                $query->where('status', 1); // Filtrar solo secciones activadas
+            },
+            'sections.employees', // Relaciones adicionales
+            'sections.cover',
+            'sections.images'
+        ])->find($this->page->id);
+        
+        // Obtener solo las secciones activadas relacionadas con la página
         $sections = $page->sections;
         // dd($sections);
         

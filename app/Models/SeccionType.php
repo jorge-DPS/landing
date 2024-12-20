@@ -15,4 +15,9 @@ class SeccionType extends Model
         'name'
     ];
 
+    public function sections()
+    {
+        return $this->hasMany(Section::class, 'section_type_id');
+    }
+
 }

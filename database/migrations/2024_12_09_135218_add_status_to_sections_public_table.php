@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('sections_public', function (Blueprint $table) {
             //
-            $table->boolean('status')->default(true);  // El campo 'status' por defecto es 'true'
+            $table->boolean('status')->default(false);  // El campo 'status' por defecto es 'true'
             $table->softDeletes();  // Esto agregará el campo 'deleted_at'
         });
     }

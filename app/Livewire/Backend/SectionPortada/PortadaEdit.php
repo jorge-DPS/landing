@@ -56,7 +56,7 @@ class PortadaEdit extends Component
         $this->subtitle = $cover->subtitle;
         $this->description = $cover->description;
         $this->image = $cover->image;
-        $this->status = $cover->status;
+        $this->status = $section->status;
         $this->button_text = $cover->button_text;
         $this->button_url = $cover->button_url;
         $this->open_in_new_tab = $cover->open_in_new_tab;
@@ -117,6 +117,7 @@ class PortadaEdit extends Component
         // dd($datos);
         $cover = Cover::find($this->cover->id); // Busca la portada a actualizar
         $cover->update($datos); // Actualiza la portada con los nuevos datos
+        $this->section->update(['status' => $datos['status']]);
     }
 
     /**

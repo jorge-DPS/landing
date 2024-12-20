@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Page;
 use App\Models\Employee;
+use App\Models\SeccionType;
 use App\Models\Backend\Pages\Cover;
 use App\Models\Backend\Pages\Image;
 use Illuminate\Database\Eloquent\Model;
@@ -34,6 +35,11 @@ class Section extends Model
     // {
     //     return $this->belongsTo(Section::class, 'section_id');
     // }
+
+    public function sectionType()
+    {
+        return $this->belongsTo(SeccionType::class, 'section_type_id');
+    }
 
     public function employees()
     {

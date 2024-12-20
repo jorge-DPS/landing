@@ -7,29 +7,35 @@ use App\Models\Section;
 use Livewire\Component;
 use App\Models\Employee;
 use Illuminate\Support\Facades\Storage;
+use Livewire\Attributes\On;
 use Livewire\WithPagination;
 
 class MostrarEmployees extends Component
 {
+    use WithPagination;
 
-
+    protected $paginationTheme = 'tailwind'; // Usa estilos de Tailwind para la paginación
     protected $listeners = ['eliminarEmployee'];
 
-    use WithPagination;
 
     public $section;
     public $page;
+
+    // public $employees = [];
 
 
     public function mount(Section $section, Page $page)
     {
         $this->section = $section;
         $this->page = $page;
+
     }
 
-    // #[On('eliminarEmployee'),section]
-    public function eliminarEmployee(Employee $employee, Section $section)
+    #[On('eliminar-empleado')]
+    public function eliminarEmployee($employeeId)
     {
+        $employee = Employee::findOrFail($employeeId);
+        // dd($employee);
         // Verificar si el empleado tiene una imagen
         if ($employee->image && Storage::disk('public')->exists('employees/' . $employee->image)) {
             // Eliminar la imagen del almacenamiento
@@ -38,15 +44,19 @@ class MostrarEmployees extends Component
 
         // Eliminar el registro del empleado
         $employee->delete();
+        
+        $this->dispatch('empleado-eliminado');
+        // $this->resetPage();
+        // return redirect()->route('employees.index', [$this->page, $this->section]);
+
+        
+
     }
 
 
     public function render()
     {
-        // dd($this->section->id);
-        // Usa section_id directamente si se refiere al ID relacionado
-        $employees = Employee::where('section_id', $this->section->id)
-            ->paginate(3);
+        $employees = Employee::where('section_id', $this->section->id)->paginate(12);
 
         return view('livewire.backend.employee.mostrar-employees', [
             'employees' => $employees,

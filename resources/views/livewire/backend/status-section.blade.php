@@ -8,3 +8,4 @@
     
 
 </div>
+@vite('resources/js/backend/alertStatus.js')

@@ -53,15 +53,7 @@
                 @enderror
             </div>
         </div>
-        {{-- <div class="w-full">
-            <div class="flex items-baseline flex-wrap lg:flex-nowrap gap-2.5">
-             <label class="form-label max-w-32">
-              Example Label
-             </label>
-             <textarea class="textarea" name="memo" placeholder="Text" rows="6"></textarea>
-            </div>
-           </div> --}}
-
+        
         <!-- Imagen -->
         
         <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
@@ -88,15 +80,14 @@
         </div>
 
         <!-- Estado -->
-        <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+        {{-- <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
             <div class="flex flex-col max-w-72 w-full">
                 <label class="text-gray-900 text-sm font-semibold" for="status">Estado</label>
             </div>
             <div class="w-full">
-                <label class="input">
+                <label class="">
                     <select wire:model="status" id="status" class="form-control @error('status') is-invalid @enderror"
                         required>
-                        <option>-- Seleccione --</option>
                         <option value="1">Activo</option>
                         <option value="0">Inactivo</option>
                     </select>
@@ -107,7 +98,7 @@
                     </div>
                 @enderror
             </div>
-        </div>
+        </div> --}}
 
         <!-- Botón de texto -->
         <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">

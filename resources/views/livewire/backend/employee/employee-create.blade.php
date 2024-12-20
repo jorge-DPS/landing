@@ -62,7 +62,7 @@
         </div>
 
         <!-- Estado -->
-        <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+        {{-- <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
             <div class="flex flex-col max-w-72 w-full">
                 <label class="text-gray-900 text-sm font-semibold" for="status">Estado</label>
             </div>
@@ -70,7 +70,6 @@
                 <label class="input">
                     <select wire:model="status" id="status" class="form-control @error('status') is-invalid @enderror"
                         required>
-                        <option>-- Seleccione --</option>
                         <option value="1">Activo</option>
                         <option value="0">Inactivo</option>
                     </select>
@@ -81,7 +80,7 @@
                     </div>
                 @enderror
             </div>
-        </div>
+        </div> --}}
 
         <div class="border-t border-gray-200 my-7.5"></div>
         <div class="flex justify-end">
