@@ -22,7 +22,7 @@ class SectionController extends Controller
 
     public function index(Page $page)
     {
-        $sectionsAll = Section::where('page_id', $page->id)->get();
+        $sectionsAll = Section::where('page_id', $page->id)->orderBy('order')->get();
         // dd($sectionsAll);
 
         $sectionType = SeccionType::all();
@@ -54,17 +54,33 @@ class SectionController extends Controller
         ]);
 
         // Crear una nueva sección con los datos validados
-        Section::create([
+        $section = Section::create([
             'title' => $datos['title'],
             'section_type_id' => $datos['section_type_id'],
             'page_id' => $page->id,  // Asumiendo que 'page_id' viene del modelo de página
         ]);
 
+        // Actualizar el campo 'order' con el ID de la sección recién creada
+        $section->update(['order' => $section->id]);
+
         // Redirigir después de guardar
-        return redirect()->route('pages.configuration.index', [
-            'page' => $page
+        return redirect()->route(
+            'pages.configuration.index',
+            [
+                'page' => $page
             ]
         );
+    }
+
+    public function updateOrder(Request $request)
+    {
+        $data = $request->all();
+
+        foreach ($data as $item) {
+            Section::where('id', $item['id'])->update(['order' => $item['order']]);
+        }
+
+        return response()->json(['success' => true]);
     }
 
     // public function employees(Page $page, Section $section)
@@ -78,7 +94,8 @@ class SectionController extends Controller
     //     ]);
     // }
 
-    public function destroy(Page $page, Section $section){
+    public function destroy(Page $page, Section $section)
+    {
         // El Laravel se encargará de buscar la sección con ese ID
         // dd($page);
         $section->delete();

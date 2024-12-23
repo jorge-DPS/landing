@@ -1,4 +1,4 @@
-<table id="table_respaldo" class="table table-auto table-border" data-datatable-table="true">
+<table id="" class="table table-auto table-border" data-datatable-table="true">
     <thead>
         <tr>
             <th class="w-[30px] text-center">
@@ -107,15 +107,20 @@
                                 <div class="menu-separator">
                                 </div>
                                 <div class="menu-item">
-                                    <a class="menu-link" href="#">
-                                        <span class="menu-icon">
-                                            <i class="ki-filled ki-trash">
-                                            </i>
-                                        </span>
-                                        <span class="menu-title">
-                                            Eliminar
-                                        </span>
-                                    </a>
+                                    <form action="{{ route('pages.destroy', $pag->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <a class="menu-link" href="">
+                                            <span class="menu-icon">
+                                                <i class="ki-filled ki-trash">
+                                                </i>
+                                            </span>
+                                            <button type="submit" class="menu-title">
+                                                Eliminar
+                                            </button>
+                                        </a>
+
+                                    </form>
                                 </div>
                             </div>
                         </div>

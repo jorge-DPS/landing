@@ -146,14 +146,14 @@
                                                                 width="44" xmlns="http://www.w3.org/2000/svg">
                                                                 <path
                                                                     d="M16 2.4641C19.7128 0.320509 24.2872 0.320508 28 2.4641L37.6506 8.0359C41.3634 10.1795 43.6506 14.141 43.6506
-                                                                                            18.4282V29.5718C43.6506 33.859 41.3634 37.8205 37.6506 39.9641L28 45.5359C24.2872 47.6795 19.7128 47.6795 16 45.5359L6.34937
-                                                                                            39.9641C2.63655 37.8205 0.349365 33.859 0.349365 29.5718V18.4282C0.349365 14.141 2.63655 10.1795 6.34937 8.0359L16 2.4641Z"
+                                                                                                        18.4282V29.5718C43.6506 33.859 41.3634 37.8205 37.6506 39.9641L28 45.5359C24.2872 47.6795 19.7128 47.6795 16 45.5359L6.34937
+                                                                                                        39.9641C2.63655 37.8205 0.349365 33.859 0.349365 29.5718V18.4282C0.349365 14.141 2.63655 10.1795 6.34937 8.0359L16 2.4641Z"
                                                                     fill="">
                                                                 </path>
                                                                 <path
                                                                     d="M16.25 2.89711C19.8081 0.842838 24.1919 0.842837 27.75 2.89711L37.4006 8.46891C40.9587 10.5232 43.1506 14.3196 43.1506
-                                                                                            18.4282V29.5718C43.1506 33.6804 40.9587 37.4768 37.4006 39.5311L27.75 45.1029C24.1919 47.1572 19.8081 47.1572 16.25 45.1029L6.59937
-                                                                                            39.5311C3.04125 37.4768 0.849365 33.6803 0.849365 29.5718V18.4282C0.849365 14.3196 3.04125 10.5232 6.59937 8.46891L16.25 2.89711Z"
+                                                                                                        18.4282V29.5718C43.1506 33.6804 40.9587 37.4768 37.4006 39.5311L27.75 45.1029C24.1919 47.1572 19.8081 47.1572 16.25 45.1029L6.59937
+                                                                                                        39.5311C3.04125 37.4768 0.849365 33.6803 0.849365 29.5718V18.4282C0.849365 14.3196 3.04125 10.5232 6.59937 8.46891L16.25 2.89711Z"
                                                                     stroke="">
                                                                 </path>
                                                             </svg>
@@ -173,81 +173,102 @@
                                                         </div>
                                                     </td>
                                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                                        {{ $section->title }}
+                                                        <div>
+                                                            <livewire:backend.sections.section-edit :section="$section" :page="$page" />
+                                                            {{-- {{ $section->title }}  --}}
+                                                        </div>
                                                     </td>
-
-                                                    <td
-                                                        class=" flex items-center justify-items-end px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                    
+                                                    <td class=" px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                                         {{-- <i class="ki-filled ki-arrow-up-down"></i> --}}
+                                                        <div class="flex justify-end">
 
-                                                        @if ($section->section_type_id == 1)
-                                                            {{-- <i class="ki-filled ki-eye"></i> --}}
-                                                            <div>
-                                                                <livewire:backend.status-section :section="$section" />
+                                                            @if ($section->section_type_id == 1)
+                                                                {{-- <i class="ki-filled ki-eye"></i> --}}
+                                                                <div>
+                                                                    <livewire:backend.status-section :section="$section" />
 
-                                                            </div>
-                                                            <a href="{{ route('employees.index', [$page, $section]) }}"
-                                                                title="configurar"
-                                                                class="btn btn-sm btn-icon btn-clear btn-primary">
-                                                                <i class="ki-filled ki-setting-2"></i>
-                                                            </a>
+                                                                </div>
+                                                                <div>
+                                                                    <a href="{{ route('employees.index', [$page, $section]) }}"
+                                                                        title="configurar"
+                                                                        class="btn btn-sm btn-icon btn-clear btn-primary">
+                                                                        <i class="ki-filled ki-setting-2"></i>
+                                                                    </a>
+                                                                </div>
 
-                                                            <form
-                                                                action="{{ route('pages.configuration.delete', [$page, $section]) }}"
-                                                                method="POST" style="display:inline;">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <!-- Esto indica que la solicitud será DELETE -->
-                                                                <button type="submit"
-                                                                    class="btn btn-sm btn-icon btn-clear btn-primary">
-                                                                    <i class="ki-filled ki-basket"></i>
-                                                                </button>
-                                                            </form>
-                                                        @elseif($section->section_type_id == 2)
-                                                            <div>
-                                                                <livewire:backend.status-section :section="$section" />
+                                                                <div>
+                                                                </div>
 
-                                                            </div>
-                                                            <a href="{{ route('section-gallery.index', [$page, $section]) }}"
-                                                                title="configurar imágenes"
-                                                                class="btn btn-sm btn-icon btn-clear btn-primary">
-                                                                <i class="ki-filled ki-setting-2"></i>
-                                                            </a>
-                                                            <form
-                                                                action="{{ route('pages.configuration.delete', [$page, $section]) }}"
-                                                                method="POST" style="display:inline;">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <!-- Esto indica que la solicitud será DELETE -->
-                                                                <button type="submit"
-                                                                    class="btn btn-sm btn-icon btn-clear btn-primary">
-                                                                    <i class="ki-filled ki-basket"></i>
-                                                                </button>
-                                                            </form>
-                                                        @elseif($section->section_type_id == 3)
-                                                            <div>
-                                                                <livewire:backend.status-section :section="$section" />
+                                                                <div>
+                                                                    <form
+                                                                        action="{{ route('pages.configuration.delete', [$page, $section]) }}"
+                                                                        method="POST" style="display:inline;">
+                                                                        @csrf
+                                                                        @method('DELETE')
+                                                                        <!-- Esto indica que la solicitud será DELETE -->
+                                                                        <button type="submit"
+                                                                            class="btn btn-sm btn-icon btn-clear btn-primary"
+                                                                            title="Eliminar">
+                                                                            <i class="ki-filled ki-basket"></i>
+                                                                        </button>
+                                                                    </form>
+                                                                </div>
+                                                            @elseif($section->section_type_id == 2)
+                                                                <div>
+                                                                    <input type="hidden" value="false">
+                                                                    <livewire:backend.status-section :section="$section" />
 
-                                                            </div>
-                                                            <a href="{{ route('portada.index', [$page, $section]) }}"
-                                                                title="Configurar portada"
-                                                                class="btn btn-sm btn-icon btn-clear btn-primary">
-                                                                <i class="ki-filled ki-setting-2"></i>
-                                                            </a>
-                                                            <form
-                                                                action="{{ route('pages.configuration.delete', [$page, $section]) }}"
-                                                                method="POST" style="display:inline;">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <!-- Esto indica que la solicitud será DELETE -->
-                                                                <button type="submit"
-                                                                    class="btn btn-sm btn-icon btn-clear btn-primary">
-                                                                    <i class="ki-filled ki-basket"></i>
-                                                                </button>
-                                                            </form>
+                                                                </div>
+                                                                <div>
+                                                                    <a href="{{ route('section-gallery.index', [$page, $section]) }}"
+                                                                        title="configurar imágenes"
+                                                                        class="btn btn-sm btn-icon btn-clear btn-primary">
+                                                                        <i class="ki-filled ki-setting-2"></i>
+                                                                    </a>
+                                                                </div>
+                                                                <div>
+                                                                    <form
+                                                                        action="{{ route('pages.configuration.delete', [$page, $section]) }}"
+                                                                        method="POST" style="display:inline;">
+                                                                        @csrf
+                                                                        @method('DELETE')
+                                                                        <!-- Esto indica que la solicitud será DELETE -->
+                                                                        <button type="submit"
+                                                                            class="btn btn-sm btn-icon btn-clear btn-primary">
+                                                                            <i class="ki-filled ki-basket"></i>
+                                                                        </button>
+                                                                    </form>
+                                                                </div>
+                                                            @elseif($section->section_type_id == 3)
+                                                                <div>
+                                                                    <livewire:backend.status-section :section="$section" />
 
-                                                            {{-- eliminar --}}
-                                                        @endif
+                                                                </div>
+                                                                <div>
+                                                                    <a href="{{ route('portada.index', [$page, $section]) }}"
+                                                                        title="Configurar portada"
+                                                                        class="btn btn-sm btn-icon btn-clear btn-primary">
+                                                                        <i class="ki-filled ki-setting-2"></i>
+                                                                    </a>
+                                                                </div>
+                                                                <div>
+                                                                    <form
+                                                                        action="{{ route('pages.configuration.delete', [$page, $section]) }}"
+                                                                        method="POST" style="display:inline;">
+                                                                        @csrf
+                                                                        @method('DELETE')
+                                                                        <!-- Esto indica que la solicitud será DELETE -->
+                                                                        <button type="submit"
+                                                                            class="btn btn-sm btn-icon btn-clear btn-primary">
+                                                                            <i class="ki-filled ki-basket"></i>
+                                                                        </button>
+                                                                    </form>
+                                                                </div>
+
+                                                                {{-- eliminar --}}
+                                                            @endif
+                                                        </div>
 
                                                     </td>
                                                 </tr>
@@ -484,75 +505,44 @@
         });
     </script> --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const tableBody = document.getElementById('table_respaldo').getElementsByTagName('tbody')[0];
+            const tableBody = document.getElementById('sortable');
+
             new Sortable(tableBody, {
                 animation: 150,
-                handle: 'tr',
-                onEnd: function(evt) {
-                    const order = Array.from(tableBody.children).map((row, index) => {
-                        const idElement = row.querySelector('.id');
+                onEnd: function() {
+                    // Obtener el nuevo orden
+                    const order = Array.from(tableBody.children).map((row, index) => ({
+                        id: row.getAttribute('data-id'),
+                        order: index // Nuevo orden basado en el índice
+                    }));
 
-                        if (idElement) {
-                            return {
-                                id: idElement.value,
-                                order: index + 1
-                            };
-                        } else {
-                            console.error('Could not find necessary elements in row:', row);
-                            return null;
-                        }
-                    }).filter(item => item !== null);
-
-                    $.ajax({
-                        url: "",
-                        type: 'POST',
-                        data: JSON.stringify(order),
-                        contentType: 'application/json',
-                        headers: {
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        },
-
-                        success: function(response) {
-                            if (response.Codigo == 0) {
-                                $('#table_respaldo tbody').html($(response.Data).find(
-                                    'tbody').html());
+                    // Enviar el nuevo orden al servidor
+                    fetch('{{ route('sections.updateOrder') }}', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                            },
+                            body: JSON.stringify(order)
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                // Swal.fire('Éxito', 'El orden ha sido actualizado.', 'success');]
                                 Swal.fire({
                                     position: "top-end",
-                                    title: "Reordenado exitoso",
-                                    text: response.Mensaje,
-                                    showConfirmButton: false,
                                     icon: "success",
-                                    timer: 3000,
-                                    scrollbarPadding: false,
-                                    heightAuto: false,
-                                    backdrop: false,
-                                    customClass: {
-                                        popup: 'swal-alert-success',
-                                        title: 'swal-title-overlay',
-                                        content: 'swal-content-overlay'
-                                    },
-                                    didOpen: () => {
-                                        document.body.classList.add(
-                                            'swal-open');
-                                    },
-                                    willClose: () => {
-                                        document.body.classList.remove(
-                                            'swal-open');
-                                    }
+                                    title: "El orden ha sido actualizado.",
+                                    showConfirmButton: false,
+                                    timer: 1500
                                 });
                             } else {
-                                executeExample('error', response.Mensaje);
+                                Swal.fire('Error', 'No se pudo actualizar el orden.', 'error');
                             }
-                        },
-                        error: function(xhr, status, error) {
-                            console.error('Error:', error);
-                        }
-                    });
-
-
+                        })
+                        .catch(error => console.error('Error:', error));
                 }
             });
         });

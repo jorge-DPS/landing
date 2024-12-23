@@ -20,10 +20,10 @@
     <!-- Page Content -->
 
     {{-- <x-frontend.app-layout/> --}}
+    @livewireScripts
 
     @include('frontend.partials.footer')
     @include('frontend.layouts.scripts')
-    @livewireScripts
 </body>
 
 </html>

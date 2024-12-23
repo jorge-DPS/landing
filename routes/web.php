@@ -52,6 +52,7 @@ Route::middleware(['auth'])->group(function () {
     // Route::get('/pages/configuracion/{id}', [SectionController::class, 'index'])->name('pages.configuration.index');
     Route::get('/pages/configuracion/{page:title}', [SectionController::class, 'index'])->name('pages.configuration.index');
     Route::post('/pages/configuracion/{page:title}', [SectionController::class, 'store'])->name('pages.configuration.store');
+    Route::post('/pages/configuracion/sections/update-order', [SectionController::class, 'updateOrder'])->name('sections.updateOrder');
     // Route::get('/pages/configuracion/{page:title}/{section:title}', [SectionController::class, 'employees'])->name('pages.configuration.employees');
     // Route::get('/pages/configuracion/edit/{id}', [SectionController::class, 'edit'])->name('pages.configuration.edit');
     Route::delete('/pages/configuracion/{page:title}/delete/{section}', [SectionController::class, 'destroy'])->name('pages.configuration.delete');

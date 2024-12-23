@@ -66,9 +66,10 @@
                     <div class="flex flex-col gap-5 lg:gap-7.5">
 
                         <div class="card min-w-full">
-                            <form id="createCarrusel" action="{{ route('pages.store') }}" method="POST"
+                            <form action="{{ route('pages.update', [$page]) }}" method="POST" 
                                 enctype="multipart/form-data">
                                 @csrf
+                                @method('PUT')
                                 <div class="card-header gap-2">
                                     <h3 class="card-title">
                                         Datos de para mostrar
@@ -83,9 +84,12 @@
                                             </div>
                                         </div>
                                         <select class="custom-select w-full" name="menu_id">
-                                            <option value="">Selecionar un menú</option>
+                                            <option value="">Seleccionar un menú</option>
                                             @foreach ($botones as $btn)
-                                                <option value="{{ $btn->id }}">{{ $btn->title }}</option>
+                                                <option value="{{ $btn->id }}"
+                                                    {{ old('menu_id', $page->menu_id) == $btn->id ? 'selected' : '' }}>
+                                                    {{ $btn->title }}
+                                                </option>
                                             @endforeach
                                         </select>
 
@@ -120,7 +124,7 @@
                                                 <input id="title" name="title" type="text"
                                                     placeholder="Título de la publicación"
                                                     class="input w-full lg:max-w-md border border-gray-300 rounded-lg px-4 py-2 text-gray-900 @error('title') border-red-500 @enderror"
-                                                    value="{{ old('title') }}" />
+                                                    value="{{ old('title', $page->title) }}" />
                                             </div>
                                             @error('title')
                                                 <p class="mt-2 text-sm text-red-500">{{ $message }}</p>
@@ -128,6 +132,7 @@
                                         </div>
 
                                         <!-- Campo: Descripción -->
+                                        {{ $page->description }}
                                         <div class="w-full mb-6">
                                             <div class="flex flex-wrap lg:flex-nowrap gap-3 items-center">
                                                 <label for="description"
@@ -135,7 +140,7 @@
                                                 <input id="description" name="description" type="text"
                                                     placeholder="Descripción"
                                                     class="input w-full lg:max-w-md border border-gray-300 rounded-lg px-4 py-2 text-gray-900 @error('description') border-red-500 @enderror"
-                                                    value="{{ old('description') }}" />
+                                                    value="{{ old('description', $page->description) }}" />
                                             </div>
                                             @error('description')
                                                 <p class="mt-2 text-sm text-red-500">{{ $message }}</p>
@@ -151,7 +156,7 @@
                                                 <input id="seo_title" name="seo_title" type="text"
                                                     placeholder="Título del SEO"
                                                     class="input w-full lg:max-w-md border border-gray-300 rounded-lg px-4 py-2 text-gray-900 @error('seo_title') border-red-500 @enderror"
-                                                    value="{{ old('seo_title') }}" />
+                                                    value="{{ old('seo_title', $page->seo_title) }}" />
                                             </div>
                                             @error('seo_title')
                                                 <p class="mt-2 text-sm text-red-500">{{ $message }}</p>
@@ -163,7 +168,7 @@
                                             <button type="submit">
                                                 <div class="btn-conteiner">
                                                     <a class="btn-content">
-                                                        <span class="btn-title">CREAR</span>
+                                                        <span class="btn-title">ACTUALIZAR</span>
                                                         <span class="icon-arrow">
                                                             <svg width="66px" height="43px" viewBox="0 0 66 43"
                                                                 version="1.1" xmlns="http://www.w3.org/2000/svg">
