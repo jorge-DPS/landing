@@ -14,22 +14,24 @@
                 <div class="ed-header-nav-container">
                     <ul
                         class="to-go-to-sidebar-in-mobile ed-header-nav flex lg:flex-col gap-x-[43px] xl:gap-x-[33px] font-kanit text-[17px] font-normal">
-                        {{-- <a href="{{ url('/') }}">Inicio</a> --}}
+                        <a href="{{ url('/') }}">Inicio</a>
                         @foreach ($menuGeneral as $menu)
                             <li class="has-sub-menu relative">
                                 <a role="button">{{ $menu->title }}</a>
-                                @if ($menu->pages->isNotEmpty())
-                                    <ul class="ed-header-submenu">
-                                        @foreach ($menu->pages as $page)
-                                            <li>
-                                                <a href="{{ url('page', $page->slug) }}"
-                                                    target="_blank">{{ $page->title }}</a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                @endif
+                                    @if ($menu->pages->isNotEmpty())
+                                        <ul class="ed-header-submenu">
+                                            @foreach ($menu->pages as $page)
+                                                <li>
+                                                    <a href="{{ url('page', $page->slug) }}"
+                                                        target="_blank">{{ $page->title }}</a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
                             </li>
                         @endforeach
+                        <a href="{{ route('page.contact') }}">Contacto</a>
+
                     </ul>
                 </div>
                 <style>

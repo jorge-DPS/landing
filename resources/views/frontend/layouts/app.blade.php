@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="es-BO">
 
-    <head>
-        @include('frontend.layouts.metas')
-        @include('frontend.layouts.styles')
-        {{-- @vite('resources/css/app.css') --}}
-        @livewireStyles
-    </head>
+<head>
+    @include('frontend.layouts.metas')
+    @include('frontend.layouts.styles')
+    {{-- @vite('resources/css/app.css') --}}
+    {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsSwcXKpZO6cpmV0lStja92i1jTPip2h4&callback=initMap" async defer></script> --}}
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsSwcXKpZO6cpmV0lStja92i1jTPip2h4&libraries=maps,marker&v=beta"
+        defer>
+    </script>
+    @vite('resources/css/frontend/mapa.css')
+    @livewireStyles
+</head>
 
 <body>
     <div class="ed-overlay group">
-        <div class="fixed inset-0 z-[100] group-[.active]:bg-edblue/80 duration-[400ms] pointer-events-none group-[.active]:pointer-events-auto"></div>
+        <div
+            class="fixed inset-0 z-[100] group-[.active]:bg-edblue/80 duration-[400ms] pointer-events-none group-[.active]:pointer-events-auto">
+        </div>
     </div>
     @include('frontend.partials.cart')
     @include('frontend.partials.search')

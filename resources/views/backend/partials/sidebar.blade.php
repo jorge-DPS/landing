@@ -4,10 +4,10 @@
     <div class="sidebar-header hidden lg:flex items-center relative justify-between px-3 lg:px-6 shrink-0"
         id="sidebar_header">
         <a href="{{ url('dashboard') }}" class="flex items-center justify-center">
-            <img class="default-logo min-h-[22px] max-w-none" src="favicon.png" style="max-width: 30px;" />
+            <img class="default-logo min-h-[22px] max-w-none" src="{{ asset('favicon.png')}}" style="max-width: 30px;" />
             <span class="default-logo text-gray-800 text-center tracking-widest uppercase ml-5"
                 style="font-size: 16px;">Saint George</span>
-            <img class="small-logo min-h-[22px] max-w-none" src="favicon.png" style="max-width: 30px;" />
+            <img class="small-logo min-h-[22px] max-w-none" src="{{ asset('favicon.png')}}" style="max-width: 30px;" />
         </a>
         <div data-toggle="body" data-toggle-class="sidebar-collapse" id="sidebar_toggle">
             <div class="hidden [html.dark_&amp;]:block">

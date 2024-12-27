@@ -16,7 +16,7 @@
 
         <div class="grid grid-cols-3 sm:grid-cols-2 xxs:grid-cols-1 gap-[30px] lg:gap-[20px]">
             <!-- single Employees -->
-            @forelse ($employees->take(3) as $employee)
+            @forelse ($employees->take(6) as $employee)
                 <div class="ed-teacher group">
                     <div class="ed-teacher__img rounded-[16px] overflow-hidden">
                         <img

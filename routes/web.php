@@ -18,12 +18,15 @@ use App\Http\Controllers\PersonSectionController;
 use App\Http\Controllers\GlobalConfiguracionController;
 use App\Http\Controllers\Backend\SectionGallery\ImageController;
 use App\Http\Controllers\Backend\SectionPortada\PortadaController;
+use App\Http\Controllers\Frontend\Pages\ContactController;
 use App\Http\Controllers\Frontend\Pages\EmployeesController;
 use App\Http\Controllers\Frontend\Pages\GalleryController;
 
 Route::get('/', function () {
     return view('frontend.home.index');
 });
+
+Route::get('page/contacto', [ContactController::class, 'show'])->name('page.contact');
 
 Route::get('page/{page:slug}', [PublicPageController::class, 'show'])->name('page-content');
 Route::get('page/{page:slug}/people/{section:title}', [EmployeesController::class, 'employees'])->name('pages.employees');

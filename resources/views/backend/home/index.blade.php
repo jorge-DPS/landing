@@ -124,7 +124,7 @@
 
                                         <div class="flex">
                                             <img class="hover:z-5 relative shrink-0 rounded-full ring-1 ring-light-light size-10"
-                                                src="favicon.png" />
+                                            src="{{ asset('favicon.png')}}" />
                                         </div>
 
                                     </div>

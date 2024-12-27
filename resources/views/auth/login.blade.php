@@ -55,7 +55,7 @@
                         Portal de Acceso Seguro
                     </h3>
                     <a href="/">
-                        <img style="max-width: 300px;" src="favicon.png"/>
+                        <img style="max-width: 300px;" src="{{ asset('favicon.png')}}"/>
                     </a>
                 </div>
             </div>

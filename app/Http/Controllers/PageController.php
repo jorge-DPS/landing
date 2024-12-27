@@ -118,11 +118,13 @@ class PageController extends Controller
         $titulo = str_replace(['año', 'años'], ['anio', 'anios'], $datos['title']);
         $datos['slug'] = Str::slug($titulo);
 
+        // dd($datos);
         $page->update([
             'title' => $datos['title'],
             'description' => $datos['description'],
             'seo_title' => $datos['seo_title'],
             'menu_id' => $datos['menu_id'],
+            'slug' => $datos['slug']
         ]);
 
         // Redirect to the pages index route

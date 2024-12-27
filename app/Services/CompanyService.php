@@ -28,9 +28,10 @@ class CompanyService
 
     public function updateCompany(CompanyRequest $request, Company $company): RedirectResponse
     {
+        // dd($company);   
         try {
             $validatedData = $request->validated();
-
+            
             if ($request->hasFile('big_logo')) {
                 $logoNewBig = saveStorage($request->file('big_logo'), 'big_logos');
                 $validatedData['big_logo'] = $logoNewBig;
@@ -50,11 +51,12 @@ class CompanyService
                 $logoNewLight = saveStorage($request->file('light_logo'), 'loght_logos');
                 $validatedData['light_logo'] = $logoNewLight;
             }
+            
+            $company->update($validatedData);
 
-            $this->repository->update($company, $validatedData);
+            // $this->repository->update($company, $validatedData);
 
-            return redirect()->route('company.index')
-                ->with('success', 'Datos de empresa actualizado exitosamente');
+            return redirect()->route('company.index')->with('success', 'Datos de empresa actualizado exitosamente');
         } catch (Exception $e) {
             return $this->handleException($e, 'company.index');
         }
