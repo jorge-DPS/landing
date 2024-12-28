@@ -26,6 +26,7 @@ class CompanyController extends Controller
     public function update(CompanyRequest $request, Company $company): RedirectResponse
     {
         $company = $this->service->getFirstCompanys();
+        // dd($company);
 
         return $this->service->updateCompany($request, $company);
     }

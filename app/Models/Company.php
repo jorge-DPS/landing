@@ -23,6 +23,8 @@ class Company extends Model
         'dark_logo',
         'light_logo',
         'state',
+        'email',
+        'horario',
     ];
 
     public function socialMedia()

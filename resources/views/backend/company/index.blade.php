@@ -218,7 +218,20 @@
                                         <label class="input">
                                             <i class="ki-solid ki-information-2 text-school text-2xl">
                                             </i>
-                                            <input type="text" value="{{ $companies->address }}" name="email" placeholder="Correo electrónico">
+                                            <input type="email" value="{{ $companies->email }}" name="email" placeholder="Correo electrónico del colegio">
+                                            </input>
+                                        </label>
+                                    </div>
+                                    <div class="flex flex-wrap md:flex-nowrap gap-5 lg:gap-14 mt-5">
+                                        <div class="flex flex-col max-w-72 w-full">
+                                            <div class="text-gray-900 text-sm font-semibold">
+                                                Horario
+                                            </div>
+                                        </div>
+                                        <label class="input">
+                                            <i class="ki-solid ki-information-2 text-school text-2xl">
+                                            </i>
+                                            <input type="text" value="{{ $companies->horario }}" name="horario" placeholder="ej: Lunes a Viernes, 9:00 AM - 5:00 PM">
                                             </input>
                                         </label>
                                     </div>

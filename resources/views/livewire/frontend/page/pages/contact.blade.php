@@ -1,18 +1,20 @@
 <main>
     <!-- BREADCRUMB SECTION START -->
-    <section class="pt-[327px] xl:pt-[287px] lg:pt-[237px] sm:pt-[200px] xxs:pt-[180px] pb-[158px] xl:pb-[118px] lg:pb-[98px] sm:pb-[68px] xs:pb-[48px] text-center bg-[url('../assets/img/breadcrumb-bg.jpg')] bg-no-repeat bg-cover bg-center relative z-[1] overflow-hidden before:absolute before:-z-[1] before:inset-0 before:bg-edblue/70 before:pointer-events-none">
+    <section style="background-image: url('{{ asset('assetsFrontend/img/breadcrumb-bg-banner.jpg') }}')" class="pt-[327px] xl:pt-[287px] lg:pt-[237px] sm:pt-[200px] xxs:pt-[180px] pb-[158px] xl:pb-[118px] lg:pb-[98px] sm:pb-[68px] xs:pb-[48px] text-center bg-no-repeat bg-cover bg-center relative z-[1] overflow-hidden before:absolute before:-z-[1] before:inset-0 before:bg-edblue/70 before:pointer-events-none">
+
+    {{-- <section class="pt-[327px] xl:pt-[287px] lg:pt-[237px] sm:pt-[200px] xxs:pt-[180px] pb-[158px] xl:pb-[118px] lg:pb-[98px] sm:pb-[68px] xs:pb-[48px] text-center bg-[url('../assets/img/breadcrumb-bg.jpg')] bg-no-repeat bg-cover bg-center relative z-[1] overflow-hidden before:absolute before:-z-[1] before:inset-0 before:bg-edblue/70 before:pointer-events-none"> --}}
         <div class="mx-[19.71%] xxxl:mx-[14.71%] xxl:mx-[9.71%] xl:mx-[5.71%] md:mx-[12px]">
-            <h1 class="font-semibold text-[clamp(35px,6vw,56px)] text-white">Contact us</h1>
+            <h1 class="font-semibold text-[clamp(35px,6vw,56px)] text-white">Contactanos</h1>
             <ul class="flex items-center justify-center gap-[10px] text-white">
-                <li><a href="index.html" class="text-edyellow">Home</a></li>
+                <li><a href="{{'/'}}" class="text-edyellow">Inicio</a></li>
                 <li><span class="text-[12px]"><i class="fa-solid fa-angle-double-right"></i></span></li>
-                <li>Contact us</li>
+                <li>Contactos</li>
             </ul>
         </div>
 
         <div class="vectors">
-            <img src="assets/img/breadcrumb-vector-1.svg" alt="vector" class="absolute -z-[1] pointer-events-none bottom-[34px] left-0 xl:left-auto xl:right-[90%]">
-            <img src="assets/img/breadcrumb-vector-2.svg" alt="vector" class="absolute -z-[1] pointer-events-none bottom-0 right-0 xl:right-auto xl:left-[60%]">
+            <img src="{{ asset("assetsFrontend/img/breadcrumb-vector-1.svg") }}" alt="vector" class="absolute -z-[1] pointer-events-none bottom-[34px] left-0 xl:left-auto xl:right-[90%]">
+            <img src="{{ asset("assetsFrontend/img/breadcrumb-vector-2.svg") }}" alt="vector" class="absolute -z-[1] pointer-events-none bottom-0 right-0 xl:right-auto xl:left-[60%]">
         </div>
     </section>
     <!-- BREADCRUMB SECTION END -->
@@ -31,26 +33,51 @@
 
                 <!-- right side contact form -->
                 <div>
-                    <h2 class="text-[40px] md:text-[35px] sm:text-[30px] xxs:text-[28px] font-semibold text-edblue mb-[7px]">Ready to Get Started?</h2>
-                    <p class="text-edgray font-normal text-[16px] mb-[38px]">Nullam varius, erat quis iaculis dictum, eros urna varius eros, ut blandit felis odio in turpis. Quisque rhoncus, eros in auctor ultrices,</p>
+                    <h2 class="text-[40px] md:text-[35px] sm:text-[30px] xxs:text-[28px] font-semibold text-edblue mb-[7px]">Contactanos</h2>
+                    <p class="text-edgray font-normal text-[16px] mb-[38px]">{{ $company->description }}</p>
 
-                    <form action="#" class="grid grid-cols-2 xxs:grid-cols-1 gap-[30px] xs:gap-[20px] text-[16px]">
+                    <div class="grid grid-cols-2 xxs:grid-cols-1 gap-[30px] xs:gap-[20px] text-[16px]">
                         <div>
-                            <label for="ed-contact-name" class="font-lato font-semibold text-edblue block mb-[12px]">Your Name*</label>
-                            <input type="text" name="name" id="ed-contact-name" placeholder="Your Name" class="border border-[#ECECEC] h-[55px] px-[20px] xs:px-[15px] rounded-[4px] w-full focus:outline-none">
+                            <label class="font-lato font-semibold text-edblue block mb-[12px]">Nombre</label>
+                            <div class="border border-[#ECECEC] h-[55px] px-[20px] xs:px-[15px] rounded-[4px] flex items-center">
+                                {{$company->company_name}}
+                            </div>
                         </div>
                         <div>
-                            <label for="ed-contact-email" class="font-lato font-semibold text-edblue block mb-[12px]">Your Email*</label>
-                            <input type="email" name="email" id="ed-contact-email" placeholder="Your Email" class="border border-[#ECECEC] h-[55px] px-[20px] xs:px-[15px] rounded-[4px] w-full focus:outline-none">
+                            <label class="font-lato font-semibold text-edblue block mb-[12px]">Dirección</label>
+                            <div class="border border-[#ECECEC] h-[55px] px-[20px] xs:px-[15px] rounded-[4px] flex items-center">
+                                {{$company->address}}
+                            </div>
+                        </div>
+                        <div>
+                            <label class="font-lato font-semibold text-edblue block mb-[12px]">Celular</label>
+                            <div class="border border-[#ECECEC] h-[55px] px-[20px] xs:px-[15px] rounded-[4px] flex items-center">
+                                {{ str_replace('+591', '', $company->mobile) }} / {{ str_replace('+591', '', $company->phone) }}
+
+                            </div>
+                        </div>
+                        <div>
+                            <label class="font-lato font-semibold text-edblue block mb-[12px]">Correo</label>
+                            <div class="border border-[#ECECEC] h-[55px] px-[20px] xs:px-[15px] rounded-[4px] flex items-center">
+                                {{$company->email}}
+                            </div>
                         </div>
                         <div class="col-span-2 xxs:col-span-1">
-                            <label for="ed-contact-message" class="font-lato font-semibold text-edblue block mb-[12px]">Your Message*</label>
-                            <textarea name="message" id="ed-contact-message" placeholder="Your Message" class="border border-[#ECECEC] h-[145px] p-[20px] rounded-[4px] w-full focus:outline-none"></textarea>
+                            <label class="font-lato font-semibold text-edblue block mb-[12px]">Horario</label>
+                            <div class="border border-[#ECECEC] h-[55px] px-[20px] xs:px-[15px] rounded-[4px] flex items-center">
+                                {{$company->horario}}
+                            </div>
                         </div>
                         <div>
-                            <button type="submit" class="bg-edpurple h-[55px] px-[24px] rounded-[10px] text-[16px] font-medium text-white hover:bg-edblue">Send Message <span class="icon pl-[10px]"><i class="fa-solid fa-arrow-right-long"></i></span></button>
+                            <a href="https://wa.me/59178825555?text=Hola,%20quiero%20más%20información."
+                               target="_blank"
+                               class="bg-edpurple h-[55px] px-[24px] rounded-[10px] text-[16px] font-medium text-white hover:bg-edblue flex items-center justify-center">
+                                Enviar un mensaje <span class="icon pl-[10px]"><i class="fa-solid fa-arrow-right-long"></i></span>
+                            </a>
                         </div>
-                    </form>
+                        
+                    </div>
+                    
                 </div>
             </div>
         </div>

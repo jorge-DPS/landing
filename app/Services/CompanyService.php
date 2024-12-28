@@ -30,7 +30,16 @@ class CompanyService
     {
         // dd($company);   
         try {
-            $validatedData = $request->validated();
+            $validatedData = $request->validate([
+                'company_name' => 'required|string|max:255',
+                'owner_name' => 'nullable|string|max:255',
+                'description' => 'nullable|string|max:255',
+                'phone' => 'nullable|string|max:20',
+                'mobile' => 'nullable|string|max:20',
+                'address' => 'nullable|string|max:255',
+                'email' => 'required|email|max:255',
+                'horario' => 'nullable|string|max:255',
+            ]);
             
             if ($request->hasFile('big_logo')) {
                 $logoNewBig = saveStorage($request->file('big_logo'), 'big_logos');
@@ -51,7 +60,7 @@ class CompanyService
                 $logoNewLight = saveStorage($request->file('light_logo'), 'loght_logos');
                 $validatedData['light_logo'] = $logoNewLight;
             }
-            
+            // dd($validatedData);
             $company->update($validatedData);
 
             // $this->repository->update($company, $validatedData);
