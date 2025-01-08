@@ -33,6 +33,15 @@ Breadcrumbs::for('metatags.index', function (BreadcrumbTrail $trail) {
 //     $trail->push('Configuración de Páginas', route('employees.index', ['page' => $page->id, 'section' => $section->id]));
 // });
 
+// Actividades
+Breadcrumbs::for('activities.index', function (BreadcrumbTrail $trail) {
+    $trail->push('Actividades', route('activities.index'));
+});
+
+Breadcrumbs::for('activities.create', function (BreadcrumbTrail $trail) {
+    $trail->push('Crear', route('activities.create'));
+});
+
 // portada
 Breadcrumbs::for('portada.index', function (BreadcrumbTrail $trail, $page, $section) {
     $trail->push('Portadas', route('portada.index', ['page' => $page, 'section' => $section]));

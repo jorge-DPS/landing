@@ -24,7 +24,7 @@
     "autoload": {
         "files": [
             "app/Helpers/helpers.php",
-            "app/Helpers/clearTemporaryflies.php"
+            "app/Helpers/clearTemporaryFiles.php"
 
         ],
         "psr-4":{

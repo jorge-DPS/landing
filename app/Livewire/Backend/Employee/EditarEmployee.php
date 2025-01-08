@@ -58,12 +58,6 @@ class EditarEmployee extends Component
             // Verificar y eliminar la imagen antigua si existe
             $filePath = 'employees/' . $this->employee->image;
 
-            // dd($this->employee->image && Storage::disk('public')->exists('employees/' . $this->employee->image));
-            // if (!Storage::disk('public')->exists($filePath)) {
-            //     dd("Archivo no encontrado: " . $filePath);
-            // } else {
-            //     dd("Archivo encontrado: " . $filePath);
-            // }
             if ($this->employee->image && Storage::disk('public')->exists('employees/' . $this->employee->image)) {
                 // dd('si borrara');
                 Storage::disk('public')->delete('employees/' . $this->employee->image);

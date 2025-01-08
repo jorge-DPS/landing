@@ -11,16 +11,17 @@ use App\Http\Controllers\CarruselController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\MetaTagsController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Backend\Activity\ActivityController;
 use App\Http\Controllers\PublicPageController;
 use App\Http\Controllers\SectionTypeController;
 use App\Http\Controllers\CoverSectionController;
 use App\Http\Controllers\PersonSectionController;
 use App\Http\Controllers\GlobalConfiguracionController;
+use App\Http\Controllers\Frontend\Pages\ContactController;
+use App\Http\Controllers\Frontend\Pages\GalleryController;
+use App\Http\Controllers\Frontend\Pages\EmployeesController;
 use App\Http\Controllers\Backend\SectionGallery\ImageController;
 use App\Http\Controllers\Backend\SectionPortada\PortadaController;
-use App\Http\Controllers\Frontend\Pages\ContactController;
-use App\Http\Controllers\Frontend\Pages\EmployeesController;
-use App\Http\Controllers\Frontend\Pages\GalleryController;
 
 Route::get('/', function () {
     return view('frontend.home.index');
@@ -76,6 +77,7 @@ Route::middleware(['auth'])->group(function () {
 
 
     Route::resource('pages', PageController::class);
+    Route::resource('activities', ActivityController::class);
     // Route::resource('people', PeopleController::class);
     Route::resource('section-type', SectionTypeController::class);
     Route::resource('person-section', PersonSectionController::class);

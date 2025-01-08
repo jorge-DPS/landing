@@ -14,7 +14,7 @@
                         placeholder="Nombre del empleado" class="form-control @error('name') is-invalid @enderror" />
                 </label>
                 @error('name')
-                    <livewire:backend.employee.mostrar-alerta :message="$message"/>
+                    <livewire:backend.alertas.mostrar-alerta :message="$message"/>
                 @enderror
             </div>
         </div>
@@ -56,7 +56,7 @@
                 </div>
 
                 @error('image')
-                <livewire:backend.employee.mostrar-alerta :message="$message"/>
+                <livewire:backend.alertas.mostrar-alerta :message="$message"/>
                 @enderror
             </div>
         </div>
