@@ -26,11 +26,6 @@ class PageController extends Controller
     public function index(Request $request)
     {
         $pages = Page::paginate(20); // 20 por página
-        $currentPage = $request->input('page', 1);
-        // Redirigir a la primera página si es necesario
-        if ($currentPage != 1) {
-            return view('backend.pages.index', compact('pages'));
-        }
 
         return view('backend.pages.index', compact('pages'));
     }

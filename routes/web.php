@@ -12,6 +12,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\MetaTagsController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Backend\Activity\ActivityController;
+use App\Http\Controllers\Backend\Activity\ActivityImageController;
 use App\Http\Controllers\PublicPageController;
 use App\Http\Controllers\SectionTypeController;
 use App\Http\Controllers\CoverSectionController;
@@ -22,6 +23,7 @@ use App\Http\Controllers\Frontend\Pages\GalleryController;
 use App\Http\Controllers\Frontend\Pages\EmployeesController;
 use App\Http\Controllers\Backend\SectionGallery\ImageController;
 use App\Http\Controllers\Backend\SectionPortada\PortadaController;
+use App\Models\Backend\Pages\ActivityImage;
 
 Route::get('/', function () {
     return view('frontend.home.index');

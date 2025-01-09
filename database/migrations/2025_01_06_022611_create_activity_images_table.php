@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('activity_images', function (Blueprint $table) {
             $table->id();
             $table->foreignId('activity_id')->constrained('activities')->onDelete('cascade'); // Foreign Key to activities
-            $table->string('image_url'); // Full-size image URL
-            $table->string('thumbnail_url'); // Thumbnail image URL
+            $table->string('image_url')->nullable(); // Full-size image URL
+            $table->string('thumbnail_url')->nullable(); // Thumbnail image URL
             $table->timestamps();
         });
     }

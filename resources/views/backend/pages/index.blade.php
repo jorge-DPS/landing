@@ -63,114 +63,14 @@
                             <div data-datatable="true" data-datatable-page-size="20">
                                 <div class="scrollable-x-auto">
                                     @include('backend.pages.board')
-                                </div>
-                                <div
-                                    class="card-footer justify-center md:justify-between flex-col md:flex-row gap-5 text-gray-600 text-2sm font-medium">
-                                    <div class="flex items-center gap-2 order-2 md:order-1">
-                                        Ver
-                                        <select class="select select-sm w-16" data-datatable-size="true" name="perpage">
-                                        </select>
-                                        por página
-                                    </div>
-    
-                                    <div class="flex items-center gap-4 order-1 md:order-2">
-                                        <span data-datatable-info="true"></span>
-                                        <div class="pagination" data-datatable-pagination="true">
-                                            {!! $pages->links() !!}
-                                            {{-- {{ dd($pages->links()) }} --}}
-                                        </div>
-                                    </div>
-                                </div>
+                                </div>  
                             </div>
-                            {{-- <div class="grid">
-                                <div class="card card-grid min-w-full">
-                                    <div class="card-header py-5 flex-wrap">
-                                        <h3 class="card-title">
-                                            Remote Data Source
-                                        </h3>
-                                    </div>
-                                    <div class="card-body">
-                                        <div id="kt_remote_table">
-                                            <div class="scrollable-x-auto">
-                                                <table
-                                                    class="table table-auto table-border align-middle text-gray-700 font-medium text-sm"
-                                                    data-datatable-table="true">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="w-[100px] text-center" data-datatable-column="status">
-                                                                <span class="sort">
-                                                                    <span class="sort-label">
-                                                                        Status
-                                                                    </span>
-                                                                    <span class="sort-icon">
-                                                                    </span>
-                                                                </span>
-                                                            </th>
-                                                            <th class="min-w-[250px]" data-datatable-column="title">
-                                                                <span class="sort">
-                                                                    <span class="sort-label">
-                                                                        Title
-                                                                    </span>
-                                                                    <span class="sort-icon">
-                                                                    </span>
-                                                                </span>
-                                                            </th>
-                                                            <th class="min-w-[185px]" data-datatable-column="description">
-                                                                <span class="sort">
-                                                                    <span class="sort-label">
-                                                                        Description
-                                                                    </span>
-                                                                    <span class="sort-icon">
-                                                                    </span>
-                                                                </span>
-                                                            </th>
-                                                            <th class="w-[185px]" data-datatable-column="seo_title">
-                                                                <span class="sort">
-                                                                    <span class="sort-label">
-                                                                        SEO
-                                                                    </span>
-                                                                    <span class="sort-icon">
-                                                                    </span>
-                                                                </span>
-                                                            </th>
-                                                            <th class="w-[185px]" data-datatable-column="id">
-                                                                <span class="sort">
-                                                                    <span class="sort-label">
-                                                                        ID
-                                                                    </span>
-                                                                    <span class="sort-icon">
-                                                                    </span>
-                                                                </span>
-                                                            </th>
-                                                            
-                                                        </tr>
-                                                    </thead>
-                                                </table>
-                                            </div>
-                                            <div
-                                                class="card-footer justify-center md:justify-between flex-col md:flex-row gap-3 text-gray-600 text-2sm font-medium">
-                                                <div class="flex items-center gap-2">
-                                                    Show
-                                                    <select class="select select-sm w-16" data-datatable-size="true"
-                                                        name="perPage">
-                                                    </select>
-                                                    per page
-                                                </div>
-                                                <div class="flex items-center gap-4">
-                                                    <span data-datatable-info="true">
-                                                    </span>
-                                                    <div class="pagination" data-datatable-pagination="true">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> --}}
-
                         </div>
-
                     </div>
+                </div>
+                <div>
+                    <!-- Coloca la paginación fuera de la tabla -->
+                    {{ $pages->links() }}
                 </div>
             </div>
         </div>

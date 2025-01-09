@@ -192,6 +192,7 @@
                                 </span>
                             </a>
                         </div>
+                        
                         <div class="menu-item {{ Request::is('pages', 'pages/*') ? 'active' : '' }}">
                             <a class="menu-link gap-[14px] pl-[10px] pr-[10px] py-[8px] border border-transparent items-center grow menu-item-active:bg-secondary-active dark:menu-item-active:bg-coal-300 dark:menu-item-active:border-gray-100 menu-item-active:rounded-lg hover:bg-secondary-active dark:hover:bg-coal-300 dark:hover:border-gray-100 hover:rounded-lg"
                                 href="{{ route('pages.index') }}" tabindex="0">

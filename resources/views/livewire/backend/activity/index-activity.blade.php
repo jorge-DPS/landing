@@ -49,7 +49,7 @@
                     <!-- Pie de la tarjeta con botones -->
                     <div class="card-footer bg-gray-50 px-4 py-3 border-t flex justify-center space-x-4">
                         <!-- Botón Agregar Galería -->
-                        <a href="3" title="agregar galeria" class="text-teal-500 hover:text-teal-600">
+                        <a href="{{ route('activities.show', $activity) }}" title="agregar galeria" class="text-teal-500 hover:text-teal-600">
                             <svg class="w-6 h-6" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.5v15m7.5-7.5h-15" />
                             </svg>
@@ -61,7 +61,7 @@
                             </svg>
                         </a>
                         <!-- Botón Eliminar -->
-                        <button wire:click="deleteActivity({{ $activity->id }})" title="Eliminar" class="text-rose-500 hover:text-rose-600">
+                        <button wire:click="$dispatch('showActivityDelete', { activity: {{ $activity }} })" title="Eliminar" class="text-rose-500 hover:text-rose-600">
                             <svg class="w-6 h-6" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                             </svg>
@@ -72,3 +72,5 @@
         </div>
     @endif
 </div>
+
+@vite('resources/js/backend/deleteActivity.js')

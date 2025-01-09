@@ -28,4 +28,11 @@ class ActivityController extends Controller
             'activity' => $activity,
         ]);
     }
+
+    public function show(Activity $activity)
+    {
+        return view('backend.activity.show', [
+            'activity' => $activity,
+        ]);
+    }
 }

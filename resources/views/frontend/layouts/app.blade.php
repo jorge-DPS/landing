@@ -4,8 +4,6 @@
 <head>
     @include('frontend.layouts.metas')
     @include('frontend.layouts.styles')
-    {{-- @vite('resources/css/app.css') --}}
-    {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsSwcXKpZO6cpmV0lStja92i1jTPip2h4&callback=initMap" async defer></script> --}}
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsSwcXKpZO6cpmV0lStja92i1jTPip2h4&libraries=maps,marker&v=beta"
         defer>
