@@ -49,11 +49,14 @@
                     <!-- Pie de la tarjeta con botones -->
                     <div class="card-footer bg-gray-50 px-4 py-3 border-t flex justify-center space-x-4">
                         <!-- Botón Agregar Galería -->
-                        <a href="{{ route('activities.show', $activity) }}" title="agregar galeria" class="text-teal-500 hover:text-teal-600">
-                            <svg class="w-6 h-6" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.5v15m7.5-7.5h-15" />
+                        <a href="{{ route('activities.show', $activity) }}" title="Subir imágenes a la galería" class="text-teal-500 hover:text-teal-600">
+                            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                      d="M4 16v4a1 1 0 001 1h14a1 1 0 001-1v-4m-5-5l-4-4m0 0l-4 4m4-4v12" />
                             </svg>
                         </a>
+                        
+                        
                         <!-- Botón Editar -->
                         <a href="{{ route('activities.edit', $activity->id) }}" title="Editar" class="text-indigo-500 hover:text-indigo-600">
                             <svg class="w-6 h-6" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor">

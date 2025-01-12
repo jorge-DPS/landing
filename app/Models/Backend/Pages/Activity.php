@@ -26,8 +26,8 @@ class Activity extends Model
         'start_date',
         'end_date',
         'cover_image',
-        // 'attachment',
-        // 'attachment_title',
+        'attachment',
+        'attachment_title',
     ];
 
     /**

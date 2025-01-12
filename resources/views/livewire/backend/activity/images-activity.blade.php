@@ -20,7 +20,7 @@
             transition: opacity 0.3s ease-in-out;
         }
     </style>
-    
+
     <h2 class="text-lg font-semibold text-gray-900 mb-4">Lista de Imágenes</h2>
     {{-- Init Banner --}}
     <div class="mb-10">
@@ -34,13 +34,17 @@
         </button>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        @forelse ($images as $image)
+        @forelse ($imagenes as $image)
             <div class="relative group border-2 border-transparent rounded-lg overflow-hidden shadow hover:shadow-lg transition-all"
                 data-id="{{ $image->id }}">
                 <div class="bg-white rounded-lg overflow-hidden">
                     <div class="w-full aspect-w-1 aspect-h-1">
-                        <img src="{{ asset('storage/activity/galery/' . $image->image_url) }}" alt="Image"
-                            class="w-full h-full object-cover">
+                        <picture>
+                            <source srcset="{{ asset('storage/activity/galery/' . $image->image_url) . '.webp' }}" type="image/webp" class="w-full h-full object-cover">
+                            <source srcset="{{ asset('storage/activity/galery/' . $image->image_url) . '.png' }}" type="image/png" class="w-full h-full object-cover">
+                            <img src="{{ asset('storage/activity/galery/' . $image->image_url) . '.jpg' }}" alt="Image" class="w-full h-full object-cover" loading="lazy">
+                        </picture>
+
                     </div>
                     <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white font-semibold text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer"
                         data-delete>
@@ -54,7 +58,7 @@
     </div>
 
     <div class="mt-6">
-        {{ $images->links() }}
+        {{ $imagenes->links() }}
     </div>
 </div>
 
