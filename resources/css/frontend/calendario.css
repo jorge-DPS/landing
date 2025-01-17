@@ -1,0 +1,69 @@
+/* Contenedor principal */
+.container {
+    background: #ffffff; /* Fondo blanco */
+    border-radius: 15px; /* Bordes más redondeados */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra suave */
+    padding: 30px; /* Más espacio interno */
+    width: min(95%, 1200px); /* Limita el ancho */
+    margin: 0 auto;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Controles de navegación */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px; /* Más espacio debajo */
+    padding: 0 10px; /* Espaciado interno */
+}
+
+.current-month {
+    font-size: 1.8rem; /* Tamaño de fuente más grande */
+    font-weight: bold;
+    color: #4a5568; /* Color gris oscuro */
+    text-transform: capitalize; /* Mes con la primera letra mayúscula */
+}
+
+/* Botones */
+.btn {
+    background-color: #b12a38; /* Azul primario */
+    color: #ffffff; /* Texto blanco */
+    font-size: 1.1rem; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita para mayor legibilidad */
+    padding: 12px 20px; /* Espaciado interno */
+    border: none; /* Sin bordes */
+    border-radius: 25px; /* Bordes completamente redondeados */
+    cursor: pointer; /* Manito al pasar */
+    transition: all 0.3s ease; /* Animaciones suaves */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.btn:hover {
+    background-color: #a10918; /* Azul más oscuro */
+    transform: translateY(-3px); /* Efecto de elevación */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+}
+
+.btn:focus {
+    outline: none; /* Sin contorno predeterminado */
+    box-shadow: 0 0 10px rgba(245, 25, 9, 0.8); /* Resaltado en azul */
+}
+
+.btn:active {
+    background-color: #50030b; /* Azul aún más oscuro al hacer clic */
+    transform: translateY(1px); /* Botón presionado */
+    box-shadow: 0 3px 6px rgba(71, 1, 1, 0.068); /* Sombra más baja */
+}
+
+/* Contenedor del calendario */
+.calendar {
+    background: #f9fafb; /* Gris muy claro */
+    border-radius: 10px;
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.1); /* Sombra interna */
+    padding: 25px; /* Espaciado interno */
+    height: 600px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb; /* Borde gris claro */
+}

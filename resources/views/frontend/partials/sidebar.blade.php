@@ -3,7 +3,7 @@
         <!-- heading -->
         <div class="ed-sidebar-heading p-[20px] lg:p-[20px] border-b border-edgray/20">
             <div class="logo flex justify-between items-center">
-                <a href="index.html"><img src="assetsFrontend/img/logo.png" alt="logo"></a>
+                <a href="index.html"><img src="{{ asset('assetsFrontend/img/logo.png') }}" alt="logo"></a>
 
                 <button type="button" class="ed-sidebar-close-btn border border-edgray/20 w-[45px] aspect-square shrink-0 text-black text-[22px] rounded-full hover:text-edpurple"><i class="fa-solid fa-xmark"></i></button>
             </div>

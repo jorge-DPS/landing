@@ -15,6 +15,7 @@
                     <ul
                         class="to-go-to-sidebar-in-mobile ed-header-nav flex lg:flex-col gap-x-[43px] xl:gap-x-[33px] font-kanit text-[17px] font-normal">
                         <a href="{{ url('/') }}">Inicio</a>
+                        <a href="{{ route('page.activity') }}">Actividades</a>
                         @foreach ($menuGeneral as $menu)
                             <li class="has-sub-menu relative">
                                 <a role="button">{{ $menu->title }}</a>

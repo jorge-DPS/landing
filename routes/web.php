@@ -12,7 +12,6 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\MetaTagsController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Backend\Activity\ActivityController;
-use App\Http\Controllers\Backend\Activity\ActivityImageController;
 use App\Http\Controllers\PublicPageController;
 use App\Http\Controllers\SectionTypeController;
 use App\Http\Controllers\CoverSectionController;
@@ -23,17 +22,19 @@ use App\Http\Controllers\Frontend\Pages\GalleryController;
 use App\Http\Controllers\Frontend\Pages\EmployeesController;
 use App\Http\Controllers\Backend\SectionGallery\ImageController;
 use App\Http\Controllers\Backend\SectionPortada\PortadaController;
-use App\Models\Backend\Pages\ActivityImage;
+use App\Http\Controllers\Frontend\Pages\PublicActivityController;
 
 Route::get('/', function () {
     return view('frontend.home.index');
 });
 
+Route::get('page/actividades', [PublicActivityController::class, 'show'])->name('page.activity');
 Route::get('page/contacto', [ContactController::class, 'show'])->name('page.contact');
 
 Route::get('page/{page:slug}', [PublicPageController::class, 'show'])->name('page-content');
 Route::get('page/{page:slug}/people/{section:title}', [EmployeesController::class, 'employees'])->name('pages.employees');
 Route::get('page/{page:slug}/gallery/{section:title}', [GalleryController::class, 'gallery'])->name('page.gallery');
+
 
 
 //authRoute

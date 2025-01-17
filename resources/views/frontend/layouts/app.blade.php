@@ -12,7 +12,7 @@
     @livewireStyles
 </head>
 
-<body>
+<body style="background-color: #f1f1f1">
     <div class="ed-overlay group">
         <div
             class="fixed inset-0 z-[100] group-[.active]:bg-edblue/80 duration-[400ms] pointer-events-none group-[.active]:pointer-events-auto">

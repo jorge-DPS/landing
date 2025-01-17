@@ -10,7 +10,7 @@
         <div>
             <!-- single cart item -->
             <div class="flex items-center gap-[20px] py-[30px] px-[25px] border-b border-edgray/20">
-                <img src="assetsFrontend/img/cart-item-1.jpg" alt="Cart Item Image" class="rounded-[10px] shrink-0">
+                <img src="{{ asset('assetsFrontend/img/cart-item-1.jpg') }}" alt="Cart Item Image" class="rounded-[10px] shrink-0">
                 <div class="grow">
                     <h6 class="font-medium text-[18px] text-edblue"><a href="course-details.html" class="hover:text-edpurple">Web Development</a></h6>
                     <h6 class="font-medium text-edgray">$15.00</h6>
@@ -20,7 +20,7 @@
 
             <!-- single cart item -->
             <div class="flex items-center gap-[20px] py-[30px] px-[25px] border-b border-edgray/20">
-                <img src="assetsFrontend/img/cart-item-2.jpg" alt="Cart Item Image" class="rounded-[10px] shrink-0">
+                <img src="{{ asset('assetsFrontend/img/cart-item-2.jpg') }}" alt="Cart Item Image" class="rounded-[10px] shrink-0">
                 <div class="grow">
                     <h6 class="font-medium text-[18px] text-edblue"><a href="course-details.html" class="hover:text-edpurple">Digital Marketing</a></h6>
                     <h6 class="font-medium text-edgray">$15.00</h6>
@@ -30,7 +30,7 @@
 
             <!-- single cart item -->
             <div class="flex items-center gap-[20px] py-[30px] px-[25px] border-b border-edgray/20">
-                <img src="assetsFrontend/img/cart-item-3.jpg" alt="Cart Item Image" class="rounded-[10px] shrink-0">
+                <img src="{{ asset('assetsFrontend/img/cart-item-3.jpg') }}" alt="Cart Item Image" class="rounded-[10px] shrink-0">
                 <div class="grow">
                     <h6 class="font-medium text-[18px] text-edblue"><a href="course-details.html" class="hover:text-edpurple">WordPress Development</a></h6>
                     <h6 class="font-medium text-edgray">$15.00</h6>

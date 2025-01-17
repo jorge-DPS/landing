@@ -67,15 +67,15 @@
             </div>
 
             <!-- Imagen actual -->
-            {{-- @if ($activity->cover_image) --}}
+            @if ($activity->cover_image)
                 <div>
                     <label class="block text-gray-900 font-medium mb-2">Imagen Actual</label>
                     <img src="{{ asset('storage/activity/' . $activity->cover_image) }}" alt="Imagen actual"
-                        class="w-full h-64 object-cover border border-gray-300 rounded-lg">
+                        class="w-auto h-64 object-cover border border-gray-300 rounded-lg">
                 </div>
-            {{-- @else --}}
+            @else
                 <p class="text-gray-700 text-sm">No hay Imagen adjunto.</p>
-            {{-- @endif --}}
+            @endif
         </div>
 
         <!-- Subir PDF -->
